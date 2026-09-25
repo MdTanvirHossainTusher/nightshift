@@ -1,0 +1,976 @@
+2026-09-18 00:09:00.827 WARN  [sync-service,f6ea64d7b65c3fc8,0df7c9fc] [report-builder-4] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-5, retrying
+2026-09-18 00:12:04.761 WARN  [sync-service,29bc25053415c863,589c4bd9] [http-nio-8082-exec-6] com.example.sync.InventoryReportService - Slow report build: region=east dealers=1271 queries=1217 duration=20692ms (InventoryReportService.java:30)
+2026-09-18 00:12:48.773 INFO  [sync-service,266f8e290c1fcb6a,16e21a5a] [http-nio-8082-exec-6] com.example.sync.InventoryReportService - Daily report for region north built, 810 dealers
+2026-09-18 00:14:53.945 DEBUG [sync-service,0fed57bd2170ac43,02208fe5] [http-nio-8082-exec-6] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-0]
+2026-09-18 00:16:40.074 INFO  [sync-service,5743ed1c2b634d63,deed5c2b] [http-nio-8082-exec-3] com.example.sync.InventoryReportService - Daily report for region east built, 545 dealers
+2026-09-18 00:22:42.107 INFO  [sync-service,1afff3a3a5d14a3a,89aa3cc8] [http-nio-8082-exec-3] com.example.sync.ShipmentEventConsumer - Consumed 178 shipment events from partition 4
+2026-09-18 00:24:22.090 INFO  [sync-service,757dad1effa0b663,d1fc8944] [report-builder-9] com.example.sync.StockLevelService - Stock refresh completed for 106 SKUs
+2026-09-18 00:27:34.341 WARN  [sync-service,cf9ecfa0cd23ce9a,1390e3c6] [report-builder-5] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 00:32:19.757 INFO  [sync-service,586a425c16f4f880,3861dac4] [report-builder-8] com.example.sync.StockLevelService - Stock refresh completed for 224 SKUs
+2026-09-18 00:38:39.284 WARN  [sync-service,94149a749347449d,28174335] [http-nio-8082-exec-5] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-2, retrying
+2026-09-18 00:55:05.663 WARN  [sync-service,dc0b368caa80506e,4b3d8e2c] [http-nio-8082-exec-1] com.example.sync.InventoryReportService - Slow report build: region=south dealers=1093 queries=925 duration=18026ms (InventoryReportService.java:30)
+2026-09-18 00:57:03.716 INFO  [sync-service,6d530ab2d0a00100,b6234470] [report-builder-1] com.example.sync.InventoryReportService - Daily report for region north built, 1322 dealers
+2026-09-18 01:07:01.782 INFO  [sync-service,3d52faf0990536e2,25497b4c] [report-builder-9] com.example.sync.StockLevelService - Stock refresh completed for 894 SKUs
+2026-09-18 01:08:28.607 DEBUG [sync-service,107e8fe96e4460ec,766b00d7] [report-builder-2] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-5]
+2026-09-18 01:12:09.805 INFO  [sync-service,c050062ee1e92043,451ecba1] [report-builder-6] com.example.sync.ShipmentEventConsumer - Consumed 225 shipment events from partition 1
+2026-09-18 01:17:18.010 INFO  [sync-service,f3a2a96ebc8c1965,f28f4bed] [http-nio-8082-exec-8] com.example.sync.StockLevelService - Stock refresh completed for 805 SKUs
+2026-09-18 01:32:09.083 WARN  [sync-service,6f697097f766cfac,44eef495] [report-builder-3] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-5, retrying
+2026-09-18 01:32:41.199 WARN  [sync-service,37b009b10371dc87,e537913c] [report-builder-7] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-2, retrying
+2026-09-18 01:36:24.850 INFO  [sync-service,0ffcc54ac68931cf,4c945a87] [report-builder-1] com.example.sync.ShipmentEventConsumer - Consumed 57 shipment events from partition 2
+2026-09-18 01:37:51.764 WARN  [sync-service,fef82118cbe8f1cf,6f2fa246] [report-builder-3] com.example.sync.InventoryReportService - Slow report build: region=south dealers=1062 queries=1100 duration=20054ms (InventoryReportService.java:30)
+2026-09-18 01:49:10.670 WARN  [sync-service,92f87daadbdc6749,e59e1a9e] [report-builder-3] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-4, retrying
+2026-09-18 02:00:10.008 INFO  [sync-service,b863846056e19a9c,dca9eeea] [http-nio-8082-exec-2] com.example.sync.ShipmentEventConsumer - Consumed 255 shipment events from partition 3
+2026-09-18 02:05:14.228 WARN  [sync-service,08ef6c96efb29eb4,2a9594a2] [report-builder-2] org.springframework.boot.context.config.ConfigDataEnvironment - Property 'spring.datasource.initialization-mode' is deprecated and will be removed in a future release
+2026-09-18 02:13:49.730 WARN  [sync-service,17d1ca9628f6523e,47063b35] [report-builder-6] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-0, retrying
+2026-09-18 02:14:41.915 WARN  [sync-service,5c5bcc4be7961e90,36690f87] [report-builder-8] com.example.sync.InventoryReportService - Slow report build: region=north dealers=1098 queries=1262 duration=12575ms (InventoryReportService.java:30)
+2026-09-18 02:15:33.110 WARN  [sync-service,74467bb0c7bdf87b,a1892f09] [report-builder-4] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-0, retrying
+2026-09-18 02:15:55.807 INFO  [sync-service,d5bcb7280fd601d7,ce7806ee] [http-nio-8082-exec-3] com.example.sync.ShipmentEventConsumer - Consumed 279 shipment events from partition 0
+2026-09-18 02:17:58.128 WARN  [sync-service,9c5a084d52445162,085b659f] [report-builder-2] com.example.sync.InventoryReportService - Slow report build: region=west dealers=970 queries=1299 duration=11590ms (InventoryReportService.java:30)
+2026-09-18 02:32:47.031 WARN  [sync-service,073f13b2b72d3a4c,49a86f13] [report-builder-3] com.example.sync.InventoryReportService - Slow report build: region=west dealers=1019 queries=1235 duration=22277ms (InventoryReportService.java:30)
+2026-09-18 02:47:31.902 INFO  [sync-service,161b6fdd7f6435d7,00c3bc34] [http-nio-8082-exec-2] com.example.sync.InventoryReportService - Daily report for region east built, 1168 dealers
+2026-09-18 02:55:12.134 INFO  [sync-service,b73726546c28350c,dbc50f9a] [http-nio-8082-exec-1] com.example.sync.InventoryReportService - Daily report for region east built, 420 dealers
+2026-09-18 02:56:50.741 DEBUG [sync-service,1d1f694efddc4be3,f6222a10] [http-nio-8082-exec-4] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-3]
+2026-09-18 03:05:16.863 WARN  [sync-service,3fec660f98c7d246,e0058604] [report-builder-6] com.example.sync.InventoryReportService - Slow report build: region=east dealers=1239 queries=1131 duration=10220ms (InventoryReportService.java:30)
+2026-09-18 03:05:56.924 WARN  [sync-service,7014225857433379,7641814e] [http-nio-8082-exec-2] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-5, retrying
+2026-09-18 03:05:59.132 INFO  [sync-service,7d13b30befe4bb7f,c03e63b5] [report-builder-5] com.example.sync.StockLevelService - Stock refresh completed for 788 SKUs
+2026-09-18 03:09:59.750 WARN  [sync-service,07321de602797839,4f49ad84] [http-nio-8082-exec-1] com.example.sync.InventoryReportService - Slow report build: region=west dealers=1288 queries=1184 duration=20159ms (InventoryReportService.java:30)
+2026-09-18 03:11:03.716 INFO  [sync-service,4f9be73232686b77,22687c9c] [report-builder-4] com.example.sync.StockLevelService - Stock refresh completed for 618 SKUs
+2026-09-18 03:16:25.233 DEBUG [sync-service,a86182bae3532464,993fccbc] [http-nio-8082-exec-7] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-3]
+2026-09-18 03:17:56.806 WARN  [sync-service,5c7553fe24edcf76,cc2faf89] [report-builder-5] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-1, retrying
+2026-09-18 03:20:35.784 WARN  [sync-service,4838a1548d2fbe2d,b0e46247] [http-nio-8082-exec-9] org.springframework.boot.context.config.ConfigDataEnvironment - Property 'spring.datasource.initialization-mode' is deprecated and will be removed in a future release
+2026-09-18 03:26:26.977 INFO  [sync-service,786e351fad384723,fb6ab0a3] [http-nio-8082-exec-7] com.example.sync.ShipmentEventConsumer - Consumed 198 shipment events from partition 5
+2026-09-18 03:29:58.152 INFO  [sync-service,7bea985c3aa43859,be52a9ae] [http-nio-8082-exec-1] com.example.sync.ShipmentEventConsumer - Consumed 292 shipment events from partition 4
+2026-09-18 03:36:30.596 DEBUG [sync-service,172c9028bd04a6b7,c11b0576] [http-nio-8082-exec-5] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-4]
+2026-09-18 03:39:03.132 WARN  [sync-service,8b7a09f925efc24a,612172d4] [report-builder-3] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-1, retrying
+2026-09-18 03:45:49.350 INFO  [sync-service,c3dd14d8cfd4d80d,d24a943a] [http-nio-8082-exec-7] com.example.sync.StockLevelService - Stock refresh completed for 899 SKUs
+2026-09-18 04:12:30.235 WARN  [sync-service,f87c37a9ae729e7a,b099c95b] [http-nio-8082-exec-7] com.example.sync.InventoryReportService - Slow report build: region=north dealers=1272 queries=928 duration=21986ms (InventoryReportService.java:30)
+2026-09-18 04:13:40.800 DEBUG [sync-service,b2b0e45df4ebe3cb,3c65a104] [http-nio-8082-exec-7] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-5]
+2026-09-18 04:24:46.368 INFO  [sync-service,d5ee5b9da2353e80,ff5b019d] [http-nio-8082-exec-6] com.example.sync.StockLevelService - Stock refresh completed for 92 SKUs
+2026-09-18 04:27:58.660 WARN  [sync-service,a0c66236704109bf,2ee42687] [http-nio-8082-exec-2] com.example.sync.ShipmentEventConsumer - Dropping malformed shipment event from topic shipment-events, offset 166114
+com.example.sync.ShipmentEventConsumer$DeserializationException: Unexpected token START_ARRAY at [Source: (byte[]); line: 1, column: 14]
+	at com.example.sync.ShipmentEventConsumer.onMessage(ShipmentEventConsumer.java:24)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer.doInvokeRecordListener(KafkaMessageListenerContainer.java:2815)
+Caused by: com.fasterxml.jackson.core.JsonParseException: Unexpected token START_ARRAY
+	at com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:2477)
+2026-09-18 04:38:20.403 DEBUG [sync-service,3e6fa9fa720532d1,02049abf] [report-builder-9] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-0]
+2026-09-18 04:46:05.576 INFO  [sync-service,b5d05ed824db9529,4d8fddb0] [report-builder-9] com.example.sync.ShipmentEventConsumer - Consumed 249 shipment events from partition 1
+2026-09-18 04:48:21.270 WARN  [sync-service,ace438b7e1f7f83d,719da991] [http-nio-8082-exec-1] com.example.sync.InventoryReportService - Slow report build: region=west dealers=1050 queries=998 duration=17016ms (InventoryReportService.java:30)
+2026-09-18 05:00:44.955 INFO  [sync-service,2db1d7a159c7a65c,04202600] [http-nio-8082-exec-5] com.example.sync.StockLevelService - Stock refresh completed for 705 SKUs
+2026-09-18 05:08:31.038 WARN  [sync-service,3428be2aa511074e,dd56cd7f] [report-builder-2] com.example.sync.InventoryReportService - Slow report build: region=south dealers=1197 queries=937 duration=12290ms (InventoryReportService.java:30)
+2026-09-18 05:14:17.370 INFO  [sync-service,ac1f469eb1f1d902,c6ab5f18] [http-nio-8082-exec-5] com.example.sync.ShipmentEventConsumer - Consumed 39 shipment events from partition 5
+2026-09-18 05:15:24.932 DEBUG [sync-service,6f7ef8aa8c39e264,9fd7f1e8] [report-builder-7] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-5]
+2026-09-18 05:25:00.137 INFO  [sync-service,41a1f4f430278e50,78f2737c] [http-nio-8082-exec-6] com.example.sync.InventoryReportService - Daily report for region north built, 1091 dealers
+2026-09-18 05:31:11.850 INFO  [sync-service,c26ac5754499e318,79d49aa2] [http-nio-8082-exec-3] com.example.sync.StockLevelService - Stock refresh completed for 860 SKUs
+2026-09-18 05:36:26.485 INFO  [sync-service,6d2fa9e41d953100,c798d2ea] [http-nio-8082-exec-1] com.example.sync.StockLevelService - Stock refresh completed for 603 SKUs
+2026-09-18 05:48:51.802 INFO  [sync-service,5903ed0dee59ee9b,b4f7c966] [report-builder-3] com.example.sync.InventoryReportService - Daily report for region west built, 716 dealers
+2026-09-18 05:52:12.489 INFO  [sync-service,65107e32cd020743,9c83fdb3] [report-builder-6] com.example.sync.StockLevelService - Stock refresh completed for 191 SKUs
+2026-09-18 05:54:38.493 INFO  [sync-service,a1053a34c14c641c,95139562] [report-builder-1] com.example.sync.StockLevelService - Stock refresh completed for 396 SKUs
+2026-09-18 06:01:22.957 WARN  [sync-service,c078f066b404631e,b75252f7] [report-builder-3] com.example.sync.InventoryReportService - Slow report build: region=south dealers=1095 queries=968 duration=19510ms (InventoryReportService.java:30)
+2026-09-18 06:06:53.571 WARN  [sync-service,311b1245c5527cf4,ebf9ff92] [http-nio-8082-exec-4] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 06:08:40.584 WARN  [sync-service,b0b092215375fe33,0484d45c] [http-nio-8082-exec-6] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-4, retrying
+2026-09-18 06:20:07.614 WARN  [sync-service,6edf65354617187d,cc3ec102] [report-builder-5] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-0, retrying
+2026-09-18 06:24:22.241 DEBUG [sync-service,223a892fff613b63,7f65b49d] [http-nio-8082-exec-3] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-5]
+2026-09-18 06:26:19.858 WARN  [sync-service,e5f195a69f69066d,5ec03339] [report-builder-1] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-2, retrying
+2026-09-18 06:30:50.824 WARN  [sync-service,493a1f56d44742d9,290d4b3e] [report-builder-2] com.example.sync.InventoryReportService - Slow report build: region=east dealers=1199 queries=1273 duration=18121ms (InventoryReportService.java:30)
+2026-09-18 06:33:29.675 INFO  [sync-service,288da4d3c10d5d18,a6c7bd69] [report-builder-1] com.example.sync.StockLevelService - Stock refresh completed for 499 SKUs
+2026-09-18 06:36:30.979 INFO  [sync-service,3212dd6f05ea164a,9ef017f3] [http-nio-8082-exec-1] com.example.sync.ShipmentEventConsumer - Consumed 278 shipment events from partition 5
+2026-09-18 06:43:10.791 WARN  [sync-service,8ca182c84ca025a6,b3503556] [report-builder-1] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-1, retrying
+2026-09-18 06:48:29.464 INFO  [sync-service,49f7ef15358ac459,fcd0c755] [http-nio-8082-exec-8] com.example.sync.ShipmentEventConsumer - Consumed 136 shipment events from partition 2
+2026-09-18 06:58:32.057 INFO  [sync-service,65dfceb3fc71ef3e,3b723aa2] [http-nio-8082-exec-8] com.example.sync.StockLevelService - Stock refresh completed for 840 SKUs
+2026-09-18 06:59:39.828 WARN  [sync-service,66d932c02b2a858f,fda7baf8] [report-builder-3] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-2, retrying
+2026-09-18 07:00:26.823 INFO  [sync-service,4e57d43d83cac50c,64c8bed4] [http-nio-8082-exec-3] com.example.sync.InventoryReportService - Daily report for region north built, 1164 dealers
+2026-09-18 07:00:30.431 WARN  [sync-service,72e8160702ba099c,3e41fdec] [report-builder-2] com.example.sync.InventoryReportService - Slow report build: region=east dealers=1269 queries=1068 duration=20888ms (InventoryReportService.java:30)
+2026-09-18 07:02:59.487 WARN  [sync-service,545635566e7389bd,a9ecc034] [report-builder-6] com.example.sync.InventoryReportService - Slow report build: region=north dealers=1244 queries=1249 duration=20501ms (InventoryReportService.java:30)
+2026-09-18 07:05:35.532 DEBUG [sync-service,07090cd50f061ad4,be1beeea] [report-builder-9] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-5]
+2026-09-18 07:06:10.049 WARN  [sync-service,87be98238c5b8f4d,80179032] [report-builder-8] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-5, retrying
+2026-09-18 07:11:38.314 WARN  [sync-service,8770bce9c02a669d,0d75193a] [report-builder-6] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-0, retrying
+2026-09-18 07:20:51.799 INFO  [sync-service,a0b52c881944930d,92767b50] [report-builder-7] com.example.sync.StockLevelService - Stock refresh completed for 91 SKUs
+2026-09-18 07:21:23.461 INFO  [sync-service,d081fc85e0f72dcd,641d3159] [report-builder-6] com.example.sync.InventoryReportService - Daily report for region west built, 778 dealers
+2026-09-18 07:22:47.359 INFO  [sync-service,ccbca0cb1d88d703,9ca3bd08] [report-builder-6] com.example.sync.InventoryReportService - Daily report for region south built, 1005 dealers
+2026-09-18 07:26:09.065 INFO  [sync-service,5ea620ccab949a85,276a6448] [report-builder-9] com.example.sync.ShipmentEventConsumer - Consumed 78 shipment events from partition 3
+2026-09-18 07:29:46.764 INFO  [sync-service,e2d1b31e58aabaa3,d8c949d2] [http-nio-8082-exec-7] com.example.sync.ShipmentEventConsumer - Consumed 129 shipment events from partition 0
+2026-09-18 07:30:09.158 WARN  [sync-service,da1f7b691f0e6605,3d11b328] [http-nio-8082-exec-3] com.example.sync.ShipmentEventConsumer - Dropping malformed shipment event from topic shipment-events, offset 743343
+com.example.sync.ShipmentEventConsumer$DeserializationException: Unexpected token START_ARRAY at [Source: (byte[]); line: 1, column: 14]
+	at com.example.sync.ShipmentEventConsumer.onMessage(ShipmentEventConsumer.java:24)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer.doInvokeRecordListener(KafkaMessageListenerContainer.java:2815)
+Caused by: com.fasterxml.jackson.core.JsonParseException: Unexpected token START_ARRAY
+	at com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:2477)
+2026-09-18 07:31:29.885 INFO  [sync-service,85c38a2627f8a898,151a7d61] [http-nio-8082-exec-6] com.example.sync.ShipmentEventConsumer - Consumed 178 shipment events from partition 1
+2026-09-18 07:38:14.493 INFO  [sync-service,cf91a32bfb6b242e,111b33e6] [http-nio-8082-exec-6] com.example.sync.ShipmentEventConsumer - Consumed 107 shipment events from partition 2
+2026-09-18 07:48:24.342 INFO  [sync-service,e8ee14f7a7d09404,0301474b] [http-nio-8082-exec-2] com.example.sync.ShipmentEventConsumer - Consumed 36 shipment events from partition 2
+2026-09-18 07:48:40.268 WARN  [sync-service,b92f2a2c64d83e0e,c9f7db69] [http-nio-8082-exec-5] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 07:53:36.764 WARN  [sync-service,75b0662a69fe71ee,97360c7c] [http-nio-8082-exec-3] com.example.sync.InventoryReportService - Slow report build: region=south dealers=1156 queries=1227 duration=11511ms (InventoryReportService.java:30)
+2026-09-18 08:00:11.087 DEBUG [sync-service,fdffb0e0392ecfd7,3ed82cab] [report-builder-4] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-5]
+2026-09-18 08:00:20.383 INFO  [sync-service,71f80f5403ddbd81,9c70e997] [http-nio-8082-exec-9] com.example.sync.StockLevelService - Stock refresh completed for 259 SKUs
+2026-09-18 08:00:54.072 DEBUG [sync-service,cc4638d49af94f36,374367f6] [report-builder-2] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-3]
+2026-09-18 08:01:03.871 INFO  [sync-service,863da1299bf4dfaa,c183dc46] [http-nio-8082-exec-5] com.example.sync.StockLevelService - Stock refresh completed for 294 SKUs
+2026-09-18 08:01:15.936 INFO  [sync-service,2397d421e785e78b,3cb67b37] [report-builder-2] com.example.sync.StockLevelService - Stock refresh completed for 665 SKUs
+2026-09-18 08:02:30.892 INFO  [sync-service,16ab748d2f22096f,ded5bb26] [report-builder-5] com.example.sync.StockLevelService - Stock refresh completed for 445 SKUs
+2026-09-18 08:02:34.379 DEBUG [sync-service,09649e98aa808edc,adde9bb2] [report-builder-2] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-3]
+2026-09-18 08:04:39.618 INFO  [sync-service,cb3630375a376aeb,b116e456] [report-builder-1] com.example.sync.StockLevelService - Stock refresh completed for 296 SKUs
+2026-09-18 08:05:00.117 INFO  [sync-service,a965fc2a2c3ba67a,442564b2] [http-nio-8082-exec-8] com.example.sync.StockLevelService - Stock refresh completed for 337 SKUs
+2026-09-18 08:06:36.337 INFO  [sync-service,110c67d604000e0c,3b6cacea] [http-nio-8082-exec-8] com.example.sync.StockLevelService - Stock refresh completed for 432 SKUs
+2026-09-18 08:06:50.412 WARN  [sync-service,0fde23577e2553cb,93c5049f] [report-builder-2] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 08:08:00.672 WARN  [sync-service,78ac7f6356b53905,69ae0b4a] [report-builder-1] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 08:08:31.280 WARN  [sync-service,ef737df32cfb4059,165fc701] [http-nio-8082-exec-1] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-2, retrying
+2026-09-18 08:08:42.992 DEBUG [sync-service,65e60059134a0a8d,cd2f2e66] [http-nio-8082-exec-8] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-3]
+2026-09-18 08:08:54.965 WARN  [sync-service,298b4aa61c89c915,7d4df8e0] [http-nio-8082-exec-4] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-0, retrying
+2026-09-18 08:09:44.552 INFO  [sync-service,d50b7cad4aec24ce,1ddc6ab8] [report-builder-3] com.example.sync.StockLevelService - Stock refresh completed for 446 SKUs
+2026-09-18 08:09:49.456 INFO  [sync-service,72237edd6cc97174,151b3d58] [http-nio-8082-exec-1] com.example.sync.InventoryReportService - Daily report for region south built, 1267 dealers
+2026-09-18 08:09:50.291 WARN  [sync-service,88608e2ddf8502ef,a33cfb86] [report-builder-4] com.example.sync.InventoryReportService - Slow report build: region=south dealers=1052 queries=1085 duration=11364ms (InventoryReportService.java:30)
+2026-09-18 08:10:03.303 DEBUG [sync-service,3f2d973b0deb278c,2191b992] [http-nio-8082-exec-2] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-0]
+2026-09-18 08:10:50.085 DEBUG [sync-service,55e2a85a6e69cac7,e56e45fa] [report-builder-1] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-1]
+2026-09-18 08:13:07.712 WARN  [sync-service,8ae12ddbbc88d29e,ae47586f] [http-nio-8082-exec-4] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 08:13:07.772 DEBUG [sync-service,23fd035ce6b0eaf4,8edb2654] [report-builder-4] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-1]
+2026-09-18 08:13:16.716 INFO  [sync-service,99c0286e64e38609,b777b29d] [http-nio-8082-exec-4] com.example.sync.StockLevelService - Stock refresh completed for 447 SKUs
+2026-09-18 08:15:07.102 DEBUG [sync-service,1729933ee12a11ce,e884974e] [http-nio-8082-exec-5] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-1]
+2026-09-18 08:15:08.269 INFO  [sync-service,2bd10bb661a42ba4,7ca65295] [http-nio-8082-exec-3] com.example.sync.StockLevelService - Stock refresh completed for 828 SKUs
+2026-09-18 08:15:28.429 WARN  [sync-service,b7de12a2f7a98f58,9442680f] [report-builder-9] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-5, retrying
+2026-09-18 08:16:47.994 DEBUG [sync-service,1d77ff42f9b1044e,a6d65d6b] [report-builder-9] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-1]
+2026-09-18 08:17:32.344 INFO  [sync-service,6309ed4508cd3a42,4f89efbf] [http-nio-8082-exec-7] com.example.sync.InventoryReportService - Daily report for region west built, 430 dealers
+2026-09-18 08:19:44.885 WARN  [sync-service,012c06aa23e2c0a5,a6225f07] [http-nio-8082-exec-5] com.example.sync.InventoryReportService - Slow report build: region=west dealers=1018 queries=1151 duration=18569ms (InventoryReportService.java:30)
+2026-09-18 08:20:43.129 DEBUG [sync-service,ea09cafe104bd44d,f2a0bc6f] [report-builder-9] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-5]
+2026-09-18 08:20:51.588 INFO  [sync-service,47f19561daa07279,d59d4b58] [report-builder-7] com.example.sync.InventoryReportService - Daily report for region east built, 1131 dealers
+2026-09-18 08:22:51.163 INFO  [sync-service,e33324f6b17ef67e,9f8d1f34] [http-nio-8082-exec-8] com.example.sync.ShipmentEventConsumer - Consumed 256 shipment events from partition 4
+2026-09-18 08:23:15.177 DEBUG [sync-service,a05fcdad186ebe82,3b1f5ea2] [http-nio-8082-exec-8] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-3]
+2026-09-18 08:26:37.498 INFO  [sync-service,ae4f2d64d6aa8b01,c395146e] [report-builder-5] com.example.sync.StockLevelService - Stock refresh completed for 348 SKUs
+2026-09-18 08:26:57.125 INFO  [sync-service,6260fd1e2ca71108,2dc56200] [http-nio-8082-exec-1] com.example.sync.StockLevelService - Stock refresh completed for 792 SKUs
+2026-09-18 08:27:23.733 DEBUG [sync-service,077af24950e64203,0c326cfe] [http-nio-8082-exec-3] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-0]
+2026-09-18 08:28:11.558 INFO  [sync-service,2bb82d012f60a236,ead6944e] [report-builder-1] com.example.sync.InventoryReportService - Daily report for region west built, 1395 dealers
+2026-09-18 08:28:29.786 INFO  [sync-service,74157f46ba2b00b7,69b54bc2] [http-nio-8082-exec-3] com.example.sync.InventoryReportService - Daily report for region north built, 588 dealers
+2026-09-18 08:28:38.331 DEBUG [sync-service,04e98c9e0a7a176f,1af1d0a3] [http-nio-8082-exec-4] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-0]
+2026-09-18 08:29:43.975 INFO  [sync-service,24b580dd8e466cf9,7c5a2f4e] [http-nio-8082-exec-1] com.example.sync.ShipmentEventConsumer - Consumed 208 shipment events from partition 5
+2026-09-18 08:32:03.938 INFO  [sync-service,92752c2a733ce13a,18057c19] [report-builder-5] com.example.sync.ShipmentEventConsumer - Consumed 76 shipment events from partition 5
+2026-09-18 08:32:33.461 INFO  [sync-service,9d1ab09b54046dbf,a6a91584] [report-builder-1] com.example.sync.StockLevelService - Stock refresh completed for 722 SKUs
+2026-09-18 08:33:28.716 DEBUG [sync-service,37d4b3c700e46996,d8d50e82] [report-builder-9] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-2]
+2026-09-18 08:35:39.333 INFO  [sync-service,66cdbeae682cc29f,41b4ca0c] [report-builder-6] com.example.sync.StockLevelService - Stock refresh completed for 166 SKUs
+2026-09-18 08:36:46.357 WARN  [sync-service,0fd42738cd326efb,7b44c416] [report-builder-2] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-1, retrying
+2026-09-18 08:36:51.491 INFO  [sync-service,e4724eda6857fa47,4ace9ab9] [report-builder-5] com.example.sync.StockLevelService - Stock refresh completed for 491 SKUs
+2026-09-18 08:37:09.682 INFO  [sync-service,b19674abe52e4364,668928fb] [report-builder-8] com.example.sync.StockLevelService - Stock refresh completed for 270 SKUs
+2026-09-18 08:37:10.059 INFO  [sync-service,d4d2cec6099fbc92,2513a8d7] [http-nio-8082-exec-2] com.example.sync.StockLevelService - Stock refresh completed for 298 SKUs
+2026-09-18 08:37:15.025 DEBUG [sync-service,1f3d0bf4ec2a47d3,f3b21ac9] [http-nio-8082-exec-1] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-0]
+2026-09-18 08:38:30.881 INFO  [sync-service,bfb7d5e7172f755a,25d107af] [http-nio-8082-exec-2] com.example.sync.ShipmentEventConsumer - Consumed 15 shipment events from partition 2
+2026-09-18 08:39:38.664 DEBUG [sync-service,5786685d683758e9,6de596d5] [http-nio-8082-exec-5] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-4]
+2026-09-18 08:40:13.824 DEBUG [sync-service,1cf5605ad4ce90f1,473bc021] [report-builder-7] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-4]
+2026-09-18 08:40:16.825 DEBUG [sync-service,3c164161e34cd688,8e0c06f9] [http-nio-8082-exec-7] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-1]
+2026-09-18 08:40:29.616 INFO  [sync-service,0f0068333f870b42,92d8a188] [report-builder-4] com.example.sync.InventoryReportService - Daily report for region west built, 1229 dealers
+2026-09-18 08:40:44.511 INFO  [sync-service,322886f8e9aa5f45,a066e229] [http-nio-8082-exec-2] com.example.sync.InventoryReportService - Daily report for region north built, 822 dealers
+2026-09-18 08:40:47.508 INFO  [sync-service,d99dea625a8acc76,2cbd24ee] [http-nio-8082-exec-3] com.example.sync.InventoryReportService - Daily report for region west built, 890 dealers
+2026-09-18 08:41:11.668 WARN  [sync-service,bd3d8f53b9493afc,890ea19c] [report-builder-7] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-2, retrying
+2026-09-18 08:41:35.682 DEBUG [sync-service,122e2a96b66ab1c7,4401a9a9] [http-nio-8082-exec-2] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-2]
+2026-09-18 08:42:06.253 INFO  [sync-service,8ce114df89da5479,83dd2c2f] [report-builder-2] com.example.sync.StockLevelService - Stock refresh completed for 94 SKUs
+2026-09-18 08:43:14.807 INFO  [sync-service,a808a12fdf6ffa85,79d6090f] [report-builder-8] com.example.sync.ShipmentEventConsumer - Consumed 15 shipment events from partition 1
+2026-09-18 08:47:54.084 DEBUG [sync-service,62089f6a50439955,3688accd] [http-nio-8082-exec-1] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-2]
+2026-09-18 08:47:56.586 INFO  [sync-service,b630f74488850236,e7e0bc4a] [http-nio-8082-exec-6] com.example.sync.ShipmentEventConsumer - Consumed 25 shipment events from partition 1
+2026-09-18 08:48:02.979 WARN  [sync-service,9b66fcc6de163011,56673e99] [http-nio-8082-exec-4] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-5, retrying
+2026-09-18 08:48:33.388 INFO  [sync-service,3f40304a770ad37c,75efa05e] [report-builder-4] com.example.sync.InventoryReportService - Daily report for region south built, 1292 dealers
+2026-09-18 08:50:45.655 WARN  [sync-service,5bfefee2f8c8a7fb,0978dc2b] [http-nio-8082-exec-5] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-1, retrying
+2026-09-18 08:50:46.982 WARN  [sync-service,749ea099fd3cde2b,85f015a7] [http-nio-8082-exec-2] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-4, retrying
+2026-09-18 08:50:53.670 DEBUG [sync-service,a2fbba69bbbbbd2e,41a092b7] [http-nio-8082-exec-6] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-2]
+2026-09-18 08:50:57.148 WARN  [sync-service,beedb1080c253759,0228759e] [report-builder-1] com.example.sync.InventoryReportService - Slow report build: region=east dealers=1175 queries=986 duration=24359ms (InventoryReportService.java:30)
+2026-09-18 08:51:44.615 DEBUG [sync-service,a8bde033757c77d5,621e25e3] [report-builder-9] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-4]
+2026-09-18 08:52:34.307 WARN  [sync-service,93d7bcc627c169e1,95ce80a3] [http-nio-8082-exec-5] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-2, retrying
+2026-09-18 08:53:01.964 DEBUG [sync-service,f25d0dbc35aa4d61,35ca1f16] [http-nio-8082-exec-4] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-2]
+2026-09-18 08:53:50.106 INFO  [sync-service,64cac2af6794e318,bcb7b3f6] [http-nio-8082-exec-7] com.example.sync.ShipmentEventConsumer - Consumed 43 shipment events from partition 2
+2026-09-18 08:54:05.027 INFO  [sync-service,fc09e34b6e50ec3c,7acf5311] [report-builder-1] com.example.sync.StockLevelService - Stock refresh completed for 790 SKUs
+2026-09-18 08:54:10.348 INFO  [sync-service,5b72a855ed0370c7,b127c8f4] [http-nio-8082-exec-1] com.example.sync.InventoryReportService - Daily report for region south built, 771 dealers
+2026-09-18 08:54:46.541 INFO  [sync-service,1dd9d4fe97ffebda,4716bc97] [report-builder-7] com.example.sync.ShipmentEventConsumer - Consumed 237 shipment events from partition 0
+2026-09-18 08:56:15.437 INFO  [sync-service,583b93793610a55d,765338a2] [http-nio-8082-exec-3] com.example.sync.InventoryReportService - Daily report for region west built, 474 dealers
+2026-09-18 08:57:21.969 INFO  [sync-service,0c954af709c59235,6c5faa6c] [http-nio-8082-exec-3] com.example.sync.StockLevelService - Stock refresh completed for 888 SKUs
+2026-09-18 08:58:07.080 INFO  [sync-service,925def8e5da81be4,dacb8543] [http-nio-8082-exec-8] com.example.sync.StockLevelService - Stock refresh completed for 503 SKUs
+2026-09-18 08:58:40.456 INFO  [sync-service,fc2d0ac1e795d587,9ba46fad] [http-nio-8082-exec-3] com.example.sync.ShipmentEventConsumer - Consumed 38 shipment events from partition 0
+2026-09-18 09:00:07.479 INFO  [sync-service,f387b65367c1be10,df939a89] [report-builder-1] com.example.sync.ShipmentEventConsumer - Consumed 276 shipment events from partition 5
+2026-09-18 09:00:55.431 INFO  [sync-service,696fcd34ac7336cc,3c822fe2] [http-nio-8082-exec-2] com.example.sync.InventoryReportService - Daily report for region north built, 498 dealers
+2026-09-18 09:01:38.727 INFO  [sync-service,d48d91d493501008,b7e9302b] [report-builder-7] com.example.sync.ShipmentEventConsumer - Consumed 82 shipment events from partition 2
+2026-09-18 09:02:02.762 INFO  [sync-service,42b64356212f2664,fa23e883] [http-nio-8082-exec-9] com.example.sync.StockLevelService - Stock refresh completed for 226 SKUs
+2026-09-18 09:02:32.601 INFO  [sync-service,4109bc9a329f431a,0cda8022] [report-builder-8] com.example.sync.ShipmentEventConsumer - Consumed 244 shipment events from partition 4
+2026-09-18 09:03:23.883 INFO  [sync-service,bf497ad9a6c9f282,8da29543] [report-builder-8] com.example.sync.InventoryReportService - Daily report for region east built, 1190 dealers
+2026-09-18 09:04:32.092 WARN  [sync-service,e813037bac2e7e7f,0839f103] [http-nio-8082-exec-3] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-0, retrying
+2026-09-18 09:04:41.404 DEBUG [sync-service,5ebc1d670f71a9ce,18af45cc] [http-nio-8082-exec-3] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-3]
+2026-09-18 09:05:26.439 INFO  [sync-service,bbe81421b1c86eb4,4a5f632e] [http-nio-8082-exec-2] com.example.sync.StockLevelService - Stock refresh completed for 190 SKUs
+2026-09-18 09:06:43.346 INFO  [sync-service,294a28f789498e86,65718dfe] [report-builder-6] com.example.sync.InventoryReportService - Daily report for region west built, 858 dealers
+2026-09-18 09:07:26.330 INFO  [sync-service,57385b5faee457d2,4a6a9418] [http-nio-8082-exec-1] com.example.sync.StockLevelService - Stock refresh completed for 769 SKUs
+2026-09-18 09:07:43.754 INFO  [sync-service,19c4fe4e9711e0f8,dabb76d3] [report-builder-5] com.example.sync.StockLevelService - Stock refresh completed for 563 SKUs
+2026-09-18 09:08:08.152 WARN  [sync-service,e198d1b871d29634,3a179769] [report-builder-9] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-0, retrying
+2026-09-18 09:08:14.329 INFO  [sync-service,ccd94f51576c3298,4241afac] [http-nio-8082-exec-3] com.example.sync.StockLevelService - Stock refresh completed for 785 SKUs
+2026-09-18 09:08:21.003 INFO  [sync-service,6352ee2c8833921d,734ce4a2] [report-builder-1] com.example.sync.InventoryReportService - Daily report for region south built, 953 dealers
+2026-09-18 09:09:11.835 INFO  [sync-service,e2eecd20671c0b7a,d6d3901b] [http-nio-8082-exec-8] com.example.sync.StockLevelService - Stock refresh completed for 802 SKUs
+2026-09-18 09:12:12.133 INFO  [sync-service,c304614d3af23125,b1f75bcf] [http-nio-8082-exec-5] com.example.sync.ShipmentEventConsumer - Consumed 123 shipment events from partition 5
+2026-09-18 09:13:45.093 WARN  [sync-service,2d7d9f3e8beaf28b,a319b261] [report-builder-9] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-0, retrying
+2026-09-18 09:14:50.707 INFO  [sync-service,b66c3c9733fdcc76,72e7c976] [http-nio-8082-exec-4] com.example.sync.InventoryReportService - Daily report for region east built, 1173 dealers
+2026-09-18 09:15:54.519 WARN  [sync-service,478c94ff91908c42,03cb8c61] [http-nio-8082-exec-2] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-1, retrying
+2026-09-18 09:16:33.362 INFO  [sync-service,b7e264630adb4fe6,8bf7aa28] [report-builder-4] com.example.sync.ShipmentEventConsumer - Consumed 276 shipment events from partition 1
+2026-09-18 09:18:49.760 INFO  [sync-service,7783ffe068ee32c7,bf22fa90] [http-nio-8082-exec-3] com.example.sync.StockLevelService - Stock refresh completed for 405 SKUs
+2026-09-18 09:20:54.229 INFO  [sync-service,f0d36399d883c29e,f3984fe6] [http-nio-8082-exec-4] com.example.sync.InventoryReportService - Daily report for region east built, 1199 dealers
+2026-09-18 09:20:58.293 INFO  [sync-service,adfe79ff1a10e364,ec8e5bb6] [http-nio-8082-exec-1] com.example.sync.StockLevelService - Stock refresh completed for 749 SKUs
+2026-09-18 09:21:02.186 WARN  [sync-service,6229a45d4a7a89f7,77adbf18] [report-builder-3] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 09:21:13.202 INFO  [sync-service,fbef4d021a3290ea,ba488957] [report-builder-3] com.example.sync.StockLevelService - Stock refresh completed for 329 SKUs
+2026-09-18 09:21:27.807 WARN  [sync-service,9a47118a2b35709e,bc57f15a] [http-nio-8082-exec-4] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-4, retrying
+2026-09-18 09:22:05.057 WARN  [sync-service,c42c223155971252,1eeb9280] [http-nio-8082-exec-6] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-0, retrying
+2026-09-18 09:22:47.999 WARN  [sync-service,bad6b1d0bd74cc8a,99a6bf06] [report-builder-4] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-0, retrying
+2026-09-18 09:23:38.007 DEBUG [sync-service,98446e79ef98bb2f,a957351d] [report-builder-9] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-5]
+2026-09-18 09:26:12.322 INFO  [sync-service,2d4a91bbeeca72a9,411d4dde] [report-builder-2] com.example.sync.InventoryReportService - Daily report for region west built, 507 dealers
+2026-09-18 09:26:12.769 INFO  [sync-service,2a6363c7eecb133d,086fd27e] [http-nio-8082-exec-2] com.example.sync.InventoryReportService - Daily report for region north built, 1277 dealers
+2026-09-18 09:26:32.783 INFO  [sync-service,a19f5b775653ed4c,9565236d] [report-builder-3] com.example.sync.ShipmentEventConsumer - Consumed 204 shipment events from partition 4
+2026-09-18 09:27:12.567 DEBUG [sync-service,65f081502146e95d,b6637e31] [http-nio-8082-exec-8] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-4]
+2026-09-18 09:27:23.417 INFO  [sync-service,e26e439ab773e40b,207ecfd6] [report-builder-3] com.example.sync.ShipmentEventConsumer - Consumed 286 shipment events from partition 2
+2026-09-18 09:27:56.214 INFO  [sync-service,e4da6490891261f3,dd436cd8] [report-builder-9] com.example.sync.StockLevelService - Stock refresh completed for 320 SKUs
+2026-09-18 09:28:35.052 WARN  [sync-service,a2110bccae811434,b5fd4773] [report-builder-7] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-0, retrying
+2026-09-18 09:30:17.384 INFO  [sync-service,dd68601ee5b5e6fa,970bb776] [report-builder-6] com.example.sync.StockLevelService - Stock refresh completed for 644 SKUs
+2026-09-18 09:30:33.213 WARN  [sync-service,c9b7a047690c70af,4448619b] [http-nio-8082-exec-6] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-4, retrying
+2026-09-18 09:30:59.073 WARN  [sync-service,11e204758134eab6,56ffb2aa] [report-builder-8] com.example.sync.ShipmentEventConsumer - Dropping malformed shipment event from topic shipment-events, offset 869361
+com.example.sync.ShipmentEventConsumer$DeserializationException: Unexpected token START_ARRAY at [Source: (byte[]); line: 1, column: 14]
+	at com.example.sync.ShipmentEventConsumer.onMessage(ShipmentEventConsumer.java:24)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer.doInvokeRecordListener(KafkaMessageListenerContainer.java:2815)
+Caused by: com.fasterxml.jackson.core.JsonParseException: Unexpected token START_ARRAY
+	at com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:2477)
+2026-09-18 09:31:18.670 INFO  [sync-service,eadd852e44508ba9,adc4e2c8] [http-nio-8082-exec-3] com.example.sync.ShipmentEventConsumer - Consumed 227 shipment events from partition 2
+2026-09-18 09:31:30.640 INFO  [sync-service,55735efd8a407608,5b22cb0f] [http-nio-8082-exec-5] com.example.sync.InventoryReportService - Daily report for region east built, 403 dealers
+2026-09-18 09:32:06.008 INFO  [sync-service,0970c68a5ae64fef,163fd417] [http-nio-8082-exec-3] com.example.sync.StockLevelService - Stock refresh completed for 863 SKUs
+2026-09-18 09:32:35.614 DEBUG [sync-service,df71ae20cdf28915,f2baf281] [report-builder-4] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-0]
+2026-09-18 09:34:19.698 INFO  [sync-service,d45c870adccd643c,9d0ddecc] [http-nio-8082-exec-8] com.example.sync.ShipmentEventConsumer - Consumed 76 shipment events from partition 1
+2026-09-18 09:34:53.766 DEBUG [sync-service,d764c8c4180bf62c,55fb6259] [report-builder-2] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-5]
+2026-09-18 09:35:32.953 INFO  [sync-service,c5daf8dd6c11e353,98aeaadf] [report-builder-9] com.example.sync.StockLevelService - Stock refresh completed for 105 SKUs
+2026-09-18 09:35:47.053 WARN  [sync-service,303d7949c19887d2,7f93c23f] [report-builder-8] com.example.sync.InventoryReportService - Slow report build: region=north dealers=1039 queries=1006 duration=23662ms (InventoryReportService.java:30)
+2026-09-18 09:36:02.445 INFO  [sync-service,1ece3bed3e5d201b,4f20c6f2] [report-builder-3] com.example.sync.ShipmentEventConsumer - Consumed 40 shipment events from partition 4
+2026-09-18 09:36:59.700 DEBUG [sync-service,a8eb3df3b3f52aa5,1a104665] [http-nio-8082-exec-4] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-2]
+2026-09-18 09:37:05.587 INFO  [sync-service,ae737ea324e03325,9a724d26] [http-nio-8082-exec-5] com.example.sync.ShipmentEventConsumer - Consumed 276 shipment events from partition 4
+2026-09-18 09:37:40.376 WARN  [sync-service,28ebd5dd330aed1e,0c5c3d64] [report-builder-5] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 09:40:51.510 INFO  [sync-service,23f74616b15d790e,5d3982fe] [report-builder-2] com.example.sync.StockLevelService - Stock refresh completed for 354 SKUs
+2026-09-18 09:42:07.597 INFO  [sync-service,20a925584059080b,9e5d6a54] [http-nio-8082-exec-1] com.example.sync.InventoryReportService - Daily report for region north built, 406 dealers
+2026-09-18 09:42:10.456 INFO  [sync-service,0b45f2a998336af9,868a38dd] [http-nio-8082-exec-3] com.example.sync.StockLevelService - Stock refresh completed for 256 SKUs
+2026-09-18 09:43:17.674 DEBUG [sync-service,b708e369e299aace,8103e30e] [http-nio-8082-exec-1] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-2]
+2026-09-18 09:44:50.025 INFO  [sync-service,d28c12ae0677db1a,9b33bb0f] [report-builder-9] com.example.sync.InventoryReportService - Daily report for region west built, 1150 dealers
+2026-09-18 09:44:54.789 INFO  [sync-service,e510875dfbd4c7ff,c0aa39a7] [http-nio-8082-exec-9] com.example.sync.InventoryReportService - Daily report for region east built, 818 dealers
+2026-09-18 09:45:54.893 WARN  [sync-service,b9272df1edd8e9b6,cf677656] [http-nio-8082-exec-8] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-4, retrying
+2026-09-18 09:45:57.216 INFO  [sync-service,7503f5fae2cc2c7c,94b18d50] [http-nio-8082-exec-2] com.example.sync.InventoryReportService - Daily report for region east built, 864 dealers
+2026-09-18 09:47:21.622 INFO  [sync-service,055e6f9e33f84338,c12a85a0] [http-nio-8082-exec-1] com.example.sync.InventoryReportService - Daily report for region south built, 1288 dealers
+2026-09-18 09:47:41.023 INFO  [sync-service,478c9c557cf284b5,06ef8f3c] [report-builder-7] com.example.sync.StockLevelService - Stock refresh completed for 620 SKUs
+2026-09-18 09:48:35.686 INFO  [sync-service,ae700f97477171d3,921b3c3a] [http-nio-8082-exec-7] com.example.sync.StockLevelService - Stock refresh completed for 595 SKUs
+2026-09-18 09:49:54.440 WARN  [sync-service,24688d8b99426e39,3cf19229] [http-nio-8082-exec-3] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 09:50:46.646 INFO  [sync-service,1c464ef54f8948cd,5f11b29a] [http-nio-8082-exec-2] com.example.sync.InventoryReportService - Daily report for region north built, 519 dealers
+2026-09-18 09:51:13.401 INFO  [sync-service,24ec5f9db0db4aae,bcd837fc] [report-builder-3] com.example.sync.ShipmentEventConsumer - Consumed 65 shipment events from partition 5
+2026-09-18 09:53:10.377 WARN  [sync-service,62bf11b97ec8b658,f6cf2b60] [http-nio-8082-exec-3] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-5, retrying
+2026-09-18 09:53:34.380 DEBUG [sync-service,56f9f5023f9f8965,61bc43b1] [report-builder-8] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-0]
+2026-09-18 09:53:59.334 INFO  [sync-service,870e4347725ba6cc,fd8b723c] [report-builder-4] com.example.sync.ShipmentEventConsumer - Consumed 139 shipment events from partition 4
+2026-09-18 09:58:37.806 INFO  [sync-service,a7d57b41b90c7a1a,06bbf2be] [report-builder-9] com.example.sync.ShipmentEventConsumer - Consumed 300 shipment events from partition 2
+2026-09-18 09:58:58.679 INFO  [sync-service,c976fca9f37af847,f2ca3aa9] [report-builder-6] com.example.sync.ShipmentEventConsumer - Consumed 279 shipment events from partition 0
+2026-09-18 09:58:59.907 INFO  [sync-service,e6727133c5902bdb,6f556a5c] [report-builder-8] com.example.sync.StockLevelService - Stock refresh completed for 204 SKUs
+2026-09-18 09:59:20.703 INFO  [sync-service,d20b64219a98b06b,65c6d187] [http-nio-8082-exec-5] com.example.sync.StockLevelService - Stock refresh completed for 265 SKUs
+2026-09-18 10:00:16.432 INFO  [sync-service,cb74c47f2cb70e94,84c3d051] [report-builder-1] com.example.sync.ShipmentEventConsumer - Consumed 193 shipment events from partition 0
+2026-09-18 10:01:03.902 INFO  [sync-service,87c55040710b3b86,a7320faa] [report-builder-9] com.example.sync.ShipmentEventConsumer - Consumed 210 shipment events from partition 3
+2026-09-18 10:01:39.026 INFO  [sync-service,0e779cd382bfc46d,4c183a65] [http-nio-8082-exec-4] com.example.sync.InventoryReportService - Daily report for region north built, 804 dealers
+2026-09-18 10:02:40.557 WARN  [sync-service,ff82ff9c14e8a405,217ea204] [http-nio-8082-exec-1] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-1, retrying
+2026-09-18 10:06:23.154 WARN  [sync-service,17d899b0c6dacefb,0b83b000] [report-builder-2] com.example.sync.InventoryReportService - Slow report build: region=south dealers=1156 queries=1161 duration=15616ms (InventoryReportService.java:30)
+2026-09-18 10:06:36.408 INFO  [sync-service,4b9afe646523d5f9,293a28ac] [report-builder-9] com.example.sync.InventoryReportService - Daily report for region west built, 407 dealers
+2026-09-18 10:06:37.263 INFO  [sync-service,91fff0ce514bc507,4b36bbab] [report-builder-2] com.example.sync.ShipmentEventConsumer - Consumed 240 shipment events from partition 2
+2026-09-18 10:06:53.192 WARN  [sync-service,86cc669405030574,370a00b5] [report-builder-8] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 10:07:41.329 INFO  [sync-service,ce110e9de6463eca,6e610dfe] [report-builder-3] com.example.sync.ShipmentEventConsumer - Consumed 158 shipment events from partition 3
+2026-09-18 10:08:43.569 INFO  [sync-service,72cc767a93a6dc43,c5d05624] [report-builder-7] com.example.sync.InventoryReportService - Daily report for region east built, 860 dealers
+2026-09-18 10:08:50.075 DEBUG [sync-service,587beb8ef352c512,790ef9a7] [report-builder-9] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-5]
+2026-09-18 10:10:18.637 WARN  [sync-service,94f06b46972b099c,929b82ed] [report-builder-7] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 10:10:30.177 INFO  [sync-service,13815d2acf523559,c1a6abd6] [http-nio-8082-exec-8] com.example.sync.StockLevelService - Stock refresh completed for 832 SKUs
+2026-09-18 10:10:35.311 DEBUG [sync-service,c638562ffcfdfbc3,af5c3b93] [http-nio-8082-exec-4] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-2]
+2026-09-18 10:11:01.128 WARN  [sync-service,8b1d11f98827eff8,659f14a2] [report-builder-7] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 10:11:09.702 INFO  [sync-service,929cb65744a56605,a4b6d66a] [report-builder-7] com.example.sync.StockLevelService - Stock refresh completed for 897 SKUs
+2026-09-18 10:11:59.261 WARN  [sync-service,df8f9749728f4e72,18d5a3dc] [report-builder-8] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 10:13:03.196 INFO  [sync-service,87469d981dc72d32,ed8042dc] [http-nio-8082-exec-8] com.example.sync.InventoryReportService - Daily report for region east built, 953 dealers
+2026-09-18 10:15:51.813 DEBUG [sync-service,4db8cfc7ee3db774,b111f19f] [report-builder-9] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-3]
+2026-09-18 10:17:45.440 DEBUG [sync-service,1ba1dfea54eb65cb,f9b48900] [http-nio-8082-exec-7] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-3]
+2026-09-18 10:18:22.582 INFO  [sync-service,c0916a0161906841,dc70b185] [http-nio-8082-exec-2] com.example.sync.StockLevelService - Stock refresh completed for 479 SKUs
+2026-09-18 10:20:26.685 INFO  [sync-service,3797c1efb6201f56,23a3a0ad] [http-nio-8082-exec-7] com.example.sync.InventoryReportService - Daily report for region south built, 429 dealers
+2026-09-18 10:20:35.010 INFO  [sync-service,3af3dfa65f335349,0e7ef7a7] [report-builder-2] com.example.sync.InventoryReportService - Daily report for region west built, 649 dealers
+2026-09-18 10:20:40.252 INFO  [sync-service,aeb760e78d12cd85,860e6238] [http-nio-8082-exec-2] com.example.sync.InventoryReportService - Daily report for region south built, 1174 dealers
+2026-09-18 10:21:25.982 INFO  [sync-service,6d29e3116562fa5d,473d7253] [report-builder-5] com.example.sync.ShipmentEventConsumer - Consumed 199 shipment events from partition 2
+2026-09-18 10:22:00.844 WARN  [sync-service,4490950a4a370cc4,8be1acc0] [report-builder-7] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 10:22:01.593 INFO  [sync-service,0a996a8e4311098e,691003c8] [report-builder-5] com.example.sync.StockLevelService - Stock refresh completed for 395 SKUs
+2026-09-18 10:23:47.629 INFO  [sync-service,52840392041bc40b,6937f50e] [report-builder-1] com.example.sync.InventoryReportService - Daily report for region south built, 1145 dealers
+2026-09-18 10:23:59.336 WARN  [sync-service,1b733324d78a34f4,bb1a5047] [http-nio-8082-exec-3] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-2, retrying
+2026-09-18 10:25:20.038 INFO  [sync-service,ca79a54e43bae95b,ba436996] [report-builder-4] com.example.sync.InventoryReportService - Daily report for region east built, 500 dealers
+2026-09-18 10:25:47.694 DEBUG [sync-service,7049cf738443bc2e,eb8f5ba9] [report-builder-4] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-5]
+2026-09-18 10:27:15.699 INFO  [sync-service,ff90f7e287fda0f8,3ab0955e] [http-nio-8082-exec-8] com.example.sync.InventoryReportService - Daily report for region south built, 1238 dealers
+2026-09-18 10:28:35.861 DEBUG [sync-service,5ea64c740cac3d80,acf9f7e0] [report-builder-6] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-2]
+2026-09-18 10:28:53.133 INFO  [sync-service,f7491dd7cfea6dee,7b2e8fc1] [http-nio-8082-exec-3] com.example.sync.InventoryReportService - Daily report for region south built, 519 dealers
+2026-09-18 10:29:06.738 INFO  [sync-service,61b77511855a3b11,f865340f] [report-builder-6] com.example.sync.ShipmentEventConsumer - Consumed 216 shipment events from partition 0
+2026-09-18 10:30:21.793 INFO  [sync-service,512ee47a3d9524dc,a5def155] [http-nio-8082-exec-8] com.example.sync.StockLevelService - Stock refresh completed for 252 SKUs
+2026-09-18 10:30:30.999 WARN  [sync-service,c16e386a7ba8e886,a7644dbf] [http-nio-8082-exec-5] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-2, retrying
+2026-09-18 10:31:01.665 INFO  [sync-service,fa30a2ea9ca2f247,56c50ac8] [report-builder-7] com.example.sync.StockLevelService - Stock refresh completed for 757 SKUs
+2026-09-18 10:31:01.668 INFO  [sync-service,b08e3f21be8366b9,0d488616] [report-builder-9] com.example.sync.InventoryReportService - Daily report for region north built, 903 dealers
+2026-09-18 10:33:17.285 INFO  [sync-service,10452829e2340a30,3a8bc473] [report-builder-1] com.example.sync.InventoryReportService - Daily report for region south built, 537 dealers
+2026-09-18 10:33:44.382 WARN  [sync-service,703c689d3f81db2e,61249ae8] [http-nio-8082-exec-8] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-1, retrying
+2026-09-18 10:34:52.322 INFO  [sync-service,1465387d85d83544,c57604b3] [http-nio-8082-exec-9] com.example.sync.ShipmentEventConsumer - Consumed 203 shipment events from partition 2
+2026-09-18 10:35:06.760 INFO  [sync-service,e0003c2e4dd93714,35e6d99b] [http-nio-8082-exec-7] com.example.sync.StockLevelService - Stock refresh completed for 182 SKUs
+2026-09-18 10:36:08.697 INFO  [sync-service,2d51d687f15f341b,b76b767e] [report-builder-3] com.example.sync.InventoryReportService - Daily report for region south built, 979 dealers
+2026-09-18 10:36:48.487 INFO  [sync-service,c90133d3c458a506,af6082c2] [http-nio-8082-exec-8] com.example.sync.InventoryReportService - Daily report for region east built, 974 dealers
+2026-09-18 10:37:08.560 INFO  [sync-service,03002b33d6993e48,08b44614] [report-builder-8] com.example.sync.InventoryReportService - Daily report for region south built, 1373 dealers
+2026-09-18 10:38:12.339 DEBUG [sync-service,9b1ab6d9ce0ead8d,7d833967] [http-nio-8082-exec-7] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-3]
+2026-09-18 10:38:41.665 INFO  [sync-service,20967f2094153cce,970b6852] [report-builder-8] com.example.sync.StockLevelService - Stock refresh completed for 826 SKUs
+2026-09-18 10:40:57.642 DEBUG [sync-service,bb0b32b513705726,96c912db] [http-nio-8082-exec-3] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-4]
+2026-09-18 10:41:05.725 WARN  [sync-service,2c3da24b1896237e,1f3b9b48] [report-builder-8] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 10:41:06.401 WARN  [sync-service,49042fcfdca43646,72f23c59] [report-builder-6] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-1, retrying
+2026-09-18 10:42:12.958 INFO  [sync-service,d0750203c57d9717,92733f91] [report-builder-1] com.example.sync.ShipmentEventConsumer - Consumed 236 shipment events from partition 1
+2026-09-18 10:42:25.558 INFO  [sync-service,d0e1207f3abb20b2,64be88b0] [report-builder-8] com.example.sync.StockLevelService - Stock refresh completed for 726 SKUs
+2026-09-18 10:43:27.521 INFO  [sync-service,48531c27b336e824,75dedade] [http-nio-8082-exec-6] com.example.sync.ShipmentEventConsumer - Consumed 264 shipment events from partition 0
+2026-09-18 10:44:25.616 INFO  [sync-service,9c87a68954a08e87,df94c503] [report-builder-2] com.example.sync.InventoryReportService - Daily report for region east built, 879 dealers
+2026-09-18 10:45:02.130 DEBUG [sync-service,c2c84a306d039f88,0f819ba3] [http-nio-8082-exec-5] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-0]
+2026-09-18 10:47:02.403 INFO  [sync-service,a755def57ffb1147,ea2e961f] [http-nio-8082-exec-6] com.example.sync.InventoryReportService - Daily report for region south built, 983 dealers
+2026-09-18 10:47:17.062 DEBUG [sync-service,840470c4cf487fbf,e9778f8a] [http-nio-8082-exec-9] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-0]
+2026-09-18 10:47:57.334 INFO  [sync-service,c387bfbae00a8c24,31ba5d0f] [http-nio-8082-exec-1] com.example.sync.ShipmentEventConsumer - Consumed 203 shipment events from partition 4
+2026-09-18 10:48:33.039 INFO  [sync-service,ed81826ff58f7c96,a28d07c7] [report-builder-3] com.example.sync.ShipmentEventConsumer - Consumed 146 shipment events from partition 2
+2026-09-18 10:49:47.687 INFO  [sync-service,9481252101c5eaae,b3ace800] [http-nio-8082-exec-1] com.example.sync.StockLevelService - Stock refresh completed for 384 SKUs
+2026-09-18 10:50:34.482 DEBUG [sync-service,7578aca267e6b269,f1a828c8] [report-builder-5] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-3]
+2026-09-18 10:51:55.943 INFO  [sync-service,316d2319ed613c50,45510694] [http-nio-8082-exec-8] com.example.sync.ShipmentEventConsumer - Consumed 230 shipment events from partition 5
+2026-09-18 10:51:59.686 DEBUG [sync-service,043751191a0d1065,810723c2] [report-builder-8] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-3]
+2026-09-18 10:55:13.664 WARN  [sync-service,0d3ea8ffa1450b69,66836c40] [http-nio-8082-exec-5] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-1, retrying
+2026-09-18 10:55:23.614 INFO  [sync-service,84d2a58a0e6b36a5,baecdb16] [report-builder-9] com.example.sync.InventoryReportService - Daily report for region south built, 1326 dealers
+2026-09-18 10:55:32.942 WARN  [sync-service,270a7d232f7bcfe9,84463bcb] [report-builder-1] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 10:55:39.788 WARN  [sync-service,22f575c7335d54ba,a3f12f6a] [http-nio-8082-exec-4] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-0, retrying
+2026-09-18 10:59:51.006 INFO  [sync-service,bae5d89d44ea2142,b9989be8] [http-nio-8082-exec-1] com.example.sync.ShipmentEventConsumer - Consumed 205 shipment events from partition 2
+2026-09-18 11:00:39.209 WARN  [sync-service,1188748a097fc5d4,e87984ee] [http-nio-8082-exec-4] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-5, retrying
+2026-09-18 11:01:00.167 WARN  [sync-service,bccba4c590773fef,dd0e7c05] [http-nio-8082-exec-1] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 11:01:45.726 INFO  [sync-service,2c84383d3ca0cf20,47efcba1] [http-nio-8082-exec-7] com.example.sync.InventoryReportService - Daily report for region north built, 1246 dealers
+2026-09-18 11:02:11.445 WARN  [sync-service,903caa3682c0bfb2,5c62d553] [http-nio-8082-exec-1] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 11:02:30.318 INFO  [sync-service,520035fc84a08610,93af8248] [report-builder-5] com.example.sync.InventoryReportService - Daily report for region north built, 991 dealers
+2026-09-18 11:05:30.134 DEBUG [sync-service,d131291e19b8a747,7e7a0a1f] [report-builder-4] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-0]
+2026-09-18 11:08:05.215 INFO  [sync-service,5edd7193cce62df1,e9bf0443] [http-nio-8082-exec-5] com.example.sync.ShipmentEventConsumer - Consumed 246 shipment events from partition 3
+2026-09-18 11:09:29.322 DEBUG [sync-service,5c707b9590ddbd99,c6ff4a39] [report-builder-9] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-0]
+2026-09-18 11:09:46.296 INFO  [sync-service,de21bf86a64100af,c52bcd01] [http-nio-8082-exec-2] com.example.sync.ShipmentEventConsumer - Consumed 45 shipment events from partition 0
+2026-09-18 11:10:30.994 INFO  [sync-service,ff9fa1f9c5a63d62,fd6da4ad] [report-builder-1] com.example.sync.ShipmentEventConsumer - Consumed 123 shipment events from partition 0
+2026-09-18 11:11:21.197 DEBUG [sync-service,d037c04231597955,fcf2e2fa] [http-nio-8082-exec-5] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-4]
+2026-09-18 11:14:00.862 WARN  [sync-service,4db229b8e33d0a81,1f705595] [report-builder-6] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 11:14:04.472 WARN  [sync-service,ab19ebd0471d7b2a,9913fe94] [report-builder-5] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-1, retrying
+2026-09-18 11:14:17.059 INFO  [sync-service,652c3fa0e7a8cfed,eef83684] [http-nio-8082-exec-2] com.example.sync.ShipmentEventConsumer - Consumed 217 shipment events from partition 3
+2026-09-18 11:14:33.747 DEBUG [sync-service,454082e95667b1f1,826807f6] [http-nio-8082-exec-1] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-0]
+2026-09-18 11:15:31.126 INFO  [sync-service,20a2dd2f3795a614,60b6dfea] [http-nio-8082-exec-2] com.example.sync.ShipmentEventConsumer - Consumed 283 shipment events from partition 0
+2026-09-18 11:15:37.328 WARN  [sync-service,a2db1f9771c2b508,9343a920] [http-nio-8082-exec-2] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-0, retrying
+2026-09-18 11:15:53.336 INFO  [sync-service,473fdac123a06c5f,8219da5e] [http-nio-8082-exec-1] com.example.sync.InventoryReportService - Daily report for region south built, 759 dealers
+2026-09-18 11:16:26.073 INFO  [sync-service,54fa56d0ff8e2a0f,593ea750] [report-builder-5] com.example.sync.StockLevelService - Stock refresh completed for 131 SKUs
+2026-09-18 11:22:25.198 WARN  [sync-service,c2ed816355beab66,1ae1e37f] [report-builder-8] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-1, retrying
+2026-09-18 11:23:26.771 INFO  [sync-service,b335f9be277b592c,e9b0d6aa] [report-builder-8] com.example.sync.ShipmentEventConsumer - Consumed 87 shipment events from partition 4
+2026-09-18 11:24:53.093 INFO  [sync-service,907d4a63e4d5f4f4,0ff33e42] [report-builder-8] com.example.sync.StockLevelService - Stock refresh completed for 750 SKUs
+2026-09-18 11:25:42.478 WARN  [sync-service,b9a4c34afc5fc578,0f3b0180] [http-nio-8082-exec-5] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-1, retrying
+2026-09-18 11:26:22.183 DEBUG [sync-service,f349c7ac90a1f284,8c4bc2ff] [http-nio-8082-exec-3] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-5]
+2026-09-18 11:27:31.380 INFO  [sync-service,58bc816fd75283ab,bc80592f] [http-nio-8082-exec-1] com.example.sync.ShipmentEventConsumer - Consumed 256 shipment events from partition 5
+2026-09-18 11:27:50.453 WARN  [sync-service,05e9371bb93648d6,3d033ade] [report-builder-8] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-1, retrying
+2026-09-18 11:28:15.960 INFO  [sync-service,3ea0b85ba6b5d204,f5755b84] [report-builder-7] com.example.sync.StockLevelService - Stock refresh completed for 117 SKUs
+2026-09-18 11:28:28.999 WARN  [sync-service,e0ebb92a799cac40,3ce040a2] [http-nio-8082-exec-7] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-2, retrying
+2026-09-18 11:28:53.954 INFO  [sync-service,1d796c63100cbeff,e04e643b] [http-nio-8082-exec-6] com.example.sync.InventoryReportService - Daily report for region north built, 973 dealers
+2026-09-18 11:29:06.798 DEBUG [sync-service,1ef2f50b369339f6,cf0f5a69] [http-nio-8082-exec-7] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-1]
+2026-09-18 11:29:09.020 WARN  [sync-service,14b5679939aff31d,adeede1b] [report-builder-6] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-2, retrying
+2026-09-18 11:29:46.663 WARN  [sync-service,03aed0b33e6b3587,a5c2c6dc] [http-nio-8082-exec-3] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-5, retrying
+2026-09-18 11:30:02.974 INFO  [sync-service,5655aa717823a4cb,38dad9ad] [report-builder-1] com.example.sync.StockLevelService - Stock refresh completed for 282 SKUs
+2026-09-18 11:31:39.169 WARN  [sync-service,3b8c54a6451a2562,8325bbf5] [report-builder-7] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-4, retrying
+2026-09-18 11:33:15.532 INFO  [sync-service,964e418b83c11eab,8936db45] [http-nio-8082-exec-7] com.example.sync.ShipmentEventConsumer - Consumed 273 shipment events from partition 2
+2026-09-18 11:35:55.228 WARN  [sync-service,1836726ac0c53d26,da1a11c4] [http-nio-8082-exec-2] com.example.sync.InventoryReportService - Slow report build: region=south dealers=1128 queries=944 duration=9981ms (InventoryReportService.java:30)
+2026-09-18 11:35:56.410 INFO  [sync-service,eea4ffe9238d933f,f4d2932c] [report-builder-8] com.example.sync.StockLevelService - Stock refresh completed for 93 SKUs
+2026-09-18 11:36:10.853 WARN  [sync-service,6ed12650ad6306f0,d26ddc7d] [http-nio-8082-exec-6] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-0, retrying
+2026-09-18 11:36:28.705 WARN  [sync-service,4acb705c9b00fa26,1291bba5] [http-nio-8082-exec-6] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-0, retrying
+2026-09-18 11:37:14.064 DEBUG [sync-service,494c2ca3032f6656,a8147212] [report-builder-1] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-2]
+2026-09-18 11:38:52.809 INFO  [sync-service,c4b442b63e7ae32c,9862e6c9] [http-nio-8082-exec-8] com.example.sync.ShipmentEventConsumer - Consumed 228 shipment events from partition 3
+2026-09-18 11:40:35.235 WARN  [sync-service,aa461cf25152b71a,297c555f] [http-nio-8082-exec-3] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 11:40:40.790 INFO  [sync-service,b83fa37f51517953,27f351b6] [http-nio-8082-exec-6] com.example.sync.ShipmentEventConsumer - Consumed 61 shipment events from partition 0
+2026-09-18 11:41:34.667 INFO  [sync-service,540e736445b0f0af,3bac1de6] [http-nio-8082-exec-9] com.example.sync.InventoryReportService - Daily report for region north built, 1005 dealers
+2026-09-18 11:42:08.993 INFO  [sync-service,4382e5cc3922328d,1eaeebae] [http-nio-8082-exec-1] com.example.sync.InventoryReportService - Daily report for region north built, 878 dealers
+2026-09-18 11:42:49.373 INFO  [sync-service,304922b270db0a55,265926bf] [report-builder-4] com.example.sync.ShipmentEventConsumer - Consumed 184 shipment events from partition 2
+2026-09-18 11:44:20.918 INFO  [sync-service,4a764d91caeb3dee,64a8fcc7] [http-nio-8082-exec-4] com.example.sync.InventoryReportService - Daily report for region south built, 520 dealers
+2026-09-18 11:44:25.709 DEBUG [sync-service,3095de3fbbb553fd,d5207d76] [report-builder-8] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-0]
+2026-09-18 11:45:30.709 INFO  [sync-service,2a0f61851bd42ede,4ece0e5f] [report-builder-2] com.example.sync.StockLevelService - Stock refresh completed for 549 SKUs
+2026-09-18 11:46:59.287 DEBUG [sync-service,91425c86d751953d,59ab12ac] [report-builder-6] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-5]
+2026-09-18 11:46:59.991 INFO  [sync-service,59e81532783c2dcd,9973380c] [http-nio-8082-exec-1] com.example.sync.InventoryReportService - Daily report for region east built, 1080 dealers
+2026-09-18 11:47:38.686 INFO  [sync-service,c7a28d0f5f5cdaed,a081b199] [report-builder-1] com.example.sync.ShipmentEventConsumer - Consumed 296 shipment events from partition 0
+2026-09-18 11:48:07.088 INFO  [sync-service,abceca7eeedc9618,f61cf9c0] [http-nio-8082-exec-5] com.example.sync.StockLevelService - Stock refresh completed for 658 SKUs
+2026-09-18 11:48:33.430 INFO  [sync-service,ff305e73dad54bd7,6f0b149d] [http-nio-8082-exec-1] com.example.sync.InventoryReportService - Daily report for region east built, 1334 dealers
+2026-09-18 11:48:51.060 WARN  [sync-service,eb7423bf3a7c0cd9,8efd3b92] [http-nio-8082-exec-8] com.example.sync.ShipmentEventConsumer - Dropping malformed shipment event from topic shipment-events, offset 744464
+com.example.sync.ShipmentEventConsumer$DeserializationException: Unexpected token START_ARRAY at [Source: (byte[]); line: 1, column: 14]
+	at com.example.sync.ShipmentEventConsumer.onMessage(ShipmentEventConsumer.java:24)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer.doInvokeRecordListener(KafkaMessageListenerContainer.java:2815)
+Caused by: com.fasterxml.jackson.core.JsonParseException: Unexpected token START_ARRAY
+	at com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:2477)
+2026-09-18 11:48:58.910 INFO  [sync-service,4fbac238006f5578,fd784cc7] [http-nio-8082-exec-8] com.example.sync.StockLevelService - Stock refresh completed for 408 SKUs
+2026-09-18 11:49:27.948 DEBUG [sync-service,dc4fe674c4e631d9,201484eb] [http-nio-8082-exec-6] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-5]
+2026-09-18 11:53:12.655 INFO  [sync-service,912e7bf3f895d9b6,b6986d6d] [http-nio-8082-exec-4] com.example.sync.InventoryReportService - Daily report for region west built, 431 dealers
+2026-09-18 11:53:32.303 INFO  [sync-service,aa5b9aff96402dd4,bdf5f35d] [report-builder-2] com.example.sync.ShipmentEventConsumer - Consumed 299 shipment events from partition 4
+2026-09-18 11:53:46.675 INFO  [sync-service,65436258dfaf53ca,31f89f54] [report-builder-6] com.example.sync.InventoryReportService - Daily report for region south built, 944 dealers
+2026-09-18 11:55:36.285 WARN  [sync-service,83c2767756fc0e7e,b86bcd6b] [report-builder-4] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-1, retrying
+2026-09-18 12:00:49.272 WARN  [sync-service,dea685ab74ad90a6,34a0242a] [http-nio-8082-exec-5] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 12:00:51.520 INFO  [sync-service,5b3f046e1c2e49cd,3871cab4] [report-builder-2] com.example.sync.StockLevelService - Stock refresh completed for 761 SKUs
+2026-09-18 12:01:15.974 INFO  [sync-service,d5893e99a20fe5ea,572704a7] [report-builder-2] com.example.sync.StockLevelService - Stock refresh completed for 830 SKUs
+2026-09-18 12:01:50.925 WARN  [sync-service,4d65d19d54063805,5c1203cb] [report-builder-7] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-4, retrying
+2026-09-18 12:02:40.586 INFO  [sync-service,b526d87116bfdd98,8ace4b15] [report-builder-7] com.example.sync.StockLevelService - Stock refresh completed for 694 SKUs
+2026-09-18 12:02:59.184 DEBUG [sync-service,ad3e9dff55ad9603,e845ae73] [http-nio-8082-exec-6] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-5]
+2026-09-18 12:03:33.938 INFO  [sync-service,96ef67792726e65a,500e01c3] [report-builder-6] com.example.sync.ShipmentEventConsumer - Consumed 221 shipment events from partition 2
+2026-09-18 12:04:00.189 WARN  [sync-service,0f152c44c17a0362,dbb754ca] [report-builder-2] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-2, retrying
+2026-09-18 12:04:15.683 DEBUG [sync-service,f8ce59da369863f6,a097da96] [report-builder-4] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-0]
+2026-09-18 12:04:35.286 INFO  [sync-service,c996a2480335a244,4b2571a3] [report-builder-2] com.example.sync.StockLevelService - Stock refresh completed for 270 SKUs
+2026-09-18 12:05:17.055 INFO  [sync-service,dff53d1b6756be27,907114ca] [report-builder-8] com.example.sync.StockLevelService - Stock refresh completed for 150 SKUs
+2026-09-18 12:05:22.747 INFO  [sync-service,47504d4ab21d48c2,71b2101f] [report-builder-3] com.example.sync.StockLevelService - Stock refresh completed for 416 SKUs
+2026-09-18 12:06:22.195 DEBUG [sync-service,da4b424974efe937,c1b8d9b4] [report-builder-2] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-1]
+2026-09-18 12:06:30.482 WARN  [sync-service,c0c419ed4660f75c,b88a19bb] [report-builder-3] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-4, retrying
+2026-09-18 12:07:28.416 DEBUG [sync-service,df05c54aa6256d1d,8760d82c] [report-builder-9] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-1]
+2026-09-18 12:07:54.879 INFO  [sync-service,244e20e11ea1837b,e4dac147] [report-builder-9] com.example.sync.StockLevelService - Stock refresh completed for 285 SKUs
+2026-09-18 12:11:44.885 WARN  [sync-service,06422f0f84c8bc46,009f59b7] [http-nio-8082-exec-6] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 12:13:14.444 INFO  [sync-service,48a56d54efb0ff27,b972047c] [http-nio-8082-exec-9] com.example.sync.InventoryReportService - Daily report for region north built, 457 dealers
+2026-09-18 12:15:41.247 INFO  [sync-service,19f6bd62c12e274c,f45e53ac] [report-builder-6] com.example.sync.StockLevelService - Stock refresh completed for 176 SKUs
+2026-09-18 12:17:17.762 INFO  [sync-service,660c689215fc031d,c65591d8] [http-nio-8082-exec-4] com.example.sync.StockLevelService - Stock refresh completed for 246 SKUs
+2026-09-18 12:18:29.472 INFO  [sync-service,a6ce8d33ac45dc88,32904f54] [http-nio-8082-exec-6] com.example.sync.ShipmentEventConsumer - Consumed 153 shipment events from partition 0
+2026-09-18 12:18:52.176 INFO  [sync-service,0f8db5497987c006,3966d151] [http-nio-8082-exec-9] com.example.sync.StockLevelService - Stock refresh completed for 668 SKUs
+2026-09-18 12:19:22.155 DEBUG [sync-service,ea59fc2e8e267d25,8d7c74b9] [http-nio-8082-exec-4] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-0]
+2026-09-18 12:19:25.783 DEBUG [sync-service,95931c1d68e7ef6a,fe42dd45] [report-builder-6] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-3]
+2026-09-18 12:20:05.893 INFO  [sync-service,39fdbb349d11ce46,dfa0a1e3] [report-builder-4] com.example.sync.InventoryReportService - Daily report for region east built, 657 dealers
+2026-09-18 12:21:25.908 INFO  [sync-service,980f2914dfc48a53,80b39532] [report-builder-8] com.example.sync.ShipmentEventConsumer - Consumed 79 shipment events from partition 4
+2026-09-18 12:22:00.295 INFO  [sync-service,3de87f9bc3bad8ab,cf0c4a8c] [http-nio-8082-exec-6] com.example.sync.StockLevelService - Stock refresh completed for 438 SKUs
+2026-09-18 12:22:39.526 INFO  [sync-service,7d73a1ccf5dc94ae,80a45ff6] [report-builder-9] com.example.sync.ShipmentEventConsumer - Consumed 20 shipment events from partition 4
+2026-09-18 12:22:58.859 DEBUG [sync-service,3370a4a6f048bbc9,d6c16990] [http-nio-8082-exec-7] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-5]
+2026-09-18 12:26:39.893 DEBUG [sync-service,8eee180d6b04220d,4acdf48e] [http-nio-8082-exec-7] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-2]
+2026-09-18 12:27:30.506 WARN  [sync-service,c7439dbe58cf4b27,eedcc329] [http-nio-8082-exec-3] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 12:29:27.907 INFO  [sync-service,2d348672ad7a99f1,5b2020e1] [http-nio-8082-exec-5] com.example.sync.StockLevelService - Stock refresh completed for 691 SKUs
+2026-09-18 12:30:25.686 INFO  [sync-service,1035dd009c4c396b,c77c808f] [http-nio-8082-exec-9] com.example.sync.StockLevelService - Stock refresh completed for 624 SKUs
+2026-09-18 12:31:41.995 WARN  [sync-service,ed760f72266cf871,dc29030f] [report-builder-2] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-1, retrying
+2026-09-18 12:31:48.670 INFO  [sync-service,10c9fdb0086a867a,6ca6f968] [report-builder-4] com.example.sync.StockLevelService - Stock refresh completed for 200 SKUs
+2026-09-18 12:31:59.200 WARN  [sync-service,d0d3edf6be906550,e0189fbf] [http-nio-8082-exec-3] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-4, retrying
+2026-09-18 12:32:26.283 INFO  [sync-service,eddff559faba4611,23441246] [http-nio-8082-exec-6] com.example.sync.ShipmentEventConsumer - Consumed 151 shipment events from partition 1
+2026-09-18 12:35:16.543 INFO  [sync-service,8e08a07106f58b1c,ae74066b] [http-nio-8082-exec-3] com.example.sync.ShipmentEventConsumer - Consumed 21 shipment events from partition 3
+2026-09-18 12:36:09.494 INFO  [sync-service,56a4786155b96958,65f29b85] [report-builder-8] com.example.sync.InventoryReportService - Daily report for region south built, 1095 dealers
+2026-09-18 12:40:19.127 INFO  [sync-service,2a6687a6cab60e3c,55cd5237] [http-nio-8082-exec-7] com.example.sync.InventoryReportService - Daily report for region west built, 1282 dealers
+2026-09-18 12:41:08.869 INFO  [sync-service,41e4e77a7a08cbc3,d687a070] [report-builder-4] com.example.sync.ShipmentEventConsumer - Consumed 185 shipment events from partition 2
+2026-09-18 12:41:16.372 DEBUG [sync-service,ea2b2909461d7b4a,790ed101] [report-builder-3] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-3]
+2026-09-18 12:43:53.599 INFO  [sync-service,2b9b1e854bbf48d6,26661427] [http-nio-8082-exec-5] com.example.sync.ShipmentEventConsumer - Consumed 205 shipment events from partition 0
+2026-09-18 12:45:00.382 DEBUG [sync-service,c1de25e302f0b5d6,8c3c5012] [report-builder-4] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-2]
+2026-09-18 12:45:47.585 WARN  [sync-service,369bd5ac37b5aa3f,b49b3304] [http-nio-8082-exec-1] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 12:45:52.132 WARN  [sync-service,fb131b534090e5e6,61743b6b] [http-nio-8082-exec-4] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-2, retrying
+2026-09-18 12:46:00.020 INFO  [sync-service,bffa1a8c25623b23,094d38c9] [report-builder-7] com.example.sync.ShipmentEventConsumer - Consumed 91 shipment events from partition 3
+2026-09-18 12:46:16.272 INFO  [sync-service,e69246e02071517a,50d4bc97] [report-builder-1] com.example.sync.StockLevelService - Stock refresh completed for 743 SKUs
+2026-09-18 12:46:24.911 INFO  [sync-service,e48599adeb49fb50,adca515f] [http-nio-8082-exec-7] com.example.sync.StockLevelService - Stock refresh completed for 254 SKUs
+2026-09-18 12:46:35.423 INFO  [sync-service,a76599f40d4607fe,d19b5642] [http-nio-8082-exec-4] com.example.sync.InventoryReportService - Daily report for region north built, 720 dealers
+2026-09-18 12:48:19.346 DEBUG [sync-service,28f1c629018b36df,e4ee67fd] [report-builder-5] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-5]
+2026-09-18 12:48:39.099 INFO  [sync-service,3b1ca887ef159080,bb5eea6f] [report-builder-6] com.example.sync.InventoryReportService - Daily report for region north built, 1212 dealers
+2026-09-18 12:48:47.480 WARN  [sync-service,c8d18a2745213a1e,fd2008e0] [report-builder-7] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-1, retrying
+2026-09-18 12:49:19.782 INFO  [sync-service,db3dc640c583dcd1,8f26db8a] [report-builder-6] com.example.sync.InventoryReportService - Daily report for region west built, 1000 dealers
+2026-09-18 12:50:07.830 INFO  [sync-service,74f4fbd14c02909d,d6b83625] [http-nio-8082-exec-8] com.example.sync.ShipmentEventConsumer - Consumed 146 shipment events from partition 3
+2026-09-18 12:51:51.765 DEBUG [sync-service,aa04957e5b19b474,9d893c79] [http-nio-8082-exec-5] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-2]
+2026-09-18 12:52:42.859 INFO  [sync-service,47de5a92cadaa2b4,5faf49d8] [http-nio-8082-exec-2] com.example.sync.ShipmentEventConsumer - Consumed 241 shipment events from partition 2
+2026-09-18 12:53:04.739 WARN  [sync-service,8229cff939d1ec92,5f1fb1d1] [http-nio-8082-exec-6] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-1, retrying
+2026-09-18 12:54:10.977 DEBUG [sync-service,7891a24ef772f733,1fd6750d] [report-builder-2] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-5]
+2026-09-18 12:54:43.999 INFO  [sync-service,35d16caf90cb4b7b,4ddb0eed] [http-nio-8082-exec-8] com.example.sync.ShipmentEventConsumer - Consumed 227 shipment events from partition 2
+2026-09-18 12:54:48.488 INFO  [sync-service,12018513352e2676,ef6f4514] [report-builder-6] com.example.sync.ShipmentEventConsumer - Consumed 95 shipment events from partition 0
+2026-09-18 12:55:02.943 INFO  [sync-service,603f3979f8558a32,a58bda4f] [report-builder-3] com.example.sync.ShipmentEventConsumer - Consumed 117 shipment events from partition 4
+2026-09-18 12:56:32.108 INFO  [sync-service,8a50b87f9796361f,09391a27] [http-nio-8082-exec-3] com.example.sync.InventoryReportService - Daily report for region west built, 494 dealers
+2026-09-18 12:57:11.000 DEBUG [sync-service,deed310f4da6bf29,63121193] [report-builder-1] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-2]
+2026-09-18 13:00:47.545 DEBUG [sync-service,5b9035f5eb1c2137,8eb54945] [http-nio-8082-exec-2] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-0]
+2026-09-18 13:01:29.603 INFO  [sync-service,df6a3c6d2dbef19f,273e3d96] [report-builder-6] com.example.sync.InventoryReportService - Daily report for region north built, 463 dealers
+2026-09-18 13:02:58.614 INFO  [sync-service,5eb19faf3f1cd7a8,bcf01a8b] [report-builder-5] com.example.sync.ShipmentEventConsumer - Consumed 224 shipment events from partition 4
+2026-09-18 13:04:14.187 INFO  [sync-service,74e27431b293ef68,0d6aca30] [http-nio-8082-exec-9] com.example.sync.StockLevelService - Stock refresh completed for 535 SKUs
+2026-09-18 13:04:53.563 INFO  [sync-service,f0d958f1bde5a5eb,2f8eaef3] [http-nio-8082-exec-6] com.example.sync.ShipmentEventConsumer - Consumed 230 shipment events from partition 2
+2026-09-18 13:05:02.868 INFO  [sync-service,6501b32762cbdca2,c3d2704f] [report-builder-9] com.example.sync.InventoryReportService - Daily report for region south built, 892 dealers
+2026-09-18 13:05:59.950 WARN  [sync-service,8d94c166317c1295,61b08e76] [http-nio-8082-exec-4] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-2, retrying
+2026-09-18 13:06:15.268 INFO  [sync-service,ef6264b85eadc900,bd415bc5] [http-nio-8082-exec-8] com.example.sync.StockLevelService - Stock refresh completed for 715 SKUs
+2026-09-18 13:07:09.004 INFO  [sync-service,ce636310da1e32f1,793bf347] [http-nio-8082-exec-4] com.example.sync.InventoryReportService - Daily report for region south built, 815 dealers
+2026-09-18 13:08:05.059 WARN  [sync-service,e49e62807047c73d,b73b752f] [http-nio-8082-exec-3] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-4, retrying
+2026-09-18 13:08:27.118 DEBUG [sync-service,a9f4c83d5adb7421,734e6ed7] [http-nio-8082-exec-4] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-3]
+2026-09-18 13:10:32.889 INFO  [sync-service,b4864722ceeb3755,dc1dcd7b] [http-nio-8082-exec-4] com.example.sync.StockLevelService - Stock refresh completed for 559 SKUs
+2026-09-18 13:13:15.957 INFO  [sync-service,3f5220b5653429f4,7b335a67] [http-nio-8082-exec-6] com.example.sync.StockLevelService - Stock refresh completed for 689 SKUs
+2026-09-18 13:15:29.001 INFO  [sync-service,bea64a876ff096c9,d1d6aa31] [http-nio-8082-exec-5] com.example.sync.ShipmentEventConsumer - Consumed 13 shipment events from partition 4
+2026-09-18 13:18:14.198 INFO  [sync-service,a3aff6b5e75b623b,bce1b548] [http-nio-8082-exec-5] com.example.sync.StockLevelService - Stock refresh completed for 858 SKUs
+2026-09-18 13:20:43.986 DEBUG [sync-service,f9bff9af974aa174,28f80c94] [report-builder-3] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-1]
+2026-09-18 13:20:56.445 WARN  [sync-service,b585485d08af7b9a,aeca8a26] [http-nio-8082-exec-3] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 13:22:10.474 WARN  [sync-service,2c5d242902e7ff54,f387b413] [report-builder-2] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-1, retrying
+2026-09-18 13:22:23.179 DEBUG [sync-service,efd24a131a2d6176,dc2420f7] [report-builder-3] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-5]
+2026-09-18 13:22:57.355 INFO  [sync-service,f9a5ce5b6e263a4e,e30c86d6] [http-nio-8082-exec-1] com.example.sync.StockLevelService - Stock refresh completed for 109 SKUs
+2026-09-18 13:23:53.998 DEBUG [sync-service,1b1ea4a1481bffc2,5e70118c] [http-nio-8082-exec-6] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-2]
+2026-09-18 13:26:31.125 INFO  [sync-service,d6055a07e65df8c4,011a925f] [report-builder-4] com.example.sync.ShipmentEventConsumer - Consumed 206 shipment events from partition 3
+2026-09-18 13:26:37.187 DEBUG [sync-service,2f399e1fde833f80,08d030e3] [report-builder-5] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-5]
+2026-09-18 13:27:15.941 INFO  [sync-service,ea15ce701e8d5213,cecfcd47] [report-builder-5] com.example.sync.StockLevelService - Stock refresh completed for 563 SKUs
+2026-09-18 13:27:43.786 DEBUG [sync-service,a1cf5bfaae18adfa,f5bf6c0d] [http-nio-8082-exec-4] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-1]
+2026-09-18 13:29:30.713 WARN  [sync-service,f879ca9f04c2cc5e,fccfa95f] [http-nio-8082-exec-1] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 13:29:41.286 INFO  [sync-service,c6314b3f56a52399,0621b615] [http-nio-8082-exec-4] com.example.sync.InventoryReportService - Daily report for region south built, 972 dealers
+2026-09-18 13:29:48.103 WARN  [sync-service,1877991ba6b34fb6,0aa1d1bd] [http-nio-8082-exec-3] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-4, retrying
+2026-09-18 13:30:53.503 DEBUG [sync-service,3ac0a23988b8d50c,93f16551] [report-builder-3] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-2]
+2026-09-18 13:32:03.684 DEBUG [sync-service,9d3223cac2f360bb,9ea132b8] [report-builder-9] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-4]
+2026-09-18 13:32:11.260 INFO  [sync-service,ca030cb4b5471a80,b5a13e29] [report-builder-3] com.example.sync.ShipmentEventConsumer - Consumed 173 shipment events from partition 4
+2026-09-18 13:32:11.948 INFO  [sync-service,a70a9441c2845444,fb8e051f] [report-builder-7] com.example.sync.ShipmentEventConsumer - Consumed 214 shipment events from partition 4
+2026-09-18 13:35:04.481 INFO  [sync-service,902da7aeaa0aaa36,8b1291f3] [http-nio-8082-exec-9] com.example.sync.InventoryReportService - Daily report for region west built, 998 dealers
+2026-09-18 13:35:32.813 INFO  [sync-service,2b813ac092b11232,2c510637] [http-nio-8082-exec-5] com.example.sync.ShipmentEventConsumer - Consumed 103 shipment events from partition 1
+2026-09-18 13:36:03.882 INFO  [sync-service,61a8b746fb9d63a4,48dd0ccc] [http-nio-8082-exec-4] com.example.sync.InventoryReportService - Daily report for region east built, 896 dealers
+2026-09-18 13:36:20.153 INFO  [sync-service,aab6f2af45b8c250,98942fa2] [report-builder-9] com.example.sync.ShipmentEventConsumer - Consumed 15 shipment events from partition 5
+2026-09-18 13:36:56.225 WARN  [sync-service,c77499228468d345,aec928d8] [http-nio-8082-exec-6] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 13:37:36.792 INFO  [sync-service,bace0aa80a056746,90def4de] [report-builder-9] com.example.sync.InventoryReportService - Daily report for region south built, 1296 dealers
+2026-09-18 13:39:40.709 INFO  [sync-service,4aa5e787b676db47,08382a32] [report-builder-7] com.example.sync.StockLevelService - Stock refresh completed for 486 SKUs
+2026-09-18 13:39:51.409 INFO  [sync-service,e396a21b8e7f7765,6332dc85] [http-nio-8082-exec-6] com.example.sync.StockLevelService - Stock refresh completed for 738 SKUs
+2026-09-18 13:39:55.693 INFO  [sync-service,d4cf6e96ea40678f,7e52748e] [http-nio-8082-exec-6] com.example.sync.InventoryReportService - Daily report for region west built, 528 dealers
+2026-09-18 13:40:03.370 INFO  [sync-service,8078c54d6cf13372,0d380af4] [report-builder-1] com.example.sync.ShipmentEventConsumer - Consumed 58 shipment events from partition 0
+2026-09-18 13:40:32.434 INFO  [sync-service,b1ca40d556e6c27b,20c712d0] [http-nio-8082-exec-5] com.example.sync.ShipmentEventConsumer - Consumed 216 shipment events from partition 3
+2026-09-18 13:40:32.781 INFO  [sync-service,271f3c32fdeaa23d,7e69d8ff] [report-builder-9] com.example.sync.ShipmentEventConsumer - Consumed 51 shipment events from partition 5
+2026-09-18 13:42:03.932 INFO  [sync-service,55560d970456620d,e55cc8d6] [report-builder-6] com.example.sync.ShipmentEventConsumer - Consumed 133 shipment events from partition 0
+2026-09-18 13:42:32.865 INFO  [sync-service,439ef6b223330f4b,e617b443] [report-builder-4] com.example.sync.StockLevelService - Stock refresh completed for 122 SKUs
+2026-09-18 13:43:39.135 DEBUG [sync-service,f3d2ff621a4a2099,18a16c92] [http-nio-8082-exec-2] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-4]
+2026-09-18 13:45:30.397 DEBUG [sync-service,1c497c3c3cde471a,4398ca58] [report-builder-6] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-5]
+2026-09-18 13:46:54.480 INFO  [sync-service,8385616e95857719,3cc755df] [http-nio-8082-exec-7] com.example.sync.InventoryReportService - Daily report for region south built, 827 dealers
+2026-09-18 13:48:15.929 WARN  [sync-service,16cb0c1bf90a8ec7,4ec67dcd] [report-builder-4] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-4, retrying
+2026-09-18 13:48:45.791 WARN  [sync-service,2361e61a497d33af,79e17960] [report-builder-5] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-1, retrying
+2026-09-18 13:51:54.236 DEBUG [sync-service,31f4e3501a820d67,c0687377] [report-builder-8] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-3]
+2026-09-18 13:51:57.460 INFO  [sync-service,ed82c106f1a6b1f8,35c6dd51] [http-nio-8082-exec-8] com.example.sync.StockLevelService - Stock refresh completed for 365 SKUs
+2026-09-18 13:53:23.155 INFO  [sync-service,ce50c1b3dd2f59fe,a8e9c88d] [http-nio-8082-exec-8] com.example.sync.InventoryReportService - Daily report for region west built, 910 dealers
+2026-09-18 13:53:29.862 INFO  [sync-service,94199f8c0c07b743,a32c5504] [http-nio-8082-exec-5] com.example.sync.InventoryReportService - Daily report for region east built, 487 dealers
+2026-09-18 13:54:05.951 DEBUG [sync-service,581fffc465db634e,f7e006ec] [http-nio-8082-exec-8] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-5]
+2026-09-18 13:56:30.905 DEBUG [sync-service,5f250c93d29a66aa,438cdeda] [report-builder-3] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-0]
+2026-09-18 13:56:33.812 DEBUG [sync-service,784eca596fcd272a,22e72570] [report-builder-8] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-1]
+2026-09-18 13:58:06.833 INFO  [sync-service,1a012c318910f22f,70556766] [http-nio-8082-exec-2] com.example.sync.StockLevelService - Stock refresh completed for 729 SKUs
+2026-09-18 13:58:18.677 DEBUG [sync-service,1312ba697cc65ba8,2a0f60e1] [report-builder-1] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-3]
+2026-09-18 13:58:24.671 INFO  [sync-service,f2adaecd7bca474b,4b0b603e] [http-nio-8082-exec-9] com.example.sync.StockLevelService - Stock refresh completed for 732 SKUs
+2026-09-18 14:00:43.978 INFO  [sync-service,76136960b9d32fe6,b3c553c1] [http-nio-8082-exec-5] com.example.sync.ShipmentEventConsumer - Consumed 100 shipment events from partition 3
+2026-09-18 14:03:17.040 INFO  [sync-service,e7dc8c78ad97027a,c3f951bb] [http-nio-8082-exec-3] com.example.sync.ShipmentEventConsumer - Consumed 61 shipment events from partition 1
+2026-09-18 14:04:14.021 INFO  [sync-service,c2e2f35c812adeec,218278f5] [report-builder-8] com.example.sync.StockLevelService - Stock refresh completed for 681 SKUs
+2026-09-18 14:04:29.660 INFO  [sync-service,849535de02df81f8,46ed807a] [report-builder-4] com.example.sync.ShipmentEventConsumer - Consumed 298 shipment events from partition 1
+2026-09-18 14:04:33.822 INFO  [sync-service,8f5181005055b3ac,f73f5618] [report-builder-4] com.example.sync.StockLevelService - Stock refresh completed for 109 SKUs
+2026-09-18 14:04:47.523 INFO  [sync-service,58f8ced2bfc936d1,c128aa4c] [report-builder-6] com.example.sync.InventoryReportService - Daily report for region north built, 771 dealers
+2026-09-18 14:06:25.968 DEBUG [sync-service,8508f2c7af641c5c,59933730] [report-builder-8] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-0]
+2026-09-18 14:07:53.657 INFO  [sync-service,dc0ff0b9926b070f,62ecfab8] [report-builder-1] com.example.sync.StockLevelService - Stock refresh completed for 756 SKUs
+2026-09-18 14:08:27.813 WARN  [sync-service,124c579e9a028b02,d96e8148] [report-builder-2] com.example.sync.ShipmentEventConsumer - Dropping malformed shipment event from topic shipment-events, offset 633440
+com.example.sync.ShipmentEventConsumer$DeserializationException: Unexpected token START_ARRAY at [Source: (byte[]); line: 1, column: 14]
+	at com.example.sync.ShipmentEventConsumer.onMessage(ShipmentEventConsumer.java:24)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer.doInvokeRecordListener(KafkaMessageListenerContainer.java:2815)
+Caused by: com.fasterxml.jackson.core.JsonParseException: Unexpected token START_ARRAY
+	at com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:2477)
+2026-09-18 14:08:57.708 INFO  [sync-service,8a7277bb7e95d2a6,c9b0d14f] [report-builder-1] com.example.sync.ShipmentEventConsumer - Consumed 134 shipment events from partition 0
+2026-09-18 14:09:17.110 INFO  [sync-service,78bacb50287a1c79,f1e34429] [http-nio-8082-exec-5] com.example.sync.ShipmentEventConsumer - Consumed 57 shipment events from partition 4
+2026-09-18 14:10:29.843 INFO  [sync-service,2802881a37e71227,0445069b] [http-nio-8082-exec-9] com.example.sync.ShipmentEventConsumer - Consumed 176 shipment events from partition 2
+2026-09-18 14:11:09.172 DEBUG [sync-service,63c8dffcb13ef8ed,9ffb3d99] [report-builder-4] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-5]
+2026-09-18 14:11:43.250 INFO  [sync-service,19aca1199862a2f9,e2cd1d22] [http-nio-8082-exec-8] com.example.sync.ShipmentEventConsumer - Consumed 293 shipment events from partition 5
+2026-09-18 14:12:26.572 INFO  [sync-service,891d405d229789e2,a5e6390f] [report-builder-9] com.example.sync.StockLevelService - Stock refresh completed for 670 SKUs
+2026-09-18 14:12:33.091 WARN  [sync-service,6c77673ffc402e39,c70149d7] [report-builder-2] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 14:13:22.139 INFO  [sync-service,5b06930e31a945a5,7db32f26] [report-builder-3] com.example.sync.StockLevelService - Stock refresh completed for 604 SKUs
+2026-09-18 14:13:33.394 INFO  [sync-service,85a3254b2251021a,be9c1eb2] [http-nio-8082-exec-4] com.example.sync.InventoryReportService - Daily report for region south built, 871 dealers
+2026-09-18 14:14:16.259 DEBUG [sync-service,bb05aedeacab0446,196f0723] [http-nio-8082-exec-3] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-2]
+2026-09-18 14:15:50.253 WARN  [sync-service,49cd269b078d588d,79a40280] [report-builder-8] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-5, retrying
+2026-09-18 14:17:11.421 WARN  [sync-service,972f71a6bf76901d,d077b972] [http-nio-8082-exec-4] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-0, retrying
+2026-09-18 14:17:13.917 DEBUG [sync-service,7870152ffb932521,0542b27a] [http-nio-8082-exec-9] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-3]
+2026-09-18 14:19:40.659 WARN  [sync-service,cc7b3ab11e29439e,c99d94b0] [report-builder-9] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-0, retrying
+2026-09-18 14:21:05.008 INFO  [sync-service,e0b71ee08576645d,8849e59f] [http-nio-8082-exec-6] com.example.sync.StockLevelService - Stock refresh completed for 98 SKUs
+2026-09-18 14:21:35.993 DEBUG [sync-service,4dc520a55c5eb77c,51184f7c] [http-nio-8082-exec-4] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-4]
+2026-09-18 14:21:46.353 DEBUG [sync-service,4269f3e5a3221894,9b11a3de] [report-builder-7] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-1]
+2026-09-18 14:22:18.072 INFO  [sync-service,0a7916bdd22b2f17,82c91570] [report-builder-4] com.example.sync.InventoryReportService - Daily report for region east built, 956 dealers
+2026-09-18 14:23:29.407 INFO  [sync-service,c58986ad91f6fe98,7d42773b] [http-nio-8082-exec-7] com.example.sync.InventoryReportService - Daily report for region north built, 1184 dealers
+2026-09-18 14:25:20.152 INFO  [sync-service,8fb960d43637aa55,bf414e84] [report-builder-1] com.example.sync.ShipmentEventConsumer - Consumed 197 shipment events from partition 5
+2026-09-18 14:26:10.735 WARN  [sync-service,4fc199696408a48c,56914942] [http-nio-8082-exec-8] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-0, retrying
+2026-09-18 14:27:33.793 INFO  [sync-service,94bddede482aa44f,893b20f7] [report-builder-7] com.example.sync.StockLevelService - Stock refresh completed for 569 SKUs
+2026-09-18 14:28:35.868 WARN  [sync-service,0639b7360d92abcd,34bd56f1] [report-builder-3] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-2, retrying
+2026-09-18 14:29:32.002 WARN  [sync-service,285034aaf4592b4d,627aecb0] [report-builder-2] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-1, retrying
+2026-09-18 14:29:52.271 WARN  [sync-service,adb6eec401194a79,7e35b840] [report-builder-4] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-1, retrying
+2026-09-18 14:30:34.833 INFO  [sync-service,3eb4ebd015e57da5,ce7ed458] [http-nio-8082-exec-1] com.example.sync.ShipmentEventConsumer - Consumed 173 shipment events from partition 2
+2026-09-18 14:31:09.096 INFO  [sync-service,bc73289aa932eae7,29018bfc] [report-builder-5] com.example.sync.ShipmentEventConsumer - Consumed 211 shipment events from partition 2
+2026-09-18 14:31:30.843 INFO  [sync-service,7390237175bbd662,9d7e6309] [http-nio-8082-exec-1] com.example.sync.StockLevelService - Stock refresh completed for 385 SKUs
+2026-09-18 14:33:35.871 WARN  [sync-service,50df69e1a9ef575b,520e79cb] [report-builder-2] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-5, retrying
+2026-09-18 14:34:42.108 WARN  [sync-service,1d2f4212b4a53889,c3e696dc] [http-nio-8082-exec-7] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-4, retrying
+2026-09-18 14:35:57.428 INFO  [sync-service,39b1ca8d08c0b899,c35c5188] [report-builder-6] com.example.sync.StockLevelService - Stock refresh completed for 155 SKUs
+2026-09-18 14:36:33.413 INFO  [sync-service,a854aed2adfbff48,531a6ccc] [report-builder-2] com.example.sync.InventoryReportService - Daily report for region west built, 475 dealers
+2026-09-18 14:37:34.560 INFO  [sync-service,ec538b9eee47741a,681a4863] [http-nio-8082-exec-4] com.example.sync.ShipmentEventConsumer - Consumed 60 shipment events from partition 4
+2026-09-18 14:37:43.715 INFO  [sync-service,d3d41387299dc978,b74d128e] [http-nio-8082-exec-3] com.example.sync.StockLevelService - Stock refresh completed for 313 SKUs
+2026-09-18 14:38:35.416 WARN  [sync-service,e8c76ce39868e538,8d21618f] [http-nio-8082-exec-7] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-2, retrying
+2026-09-18 14:38:54.582 WARN  [sync-service,29dc8646c37c38b8,0cb1db9e] [http-nio-8082-exec-3] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-5, retrying
+2026-09-18 14:38:55.235 INFO  [sync-service,195cb0bba9e74699,8202750b] [http-nio-8082-exec-9] com.example.sync.StockLevelService - Stock refresh completed for 723 SKUs
+2026-09-18 14:40:32.274 WARN  [sync-service,5f06bfb2c6f7ed1d,96aaa915] [report-builder-5] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 14:40:35.001 DEBUG [sync-service,f6f95c6199c03998,57268320] [report-builder-9] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-4]
+2026-09-18 14:40:59.376 WARN  [sync-service,bd0dba56201db384,5431be39] [report-builder-1] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-0, retrying
+2026-09-18 14:43:40.420 DEBUG [sync-service,5c36591f3eebf807,aaf8f9cb] [report-builder-9] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-2]
+2026-09-18 14:43:58.277 WARN  [sync-service,0dc55de7dfd37c1c,d3506a39] [http-nio-8082-exec-4] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 14:44:47.372 INFO  [sync-service,781e10c14d2a14af,870ce806] [http-nio-8082-exec-8] com.example.sync.ShipmentEventConsumer - Consumed 135 shipment events from partition 5
+2026-09-18 14:45:34.316 INFO  [sync-service,c3cc0f1a797b82d1,c6141559] [http-nio-8082-exec-8] com.example.sync.InventoryReportService - Daily report for region west built, 806 dealers
+2026-09-18 14:45:58.984 WARN  [sync-service,550ecf68d94910ad,7d41987e] [http-nio-8082-exec-8] com.example.sync.InventoryReportService - Slow report build: region=west dealers=913 queries=1286 duration=16861ms (InventoryReportService.java:30)
+2026-09-18 14:46:12.399 INFO  [sync-service,fff2da68ed0009da,2be0bf3b] [report-builder-9] com.example.sync.StockLevelService - Stock refresh completed for 254 SKUs
+2026-09-18 14:46:41.698 INFO  [sync-service,d2a3127694834131,4b023a9d] [http-nio-8082-exec-6] com.example.sync.StockLevelService - Stock refresh completed for 565 SKUs
+2026-09-18 14:47:25.527 INFO  [sync-service,e971706a9b307ae6,cd815ce2] [http-nio-8082-exec-1] com.example.sync.ShipmentEventConsumer - Consumed 164 shipment events from partition 2
+2026-09-18 14:47:53.351 INFO  [sync-service,7e91e44cb3031e4a,39167939] [http-nio-8082-exec-4] com.example.sync.StockLevelService - Stock refresh completed for 487 SKUs
+2026-09-18 14:49:11.464 WARN  [sync-service,95df85ef35910cd5,fe2339bb] [http-nio-8082-exec-4] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-5, retrying
+2026-09-18 14:49:14.716 INFO  [sync-service,4fbc4f82b5f2588a,1d2844bd] [report-builder-1] com.example.sync.ShipmentEventConsumer - Consumed 282 shipment events from partition 3
+2026-09-18 14:50:35.226 DEBUG [sync-service,750bad5e17c53f97,591eee3e] [http-nio-8082-exec-7] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-4]
+2026-09-18 14:52:26.536 INFO  [sync-service,897ce207afa3006a,22b73a98] [http-nio-8082-exec-2] com.example.sync.ShipmentEventConsumer - Consumed 269 shipment events from partition 3
+2026-09-18 14:53:58.567 INFO  [sync-service,06213ab8b66c1e8d,391993a3] [report-builder-4] com.example.sync.StockLevelService - Stock refresh completed for 243 SKUs
+2026-09-18 14:54:00.466 INFO  [sync-service,601eab79ace49909,45962d33] [report-builder-1] com.example.sync.InventoryReportService - Daily report for region north built, 1033 dealers
+2026-09-18 14:55:19.761 INFO  [sync-service,f93c5c20e9a26319,1ca570d4] [report-builder-6] com.example.sync.InventoryReportService - Daily report for region east built, 985 dealers
+2026-09-18 14:55:38.587 DEBUG [sync-service,fa6405757f508e76,ae85e8e3] [report-builder-2] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-0]
+2026-09-18 14:56:47.063 DEBUG [sync-service,05c953ba6f8b54d5,95d4bca5] [report-builder-6] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-1]
+2026-09-18 14:57:40.891 INFO  [sync-service,24345d44b57a768a,b999f2d2] [http-nio-8082-exec-9] com.example.sync.InventoryReportService - Daily report for region west built, 814 dealers
+2026-09-18 15:00:32.276 WARN  [sync-service,79cd1f92500d974c,58c5eae3] [http-nio-8082-exec-9] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-5, retrying
+2026-09-18 15:03:11.992 WARN  [sync-service,b603d293b18c243c,6ce50056] [report-builder-3] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-4, retrying
+2026-09-18 15:04:02.953 WARN  [sync-service,b31739213354d91c,babd60c4] [http-nio-8082-exec-2] org.springframework.boot.context.config.ConfigDataEnvironment - Property 'spring.datasource.initialization-mode' is deprecated and will be removed in a future release
+2026-09-18 15:05:21.758 WARN  [sync-service,fe7f94f14db6a158,5ec91146] [report-builder-1] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-1, retrying
+2026-09-18 15:06:46.387 INFO  [sync-service,8051a6ce914b4d8a,48b44eb7] [http-nio-8082-exec-4] com.example.sync.StockLevelService - Stock refresh completed for 682 SKUs
+2026-09-18 15:07:35.226 INFO  [sync-service,05ec5ce64bfa3465,40e8f32c] [http-nio-8082-exec-1] com.example.sync.InventoryReportService - Daily report for region east built, 1081 dealers
+2026-09-18 15:08:01.092 DEBUG [sync-service,02559a04d00bbe93,cd677654] [report-builder-4] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-0]
+2026-09-18 15:08:22.654 DEBUG [sync-service,2cb098cbbe55fecf,b4e71eb0] [report-builder-4] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-4]
+2026-09-18 15:09:27.887 INFO  [sync-service,5ef14632f4c9ae12,1d746c97] [http-nio-8082-exec-9] com.example.sync.ShipmentEventConsumer - Consumed 215 shipment events from partition 0
+2026-09-18 15:10:04.436 INFO  [sync-service,1af59493341f9ce5,54e020d5] [report-builder-1] com.example.sync.ShipmentEventConsumer - Consumed 20 shipment events from partition 0
+2026-09-18 15:11:21.049 INFO  [sync-service,c0786eac8f55c5c8,efbd2345] [report-builder-3] com.example.sync.ShipmentEventConsumer - Consumed 54 shipment events from partition 1
+2026-09-18 15:11:36.332 INFO  [sync-service,61e907b7621db488,5aab70ff] [http-nio-8082-exec-6] com.example.sync.ShipmentEventConsumer - Consumed 37 shipment events from partition 5
+2026-09-18 15:12:30.139 INFO  [sync-service,2d2b56755ad0485b,0c8db46d] [http-nio-8082-exec-9] com.example.sync.InventoryReportService - Daily report for region west built, 429 dealers
+2026-09-18 15:12:56.953 WARN  [sync-service,03176fe119c6c96e,1182883c] [http-nio-8082-exec-6] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 15:13:10.012 WARN  [sync-service,344bae1b7f0b874d,e1e11792] [report-builder-4] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 15:13:41.377 INFO  [sync-service,6c7965ed407f40d1,417894ba] [report-builder-5] com.example.sync.ShipmentEventConsumer - Consumed 87 shipment events from partition 1
+2026-09-18 15:13:53.351 WARN  [sync-service,30a4c64837a65e04,1174ea2d] [report-builder-1] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-0, retrying
+2026-09-18 15:14:12.431 INFO  [sync-service,1708cc9e8c255bd2,b57db400] [http-nio-8082-exec-7] com.example.sync.ShipmentEventConsumer - Consumed 11 shipment events from partition 1
+2026-09-18 15:14:45.632 WARN  [sync-service,e52aa98f85cc2cd1,a9bca716] [http-nio-8082-exec-6] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-2, retrying
+2026-09-18 15:16:09.896 INFO  [sync-service,a2213d6dcb2141a4,b853f468] [http-nio-8082-exec-4] com.example.sync.StockLevelService - Stock refresh completed for 676 SKUs
+2026-09-18 15:17:18.105 INFO  [sync-service,d5fdb6e3d8eefa36,496cbae9] [report-builder-3] com.example.sync.StockLevelService - Stock refresh completed for 727 SKUs
+2026-09-18 15:18:11.222 WARN  [sync-service,f644f89377f94931,4f0f2e3f] [report-builder-3] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 15:19:57.856 WARN  [sync-service,c997f4b26be1dc9b,f54a2b42] [http-nio-8082-exec-4] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-4, retrying
+2026-09-18 15:23:42.952 INFO  [sync-service,8a1f33ffe73c56bc,33d5ac3f] [report-builder-2] com.example.sync.ShipmentEventConsumer - Consumed 179 shipment events from partition 5
+2026-09-18 15:23:49.324 INFO  [sync-service,88b53d4abc99106c,78d304e8] [report-builder-9] com.example.sync.ShipmentEventConsumer - Consumed 206 shipment events from partition 0
+2026-09-18 15:25:00.119 INFO  [sync-service,8dad11cf01fe8f6e,11c595ee] [http-nio-8082-exec-1] com.example.sync.ShipmentEventConsumer - Consumed 77 shipment events from partition 1
+2026-09-18 15:27:25.404 INFO  [sync-service,1ce9e238f87ec630,9f1081e0] [report-builder-7] com.example.sync.ShipmentEventConsumer - Consumed 147 shipment events from partition 1
+2026-09-18 15:28:26.409 INFO  [sync-service,8f2bab683eaa2c4e,9cecbd90] [report-builder-1] com.example.sync.ShipmentEventConsumer - Consumed 79 shipment events from partition 0
+2026-09-18 15:28:38.346 INFO  [sync-service,599c2b2fbe999552,9d0f4871] [report-builder-3] com.example.sync.StockLevelService - Stock refresh completed for 160 SKUs
+2026-09-18 15:30:45.061 INFO  [sync-service,762a661f95db944a,9fcf5c67] [report-builder-7] com.example.sync.StockLevelService - Stock refresh completed for 645 SKUs
+2026-09-18 15:31:31.277 WARN  [sync-service,2408197c0c14dfd7,687dc07d] [report-builder-8] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-5, retrying
+2026-09-18 15:31:33.770 INFO  [sync-service,e421184d4a8cb136,e23bdee2] [http-nio-8082-exec-5] com.example.sync.InventoryReportService - Daily report for region south built, 1086 dealers
+2026-09-18 15:33:32.195 DEBUG [sync-service,b365e72883a61ec2,d516d5cb] [report-builder-3] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-3]
+2026-09-18 15:33:45.059 DEBUG [sync-service,56ccbc1448a242f5,f6527c15] [http-nio-8082-exec-8] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-1]
+2026-09-18 15:34:57.401 WARN  [sync-service,0596a4af28ccb5b4,7451c095] [http-nio-8082-exec-6] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 15:35:44.132 INFO  [sync-service,9f9b13925f96b947,9d66a704] [report-builder-1] com.example.sync.StockLevelService - Stock refresh completed for 54 SKUs
+2026-09-18 15:36:05.587 WARN  [sync-service,3ac4a131f60cb29e,36c5ea21] [report-builder-1] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-0, retrying
+2026-09-18 15:36:33.285 INFO  [sync-service,2c4c90a36515497f,de615cfa] [report-builder-4] com.example.sync.ShipmentEventConsumer - Consumed 28 shipment events from partition 1
+2026-09-18 15:37:07.471 INFO  [sync-service,fbed0c247b5dac3c,a35ddd7c] [http-nio-8082-exec-1] com.example.sync.StockLevelService - Stock refresh completed for 560 SKUs
+2026-09-18 15:37:54.279 WARN  [sync-service,2d1ff69415b700d5,69f1393a] [http-nio-8082-exec-6] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-2, retrying
+2026-09-18 15:38:37.959 INFO  [sync-service,5c83c7f106772f08,e9729bae] [report-builder-5] com.example.sync.StockLevelService - Stock refresh completed for 253 SKUs
+2026-09-18 15:38:57.217 WARN  [sync-service,710b611f758884aa,3ca81bc4] [report-builder-2] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-2, retrying
+2026-09-18 15:39:42.124 INFO  [sync-service,114fe4e7aa85b270,450e0ab3] [report-builder-6] com.example.sync.InventoryReportService - Daily report for region east built, 526 dealers
+2026-09-18 15:41:23.638 INFO  [sync-service,bf3a3b7ba9671b94,6dd082e6] [http-nio-8082-exec-9] com.example.sync.ShipmentEventConsumer - Consumed 165 shipment events from partition 3
+2026-09-18 15:42:32.440 WARN  [sync-service,0406d8a55a88622c,06818e01] [report-builder-3] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 15:44:10.818 INFO  [sync-service,01a11e367cf7d701,3ef0387e] [http-nio-8082-exec-9] com.example.sync.ShipmentEventConsumer - Consumed 147 shipment events from partition 0
+2026-09-18 15:46:38.413 INFO  [sync-service,d233957e5905ee89,441e5229] [report-builder-4] com.example.sync.StockLevelService - Stock refresh completed for 296 SKUs
+2026-09-18 15:47:45.878 INFO  [sync-service,92ed03eff0d3225e,510ba186] [http-nio-8082-exec-2] com.example.sync.StockLevelService - Stock refresh completed for 884 SKUs
+2026-09-18 15:48:12.257 DEBUG [sync-service,a1359089d6d5d826,a15db108] [report-builder-9] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-5]
+2026-09-18 15:48:55.977 DEBUG [sync-service,f39d370690c99ff5,3a6b6e78] [http-nio-8082-exec-4] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-3]
+2026-09-18 15:49:43.320 WARN  [sync-service,42449668d22c77aa,c58c64d7] [report-builder-1] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-1, retrying
+2026-09-18 15:50:31.915 INFO  [sync-service,ae413fcb31acabd4,e1ce0d80] [report-builder-3] com.example.sync.InventoryReportService - Daily report for region east built, 918 dealers
+2026-09-18 15:52:43.817 WARN  [sync-service,3b94ebf04cc4fdcb,f39f6055] [http-nio-8082-exec-2] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 15:53:22.521 INFO  [sync-service,e739a365f8d9c10b,61b12f14] [report-builder-5] com.example.sync.ShipmentEventConsumer - Consumed 10 shipment events from partition 4
+2026-09-18 15:55:00.492 DEBUG [sync-service,b82419c14366f621,1c9f1045] [http-nio-8082-exec-7] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-2]
+2026-09-18 15:55:12.149 WARN  [sync-service,30acf56cdcfd9fcd,09ea65a0] [report-builder-8] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 15:55:18.749 INFO  [sync-service,d2d695a8176200aa,04415736] [report-builder-2] com.example.sync.ShipmentEventConsumer - Consumed 141 shipment events from partition 3
+2026-09-18 15:56:44.048 INFO  [sync-service,c5b7408d45de1eb8,0ed1f2b7] [http-nio-8082-exec-9] com.example.sync.InventoryReportService - Daily report for region south built, 442 dealers
+2026-09-18 15:56:49.196 INFO  [sync-service,c4a1402ecd3ed292,9b049220] [http-nio-8082-exec-8] com.example.sync.ShipmentEventConsumer - Consumed 157 shipment events from partition 0
+2026-09-18 15:58:14.469 WARN  [sync-service,3dd5ac4a86e0041a,ab558fba] [report-builder-3] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-5, retrying
+2026-09-18 15:59:55.084 INFO  [sync-service,1b5741df7f84fe9e,f4d4dd69] [http-nio-8082-exec-4] com.example.sync.InventoryReportService - Daily report for region north built, 498 dealers
+2026-09-18 16:01:53.653 INFO  [sync-service,870b4c6be48d96e5,f8f0c32c] [http-nio-8082-exec-3] com.example.sync.InventoryReportService - Daily report for region south built, 689 dealers
+2026-09-18 16:01:56.560 WARN  [sync-service,b4cd950f808dbb0b,335de978] [report-builder-8] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-5, retrying
+2026-09-18 16:02:35.220 INFO  [sync-service,8d4566c62cd01968,0ce773fb] [http-nio-8082-exec-4] com.example.sync.InventoryReportService - Daily report for region west built, 1154 dealers
+2026-09-18 16:02:51.644 INFO  [sync-service,503b12fdc47069fb,8ee3e0cf] [http-nio-8082-exec-5] com.example.sync.InventoryReportService - Daily report for region south built, 1125 dealers
+2026-09-18 16:03:35.463 WARN  [sync-service,c76afa7f825aec96,3db6398e] [report-builder-6] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-5, retrying
+2026-09-18 16:03:37.569 INFO  [sync-service,7bfc5772be0c64c6,b2865e6e] [report-builder-2] com.example.sync.StockLevelService - Stock refresh completed for 618 SKUs
+2026-09-18 16:03:45.761 INFO  [sync-service,04790d0f0e02a39b,38777bb5] [http-nio-8082-exec-5] com.example.sync.ShipmentEventConsumer - Consumed 134 shipment events from partition 4
+2026-09-18 16:03:46.633 WARN  [sync-service,c9089b1c4ff53ad9,1242b122] [http-nio-8082-exec-5] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-4, retrying
+2026-09-18 16:04:05.293 INFO  [sync-service,c981084a6f6a82dd,7bddffb3] [http-nio-8082-exec-2] com.example.sync.InventoryReportService - Daily report for region north built, 709 dealers
+2026-09-18 16:04:10.509 WARN  [sync-service,f42b5afaf856683c,7d993f3e] [http-nio-8082-exec-2] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 16:04:10.687 INFO  [sync-service,5003e16c2e818c43,f13b482a] [report-builder-8] com.example.sync.StockLevelService - Stock refresh completed for 171 SKUs
+2026-09-18 16:04:36.285 WARN  [sync-service,b309ba8c29821dcf,50179d90] [report-builder-4] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 16:04:48.158 INFO  [sync-service,207a626dc1b9cdc9,3f679208] [report-builder-9] com.example.sync.InventoryReportService - Daily report for region east built, 1079 dealers
+2026-09-18 16:05:39.929 INFO  [sync-service,e7bf57b29436e8ad,d8fcbe3b] [http-nio-8082-exec-2] com.example.sync.StockLevelService - Stock refresh completed for 607 SKUs
+2026-09-18 16:08:03.667 DEBUG [sync-service,b3eb30e7323fc30b,fa2844c8] [http-nio-8082-exec-8] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-3]
+2026-09-18 16:08:26.454 DEBUG [sync-service,8d13b99e4ff06240,901ca16d] [http-nio-8082-exec-7] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-3]
+2026-09-18 16:08:30.436 INFO  [sync-service,2244b3b38d9ab0b2,1da62839] [http-nio-8082-exec-6] com.example.sync.InventoryReportService - Daily report for region south built, 772 dealers
+2026-09-18 16:09:21.035 WARN  [sync-service,6d5cd5a86181c2a1,eda3c089] [http-nio-8082-exec-3] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-2, retrying
+2026-09-18 16:09:24.386 WARN  [sync-service,caee7f8922e32d12,fa819219] [http-nio-8082-exec-4] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-2, retrying
+2026-09-18 16:10:21.074 INFO  [sync-service,d2381a722dc5f172,79c6cb45] [report-builder-4] com.example.sync.InventoryReportService - Daily report for region north built, 903 dealers
+2026-09-18 16:10:55.157 DEBUG [sync-service,ccdfb8bdcb973d36,8840ea0b] [report-builder-3] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-5]
+2026-09-18 16:11:52.199 INFO  [sync-service,20aa1d770988c24c,2d3dc480] [report-builder-8] com.example.sync.StockLevelService - Stock refresh completed for 608 SKUs
+2026-09-18 16:13:52.975 INFO  [sync-service,26893ec8b29d9fee,f06b745e] [report-builder-5] com.example.sync.ShipmentEventConsumer - Consumed 146 shipment events from partition 1
+2026-09-18 16:14:03.173 INFO  [sync-service,fc74f50fd6e3f69e,7b1d2fb2] [report-builder-6] com.example.sync.StockLevelService - Stock refresh completed for 547 SKUs
+2026-09-18 16:14:19.082 DEBUG [sync-service,7d86b053c2362650,15f5286e] [http-nio-8082-exec-5] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-4]
+2026-09-18 16:16:26.858 INFO  [sync-service,fd3518faa31318e4,584cd55b] [http-nio-8082-exec-3] com.example.sync.StockLevelService - Stock refresh completed for 283 SKUs
+2026-09-18 16:16:46.520 WARN  [sync-service,1b2407ab784b32c1,f7c2614e] [report-builder-4] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-1, retrying
+2026-09-18 16:17:37.030 INFO  [sync-service,ae265412380b4cf4,cb6b1a33] [report-builder-2] com.example.sync.ShipmentEventConsumer - Consumed 52 shipment events from partition 4
+2026-09-18 16:18:18.497 INFO  [sync-service,ebc91a4e4b2451ad,86ebd4e8] [report-builder-2] com.example.sync.StockLevelService - Stock refresh completed for 532 SKUs
+2026-09-18 16:18:58.331 INFO  [sync-service,26b9d2f50511a6ca,ee6df5a5] [report-builder-5] com.example.sync.ShipmentEventConsumer - Consumed 186 shipment events from partition 3
+2026-09-18 16:19:06.774 INFO  [sync-service,5b6e8bfc659303d9,37b0a876] [http-nio-8082-exec-2] com.example.sync.InventoryReportService - Daily report for region east built, 418 dealers
+2026-09-18 16:21:00.170 INFO  [sync-service,a94a60889f9fbbd8,01a9d03c] [http-nio-8082-exec-5] com.example.sync.StockLevelService - Stock refresh completed for 691 SKUs
+2026-09-18 16:21:28.509 INFO  [sync-service,1280e04862b312f5,c7e0f2dc] [http-nio-8082-exec-1] com.example.sync.ShipmentEventConsumer - Consumed 260 shipment events from partition 1
+2026-09-18 16:22:13.061 INFO  [sync-service,09b355bda4240adc,afb7817b] [report-builder-3] com.example.sync.StockLevelService - Stock refresh completed for 413 SKUs
+2026-09-18 16:22:22.867 DEBUG [sync-service,4e87870b3053fcfd,77c3409f] [report-builder-3] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-2]
+2026-09-18 16:23:18.147 INFO  [sync-service,b3343e31f89bc9c2,6ab8c10c] [report-builder-4] com.example.sync.InventoryReportService - Daily report for region east built, 455 dealers
+2026-09-18 16:24:09.293 INFO  [sync-service,300cf3ea4b2e9e43,aded5c19] [http-nio-8082-exec-5] com.example.sync.InventoryReportService - Daily report for region east built, 638 dealers
+2026-09-18 16:24:45.583 INFO  [sync-service,2032b67032ee0513,1136378a] [http-nio-8082-exec-7] com.example.sync.ShipmentEventConsumer - Consumed 189 shipment events from partition 1
+2026-09-18 16:24:48.247 DEBUG [sync-service,a03d74df0ef2d8cd,e571fe22] [report-builder-2] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-4]
+2026-09-18 16:26:48.085 DEBUG [sync-service,ab620284d95d1b64,32f144de] [http-nio-8082-exec-8] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-3]
+2026-09-18 16:30:38.845 WARN  [sync-service,6013719a5bc44821,3c934369] [report-builder-9] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 16:30:41.365 DEBUG [sync-service,fabc799289db1b11,91c34a7a] [http-nio-8082-exec-7] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-4]
+2026-09-18 16:32:48.214 INFO  [sync-service,7d3f54a111e431d9,23f19bfa] [report-builder-7] com.example.sync.InventoryReportService - Daily report for region south built, 1133 dealers
+2026-09-18 16:34:04.769 INFO  [sync-service,c7dc54eacd1bdaa7,e662f63c] [http-nio-8082-exec-8] com.example.sync.InventoryReportService - Daily report for region north built, 1376 dealers
+2026-09-18 16:34:17.734 INFO  [sync-service,5a8cb249b1c80bb7,db665230] [report-builder-7] com.example.sync.StockLevelService - Stock refresh completed for 573 SKUs
+2026-09-18 16:36:00.401 DEBUG [sync-service,1d5387e6a2082b6f,c191a963] [http-nio-8082-exec-8] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-0]
+2026-09-18 16:36:44.753 DEBUG [sync-service,d0bae80d9f51aca6,951eb501] [http-nio-8082-exec-9] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-0]
+2026-09-18 16:37:00.345 INFO  [sync-service,8591e681669c9806,f3f759ad] [report-builder-3] com.example.sync.InventoryReportService - Daily report for region south built, 728 dealers
+2026-09-18 16:37:11.103 INFO  [sync-service,a63d4594b85a0cfd,6262c3c5] [http-nio-8082-exec-4] com.example.sync.StockLevelService - Stock refresh completed for 574 SKUs
+2026-09-18 16:37:11.289 INFO  [sync-service,a72eed827bb0a7d9,45a1dd53] [report-builder-7] com.example.sync.InventoryReportService - Daily report for region east built, 1304 dealers
+2026-09-18 16:38:15.381 DEBUG [sync-service,2e242a3846f837bd,ad816cc6] [report-builder-2] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-4]
+2026-09-18 16:38:26.484 WARN  [sync-service,97dd8cea7a6e973a,5c14dc0c] [http-nio-8082-exec-7] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-2, retrying
+2026-09-18 16:38:26.501 INFO  [sync-service,3734e1c1f321ffa2,f09ba0be] [report-builder-6] com.example.sync.InventoryReportService - Daily report for region south built, 854 dealers
+2026-09-18 16:39:04.907 DEBUG [sync-service,059bc9579a48f380,23b47efd] [http-nio-8082-exec-1] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-5]
+2026-09-18 16:40:13.039 DEBUG [sync-service,a36aaa75addfd005,42df227a] [http-nio-8082-exec-7] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-0]
+2026-09-18 16:41:06.393 DEBUG [sync-service,79653bebaa25b100,2ce93b38] [report-builder-9] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-4]
+2026-09-18 16:41:17.390 WARN  [sync-service,1b130fc73fe033d6,1e8f3dc0] [report-builder-9] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-4, retrying
+2026-09-18 16:41:37.723 WARN  [sync-service,465da13e4669ff68,7c09a359] [http-nio-8082-exec-7] com.example.sync.ShipmentEventConsumer - Dropping malformed shipment event from topic shipment-events, offset 971227
+com.example.sync.ShipmentEventConsumer$DeserializationException: Unexpected token START_ARRAY at [Source: (byte[]); line: 1, column: 14]
+	at com.example.sync.ShipmentEventConsumer.onMessage(ShipmentEventConsumer.java:24)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer.doInvokeRecordListener(KafkaMessageListenerContainer.java:2815)
+Caused by: com.fasterxml.jackson.core.JsonParseException: Unexpected token START_ARRAY
+	at com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:2477)
+2026-09-18 16:41:53.023 WARN  [sync-service,c552e993b812e274,c905f515] [http-nio-8082-exec-8] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-2, retrying
+2026-09-18 16:42:12.565 WARN  [sync-service,d207316e8ccc2551,dec6abf1] [http-nio-8082-exec-8] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-2, retrying
+2026-09-18 16:43:20.365 DEBUG [sync-service,7a19e85ad3523cd1,6fc19f80] [report-builder-6] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-4]
+2026-09-18 16:43:39.845 INFO  [sync-service,b9bfb0b1e2766f8c,02d84a4f] [report-builder-3] com.example.sync.StockLevelService - Stock refresh completed for 768 SKUs
+2026-09-18 16:44:00.299 INFO  [sync-service,5ecd838a9023c740,bc722440] [http-nio-8082-exec-8] com.example.sync.ShipmentEventConsumer - Consumed 75 shipment events from partition 0
+2026-09-18 16:44:26.663 INFO  [sync-service,863af55177e7b5b0,25e3625c] [report-builder-1] com.example.sync.ShipmentEventConsumer - Consumed 253 shipment events from partition 4
+2026-09-18 16:44:29.343 DEBUG [sync-service,0245499f4909b8c3,ef71a12e] [report-builder-5] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-5]
+2026-09-18 16:45:01.821 INFO  [sync-service,6e97253b02a4a7f8,2514d087] [report-builder-7] com.example.sync.InventoryReportService - Daily report for region south built, 1184 dealers
+2026-09-18 16:46:27.233 INFO  [sync-service,46f3365246596afa,c8d51b1d] [report-builder-7] com.example.sync.InventoryReportService - Daily report for region west built, 548 dealers
+2026-09-18 16:47:15.852 WARN  [sync-service,91ddb45c7df58461,d0e952f8] [http-nio-8082-exec-4] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 16:49:31.515 WARN  [sync-service,e05e5ee51fecc6a0,dfe9eb46] [report-builder-5] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-1, retrying
+2026-09-18 16:50:57.488 WARN  [sync-service,65dbfee305dba26d,65dbacd7] [http-nio-8082-exec-2] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-4, retrying
+2026-09-18 16:51:01.504 WARN  [sync-service,ba046dfa55637973,b0a65d28] [report-builder-2] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-1, retrying
+2026-09-18 16:51:06.044 WARN  [sync-service,d567ed02207d2997,e69d5eaf] [http-nio-8082-exec-7] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-5, retrying
+2026-09-18 16:51:41.532 DEBUG [sync-service,3804935c2169b287,1a9030a3] [http-nio-8082-exec-3] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-1]
+2026-09-18 16:53:05.457 INFO  [sync-service,4e9847b7bf46a0d6,0fa452dd] [http-nio-8082-exec-7] com.example.sync.StockLevelService - Stock refresh completed for 288 SKUs
+2026-09-18 16:53:59.602 WARN  [sync-service,9ab5ec2eb09c7100,5f96571b] [http-nio-8082-exec-3] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-4, retrying
+2026-09-18 16:58:36.026 INFO  [sync-service,9d29d22828051de9,dff28d5b] [report-builder-7] com.example.sync.InventoryReportService - Daily report for region south built, 642 dealers
+2026-09-18 17:00:07.567 INFO  [sync-service,d7a43d5c1569aaa8,3688f83c] [http-nio-8082-exec-7] com.example.sync.ShipmentEventConsumer - Consumed 202 shipment events from partition 4
+2026-09-18 17:00:13.074 INFO  [sync-service,5eface614ba51ebc,ba455873] [http-nio-8082-exec-8] com.example.sync.InventoryReportService - Daily report for region north built, 599 dealers
+2026-09-18 17:01:06.881 WARN  [sync-service,60bcc9962183a6cb,1d3b1a85] [http-nio-8082-exec-5] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-0, retrying
+2026-09-18 17:02:47.887 INFO  [sync-service,d5316c5f6b2ccf81,41a05026] [report-builder-6] com.example.sync.InventoryReportService - Daily report for region south built, 1234 dealers
+2026-09-18 17:03:27.677 INFO  [sync-service,83b9809b89d91629,fe697cb6] [report-builder-2] com.example.sync.StockLevelService - Stock refresh completed for 207 SKUs
+2026-09-18 17:07:59.575 DEBUG [sync-service,731045e5f7848277,5fc0dadc] [http-nio-8082-exec-3] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-5]
+2026-09-18 17:09:19.000 WARN  [sync-service,0c0a9868e3a3048a,44cdb22e] [http-nio-8082-exec-6] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-2, retrying
+2026-09-18 17:09:25.037 DEBUG [sync-service,6edc8bf7b0791b79,f4bc830a] [http-nio-8082-exec-8] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-2]
+2026-09-18 17:09:43.592 DEBUG [sync-service,7711379339bcb190,d28c83c2] [http-nio-8082-exec-1] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-1]
+2026-09-18 17:10:21.760 WARN  [sync-service,27a463aa7bcf4021,bf7581ea] [http-nio-8082-exec-5] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-4, retrying
+2026-09-18 17:10:54.273 INFO  [sync-service,662ba80f50eb55f9,1a7a4a56] [report-builder-4] com.example.sync.StockLevelService - Stock refresh completed for 480 SKUs
+2026-09-18 17:13:42.175 WARN  [sync-service,641b7095f96e7655,f8d3b5f5] [http-nio-8082-exec-9] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-5, retrying
+2026-09-18 17:15:16.802 INFO  [sync-service,fbaed656f7a2767b,db82700b] [http-nio-8082-exec-1] com.example.sync.InventoryReportService - Daily report for region south built, 1280 dealers
+2026-09-18 17:16:22.736 INFO  [sync-service,71b8fa101bda0c83,8a56fd04] [http-nio-8082-exec-5] com.example.sync.StockLevelService - Stock refresh completed for 817 SKUs
+2026-09-18 17:17:05.210 DEBUG [sync-service,85352634c426d7d4,afb7a5b1] [http-nio-8082-exec-2] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-3]
+2026-09-18 17:18:00.823 DEBUG [sync-service,4f7cdb16f1c6514e,ea2c34d1] [http-nio-8082-exec-9] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-5]
+2026-09-18 17:18:47.035 INFO  [sync-service,d7e8d6339b1b901e,31c3ffe4] [report-builder-2] com.example.sync.ShipmentEventConsumer - Consumed 139 shipment events from partition 4
+2026-09-18 17:18:57.349 INFO  [sync-service,ebf9bfce863909ec,314993a5] [http-nio-8082-exec-1] com.example.sync.StockLevelService - Stock refresh completed for 425 SKUs
+2026-09-18 17:19:14.283 DEBUG [sync-service,381cd670c0dec99d,51366aa9] [report-builder-6] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-0]
+2026-09-18 17:20:43.859 INFO  [sync-service,8dc6842fc1a05b5c,1bc49ca2] [http-nio-8082-exec-5] com.example.sync.InventoryReportService - Daily report for region west built, 473 dealers
+2026-09-18 17:21:07.588 INFO  [sync-service,f333a535b941f73e,ce504cf3] [report-builder-8] com.example.sync.ShipmentEventConsumer - Consumed 10 shipment events from partition 3
+2026-09-18 17:21:14.960 WARN  [sync-service,19558cf70860da87,7100abf3] [http-nio-8082-exec-2] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-0, retrying
+2026-09-18 17:22:28.556 INFO  [sync-service,2bce57df82e304f6,287df8a4] [http-nio-8082-exec-8] com.example.sync.ShipmentEventConsumer - Consumed 180 shipment events from partition 0
+2026-09-18 17:23:09.334 DEBUG [sync-service,30cae18d64d66814,d83594a4] [http-nio-8082-exec-4] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-2]
+2026-09-18 17:26:08.104 WARN  [sync-service,e1f30e34669a24f7,0162722d] [report-builder-3] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-1, retrying
+2026-09-18 17:26:51.931 INFO  [sync-service,5ed5f479ff0a3672,38a40264] [http-nio-8082-exec-4] com.example.sync.InventoryReportService - Daily report for region east built, 454 dealers
+2026-09-18 17:27:35.777 INFO  [sync-service,72ace699322c206c,70c4116a] [report-builder-3] com.example.sync.InventoryReportService - Daily report for region south built, 1215 dealers
+2026-09-18 17:29:01.256 INFO  [sync-service,73febe3f61ed1ac1,44475ea2] [report-builder-4] com.example.sync.StockLevelService - Stock refresh completed for 520 SKUs
+2026-09-18 17:29:52.296 WARN  [sync-service,82a72bbc10c8b890,9e484768] [http-nio-8082-exec-1] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-1, retrying
+2026-09-18 17:30:10.230 INFO  [sync-service,41e9f337abc64931,dd3347f8] [http-nio-8082-exec-1] com.example.sync.InventoryReportService - Daily report for region north built, 1346 dealers
+2026-09-18 17:30:35.840 WARN  [sync-service,7df8c306211157b6,294ff288] [http-nio-8082-exec-6] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-0, retrying
+2026-09-18 17:30:36.842 WARN  [sync-service,0a2e4e2c6148908d,9ffe7cc5] [report-builder-5] com.example.sync.ShipmentEventConsumer - Dropping malformed shipment event from topic shipment-events, offset 900275
+com.example.sync.ShipmentEventConsumer$DeserializationException: Unexpected token START_ARRAY at [Source: (byte[]); line: 1, column: 14]
+	at com.example.sync.ShipmentEventConsumer.onMessage(ShipmentEventConsumer.java:24)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer.doInvokeRecordListener(KafkaMessageListenerContainer.java:2815)
+Caused by: com.fasterxml.jackson.core.JsonParseException: Unexpected token START_ARRAY
+	at com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:2477)
+2026-09-18 17:32:57.843 WARN  [sync-service,e65f7719c2da0bdb,1759627e] [report-builder-1] com.example.sync.InventoryReportService - Slow report build: region=north dealers=955 queries=1236 duration=14085ms (InventoryReportService.java:30)
+2026-09-18 17:33:08.539 INFO  [sync-service,723c667873e1409e,14e12b92] [report-builder-2] com.example.sync.StockLevelService - Stock refresh completed for 421 SKUs
+2026-09-18 17:33:44.494 DEBUG [sync-service,2b212834688914e4,33f4b927] [report-builder-4] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-3]
+2026-09-18 17:35:19.369 DEBUG [sync-service,8b2e2379a5c5576d,096ee04c] [report-builder-5] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-3]
+2026-09-18 17:35:29.005 DEBUG [sync-service,de0a2f3688a7e720,a497923f] [report-builder-4] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-4]
+2026-09-18 17:38:23.345 INFO  [sync-service,7e91239ce488a71e,61c69154] [report-builder-2] com.example.sync.ShipmentEventConsumer - Consumed 277 shipment events from partition 3
+2026-09-18 17:38:49.092 WARN  [sync-service,8cb010fbf612ec99,0dcc9260] [http-nio-8082-exec-9] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 17:38:50.950 INFO  [sync-service,2050dabfe34bf667,9f315af4] [report-builder-1] com.example.sync.ShipmentEventConsumer - Consumed 202 shipment events from partition 5
+2026-09-18 17:41:28.094 INFO  [sync-service,f3648a40af784a4e,311372cb] [report-builder-8] com.example.sync.StockLevelService - Stock refresh completed for 434 SKUs
+2026-09-18 17:42:54.525 INFO  [sync-service,a9fec1c780d74443,b18571bc] [report-builder-2] com.example.sync.ShipmentEventConsumer - Consumed 123 shipment events from partition 3
+2026-09-18 17:43:00.476 INFO  [sync-service,7d45baa62992af3a,d97305a3] [http-nio-8082-exec-4] com.example.sync.InventoryReportService - Daily report for region east built, 896 dealers
+2026-09-18 17:44:38.037 INFO  [sync-service,ddea00b8edd0320b,f1b4fdc7] [http-nio-8082-exec-9] com.example.sync.ShipmentEventConsumer - Consumed 242 shipment events from partition 5
+2026-09-18 17:45:47.862 DEBUG [sync-service,1659b5053e39ad38,161adaab] [report-builder-8] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-5]
+2026-09-18 17:46:19.612 INFO  [sync-service,cb715146436dfa7c,ed0ffb45] [report-builder-6] com.example.sync.ShipmentEventConsumer - Consumed 33 shipment events from partition 1
+2026-09-18 17:50:05.819 WARN  [sync-service,987e09f2e14e63c2,22e444e8] [report-builder-7] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-1, retrying
+2026-09-18 17:51:09.433 INFO  [sync-service,4cab41e94895417f,e1e432ee] [report-builder-4] com.example.sync.ShipmentEventConsumer - Consumed 122 shipment events from partition 0
+2026-09-18 17:51:13.642 WARN  [sync-service,a891c3256b4a7716,a2dc9485] [http-nio-8082-exec-1] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 17:52:02.006 DEBUG [sync-service,aaf273da7a916e6c,eb0074dc] [report-builder-2] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-5]
+2026-09-18 17:52:26.634 WARN  [sync-service,70bc71ff015aa8a0,0a0314ff] [http-nio-8082-exec-7] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-4, retrying
+2026-09-18 17:53:21.446 INFO  [sync-service,4adb66dfe7cbbc7a,7cba3690] [http-nio-8082-exec-3] com.example.sync.StockLevelService - Stock refresh completed for 531 SKUs
+2026-09-18 17:55:37.386 INFO  [sync-service,c66b97afeb8d17a4,4670a241] [report-builder-6] com.example.sync.StockLevelService - Stock refresh completed for 75 SKUs
+2026-09-18 17:56:15.894 INFO  [sync-service,8f02f637fa224dbc,6181f462] [report-builder-2] com.example.sync.StockLevelService - Stock refresh completed for 784 SKUs
+2026-09-18 18:01:18.011 DEBUG [sync-service,885298ea536e0fc4,d302eeb0] [http-nio-8082-exec-4] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-3]
+2026-09-18 18:01:43.297 INFO  [sync-service,05550123aeda3033,201e1d31] [http-nio-8082-exec-6] com.example.sync.InventoryReportService - Daily report for region west built, 629 dealers
+2026-09-18 18:02:37.272 DEBUG [sync-service,d6cbb0bd43d70894,5e2c91ae] [report-builder-5] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-2]
+2026-09-18 18:03:24.000 WARN  [sync-service,1d6a3858bb7ba047,a3fa2d55] [report-builder-3] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-4, retrying
+2026-09-18 18:04:31.498 DEBUG [sync-service,bdcb262b1b9e4e31,c3342dfa] [report-builder-5] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-4]
+2026-09-18 18:06:09.201 INFO  [sync-service,351af763ad309586,bb50371f] [http-nio-8082-exec-4] com.example.sync.StockLevelService - Stock refresh completed for 852 SKUs
+2026-09-18 18:06:47.969 INFO  [sync-service,21a5e689d9995694,abf5b124] [report-builder-7] com.example.sync.ShipmentEventConsumer - Consumed 157 shipment events from partition 2
+2026-09-18 18:06:55.150 WARN  [sync-service,70ab364bc5c53ee7,26bee855] [report-builder-3] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-2, retrying
+2026-09-18 18:06:55.192 WARN  [sync-service,dad076b8955b8b33,f53c30db] [report-builder-5] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 18:07:23.052 INFO  [sync-service,dbeff7d2fc27eb03,137fcc5f] [report-builder-6] com.example.sync.StockLevelService - Stock refresh completed for 801 SKUs
+2026-09-18 18:08:34.364 INFO  [sync-service,28b563c21da8d6a0,4c3a5b45] [http-nio-8082-exec-2] com.example.sync.InventoryReportService - Daily report for region west built, 966 dealers
+2026-09-18 18:09:28.628 WARN  [sync-service,5fdbfa0857df57c4,17d1d210] [http-nio-8082-exec-5] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 18:10:31.573 INFO  [sync-service,3675bfcfbf8e0b78,d8e769ed] [report-builder-2] com.example.sync.ShipmentEventConsumer - Consumed 294 shipment events from partition 2
+2026-09-18 18:10:59.001 INFO  [sync-service,e6a47adb0e49d0e5,86c6fa67] [report-builder-2] com.example.sync.ShipmentEventConsumer - Consumed 73 shipment events from partition 4
+2026-09-18 18:12:23.190 INFO  [sync-service,838c4df051b36b29,8f92657b] [http-nio-8082-exec-8] com.example.sync.ShipmentEventConsumer - Consumed 78 shipment events from partition 0
+2026-09-18 18:15:11.230 INFO  [sync-service,1933feaec74eb4e6,70570764] [report-builder-1] com.example.sync.InventoryReportService - Daily report for region north built, 837 dealers
+2026-09-18 18:15:17.719 WARN  [sync-service,52d7551c72c231c7,1588f90b] [report-builder-2] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 18:15:32.982 INFO  [sync-service,42923b86646cfffa,ece6753c] [report-builder-7] com.example.sync.InventoryReportService - Daily report for region south built, 871 dealers
+2026-09-18 18:15:49.634 WARN  [sync-service,29db8088efb03725,3ca61d05] [report-builder-2] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 18:16:18.247 DEBUG [sync-service,1f13de94d467d64e,03d1ed9f] [report-builder-7] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-4]
+2026-09-18 18:16:22.219 WARN  [sync-service,6d56c43d8cca58dc,3fba4df9] [http-nio-8082-exec-6] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-1, retrying
+2026-09-18 18:17:45.019 WARN  [sync-service,b51821eea7b09875,973dda08] [http-nio-8082-exec-1] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 18:18:06.743 INFO  [sync-service,51c0120e37a6fd19,f7c4d91a] [report-builder-2] com.example.sync.InventoryReportService - Daily report for region west built, 929 dealers
+2026-09-18 18:18:54.299 INFO  [sync-service,e29730e0c03fb720,5ab0fd6a] [report-builder-1] com.example.sync.ShipmentEventConsumer - Consumed 243 shipment events from partition 2
+2026-09-18 18:19:16.601 INFO  [sync-service,480d1e3e7bc7c89d,5ac6dfa2] [http-nio-8082-exec-1] com.example.sync.StockLevelService - Stock refresh completed for 647 SKUs
+2026-09-18 18:21:27.329 INFO  [sync-service,0a4c7534fad3bd8b,3491042a] [report-builder-4] com.example.sync.StockLevelService - Stock refresh completed for 564 SKUs
+2026-09-18 18:22:05.460 DEBUG [sync-service,9c465f5738b5e7ca,d7282db4] [report-builder-1] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-2]
+2026-09-18 18:22:41.604 WARN  [sync-service,faf572030250b5ba,bf9adc91] [http-nio-8082-exec-8] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 18:22:49.443 INFO  [sync-service,1496e137a8e120d9,454ebdf9] [http-nio-8082-exec-1] com.example.sync.StockLevelService - Stock refresh completed for 791 SKUs
+2026-09-18 18:23:37.455 INFO  [sync-service,e120f25650b80131,28d15342] [http-nio-8082-exec-5] com.example.sync.InventoryReportService - Daily report for region west built, 1377 dealers
+2026-09-18 18:23:43.024 INFO  [sync-service,50e386552cb07cf0,19c7fc8b] [report-builder-9] com.example.sync.ShipmentEventConsumer - Consumed 254 shipment events from partition 1
+2026-09-18 18:23:49.195 INFO  [sync-service,066376a2f927a827,ab0d7dd6] [report-builder-2] com.example.sync.ShipmentEventConsumer - Consumed 219 shipment events from partition 3
+2026-09-18 18:23:54.418 INFO  [sync-service,d083bf27a8b1fb6f,04f5e81b] [report-builder-6] com.example.sync.StockLevelService - Stock refresh completed for 742 SKUs
+2026-09-18 18:24:52.787 INFO  [sync-service,c01d4f68808fe074,787791f8] [http-nio-8082-exec-6] com.example.sync.ShipmentEventConsumer - Consumed 140 shipment events from partition 0
+2026-09-18 18:25:08.843 INFO  [sync-service,5222c32614128f8a,197cb448] [report-builder-9] com.example.sync.StockLevelService - Stock refresh completed for 316 SKUs
+2026-09-18 18:25:27.671 INFO  [sync-service,74c9ef8b9d0b4ce5,dd114ddf] [http-nio-8082-exec-4] com.example.sync.StockLevelService - Stock refresh completed for 284 SKUs
+2026-09-18 18:26:49.081 INFO  [sync-service,e7b648a8ebd868cb,626e4b41] [http-nio-8082-exec-3] com.example.sync.ShipmentEventConsumer - Consumed 241 shipment events from partition 2
+2026-09-18 18:27:03.598 DEBUG [sync-service,0401ea188023a18d,67a3228e] [http-nio-8082-exec-3] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-3]
+2026-09-18 18:27:18.365 INFO  [sync-service,cb577e666064c8ba,6213a58e] [report-builder-3] com.example.sync.ShipmentEventConsumer - Consumed 247 shipment events from partition 1
+2026-09-18 18:27:39.077 INFO  [sync-service,410924a3d5ac5007,26235fe1] [report-builder-2] com.example.sync.InventoryReportService - Daily report for region north built, 476 dealers
+2026-09-18 18:28:21.166 INFO  [sync-service,26aad6c386eb52c0,b35c3897] [report-builder-5] com.example.sync.StockLevelService - Stock refresh completed for 760 SKUs
+2026-09-18 18:29:10.381 INFO  [sync-service,1aa54831b3c0c2db,57165d53] [report-builder-2] com.example.sync.ShipmentEventConsumer - Consumed 187 shipment events from partition 2
+2026-09-18 18:31:21.484 INFO  [sync-service,cf0f0fd1d97829bf,30e08106] [http-nio-8082-exec-5] com.example.sync.ShipmentEventConsumer - Consumed 89 shipment events from partition 1
+2026-09-18 18:31:43.817 DEBUG [sync-service,1e8964c77a3ecff3,3ccae61b] [report-builder-4] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-4]
+2026-09-18 18:33:12.458 WARN  [sync-service,d0498fcb8f8a128a,80c140f2] [http-nio-8082-exec-2] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-4, retrying
+2026-09-18 18:35:37.678 INFO  [sync-service,1d3f7f10dd4b94e4,a7b19fe4] [report-builder-5] com.example.sync.ShipmentEventConsumer - Consumed 132 shipment events from partition 1
+2026-09-18 18:36:12.773 INFO  [sync-service,8d9a69d1c92d17f7,c2e0281c] [report-builder-4] com.example.sync.StockLevelService - Stock refresh completed for 436 SKUs
+2026-09-18 18:36:26.180 WARN  [sync-service,49e2de306ad5de28,77d3054b] [http-nio-8082-exec-6] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-0, retrying
+2026-09-18 18:36:37.034 DEBUG [sync-service,42a908c242f27675,b614c711] [report-builder-3] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-5]
+2026-09-18 18:36:49.468 DEBUG [sync-service,cf7b6b8c4c179070,f8d36359] [report-builder-4] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-4]
+2026-09-18 18:37:03.590 INFO  [sync-service,a1ad56651e4f8d78,715248d1] [report-builder-9] com.example.sync.StockLevelService - Stock refresh completed for 675 SKUs
+2026-09-18 18:37:05.483 DEBUG [sync-service,2f37bf2bb72a5acd,04965922] [http-nio-8082-exec-8] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-3]
+2026-09-18 18:38:05.548 INFO  [sync-service,317028b2ce1bcc31,6a16b7dc] [report-builder-4] com.example.sync.InventoryReportService - Daily report for region south built, 754 dealers
+2026-09-18 18:40:56.445 INFO  [sync-service,8344f00759ea6343,4bcedbe6] [http-nio-8082-exec-1] com.example.sync.InventoryReportService - Daily report for region west built, 955 dealers
+2026-09-18 18:41:50.146 INFO  [sync-service,f72fc82a13d9d157,ccbe9c45] [http-nio-8082-exec-5] com.example.sync.InventoryReportService - Daily report for region west built, 635 dealers
+2026-09-18 18:42:23.015 DEBUG [sync-service,26beae6b132b2b96,3323a013] [http-nio-8082-exec-3] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-1]
+2026-09-18 18:42:53.019 WARN  [sync-service,20c3d4e13c2dcf1e,66ca9090] [report-builder-3] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 18:43:52.997 DEBUG [sync-service,bf1f4c001c872d0d,e5b3728f] [report-builder-8] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-2]
+2026-09-18 18:44:14.394 DEBUG [sync-service,9a80e5c560bb2a45,b80dd6eb] [http-nio-8082-exec-1] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-2]
+2026-09-18 18:44:39.308 DEBUG [sync-service,c9fd304de7352fea,3677cef7] [report-builder-1] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-0]
+2026-09-18 18:44:48.335 INFO  [sync-service,ee04575f48b996d1,6f0fbb8b] [report-builder-7] com.example.sync.StockLevelService - Stock refresh completed for 172 SKUs
+2026-09-18 18:45:39.161 INFO  [sync-service,ce178cad3d9eb201,bb0ff63a] [http-nio-8082-exec-1] com.example.sync.InventoryReportService - Daily report for region west built, 901 dealers
+2026-09-18 18:45:58.129 INFO  [sync-service,983a89048cfceae2,8966d4b2] [http-nio-8082-exec-8] com.example.sync.ShipmentEventConsumer - Consumed 66 shipment events from partition 3
+2026-09-18 18:46:28.447 WARN  [sync-service,f16a8ac476843491,f240722d] [report-builder-7] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-2, retrying
+2026-09-18 18:47:03.793 DEBUG [sync-service,eb710b0460d751f6,cf7f846d] [report-builder-4] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-2]
+2026-09-18 18:50:39.858 WARN  [sync-service,2746fd9bfe845db9,6fb17297] [report-builder-6] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-2, retrying
+2026-09-18 18:53:00.241 WARN  [sync-service,bf96d211465388ac,4e8e9932] [http-nio-8082-exec-3] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-4, retrying
+2026-09-18 18:53:02.963 WARN  [sync-service,daf7e39979f287c9,b245d90f] [report-builder-9] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 18:54:18.603 INFO  [sync-service,1fabf5e30f8658b6,e90010a4] [report-builder-6] com.example.sync.InventoryReportService - Daily report for region north built, 799 dealers
+2026-09-18 18:54:40.084 WARN  [sync-service,93357581c3c5414e,522dbcb8] [http-nio-8082-exec-8] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-1, retrying
+2026-09-18 18:54:43.438 INFO  [sync-service,b0352cd8ab608682,49f01da6] [http-nio-8082-exec-8] com.example.sync.InventoryReportService - Daily report for region west built, 1288 dealers
+2026-09-18 18:54:43.859 INFO  [sync-service,ba1d2f3ad5a15d13,7d8db83d] [http-nio-8082-exec-1] com.example.sync.ShipmentEventConsumer - Consumed 185 shipment events from partition 4
+2026-09-18 18:55:06.771 INFO  [sync-service,b30bcafca67c3433,92ad9b07] [http-nio-8082-exec-3] com.example.sync.StockLevelService - Stock refresh completed for 156 SKUs
+2026-09-18 18:57:12.630 INFO  [sync-service,6168fd20ad8c5301,abda1b7d] [http-nio-8082-exec-7] com.example.sync.InventoryReportService - Daily report for region south built, 448 dealers
+2026-09-18 18:58:22.924 WARN  [sync-service,fa4833526a5ef36a,f737ef08] [report-builder-1] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-5, retrying
+2026-09-18 18:59:28.458 DEBUG [sync-service,1e9f4bb48f75eb25,2fba9c9c] [report-builder-9] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-3]
+2026-09-18 19:03:37.165 INFO  [sync-service,ee6cf529de80f561,84b238b3] [report-builder-6] com.example.sync.ShipmentEventConsumer - Consumed 18 shipment events from partition 5
+2026-09-18 19:04:15.932 INFO  [sync-service,0359a3004197fb21,a0247f13] [report-builder-8] com.example.sync.ShipmentEventConsumer - Consumed 284 shipment events from partition 3
+2026-09-18 19:04:33.312 INFO  [sync-service,93e63764556ce248,b5e2e2da] [report-builder-5] com.example.sync.InventoryReportService - Daily report for region north built, 463 dealers
+2026-09-18 19:05:24.543 INFO  [sync-service,f86e0f30a8368d51,cbb7d978] [report-builder-2] com.example.sync.StockLevelService - Stock refresh completed for 392 SKUs
+2026-09-18 19:05:42.439 WARN  [sync-service,0ecd24c7817f04ab,d2469bb4] [http-nio-8082-exec-2] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 19:06:23.758 INFO  [sync-service,ccb9bfd0ba25f63d,cc71ca72] [report-builder-9] com.example.sync.ShipmentEventConsumer - Consumed 139 shipment events from partition 1
+2026-09-18 19:06:59.155 INFO  [sync-service,3216698c6d406536,487729c7] [report-builder-7] com.example.sync.ShipmentEventConsumer - Consumed 123 shipment events from partition 4
+2026-09-18 19:07:09.091 WARN  [sync-service,abc473a9bcf34872,06639e8c] [report-builder-3] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-1, retrying
+2026-09-18 19:07:09.629 INFO  [sync-service,030688592dd49416,8c8bd5ae] [report-builder-9] com.example.sync.InventoryReportService - Daily report for region east built, 1149 dealers
+2026-09-18 19:08:22.302 DEBUG [sync-service,d0efd3457f64ba6f,1197c7f1] [report-builder-8] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-2]
+2026-09-18 19:08:33.468 WARN  [sync-service,74d943d0c26acfec,9eff4687] [report-builder-4] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-2, retrying
+2026-09-18 19:11:09.465 DEBUG [sync-service,c17003563620d054,94ddf3e2] [http-nio-8082-exec-5] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-1]
+2026-09-18 19:11:38.007 DEBUG [sync-service,dd4230d0f498ee54,e1be67d1] [report-builder-3] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-4]
+2026-09-18 19:12:12.029 WARN  [sync-service,23b03cc59e750b23,9919787f] [http-nio-8082-exec-8] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-4, retrying
+2026-09-18 19:12:27.779 DEBUG [sync-service,04970c234ebed7f8,c7e52ce2] [http-nio-8082-exec-5] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-4]
+2026-09-18 19:13:49.106 INFO  [sync-service,087f2ce1d66c01ec,53c06054] [http-nio-8082-exec-8] com.example.sync.ShipmentEventConsumer - Consumed 85 shipment events from partition 3
+2026-09-18 19:14:43.280 INFO  [sync-service,351b945f0d69d097,208aa92e] [http-nio-8082-exec-3] com.example.sync.InventoryReportService - Daily report for region east built, 748 dealers
+2026-09-18 19:15:11.714 WARN  [sync-service,0718dd592862235a,1060e695] [http-nio-8082-exec-2] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-2, retrying
+2026-09-18 19:15:50.073 DEBUG [sync-service,285ae2aaff5c0221,c3cf3465] [report-builder-7] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-2]
+2026-09-18 19:17:07.568 INFO  [sync-service,688ae54c3f69acb1,71433fff] [http-nio-8082-exec-6] com.example.sync.InventoryReportService - Daily report for region south built, 674 dealers
+2026-09-18 19:18:12.218 DEBUG [sync-service,f164d6f465a39cf9,0b593504] [http-nio-8082-exec-3] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-5]
+2026-09-18 19:18:21.123 WARN  [sync-service,df372dd7ca2ecb46,4eb1eeb2] [report-builder-1] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-4, retrying
+2026-09-18 19:19:00.652 DEBUG [sync-service,1d73331e1fca3329,0502bffd] [report-builder-6] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-2]
+2026-09-18 19:19:46.865 INFO  [sync-service,1c4c097d1296754f,a037b4d4] [http-nio-8082-exec-7] com.example.sync.InventoryReportService - Daily report for region east built, 1241 dealers
+2026-09-18 19:20:37.714 DEBUG [sync-service,ab2c74ee26f59543,07b69cb5] [http-nio-8082-exec-7] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-4]
+2026-09-18 19:21:09.127 INFO  [sync-service,96e6fcf6490c11b1,096917c9] [report-builder-3] com.example.sync.ShipmentEventConsumer - Consumed 189 shipment events from partition 4
+2026-09-18 19:21:31.442 INFO  [sync-service,a4c600673cd48589,620e4e46] [http-nio-8082-exec-5] com.example.sync.ShipmentEventConsumer - Consumed 149 shipment events from partition 3
+2026-09-18 19:22:51.423 INFO  [sync-service,bbc97c95e4dcfdb9,4df96d02] [http-nio-8082-exec-4] com.example.sync.InventoryReportService - Daily report for region south built, 1387 dealers
+2026-09-18 19:24:15.742 DEBUG [sync-service,e916a67124794404,e4144867] [http-nio-8082-exec-4] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-0]
+2026-09-18 19:24:34.949 WARN  [sync-service,58ae17afc596025b,ed94f367] [report-builder-2] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-1, retrying
+2026-09-18 19:27:22.399 WARN  [sync-service,4e912717cf771fc2,d26f978d] [report-builder-9] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-1, retrying
+2026-09-18 19:29:20.560 INFO  [sync-service,f65d66a3cb5536a0,ba654d5f] [http-nio-8082-exec-6] com.example.sync.StockLevelService - Stock refresh completed for 557 SKUs
+2026-09-18 19:32:21.654 INFO  [sync-service,e8d1001504717cd1,c86c15b8] [report-builder-2] com.example.sync.StockLevelService - Stock refresh completed for 834 SKUs
+2026-09-18 19:33:01.185 WARN  [sync-service,c48f5d1777c5b48a,36e09b4d] [http-nio-8082-exec-9] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 19:33:19.075 INFO  [sync-service,2d0d0773f997e9ec,04274f1d] [http-nio-8082-exec-7] com.example.sync.InventoryReportService - Daily report for region south built, 986 dealers
+2026-09-18 19:33:36.684 INFO  [sync-service,b4488ab76cba9591,4445f3d5] [http-nio-8082-exec-7] com.example.sync.InventoryReportService - Daily report for region east built, 867 dealers
+2026-09-18 19:34:29.522 INFO  [sync-service,f4be3f7d5c9c1e1d,036ba01b] [report-builder-8] com.example.sync.StockLevelService - Stock refresh completed for 725 SKUs
+2026-09-18 19:34:49.434 WARN  [sync-service,d05adf5e017132e4,d05c76b2] [report-builder-4] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 19:35:36.650 INFO  [sync-service,e1c1d451a875bce2,636eaba7] [report-builder-2] com.example.sync.StockLevelService - Stock refresh completed for 422 SKUs
+2026-09-18 19:36:08.067 INFO  [sync-service,7e4250f8b1ad06e4,5b2dba91] [report-builder-6] com.example.sync.InventoryReportService - Daily report for region north built, 589 dealers
+2026-09-18 19:36:23.967 INFO  [sync-service,0be24781c94927db,58c07e6a] [report-builder-7] com.example.sync.StockLevelService - Stock refresh completed for 131 SKUs
+2026-09-18 19:37:38.519 WARN  [sync-service,18fa1c3197d8db5e,57274283] [http-nio-8082-exec-4] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 19:37:56.278 INFO  [sync-service,e8d7bc118579f937,b006f3f3] [report-builder-8] com.example.sync.ShipmentEventConsumer - Consumed 40 shipment events from partition 2
+2026-09-18 19:38:06.833 INFO  [sync-service,def2ca94f78cd416,350463d2] [report-builder-8] com.example.sync.ShipmentEventConsumer - Consumed 298 shipment events from partition 1
+2026-09-18 19:38:22.290 DEBUG [sync-service,ded2b5a3520f0c23,99e6a14d] [report-builder-2] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-5]
+2026-09-18 19:38:52.027 INFO  [sync-service,3709d67275b8d4cc,f7fbd2f7] [report-builder-2] com.example.sync.StockLevelService - Stock refresh completed for 478 SKUs
+2026-09-18 19:39:03.054 WARN  [sync-service,49c375a5398ed009,5a7df6f5] [report-builder-7] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-1, retrying
+2026-09-18 19:40:06.556 INFO  [sync-service,ddd40b85cc79c696,ebb06969] [report-builder-8] com.example.sync.StockLevelService - Stock refresh completed for 109 SKUs
+2026-09-18 19:40:15.011 INFO  [sync-service,2f92939f731882bc,ab31742d] [report-builder-9] com.example.sync.ShipmentEventConsumer - Consumed 167 shipment events from partition 3
+2026-09-18 19:41:22.058 INFO  [sync-service,f3e4d8fb828256f7,2ba3e7d4] [report-builder-2] com.example.sync.ShipmentEventConsumer - Consumed 114 shipment events from partition 4
+2026-09-18 19:43:45.441 WARN  [sync-service,b2c75d8461329955,2ba354df] [http-nio-8082-exec-3] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-4, retrying
+2026-09-18 19:43:48.016 INFO  [sync-service,423d681577937e31,eb1a1086] [report-builder-3] com.example.sync.StockLevelService - Stock refresh completed for 859 SKUs
+2026-09-18 19:44:57.885 DEBUG [sync-service,70565dbc5b65e0b5,6651e23c] [http-nio-8082-exec-2] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-1]
+2026-09-18 19:46:52.884 DEBUG [sync-service,2803f39f887afa58,97ca8539] [report-builder-5] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-4]
+2026-09-18 19:47:08.265 DEBUG [sync-service,127c0892df3e5d68,c1922343] [http-nio-8082-exec-8] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-0]
+2026-09-18 19:48:07.700 INFO  [sync-service,932c52a49990c873,30962d04] [report-builder-8] com.example.sync.InventoryReportService - Daily report for region west built, 525 dealers
+2026-09-18 19:48:58.381 WARN  [sync-service,7f6c815c2f923269,b5589085] [http-nio-8082-exec-2] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 19:50:28.183 WARN  [sync-service,d9d8ac17d725a23c,4edb56c8] [report-builder-6] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-1, retrying
+2026-09-18 19:51:16.263 INFO  [sync-service,820c4d72fe6773f7,df7b90de] [report-builder-2] com.example.sync.ShipmentEventConsumer - Consumed 264 shipment events from partition 2
+2026-09-18 19:52:56.869 INFO  [sync-service,0dbec23861bfd417,634fd9d5] [report-builder-1] com.example.sync.InventoryReportService - Daily report for region south built, 1306 dealers
+2026-09-18 19:53:12.808 DEBUG [sync-service,15c67b685aa77092,484cfa02] [http-nio-8082-exec-3] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-2]
+2026-09-18 19:55:33.630 DEBUG [sync-service,107c3f396e46fcbe,a7aa9566] [report-builder-8] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-2]
+2026-09-18 19:55:38.712 WARN  [sync-service,bb7cbe6fcfb9e598,775ab7f2] [http-nio-8082-exec-8] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-1, retrying
+2026-09-18 19:57:33.899 DEBUG [sync-service,f5a09f283119df99,4e69eb83] [http-nio-8082-exec-8] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-2]
+2026-09-18 19:58:46.944 INFO  [sync-service,4b6f29cef3d69192,1687af3e] [report-builder-9] com.example.sync.InventoryReportService - Daily report for region east built, 413 dealers
+2026-09-18 20:01:02.800 WARN  [sync-service,3fe68a001a360b03,e7b4141e] [report-builder-7] com.example.sync.InventoryReportService - Slow report build: region=south dealers=994 queries=1191 duration=10516ms (InventoryReportService.java:30)
+2026-09-18 20:05:15.038 WARN  [sync-service,9614da4d517d8c73,639b95e1] [report-builder-4] com.example.sync.InventoryReportService - Slow report build: region=west dealers=913 queries=1259 duration=22055ms (InventoryReportService.java:30)
+2026-09-18 20:12:04.933 INFO  [sync-service,69a35ccbae79c785,6e4b3c04] [report-builder-7] com.example.sync.ShipmentEventConsumer - Consumed 168 shipment events from partition 2
+2026-09-18 20:17:58.579 WARN  [sync-service,50908494f03c1c10,f7f25f4f] [report-builder-4] com.example.sync.InventoryReportService - Slow report build: region=west dealers=902 queries=908 duration=21200ms (InventoryReportService.java:30)
+2026-09-18 20:34:41.039 INFO  [sync-service,e243a8ac9349361b,97116842] [report-builder-8] com.example.sync.InventoryReportService - Daily report for region east built, 1367 dealers
+2026-09-18 20:35:36.981 INFO  [sync-service,817bcb7cb3bd0cd3,f7922283] [report-builder-7] com.example.sync.InventoryReportService - Daily report for region west built, 627 dealers
+2026-09-18 20:36:41.001 DEBUG [sync-service,8e583288f51360ca,8a0bbf29] [http-nio-8082-exec-2] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-1]
+2026-09-18 20:45:05.185 DEBUG [sync-service,4472e1cc558aa172,bd156689] [http-nio-8082-exec-9] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-5]
+2026-09-18 20:51:54.255 WARN  [sync-service,a907f237cb67526d,599565d7] [report-builder-6] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-5, retrying
+2026-09-18 20:56:50.451 INFO  [sync-service,cc48a793f1ac1d13,4caf3214] [http-nio-8082-exec-5] com.example.sync.InventoryReportService - Daily report for region east built, 675 dealers
+2026-09-18 21:04:00.369 INFO  [sync-service,9ed9ddb67392016f,6686d7c3] [report-builder-9] com.example.sync.StockLevelService - Stock refresh completed for 731 SKUs
+2026-09-18 21:12:24.129 DEBUG [sync-service,7e2d5f2b4ba91248,8a3d8c7a] [report-builder-8] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-2]
+2026-09-18 21:14:11.353 INFO  [sync-service,2b1a184bf559bb58,9ee1f54e] [http-nio-8082-exec-8] com.example.sync.ShipmentEventConsumer - Consumed 147 shipment events from partition 3
+2026-09-18 21:16:16.127 INFO  [sync-service,608ee2b2af190973,99479983] [http-nio-8082-exec-2] com.example.sync.InventoryReportService - Daily report for region west built, 1101 dealers
+2026-09-18 21:16:21.221 INFO  [sync-service,ff0b5ec58c5f55fa,268e9ffa] [report-builder-5] com.example.sync.StockLevelService - Stock refresh completed for 120 SKUs
+2026-09-18 21:17:06.527 WARN  [sync-service,464b1df9e822d079,c465e56b] [http-nio-8082-exec-2] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-5, retrying
+2026-09-18 21:36:47.769 INFO  [sync-service,1e6a459138649363,825177d0] [report-builder-1] com.example.sync.StockLevelService - Stock refresh completed for 655 SKUs
+2026-09-18 21:42:55.804 INFO  [sync-service,ea04d8cff089a9ce,891c7619] [http-nio-8082-exec-8] com.example.sync.ShipmentEventConsumer - Consumed 193 shipment events from partition 0
+2026-09-18 21:48:47.416 DEBUG [sync-service,5c3d3cb65d738f1e,bfc84c85] [report-builder-3] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-1]
+2026-09-18 21:59:02.809 INFO  [sync-service,95662fe7cf9a94b7,a6eae20e] [http-nio-8082-exec-2] com.example.sync.ShipmentEventConsumer - Consumed 257 shipment events from partition 2
+2026-09-18 22:04:49.942 WARN  [sync-service,2fc9debdb1c3bcb7,69788536] [report-builder-5] com.example.sync.InventoryReportService - Slow report build: region=west dealers=1167 queries=1059 duration=11819ms (InventoryReportService.java:30)
+2026-09-18 22:24:34.258 INFO  [sync-service,bd952897d93804b6,ad6593f7] [http-nio-8082-exec-7] com.example.sync.StockLevelService - Stock refresh completed for 138 SKUs
+2026-09-18 22:31:39.531 DEBUG [sync-service,3fb044572049232b,8dfacdaa] [report-builder-8] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-0]
+2026-09-18 22:41:56.849 WARN  [sync-service,a3bfa95c6835e8d8,6ccbedc0] [report-builder-8] com.example.sync.InventoryReportService - Slow report build: region=west dealers=1092 queries=1026 duration=21715ms (InventoryReportService.java:30)
+2026-09-18 22:42:20.763 INFO  [sync-service,b23ddf04fc219fa2,e23c8907] [http-nio-8082-exec-6] com.example.sync.ShipmentEventConsumer - Consumed 151 shipment events from partition 4
+2026-09-18 22:48:41.085 INFO  [sync-service,3f3b55529d07213f,eb65518d] [report-builder-8] com.example.sync.InventoryReportService - Daily report for region east built, 1294 dealers
+2026-09-18 22:49:05.007 INFO  [sync-service,e9ad9f77ede45b8c,4a57da57] [report-builder-5] com.example.sync.ShipmentEventConsumer - Consumed 174 shipment events from partition 3
+2026-09-18 22:51:16.726 INFO  [sync-service,d927af71e1cb8b4c,e8f90f93] [report-builder-6] com.example.sync.ShipmentEventConsumer - Consumed 85 shipment events from partition 4
+2026-09-18 22:52:13.981 DEBUG [sync-service,375ee61b83894be2,01f6675d] [report-builder-6] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-5]
+2026-09-18 23:08:12.807 WARN  [sync-service,a95572f64b12fcce,c0279ad7] [report-builder-3] com.example.sync.InventoryReportService - Slow report build: region=east dealers=1264 queries=1172 duration=10848ms (InventoryReportService.java:30)
+2026-09-18 23:10:03.791 DEBUG [sync-service,ac1f25b015448cf9,62787ed2] [report-builder-8] org.springframework.kafka.listener.KafkaMessageListenerContainer - partitions assigned: [shipment-events-1]
+2026-09-18 23:16:33.102 WARN  [sync-service,3aba4a99c0b3c547,7179de11] [report-builder-5] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-3, retrying
+2026-09-18 23:17:15.443 WARN  [sync-service,e3484f2a86d27cbf,969f4fdc] [http-nio-8082-exec-8] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-5, retrying
+2026-09-18 23:18:05.178 INFO  [sync-service,9e575e8e348cf9f8,e9a9cac2] [report-builder-9] com.example.sync.InventoryReportService - Daily report for region west built, 1231 dealers
+2026-09-18 23:18:32.605 INFO  [sync-service,d8dac9dc285c079a,c07f2dcc] [report-builder-8] com.example.sync.StockLevelService - Stock refresh completed for 332 SKUs
+2026-09-18 23:25:38.580 INFO  [sync-service,d6bc477fca864f17,428347df] [http-nio-8082-exec-2] com.example.sync.StockLevelService - Stock refresh completed for 632 SKUs
+2026-09-18 23:42:15.329 WARN  [sync-service,5a679a079435cd02,bbec8627] [report-builder-6] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-4, retrying
+2026-09-18 23:44:56.250 WARN  [sync-service,e357a1b11a05f779,3a68cffb] [report-builder-6] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - Offset commit failed on partition shipment-events-2, retrying
+2026-09-18 23:44:57.510 WARN  [sync-service,5409af69c2dd60e5,2c1fdf78] [http-nio-8082-exec-8] com.example.sync.InventoryReportService - Slow report build: region=east dealers=1112 queries=1238 duration=25259ms (InventoryReportService.java:30)
+2026-09-18 23:53:30.015 INFO  [sync-service,599b11ec45534b72,3254491e] [http-nio-8082-exec-4] com.example.sync.ShipmentEventConsumer - Consumed 286 shipment events from partition 5
+2026-09-18 23:55:54.743 INFO  [sync-service,a7dc73428173837c,43058c4a] [report-builder-3] com.example.sync.ShipmentEventConsumer - Consumed 23 shipment events from partition 4
+2026-09-18 23:58:51.905 INFO  [sync-service,a86058dd65ae0b28,d64a9724] [report-builder-9] com.example.sync.InventoryReportService - Daily report for region north built, 968 dealers

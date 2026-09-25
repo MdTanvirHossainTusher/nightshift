@@ -1,0 +1,35 @@
+# Normalise line endings in the repository, and control what lands in a Windows
+# working tree.
+#
+# The gradlew and Dockerfile entries are not cosmetic. Both are executed by a
+# Linux shell inside the Docker build and in CI, and a CRLF line ending on the
+# shebang line makes the interpreter path end in \r — which fails as
+# `/bin/sh^M: bad interpreter: No such file or directory`. On Windows with
+# core.autocrlf=true that is exactly what checkout would produce, so these files
+# are pinned to LF regardless of platform.
+
+* text=auto eol=lf
+
+# Must stay LF: executed by a shell in a container or on a CI runner.
+gradlew        text eol=lf
+*.sh           text eol=lf
+Dockerfile     text eol=lf
+*.yml          text eol=lf
+*.yaml         text eol=lf
+
+# Windows-only, so CRLF is correct here.
+gradlew.bat    text eol=crlf
+*.cmd          text eol=crlf
+
+# Binary: never touched, never diffed as text.
+*.jar          binary
+*.png          binary
+*.jpg          binary
+*.gz           binary
+*.zip          binary
+*.mmdb         binary
+
+# The demo dataset. Committed on purpose, but it is generated output: collapsing
+# it in review keeps a regeneration from burying a real change in 23 000 lines of
+# diff noise.
+demo/logs/**   linguist-generated=true

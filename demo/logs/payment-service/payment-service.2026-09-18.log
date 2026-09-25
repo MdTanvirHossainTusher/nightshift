@@ -1,0 +1,935 @@
+2026-09-18 00:04:32.588 WARN  [payment-service,3b0470dfe8b0964b,2b0d2c93] [http-nio-8081-exec-1] com.example.payment.SettlementApiClient - Upstream latency 1231ms exceeds the 1000ms budget
+2026-09-18 00:05:11.373 WARN  [payment-service,8f78b33773787987,e8ae92ef] [settlement-3] com.example.payment.SettlementApiClient - Upstream latency 2595ms exceeds the 1000ms budget
+2026-09-18 00:26:15.110 INFO  [payment-service,2973910d8d72905b,6fe9347a] [http-nio-8081-exec-9] com.example.payment.PaymentRetryClient - Settled reference SET-492333 amount=56389
+2026-09-18 00:28:04.531 DEBUG [payment-service,f0ee6c40c30e06f3,e9e50630] [settlement-2] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 516ms
+2026-09-18 00:29:12.384 INFO  [payment-service,3456d33ebaf262bc,db1e493f] [settlement-3] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 182ms
+2026-09-18 00:30:49.155 WARN  [payment-service,7f7b6023d5e65639,b11c48a7] [http-nio-8081-exec-3] com.example.payment.SettlementApiClient - Upstream latency 1463ms exceeds the 1000ms budget
+2026-09-18 00:45:23.386 DEBUG [payment-service,8f4248c777710d12,2c595289] [http-nio-8081-exec-8] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 848ms
+2026-09-18 00:49:14.621 INFO  [payment-service,a4d11462503ba0c0,177fd072] [http-nio-8081-exec-4] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 144ms
+2026-09-18 00:49:16.466 DEBUG [payment-service,22bfdaafe48d4903,1215e242] [http-nio-8081-exec-3] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 316ms
+2026-09-18 00:49:28.227 INFO  [payment-service,472274ce9d331fd8,584e4db9] [http-nio-8081-exec-7] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 314ms
+2026-09-18 00:51:30.671 WARN  [payment-service,9795ce3ba4391c7e,1e258f61] [http-nio-8081-exec-8] com.example.payment.SettlementApiClient - Upstream latency 2247ms exceeds the 1000ms budget
+2026-09-18 00:52:34.322 DEBUG [payment-service,cf06794d2ce4fdaa,33d30359] [http-nio-8081-exec-9] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 182ms
+2026-09-18 00:55:40.096 DEBUG [payment-service,cd29c4acb2848457,282ba675] [settlement-4] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 584ms
+2026-09-18 00:56:57.828 WARN  [payment-service,c977f7486c5565a0,c41b911f] [http-nio-8081-exec-3] com.example.payment.SettlementApiClient - Upstream latency 1640ms exceeds the 1000ms budget
+2026-09-18 01:06:41.044 WARN  [payment-service,71c64a3cd8e32e7a,344c8716] [http-nio-8081-exec-7] com.example.payment.SettlementApiClient - Upstream latency 1442ms exceeds the 1000ms budget
+2026-09-18 01:10:34.869 WARN  [payment-service,8c9a96f3ce43f187,5f49629f] [settlement-9] com.example.payment.SettlementApiClient - Upstream latency 1334ms exceeds the 1000ms budget
+2026-09-18 01:14:01.508 INFO  [payment-service,1b7248d664557160,112a8445] [http-nio-8081-exec-3] com.example.payment.PaymentRetryClient - Settled reference SET-546678 amount=71990
+2026-09-18 01:33:17.386 INFO  [payment-service,8146050aeb4b8925,ca3eded0] [settlement-1] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 177ms
+2026-09-18 01:41:09.024 DEBUG [payment-service,93ab8985e070bfb2,415673cc] [http-nio-8081-exec-8] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 834ms
+2026-09-18 01:50:21.895 INFO  [payment-service,d20b67863b17dc99,c9cd3663] [settlement-4] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 247ms
+2026-09-18 02:07:22.877 INFO  [payment-service,be553383ed742f82,304816d8] [settlement-1] com.example.payment.PaymentRetryClient - Settled reference SET-780059 amount=25403
+2026-09-18 02:10:24.867 DEBUG [payment-service,842de3c88d37774e,8eb0b9b8] [settlement-8] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 96ms
+2026-09-18 02:12:21.702 DEBUG [payment-service,0f82e30342de5bab,fab742b4] [http-nio-8081-exec-2] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 564ms
+2026-09-18 02:20:15.910 WARN  [payment-service,6ebff3c882a8ad07,d8a5af7e] [settlement-5] org.springframework.boot.context.config.ConfigDataEnvironment - Property 'spring.datasource.initialization-mode' is deprecated and will be removed in a future release
+2026-09-18 02:24:20.588 DEBUG [payment-service,7f79f26c50f84789,6929a2d5] [http-nio-8081-exec-4] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 678ms
+2026-09-18 02:27:02.729 WARN  [payment-service,b2b222f48e93dfc5,839023e7] [http-nio-8081-exec-4] org.springframework.boot.context.config.ConfigDataEnvironment - Property 'spring.datasource.initialization-mode' is deprecated and will be removed in a future release
+2026-09-18 02:32:09.488 WARN  [payment-service,7f5ec2deab82aad9,346953fd] [settlement-2] com.example.payment.SettlementApiClient - Upstream latency 1967ms exceeds the 1000ms budget
+2026-09-18 02:33:06.802 INFO  [payment-service,84278c382572e7ba,4ae6eaf5] [settlement-9] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 117ms
+2026-09-18 02:43:37.387 INFO  [payment-service,8271ba903e59dfb3,0d1b9247] [http-nio-8081-exec-4] com.example.payment.PaymentRetryClient - Settled reference SET-490445 amount=44575
+2026-09-18 02:43:39.174 INFO  [payment-service,a94e629b1b678044,e36efa6f] [http-nio-8081-exec-5] com.example.payment.ReconciliationJob - Reconciled 495 rows, 2 mismatches
+2026-09-18 02:53:08.419 ERROR [payment-service,8fa91a42aa4d9b5c,87c5b901] [http-nio-8081-exec-3] com.example.payment.PayoutController - Payout preview failed for payee 69325
+java.lang.NullPointerException: Cannot invoke "String.charAt(int)" because "middleName" is null
+	at com.example.common.NameFormatter.initials(NameFormatter.java:22)
+	at com.example.payment.PaymentProfileEnricher.payeeInitials(PaymentProfileEnricher.java:15)
+	at com.example.payment.PayoutController.preview(PayoutController.java:112)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-09-18 02:57:02.388 WARN  [payment-service,6f60087f281a2069,abbcf754] [http-nio-8081-exec-8] com.example.payment.SettlementApiClient - Upstream latency 1540ms exceeds the 1000ms budget
+2026-09-18 03:20:18.576 INFO  [payment-service,ca5847a4d47f16fe,b6aa0569] [http-nio-8081-exec-8] com.example.payment.ReconciliationJob - Reconciled 214 rows, 2 mismatches
+2026-09-18 03:34:31.034 INFO  [payment-service,bb9b41da9081f664,bc10013e] [settlement-1] com.example.payment.PaymentRetryClient - Settled reference SET-235022 amount=13518
+2026-09-18 03:40:42.325 INFO  [payment-service,f45fd29a2c358e3d,78595060] [settlement-4] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 297ms
+2026-09-18 03:41:31.144 DEBUG [payment-service,2c100506127d4491,588de354] [settlement-5] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 637ms
+2026-09-18 04:21:33.555 DEBUG [payment-service,c1105cd9c9a5d8a1,e30d37fe] [http-nio-8081-exec-1] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 557ms
+2026-09-18 04:24:42.367 INFO  [payment-service,02a596cc881c6639,60c99d4d] [settlement-7] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 304ms
+2026-09-18 04:32:08.929 ERROR [payment-service,ffdc6f29cad1f339,762ffb33] [settlement-7] com.example.payment.PayoutController - Payout preview failed for payee 50069
+java.lang.NullPointerException: Cannot invoke "String.charAt(int)" because "middleName" is null
+	at com.example.common.NameFormatter.initials(NameFormatter.java:22)
+	at com.example.payment.PaymentProfileEnricher.payeeInitials(PaymentProfileEnricher.java:15)
+	at com.example.payment.PayoutController.preview(PayoutController.java:112)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-09-18 04:41:10.193 INFO  [payment-service,440cc1ca248059ac,08225131] [http-nio-8081-exec-2] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 258ms
+2026-09-18 04:41:55.292 INFO  [payment-service,acfa53b889766f11,34030228] [settlement-1] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 105ms
+2026-09-18 04:49:13.102 INFO  [payment-service,ec5d5ddcdda22b9a,eaa417ec] [http-nio-8081-exec-8] com.example.payment.PaymentRetryClient - Settled reference SET-322993 amount=22121
+2026-09-18 04:59:44.373 INFO  [payment-service,90f3184f89d1a012,1e3e4851] [http-nio-8081-exec-3] com.example.payment.PaymentRetryClient - Settled reference SET-825240 amount=70915
+2026-09-18 05:08:29.658 INFO  [payment-service,27fcba8152e84708,192c8000] [http-nio-8081-exec-4] com.example.payment.ReconciliationJob - Reconciled 914 rows, 3 mismatches
+2026-09-18 05:23:47.076 INFO  [payment-service,fe183519de2c7638,4415ac53] [settlement-9] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 182ms
+2026-09-18 05:49:10.281 INFO  [payment-service,80f2811c49323608,e2799358] [http-nio-8081-exec-4] com.example.payment.PaymentRetryClient - Settled reference SET-320572 amount=12114
+2026-09-18 05:49:52.254 INFO  [payment-service,1536ad2df656b011,fcda33ae] [http-nio-8081-exec-1] com.example.payment.ReconciliationJob - Reconciled 708 rows, 3 mismatches
+2026-09-18 05:53:19.640 INFO  [payment-service,a167400bf59a9b8d,ad32c794] [settlement-5] com.example.payment.PaymentRetryClient - Settled reference SET-800186 amount=22800
+2026-09-18 05:58:56.116 WARN  [payment-service,2e94d36103062ac5,b504c075] [http-nio-8081-exec-2] com.example.payment.SettlementApiClient - Upstream latency 2523ms exceeds the 1000ms budget
+2026-09-18 06:04:26.954 INFO  [payment-service,958b33f66cd3260b,2f997406] [settlement-9] com.example.payment.ReconciliationJob - Reconciled 333 rows, 3 mismatches
+2026-09-18 06:08:50.093 INFO  [payment-service,e822a7fc14127760,5557bd44] [settlement-4] com.example.payment.ReconciliationJob - Reconciled 1060 rows, 2 mismatches
+2026-09-18 06:26:20.787 INFO  [payment-service,b63d0d6ee51675bb,effc98fa] [settlement-1] com.example.payment.ReconciliationJob - Reconciled 111 rows, 0 mismatches
+2026-09-18 06:35:08.715 INFO  [payment-service,02cd459acf87edfb,37fdd8e6] [http-nio-8081-exec-5] com.example.payment.PaymentRetryClient - Settled reference SET-897513 amount=56497
+2026-09-18 06:37:43.565 INFO  [payment-service,19486e43ed722695,6c66518b] [http-nio-8081-exec-8] com.example.payment.ReconciliationJob - Reconciled 301 rows, 0 mismatches
+2026-09-18 06:39:59.691 INFO  [payment-service,b80a1009e61c68ef,5c79bafd] [settlement-7] com.example.payment.PaymentRetryClient - Settled reference SET-553959 amount=66879
+2026-09-18 06:56:13.780 WARN  [payment-service,819e39584ac792c3,72e88d92] [settlement-4] com.example.payment.SettlementApiClient - Upstream latency 2074ms exceeds the 1000ms budget
+2026-09-18 07:00:10.692 INFO  [payment-service,fec2fae9415156db,6e41136c] [http-nio-8081-exec-7] com.example.payment.PaymentRetryClient - Settled reference SET-718033 amount=88061
+2026-09-18 07:16:31.042 DEBUG [payment-service,1d8067c82cf93053,3efea0b4] [http-nio-8081-exec-3] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 277ms
+2026-09-18 07:24:39.048 ERROR [payment-service,cfa1e37c3f36d24a,f7443635] [settlement-3] com.example.payment.PayoutController - Payout preview failed for payee 56243
+java.lang.NullPointerException: Cannot invoke "String.charAt(int)" because "middleName" is null
+	at com.example.common.NameFormatter.initials(NameFormatter.java:22)
+	at com.example.payment.PaymentProfileEnricher.payeeInitials(PaymentProfileEnricher.java:15)
+	at com.example.payment.PayoutController.preview(PayoutController.java:112)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-09-18 07:27:29.930 WARN  [payment-service,aa3f6858619953a6,f4729f53] [http-nio-8081-exec-6] com.example.payment.SettlementApiClient - Upstream latency 1632ms exceeds the 1000ms budget
+2026-09-18 07:33:00.262 INFO  [payment-service,9d08743ed1e31e6c,c94d39a9] [http-nio-8081-exec-2] com.example.payment.PaymentRetryClient - Settled reference SET-208610 amount=80507
+2026-09-18 07:50:28.196 INFO  [payment-service,5ffa7f09b2452a1c,29fa5c48] [settlement-1] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 133ms
+2026-09-18 08:00:14.696 INFO  [payment-service,ecb8b939aba5bb9b,4aa43872] [http-nio-8081-exec-5] com.example.payment.ReconciliationJob - Reconciled 459 rows, 3 mismatches
+2026-09-18 08:00:54.405 INFO  [payment-service,3b64b5bd6193fb8c,5e760fdd] [settlement-5] com.example.payment.ReconciliationJob - Reconciled 256 rows, 2 mismatches
+2026-09-18 08:02:43.893 DEBUG [payment-service,2bb3bb8e080fc915,e2fcd7ef] [settlement-5] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 562ms
+2026-09-18 08:02:58.932 WARN  [payment-service,92cb7a5d70ed739e,feed1122] [http-nio-8081-exec-8] com.example.payment.SettlementApiClient - Upstream latency 1612ms exceeds the 1000ms budget
+2026-09-18 08:03:11.534 INFO  [payment-service,46327568d4112982,022068a7] [settlement-6] com.example.payment.ReconciliationJob - Reconciled 1108 rows, 2 mismatches
+2026-09-18 08:03:27.279 INFO  [payment-service,387ba8167ca6f6c1,3925f80c] [settlement-2] com.example.payment.PaymentRetryClient - Settled reference SET-818310 amount=64930
+2026-09-18 08:04:33.067 INFO  [payment-service,86e0a8c12e86312d,aa272679] [settlement-8] com.example.payment.ReconciliationJob - Reconciled 774 rows, 2 mismatches
+2026-09-18 08:05:51.715 WARN  [payment-service,e2e2d8a64e5ef300,c460d387] [http-nio-8081-exec-2] com.example.payment.SettlementApiClient - Upstream latency 2171ms exceeds the 1000ms budget
+2026-09-18 08:06:14.640 INFO  [payment-service,41906fa194491135,a8d8efa8] [settlement-7] com.example.payment.ReconciliationJob - Reconciled 543 rows, 1 mismatches
+2026-09-18 08:06:35.736 WARN  [payment-service,6126089ccbd1f30b,3522d677] [settlement-5] com.example.payment.SettlementApiClient - Upstream latency 2111ms exceeds the 1000ms budget
+2026-09-18 08:09:03.440 INFO  [payment-service,fde3f7c5100ba21b,e0a2c081] [http-nio-8081-exec-1] com.example.payment.ReconciliationJob - Reconciled 978 rows, 3 mismatches
+2026-09-18 08:09:24.954 INFO  [payment-service,9f66b607542b0703,48dba056] [settlement-1] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 320ms
+2026-09-18 08:09:35.918 INFO  [payment-service,408a2d9d854b4a0e,9f8305a2] [http-nio-8081-exec-5] com.example.payment.PaymentRetryClient - Settled reference SET-479514 amount=9331
+2026-09-18 08:10:34.422 DEBUG [payment-service,8a5ede209a53ba97,1659f6e1] [http-nio-8081-exec-7] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 565ms
+2026-09-18 08:10:48.305 INFO  [payment-service,0c2582ff3d2b9eeb,d3f24837] [http-nio-8081-exec-6] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 243ms
+2026-09-18 08:11:16.270 DEBUG [payment-service,594319cc506527ca,8186cbe6] [http-nio-8081-exec-7] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 212ms
+2026-09-18 08:12:15.858 INFO  [payment-service,6b2fc5b93aec07fa,68ac2654] [http-nio-8081-exec-2] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 100ms
+2026-09-18 08:14:04.027 INFO  [payment-service,b56a8986f75bcb63,d5e7f533] [settlement-8] com.example.payment.PaymentRetryClient - Settled reference SET-513175 amount=60787
+2026-09-18 08:14:04.750 INFO  [payment-service,d000397b4ffce095,040e09f7] [http-nio-8081-exec-6] com.example.payment.PaymentRetryClient - Settled reference SET-193922 amount=10665
+2026-09-18 08:16:05.632 INFO  [payment-service,e2b600591336b27c,2003a6c5] [settlement-5] com.example.payment.ReconciliationJob - Reconciled 788 rows, 1 mismatches
+2026-09-18 08:16:37.238 DEBUG [payment-service,34e743c0d30dd7af,7c16c896] [http-nio-8081-exec-9] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 807ms
+2026-09-18 08:16:55.545 DEBUG [payment-service,03d5d4384ec788bb,2c816847] [settlement-1] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 232ms
+2026-09-18 08:19:04.847 WARN  [payment-service,6709f36ead6f4a5a,066339d0] [settlement-9] com.example.payment.SettlementApiClient - Upstream latency 2519ms exceeds the 1000ms budget
+2026-09-18 08:19:48.502 INFO  [payment-service,bcc86bf49f035a59,fe041053] [settlement-1] com.example.payment.PaymentRetryClient - Settled reference SET-717962 amount=62783
+2026-09-18 08:21:32.315 INFO  [payment-service,929f9f7bcce38017,687d4d90] [http-nio-8081-exec-5] com.example.payment.ReconciliationJob - Reconciled 560 rows, 3 mismatches
+2026-09-18 08:21:46.328 DEBUG [payment-service,6d70efeb7f520105,2433bbb8] [settlement-2] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 301ms
+2026-09-18 08:23:24.123 INFO  [payment-service,bff2bc34148d0b58,d05c9b7e] [http-nio-8081-exec-5] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 256ms
+2026-09-18 08:24:21.612 WARN  [payment-service,12f6debf251381bd,8bde3df0] [http-nio-8081-exec-1] com.example.payment.SettlementApiClient - Upstream latency 2054ms exceeds the 1000ms budget
+2026-09-18 08:24:58.082 INFO  [payment-service,c4952fd0951c5886,f8e49040] [settlement-3] com.example.payment.ReconciliationJob - Reconciled 972 rows, 3 mismatches
+2026-09-18 08:25:15.292 WARN  [payment-service,0bc61f5f359352ce,0b7e4a84] [settlement-5] com.example.payment.SettlementApiClient - Upstream latency 1561ms exceeds the 1000ms budget
+2026-09-18 08:25:27.300 INFO  [payment-service,c9200950812878b3,5ec7605b] [http-nio-8081-exec-2] com.example.payment.ReconciliationJob - Reconciled 796 rows, 1 mismatches
+2026-09-18 08:27:32.151 DEBUG [payment-service,aff3822059906679,9ac08c5d] [settlement-3] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 376ms
+2026-09-18 08:28:12.804 INFO  [payment-service,6231a66e4b02dc17,52f85f23] [http-nio-8081-exec-1] com.example.payment.ReconciliationJob - Reconciled 611 rows, 0 mismatches
+2026-09-18 08:28:29.335 INFO  [payment-service,85f05fbcaa5cd071,2dad524a] [settlement-3] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 270ms
+2026-09-18 08:28:34.187 WARN  [payment-service,565f8fe5bf220b19,024599f4] [http-nio-8081-exec-2] com.example.payment.SettlementApiClient - Upstream latency 2021ms exceeds the 1000ms budget
+2026-09-18 08:29:12.549 DEBUG [payment-service,f8043b4a3767ef34,1905b4fd] [settlement-7] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 532ms
+2026-09-18 08:29:20.780 DEBUG [payment-service,ea7e197286b660e9,e0a58c7f] [settlement-5] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 181ms
+2026-09-18 08:30:37.620 INFO  [payment-service,2cde27d56bc91cce,9b287444] [http-nio-8081-exec-5] com.example.payment.PaymentRetryClient - Settled reference SET-316404 amount=37257
+2026-09-18 08:30:52.287 INFO  [payment-service,c5ff383030e1acb2,f349089c] [settlement-1] com.example.payment.PaymentRetryClient - Settled reference SET-615297 amount=11874
+2026-09-18 08:31:16.732 INFO  [payment-service,cf86b847241017b2,43bee1be] [http-nio-8081-exec-2] com.example.payment.ReconciliationJob - Reconciled 180 rows, 0 mismatches
+2026-09-18 08:32:16.389 WARN  [payment-service,3ec8e89fb58574e1,76eac725] [settlement-1] com.example.payment.SettlementApiClient - Upstream latency 2171ms exceeds the 1000ms budget
+2026-09-18 08:33:40.623 DEBUG [payment-service,91849cbb0c8d0c85,b09a628c] [settlement-6] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 453ms
+2026-09-18 08:33:47.975 INFO  [payment-service,638775f180423fee,ebe33486] [http-nio-8081-exec-7] com.example.payment.PaymentRetryClient - Settled reference SET-404171 amount=27457
+2026-09-18 08:36:16.293 INFO  [payment-service,9b9e7465eddefefd,d01cc739] [settlement-1] com.example.payment.PaymentRetryClient - Settled reference SET-782233 amount=25723
+2026-09-18 08:38:02.789 INFO  [payment-service,2d8efb1b2eb5f5da,4e25ba3c] [http-nio-8081-exec-6] com.example.payment.PaymentRetryClient - Settled reference SET-952424 amount=64895
+2026-09-18 08:38:23.827 INFO  [payment-service,ad8a7f708f4cf89f,27f6c5b8] [settlement-4] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 311ms
+2026-09-18 08:39:07.797 WARN  [payment-service,92f1ee1551e80d1b,cca5bc43] [settlement-1] com.example.payment.SettlementApiClient - Upstream latency 2090ms exceeds the 1000ms budget
+2026-09-18 08:39:26.231 WARN  [payment-service,46a9470b8a186953,bd4acc0c] [http-nio-8081-exec-7] com.example.payment.SettlementApiClient - Upstream latency 2478ms exceeds the 1000ms budget
+2026-09-18 08:39:40.152 INFO  [payment-service,0bb33f69a0409d23,1a5ac1b1] [http-nio-8081-exec-1] com.example.payment.ReconciliationJob - Reconciled 201 rows, 2 mismatches
+2026-09-18 08:39:46.303 DEBUG [payment-service,143f00f014df0854,72246ac8] [http-nio-8081-exec-9] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 401ms
+2026-09-18 08:40:59.104 WARN  [payment-service,ca2c64dede8c4330,065e2edf] [settlement-4] com.example.payment.SettlementApiClient - Upstream latency 2250ms exceeds the 1000ms budget
+2026-09-18 08:43:04.980 DEBUG [payment-service,c21963a8a156a5bb,16c64959] [http-nio-8081-exec-2] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 891ms
+2026-09-18 08:43:19.168 INFO  [payment-service,32ac011b80263922,6474f50c] [http-nio-8081-exec-9] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 125ms
+2026-09-18 08:44:06.165 INFO  [payment-service,dc7f9bc916a628b6,c035e176] [http-nio-8081-exec-4] com.example.payment.ReconciliationJob - Reconciled 217 rows, 2 mismatches
+2026-09-18 08:46:09.509 DEBUG [payment-service,930cd6e9f3309da3,1210678e] [http-nio-8081-exec-9] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 557ms
+2026-09-18 08:47:17.625 WARN  [payment-service,d43940172f185186,645c980d] [http-nio-8081-exec-5] com.example.payment.SettlementApiClient - Upstream latency 1837ms exceeds the 1000ms budget
+2026-09-18 08:47:23.850 WARN  [payment-service,97a041605bf4e728,f6f18774] [http-nio-8081-exec-4] com.example.payment.SettlementApiClient - Upstream latency 1704ms exceeds the 1000ms budget
+2026-09-18 08:47:25.972 INFO  [payment-service,2b793b99153bd822,4f99a9e0] [http-nio-8081-exec-2] com.example.payment.ReconciliationJob - Reconciled 667 rows, 0 mismatches
+2026-09-18 08:47:52.945 INFO  [payment-service,5beb60a7dbd30e2e,ba760530] [http-nio-8081-exec-9] com.example.payment.PaymentRetryClient - Settled reference SET-317469 amount=51987
+2026-09-18 08:52:16.058 INFO  [payment-service,7d3acbb5dbc900b3,54d416a1] [settlement-4] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 96ms
+2026-09-18 08:52:25.759 INFO  [payment-service,a8860aa70552c4f3,386387ee] [http-nio-8081-exec-1] com.example.payment.ReconciliationJob - Reconciled 989 rows, 3 mismatches
+2026-09-18 08:54:32.104 INFO  [payment-service,c2cc212ea7a5e51e,fc8eb48c] [settlement-4] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 172ms
+2026-09-18 08:55:13.938 INFO  [payment-service,a9711e602130495a,51dac956] [settlement-2] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 173ms
+2026-09-18 08:55:25.050 INFO  [payment-service,d7f33754f72837ec,8599b4be] [settlement-1] com.example.payment.PaymentRetryClient - Settled reference SET-589247 amount=25808
+2026-09-18 08:56:20.145 INFO  [payment-service,34ec2e7eb800508e,e261930c] [http-nio-8081-exec-2] com.example.payment.ReconciliationJob - Reconciled 773 rows, 2 mismatches
+2026-09-18 08:56:52.388 INFO  [payment-service,6a9f460fa282f333,33f089a0] [settlement-5] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 165ms
+2026-09-18 08:59:57.089 DEBUG [payment-service,13b24902cf26b003,c8a99a1f] [settlement-3] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 288ms
+2026-09-18 09:00:06.978 INFO  [payment-service,5888e929c4942d8a,2e4901d3] [settlement-3] com.example.payment.PaymentRetryClient - Settled reference SET-955797 amount=61215
+2026-09-18 09:00:10.542 WARN  [payment-service,ec6b25c7b79fbd23,4d3dd445] [http-nio-8081-exec-1] com.example.payment.SettlementApiClient - Upstream latency 1827ms exceeds the 1000ms budget
+2026-09-18 09:02:15.325 WARN  [payment-service,eef7bfa3c6fe6b02,ef773d23] [settlement-8] com.example.payment.SettlementApiClient - Upstream latency 1580ms exceeds the 1000ms budget
+2026-09-18 09:02:33.169 INFO  [payment-service,76974a35768aede9,6353644a] [settlement-6] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 44ms
+2026-09-18 09:03:01.557 DEBUG [payment-service,f779597e6c9de0de,30849fae] [http-nio-8081-exec-5] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 113ms
+2026-09-18 09:03:57.613 INFO  [payment-service,f082d192a158b902,a06c7f46] [settlement-7] com.example.payment.ReconciliationJob - Reconciled 935 rows, 3 mismatches
+2026-09-18 09:04:04.501 WARN  [payment-service,7ccbb2691eb06a4f,78686b66] [settlement-3] com.example.payment.SettlementApiClient - Upstream latency 2441ms exceeds the 1000ms budget
+2026-09-18 09:05:08.334 INFO  [payment-service,e1748c328da882bc,52b7a15c] [http-nio-8081-exec-2] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 124ms
+2026-09-18 09:07:28.678 INFO  [payment-service,6bc411e535491391,6e2685d5] [http-nio-8081-exec-7] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 264ms
+2026-09-18 09:07:56.611 WARN  [payment-service,bf312d562fbbc5ab,0527330b] [http-nio-8081-exec-6] com.example.payment.SettlementApiClient - Upstream latency 1423ms exceeds the 1000ms budget
+2026-09-18 09:08:09.832 INFO  [payment-service,28fde86a9c3f1248,386fba4d] [settlement-1] com.example.payment.ReconciliationJob - Reconciled 558 rows, 0 mismatches
+2026-09-18 09:08:12.097 INFO  [payment-service,4ee388fc96fc12b9,12e4ff07] [http-nio-8081-exec-3] com.example.payment.ReconciliationJob - Reconciled 1032 rows, 1 mismatches
+2026-09-18 09:08:44.851 INFO  [payment-service,d04d126ea0cd4f3d,4530525a] [http-nio-8081-exec-1] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 261ms
+2026-09-18 09:11:01.384 WARN  [payment-service,35d87f4053b5d8cc,d86af8ab] [settlement-5] com.example.payment.SettlementApiClient - Upstream latency 2334ms exceeds the 1000ms budget
+2026-09-18 09:11:21.017 INFO  [payment-service,d644af57354a26c1,10aa9959] [http-nio-8081-exec-4] com.example.payment.PaymentRetryClient - Settled reference SET-126983 amount=41868
+2026-09-18 09:13:02.103 INFO  [payment-service,c518202c73a46fc1,5b14fc7d] [settlement-7] com.example.payment.ReconciliationJob - Reconciled 1070 rows, 0 mismatches
+2026-09-18 09:13:05.349 INFO  [payment-service,1515f5c0b98d615f,343d429d] [http-nio-8081-exec-7] com.example.payment.PaymentRetryClient - Settled reference SET-993048 amount=3616
+2026-09-18 09:15:24.821 INFO  [payment-service,07b586ac6031db12,b4cd6ae4] [http-nio-8081-exec-8] com.example.payment.ReconciliationJob - Reconciled 403 rows, 0 mismatches
+2026-09-18 09:15:50.064 DEBUG [payment-service,95dc65861b9a2d70,af4cc3f0] [settlement-6] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 167ms
+2026-09-18 09:16:05.183 INFO  [payment-service,ffbf4192166adfa0,66ddc1de] [http-nio-8081-exec-1] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 194ms
+2026-09-18 09:16:47.460 INFO  [payment-service,27b70cf0b1f58291,e69f718c] [http-nio-8081-exec-2] com.example.payment.ReconciliationJob - Reconciled 479 rows, 0 mismatches
+2026-09-18 09:17:09.381 INFO  [payment-service,22b89c7becef6569,24c75454] [settlement-1] com.example.payment.ReconciliationJob - Reconciled 938 rows, 2 mismatches
+2026-09-18 09:17:16.572 DEBUG [payment-service,0db7fe0af47ee959,19dda9ab] [http-nio-8081-exec-9] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 428ms
+2026-09-18 09:17:20.196 INFO  [payment-service,38ac586bc7b58760,ac165f6d] [settlement-1] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 215ms
+2026-09-18 09:17:37.896 INFO  [payment-service,b70dade0eb06144e,ffd0e6fc] [http-nio-8081-exec-2] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 150ms
+2026-09-18 09:17:56.078 DEBUG [payment-service,dd07ae816a195991,3691fc3b] [http-nio-8081-exec-2] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 861ms
+2026-09-18 09:18:30.069 INFO  [payment-service,7728905661f6197e,f2f8b502] [settlement-7] com.example.payment.PaymentRetryClient - Settled reference SET-670517 amount=21235
+2026-09-18 09:19:15.379 DEBUG [payment-service,6396bd4b616d75b9,78e74dbe] [http-nio-8081-exec-6] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 107ms
+2026-09-18 09:19:57.200 WARN  [payment-service,3a3388381ef391d2,71cd7582] [settlement-8] com.example.payment.SettlementApiClient - Upstream latency 1745ms exceeds the 1000ms budget
+2026-09-18 09:19:58.053 WARN  [payment-service,68164c4f2173f21d,c2639e0f] [settlement-3] com.example.payment.SettlementApiClient - Upstream latency 1676ms exceeds the 1000ms budget
+2026-09-18 09:20:43.678 INFO  [payment-service,6e70cbbbdb987457,5b717459] [settlement-9] com.example.payment.PaymentRetryClient - Settled reference SET-780049 amount=7604
+2026-09-18 09:20:51.385 WARN  [payment-service,edfaa8f72f13394e,f9a356cd] [settlement-7] com.example.payment.SettlementApiClient - Upstream latency 1995ms exceeds the 1000ms budget
+2026-09-18 09:21:32.883 INFO  [payment-service,41d2c857b9486903,3ef5be72] [http-nio-8081-exec-7] com.example.payment.PaymentRetryClient - Settled reference SET-625171 amount=6912
+2026-09-18 09:22:50.637 INFO  [payment-service,7f98041c16edb04b,82eba9af] [http-nio-8081-exec-3] com.example.payment.PaymentRetryClient - Settled reference SET-226417 amount=7362
+2026-09-18 09:23:39.308 WARN  [payment-service,621cfb8809c5bb1b,8ea19205] [settlement-6] com.example.payment.SettlementApiClient - Upstream latency 2320ms exceeds the 1000ms budget
+2026-09-18 09:28:35.242 INFO  [payment-service,d0ff08cf8af85dd0,67873745] [http-nio-8081-exec-6] com.example.payment.ReconciliationJob - Reconciled 808 rows, 0 mismatches
+2026-09-18 09:28:37.106 WARN  [payment-service,7dc83bee4181e455,3bbd19d0] [http-nio-8081-exec-6] com.example.payment.SettlementApiClient - Upstream latency 2165ms exceeds the 1000ms budget
+2026-09-18 09:31:18.474 WARN  [payment-service,eee92dda596d580c,1c881d74] [http-nio-8081-exec-3] com.example.payment.SettlementApiClient - Upstream latency 2278ms exceeds the 1000ms budget
+2026-09-18 09:32:40.162 INFO  [payment-service,9b40de0c4b53cc54,c8501af5] [http-nio-8081-exec-6] com.example.payment.ReconciliationJob - Reconciled 373 rows, 0 mismatches
+2026-09-18 09:32:51.812 INFO  [payment-service,13ebdd854dbb34d3,4fba6f09] [http-nio-8081-exec-9] com.example.payment.ReconciliationJob - Reconciled 174 rows, 3 mismatches
+2026-09-18 09:33:10.965 INFO  [payment-service,386a99e26f059519,ce53033a] [settlement-6] com.example.payment.ReconciliationJob - Reconciled 927 rows, 1 mismatches
+2026-09-18 09:33:14.486 WARN  [payment-service,c69e98fc45d0ee85,7742db66] [http-nio-8081-exec-2] com.example.payment.SettlementApiClient - Upstream latency 1775ms exceeds the 1000ms budget
+2026-09-18 09:33:38.681 DEBUG [payment-service,984cf82a5aa820cb,e3f6ce4f] [settlement-7] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 480ms
+2026-09-18 09:35:02.919 WARN  [payment-service,cbd42cea364e97c0,8ae5b36e] [http-nio-8081-exec-4] com.example.payment.SettlementApiClient - Upstream latency 1876ms exceeds the 1000ms budget
+2026-09-18 09:35:19.297 INFO  [payment-service,90e5f31a083fd351,148b4ecf] [settlement-2] com.example.payment.ReconciliationJob - Reconciled 1087 rows, 2 mismatches
+2026-09-18 09:37:21.053 WARN  [payment-service,5defc8bdceec01b6,ffe55c47] [http-nio-8081-exec-3] com.example.payment.SettlementApiClient - Upstream latency 2328ms exceeds the 1000ms budget
+2026-09-18 09:38:21.316 INFO  [payment-service,c8d44a31dfc08d83,ef241ffd] [settlement-5] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 129ms
+2026-09-18 09:39:15.657 INFO  [payment-service,2ddb3a82f161aa56,03c3f031] [http-nio-8081-exec-9] com.example.payment.PaymentRetryClient - Settled reference SET-767658 amount=46486
+2026-09-18 09:39:27.818 WARN  [payment-service,a7ebe99e97f89c05,02d7739a] [settlement-3] com.example.payment.SettlementApiClient - Upstream latency 1640ms exceeds the 1000ms budget
+2026-09-18 09:39:28.846 DEBUG [payment-service,02f7f85f093a6bbf,a774fdbd] [settlement-8] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 404ms
+2026-09-18 09:40:27.613 DEBUG [payment-service,c3f9d7ce01beb17e,405ad08e] [http-nio-8081-exec-7] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 858ms
+2026-09-18 09:41:14.706 INFO  [payment-service,0b311e7d3f563e7f,bfa64d34] [settlement-9] com.example.payment.PaymentRetryClient - Settled reference SET-982204 amount=68874
+2026-09-18 09:41:15.692 DEBUG [payment-service,39a612261eb8be3c,3bb8a501] [settlement-9] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 565ms
+2026-09-18 09:42:29.533 DEBUG [payment-service,162504addc34032f,a56bfea6] [settlement-6] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 86ms
+2026-09-18 09:43:43.685 INFO  [payment-service,b0f3d55324701fe1,9f301300] [http-nio-8081-exec-9] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 49ms
+2026-09-18 09:44:49.242 WARN  [payment-service,8d7ad49f5eaf993b,02fc121e] [settlement-3] com.example.payment.SettlementApiClient - Upstream latency 2415ms exceeds the 1000ms budget
+2026-09-18 09:45:00.193 INFO  [payment-service,b176ea46116f4cd9,b3d40565] [settlement-4] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 42ms
+2026-09-18 09:45:04.065 INFO  [payment-service,40d555aae9fe15e0,a3f97692] [http-nio-8081-exec-2] com.example.payment.PaymentRetryClient - Settled reference SET-743963 amount=54732
+2026-09-18 09:45:41.021 DEBUG [payment-service,fc1e26b193e9ce78,65a2ed16] [http-nio-8081-exec-4] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 755ms
+2026-09-18 09:45:47.780 INFO  [payment-service,ce2c57008b0803c4,73f32462] [http-nio-8081-exec-7] com.example.payment.PaymentRetryClient - Settled reference SET-810245 amount=36020
+2026-09-18 09:47:00.572 DEBUG [payment-service,2123c14bf72afc79,a0df1a8a] [http-nio-8081-exec-6] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 289ms
+2026-09-18 09:47:08.859 INFO  [payment-service,230bc906486c0c96,6e17d238] [settlement-1] com.example.payment.ReconciliationJob - Reconciled 1172 rows, 2 mismatches
+2026-09-18 09:47:27.236 INFO  [payment-service,c20a719db291dda8,42b1b499] [settlement-7] com.example.payment.PaymentRetryClient - Settled reference SET-722225 amount=83922
+2026-09-18 09:49:38.466 DEBUG [payment-service,ac0464943becf4da,9d51aeaa] [settlement-2] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 112ms
+2026-09-18 09:51:23.548 WARN  [payment-service,4e3f59a7c3495dcd,fffca90c] [settlement-1] com.example.payment.SettlementApiClient - Upstream latency 2569ms exceeds the 1000ms budget
+2026-09-18 09:52:16.949 INFO  [payment-service,ecf156f6914c1854,0d43fb49] [http-nio-8081-exec-7] com.example.payment.PaymentRetryClient - Settled reference SET-522244 amount=23602
+2026-09-18 09:52:48.508 DEBUG [payment-service,570c8734bbad5f23,caee4eed] [http-nio-8081-exec-1] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 614ms
+2026-09-18 09:53:11.180 INFO  [payment-service,824f29c4d15785b6,b67afebe] [http-nio-8081-exec-2] com.example.payment.ReconciliationJob - Reconciled 661 rows, 3 mismatches
+2026-09-18 09:53:38.829 WARN  [payment-service,738ee9b70957b5f4,b8c5c3b3] [http-nio-8081-exec-2] com.example.payment.SettlementApiClient - Upstream latency 2095ms exceeds the 1000ms budget
+2026-09-18 09:54:47.280 DEBUG [payment-service,a50f89097416e99f,1136486c] [settlement-4] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 798ms
+2026-09-18 09:55:06.797 INFO  [payment-service,4866f4fdd5df20af,3c905653] [http-nio-8081-exec-1] com.example.payment.ReconciliationJob - Reconciled 890 rows, 0 mismatches
+2026-09-18 09:55:08.034 DEBUG [payment-service,5ed1950e9d2e9a88,8605ca4e] [http-nio-8081-exec-8] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 190ms
+2026-09-18 09:55:10.280 WARN  [payment-service,33a1fe0cb80e2ab5,eb34d3b6] [http-nio-8081-exec-4] com.example.payment.SettlementApiClient - Upstream latency 1575ms exceeds the 1000ms budget
+2026-09-18 09:57:02.248 INFO  [payment-service,dcc47a20b5e5cf4d,ca191eae] [settlement-6] com.example.payment.PaymentRetryClient - Settled reference SET-374885 amount=976
+2026-09-18 09:57:05.819 DEBUG [payment-service,9e63bd859cb628a3,a1f52d99] [http-nio-8081-exec-9] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 429ms
+2026-09-18 09:59:14.854 DEBUG [payment-service,563b16e19f6d9459,ccac2acf] [http-nio-8081-exec-9] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 721ms
+2026-09-18 09:59:48.428 DEBUG [payment-service,ea6a5148e6e28d8b,b6780f68] [settlement-4] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 231ms
+2026-09-18 10:00:25.199 WARN  [payment-service,a6338294dd62974e,cb016a62] [http-nio-8081-exec-2] com.example.payment.SettlementApiClient - Upstream latency 2215ms exceeds the 1000ms budget
+2026-09-18 10:01:00.351 INFO  [payment-service,5e4d2278b687a2b4,4f2b9e33] [http-nio-8081-exec-7] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 256ms
+2026-09-18 10:03:05.324 INFO  [payment-service,c4036c3777a98c57,f39cbaf1] [settlement-2] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 271ms
+2026-09-18 10:03:27.671 WARN  [payment-service,b5f9dc595ab47068,bf09ca93] [http-nio-8081-exec-5] com.example.payment.SettlementApiClient - Upstream latency 2454ms exceeds the 1000ms budget
+2026-09-18 10:05:44.228 INFO  [payment-service,30bab9c7d9be436f,63f26f9e] [http-nio-8081-exec-2] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 311ms
+2026-09-18 10:06:06.304 INFO  [payment-service,8754bed5f2164f4e,7df1b232] [http-nio-8081-exec-3] com.example.payment.ReconciliationJob - Reconciled 320 rows, 1 mismatches
+2026-09-18 10:07:02.157 INFO  [payment-service,a094d9426e9d3032,7aef3d75] [http-nio-8081-exec-5] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 276ms
+2026-09-18 10:07:34.855 INFO  [payment-service,5305866b095aa016,1806058e] [http-nio-8081-exec-8] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 47ms
+2026-09-18 10:07:38.039 INFO  [payment-service,d3f4f14c838f1a33,c9e762b7] [http-nio-8081-exec-8] com.example.payment.ReconciliationJob - Reconciled 551 rows, 3 mismatches
+2026-09-18 10:07:47.468 INFO  [payment-service,3d25d834f54fa982,dea05335] [settlement-3] com.example.payment.ReconciliationJob - Reconciled 1012 rows, 1 mismatches
+2026-09-18 10:10:00.671 WARN  [payment-service,683d1aa14c664441,7df885cf] [http-nio-8081-exec-7] com.example.payment.SettlementApiClient - Upstream latency 1383ms exceeds the 1000ms budget
+2026-09-18 10:14:10.248 DEBUG [payment-service,69df0d28989e991c,7c28a28d] [settlement-7] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 382ms
+2026-09-18 10:14:23.667 WARN  [payment-service,14656bddcd6ead5f,d386db56] [http-nio-8081-exec-1] com.example.payment.SettlementApiClient - Upstream latency 2402ms exceeds the 1000ms budget
+2026-09-18 10:15:42.314 DEBUG [payment-service,7d60c9fee97e1423,598b646a] [http-nio-8081-exec-9] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 323ms
+2026-09-18 10:16:14.629 INFO  [payment-service,82820763e1250577,4c834ef9] [http-nio-8081-exec-3] com.example.payment.ReconciliationJob - Reconciled 412 rows, 2 mismatches
+2026-09-18 10:16:24.139 INFO  [payment-service,a94913372c08d3ba,f3182db2] [settlement-9] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 140ms
+2026-09-18 10:17:13.345 WARN  [payment-service,cb8198afbeb9c45f,72072606] [http-nio-8081-exec-7] com.example.payment.SettlementApiClient - Upstream latency 1867ms exceeds the 1000ms budget
+2026-09-18 10:17:27.870 INFO  [payment-service,1dff9c896acc315d,d031571f] [settlement-9] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 275ms
+2026-09-18 10:17:56.223 WARN  [payment-service,90a5cee479734665,fc14fae8] [settlement-1] com.example.payment.SettlementApiClient - Upstream latency 1752ms exceeds the 1000ms budget
+2026-09-18 10:18:12.763 INFO  [payment-service,a9176c9229c6e2ee,6245c64d] [http-nio-8081-exec-2] com.example.payment.PaymentRetryClient - Settled reference SET-284863 amount=23016
+2026-09-18 10:18:15.001 WARN  [payment-service,c8e729bb216f5c3f,cdf0c4ce] [http-nio-8081-exec-3] com.example.payment.SettlementApiClient - Upstream latency 2356ms exceeds the 1000ms budget
+2026-09-18 10:20:32.450 INFO  [payment-service,7107f7c0530c1b71,53165cae] [settlement-8] com.example.payment.PaymentRetryClient - Settled reference SET-566255 amount=85600
+2026-09-18 10:20:42.373 INFO  [payment-service,ca323b7647316c38,555ff685] [http-nio-8081-exec-8] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 146ms
+2026-09-18 10:22:17.105 DEBUG [payment-service,0d9fa3e64706c02e,2ae15d8e] [settlement-8] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 510ms
+2026-09-18 10:23:28.315 WARN  [payment-service,621d8842c29908f9,923d2d31] [settlement-8] com.example.payment.SettlementApiClient - Upstream latency 2545ms exceeds the 1000ms budget
+2026-09-18 10:24:20.651 INFO  [payment-service,eec011e3a18a08fc,528b9be9] [http-nio-8081-exec-6] com.example.payment.ReconciliationJob - Reconciled 654 rows, 1 mismatches
+2026-09-18 10:24:37.565 INFO  [payment-service,28873fe4361333bd,b193614e] [settlement-9] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 243ms
+2026-09-18 10:25:33.503 INFO  [payment-service,cf932144a24f2984,90ce291f] [http-nio-8081-exec-2] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 315ms
+2026-09-18 10:25:50.838 WARN  [payment-service,2885478e1ad54de0,c19a7eb6] [http-nio-8081-exec-6] com.example.payment.SettlementApiClient - Upstream latency 2297ms exceeds the 1000ms budget
+2026-09-18 10:26:26.381 DEBUG [payment-service,90fac1723be590ad,a9eae597] [settlement-9] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 872ms
+2026-09-18 10:26:39.431 DEBUG [payment-service,781b8625abe8c8ed,06db5bae] [settlement-4] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 429ms
+2026-09-18 10:28:49.440 INFO  [payment-service,489755bad1473ae7,e5dbb758] [http-nio-8081-exec-2] com.example.payment.ReconciliationJob - Reconciled 804 rows, 0 mismatches
+2026-09-18 10:29:58.222 INFO  [payment-service,80a172db20585a46,0fe1d308] [http-nio-8081-exec-5] com.example.payment.PaymentRetryClient - Settled reference SET-811839 amount=57301
+2026-09-18 10:30:48.275 INFO  [payment-service,4f660ce661e1fd30,b74a1ecf] [http-nio-8081-exec-5] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 55ms
+2026-09-18 10:33:31.816 INFO  [payment-service,48db0f2cd8d37275,fb1b0322] [settlement-5] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 155ms
+2026-09-18 10:33:46.694 DEBUG [payment-service,39194bbb04403b82,8bbe120c] [http-nio-8081-exec-8] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 835ms
+2026-09-18 10:35:00.503 INFO  [payment-service,2e6b402b9528c325,90818b2c] [http-nio-8081-exec-7] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 211ms
+2026-09-18 10:35:30.660 WARN  [payment-service,0b19d647e200947c,9b8b5b29] [settlement-3] com.example.payment.SettlementApiClient - Upstream latency 1627ms exceeds the 1000ms budget
+2026-09-18 10:35:38.848 INFO  [payment-service,c054dc02c1183e58,6ca30fa7] [settlement-7] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 222ms
+2026-09-18 10:37:11.117 INFO  [payment-service,c3ad4b42a5a759ea,564f3612] [http-nio-8081-exec-6] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 267ms
+2026-09-18 10:37:54.164 DEBUG [payment-service,ca197bff1cd2d0ef,5409adc7] [http-nio-8081-exec-7] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 582ms
+2026-09-18 10:37:57.060 INFO  [payment-service,35c0a90326a363d9,39d8d18d] [http-nio-8081-exec-6] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 270ms
+2026-09-18 10:38:15.165 INFO  [payment-service,cae407a9cb3655b1,7fb9e945] [http-nio-8081-exec-5] com.example.payment.PaymentRetryClient - Settled reference SET-828624 amount=61229
+2026-09-18 10:39:45.999 INFO  [payment-service,4d0e341b740e0f24,fde8df3a] [settlement-9] com.example.payment.ReconciliationJob - Reconciled 521 rows, 2 mismatches
+2026-09-18 10:41:32.000 DEBUG [payment-service,e0a19a08eaa41144,4568379f] [settlement-3] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 839ms
+2026-09-18 10:42:33.258 INFO  [payment-service,8389ad7e88f822b4,97f869f2] [http-nio-8081-exec-7] com.example.payment.PaymentRetryClient - Settled reference SET-250936 amount=78261
+2026-09-18 10:42:54.626 INFO  [payment-service,d478666f9db37333,3d45992b] [settlement-5] com.example.payment.ReconciliationJob - Reconciled 1093 rows, 3 mismatches
+2026-09-18 10:43:20.379 DEBUG [payment-service,81a807d77b684932,55a3ea9d] [http-nio-8081-exec-4] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 271ms
+2026-09-18 10:44:04.755 INFO  [payment-service,ca6475990a91b913,76d5eb22] [settlement-8] com.example.payment.ReconciliationJob - Reconciled 106 rows, 2 mismatches
+2026-09-18 10:44:13.583 INFO  [payment-service,11904dd9429e6ccd,39a682bf] [http-nio-8081-exec-2] com.example.payment.PaymentRetryClient - Settled reference SET-773888 amount=87051
+2026-09-18 10:44:37.833 INFO  [payment-service,1e2321af12c0e7fa,f278853c] [http-nio-8081-exec-4] com.example.payment.ReconciliationJob - Reconciled 941 rows, 1 mismatches
+2026-09-18 10:45:19.835 INFO  [payment-service,0ea7356dfb3d3bbf,6dab5acf] [settlement-9] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 135ms
+2026-09-18 10:45:38.323 INFO  [payment-service,57abc4588abe2cdd,66c777ea] [http-nio-8081-exec-2] com.example.payment.ReconciliationJob - Reconciled 363 rows, 1 mismatches
+2026-09-18 10:46:34.290 DEBUG [payment-service,e26b70e7ac33cfe5,1e883564] [settlement-1] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 92ms
+2026-09-18 10:46:34.539 INFO  [payment-service,4eb781a4276456a3,8e531a83] [settlement-2] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 301ms
+2026-09-18 10:47:45.591 INFO  [payment-service,1c05b562a572ebad,73ca8f1d] [http-nio-8081-exec-7] com.example.payment.PaymentRetryClient - Settled reference SET-134064 amount=82061
+2026-09-18 10:48:50.550 DEBUG [payment-service,efe45d784dbf91f5,b5213b92] [http-nio-8081-exec-8] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 271ms
+2026-09-18 10:49:28.901 INFO  [payment-service,2ed949d109274967,4f4fd41c] [http-nio-8081-exec-6] com.example.payment.ReconciliationJob - Reconciled 702 rows, 1 mismatches
+2026-09-18 10:50:18.563 WARN  [payment-service,e2c91d549061ff8b,34e2b340] [settlement-5] com.example.payment.SettlementApiClient - Upstream latency 1843ms exceeds the 1000ms budget
+2026-09-18 10:51:22.772 WARN  [payment-service,e5ac85fe9348867a,c0dbd6fe] [settlement-6] com.example.payment.SettlementApiClient - Upstream latency 2484ms exceeds the 1000ms budget
+2026-09-18 10:51:31.532 INFO  [payment-service,8a6fbf9bd9000cf1,5951a0e3] [settlement-5] com.example.payment.PaymentRetryClient - Settled reference SET-423054 amount=32291
+2026-09-18 10:55:31.984 INFO  [payment-service,c3577747eaa628ad,9b563b34] [settlement-9] com.example.payment.ReconciliationJob - Reconciled 255 rows, 2 mismatches
+2026-09-18 10:57:23.205 DEBUG [payment-service,ae38cb5930a8e75c,4e52ba98] [http-nio-8081-exec-2] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 569ms
+2026-09-18 10:57:53.048 WARN  [payment-service,87902c78075e042c,440473fc] [http-nio-8081-exec-9] com.example.payment.SettlementApiClient - Upstream latency 1970ms exceeds the 1000ms budget
+2026-09-18 11:00:04.234 DEBUG [payment-service,d2666778762db22d,19fc4c8f] [settlement-9] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 287ms
+2026-09-18 11:00:57.934 DEBUG [payment-service,f59fff0c857284d3,8789e4c3] [http-nio-8081-exec-8] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 742ms
+2026-09-18 11:01:41.037 INFO  [payment-service,c7ddb5548854152c,592fdc61] [http-nio-8081-exec-2] com.example.payment.ReconciliationJob - Reconciled 336 rows, 2 mismatches
+2026-09-18 11:01:42.556 DEBUG [payment-service,f40512727c558ce5,ee345aaf] [settlement-1] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 881ms
+2026-09-18 11:02:33.466 WARN  [payment-service,b2ae07b2679958aa,8a9a1161] [settlement-8] com.example.payment.SettlementApiClient - Upstream latency 1665ms exceeds the 1000ms budget
+2026-09-18 11:03:15.975 INFO  [payment-service,8e74b34253fb9135,1791cf19] [settlement-2] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 154ms
+2026-09-18 11:03:35.347 INFO  [payment-service,4ffe8efdc179c613,f52f5197] [settlement-1] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 102ms
+2026-09-18 11:04:59.777 INFO  [payment-service,187262317bd6d0bd,df23fd51] [http-nio-8081-exec-3] com.example.payment.ReconciliationJob - Reconciled 889 rows, 3 mismatches
+2026-09-18 11:06:20.258 INFO  [payment-service,0d2e45e66d62f3e6,4699fa57] [settlement-5] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 253ms
+2026-09-18 11:07:27.301 INFO  [payment-service,eca1b97d63a6d24c,8b5cbfb3] [http-nio-8081-exec-9] com.example.payment.PaymentRetryClient - Settled reference SET-686444 amount=66804
+2026-09-18 11:08:21.944 INFO  [payment-service,007bdbf5c8151831,3399cf0d] [settlement-7] com.example.payment.PaymentRetryClient - Settled reference SET-929928 amount=85480
+2026-09-18 11:08:33.742 INFO  [payment-service,9a7b8d6ee69bc78c,9210c75a] [settlement-8] com.example.payment.PaymentRetryClient - Settled reference SET-149006 amount=57683
+2026-09-18 11:09:51.969 INFO  [payment-service,9bbe32a7b14b3ec1,963c5b29] [settlement-6] com.example.payment.PaymentRetryClient - Settled reference SET-243421 amount=46013
+2026-09-18 11:11:27.676 DEBUG [payment-service,40af69b85a4c7cb6,6d78db9e] [settlement-4] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 388ms
+2026-09-18 11:13:12.795 DEBUG [payment-service,c59fac477777c2b0,47804b95] [http-nio-8081-exec-5] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 431ms
+2026-09-18 11:13:17.128 INFO  [payment-service,8d51ad86fc08ca20,f265f310] [http-nio-8081-exec-2] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 314ms
+2026-09-18 11:13:37.928 WARN  [payment-service,f0cb4cb04e8cb521,d20f8d37] [http-nio-8081-exec-7] com.example.payment.SettlementApiClient - Upstream latency 1974ms exceeds the 1000ms budget
+2026-09-18 11:16:23.489 INFO  [payment-service,17b8343017ec6033,3210c502] [http-nio-8081-exec-6] com.example.payment.PaymentRetryClient - Settled reference SET-117341 amount=5190
+2026-09-18 11:17:14.795 INFO  [payment-service,f588f0747d34cdf2,5a005202] [settlement-1] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 169ms
+2026-09-18 11:17:31.058 INFO  [payment-service,53906a3aa9822242,61272276] [http-nio-8081-exec-6] com.example.payment.ReconciliationJob - Reconciled 1013 rows, 2 mismatches
+2026-09-18 11:18:14.007 INFO  [payment-service,d1e5cc5f980118d3,30410691] [settlement-6] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 131ms
+2026-09-18 11:18:21.290 INFO  [payment-service,5105175a19555e82,edb0d570] [http-nio-8081-exec-9] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 118ms
+2026-09-18 11:18:35.193 DEBUG [payment-service,43d46925c176db94,fa6144bd] [http-nio-8081-exec-5] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 159ms
+2026-09-18 11:19:10.519 WARN  [payment-service,1ee13b4bbb297730,5f6f33cd] [settlement-4] com.example.payment.SettlementApiClient - Upstream latency 1510ms exceeds the 1000ms budget
+2026-09-18 11:19:31.117 DEBUG [payment-service,aa4936cc16ab71e8,bb79f154] [http-nio-8081-exec-2] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 616ms
+2026-09-18 11:22:18.711 WARN  [payment-service,dc0d6615b53bc698,7fbadb16] [settlement-9] com.example.payment.SettlementApiClient - Upstream latency 1676ms exceeds the 1000ms budget
+2026-09-18 11:29:03.093 WARN  [payment-service,ecf25d92a630db3d,74cf92e4] [settlement-7] com.example.payment.SettlementApiClient - Upstream latency 2482ms exceeds the 1000ms budget
+2026-09-18 11:29:10.235 INFO  [payment-service,552f1d83dddc6585,e57985dd] [settlement-6] com.example.payment.ReconciliationJob - Reconciled 342 rows, 0 mismatches
+2026-09-18 11:29:11.508 WARN  [payment-service,afe63ff3f1b0a9d8,29b671bf] [settlement-3] com.example.payment.SettlementApiClient - Upstream latency 2158ms exceeds the 1000ms budget
+2026-09-18 11:29:59.133 INFO  [payment-service,4302079eac97e480,90bfd7a2] [settlement-7] com.example.payment.PaymentRetryClient - Settled reference SET-778960 amount=64749
+2026-09-18 11:31:07.871 WARN  [payment-service,d5dac367feba4a44,55fc2e0f] [http-nio-8081-exec-9] com.example.payment.SettlementApiClient - Upstream latency 1918ms exceeds the 1000ms budget
+2026-09-18 11:31:37.694 WARN  [payment-service,c417f14b2021bfb4,b097404b] [http-nio-8081-exec-9] com.example.payment.SettlementApiClient - Upstream latency 2379ms exceeds the 1000ms budget
+2026-09-18 11:32:12.417 DEBUG [payment-service,09eb7cb084414231,e555df71] [http-nio-8081-exec-2] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 93ms
+2026-09-18 11:32:51.252 WARN  [payment-service,07c869f71d1df23f,3cd7a7a6] [http-nio-8081-exec-9] com.example.payment.SettlementApiClient - Upstream latency 2447ms exceeds the 1000ms budget
+2026-09-18 11:33:20.791 WARN  [payment-service,ee7f591d4d837f30,5680bba7] [http-nio-8081-exec-3] com.example.payment.SettlementApiClient - Upstream latency 2530ms exceeds the 1000ms budget
+2026-09-18 11:33:52.406 INFO  [payment-service,68574aed5647af61,37f2e829] [http-nio-8081-exec-2] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 305ms
+2026-09-18 11:33:53.096 INFO  [payment-service,1c3c4ecc387767e9,0743a536] [http-nio-8081-exec-7] com.example.payment.PaymentRetryClient - Settled reference SET-449869 amount=77270
+2026-09-18 11:34:15.426 INFO  [payment-service,24310e431e8fa6ac,a4f89620] [settlement-2] com.example.payment.PaymentRetryClient - Settled reference SET-289746 amount=46917
+2026-09-18 11:34:59.656 INFO  [payment-service,501444c3c27518dc,fa33538a] [http-nio-8081-exec-4] com.example.payment.ReconciliationJob - Reconciled 1068 rows, 0 mismatches
+2026-09-18 11:35:33.647 WARN  [payment-service,8e9936cfd09576ca,abb7e8cf] [settlement-5] com.example.payment.SettlementApiClient - Upstream latency 1510ms exceeds the 1000ms budget
+2026-09-18 11:35:47.576 INFO  [payment-service,2da65e0ac89c8fc8,6f747394] [settlement-5] com.example.payment.PaymentRetryClient - Settled reference SET-548677 amount=50099
+2026-09-18 11:35:54.367 WARN  [payment-service,c6696c63c08212db,a7a594c5] [http-nio-8081-exec-7] com.example.payment.SettlementApiClient - Upstream latency 1511ms exceeds the 1000ms budget
+2026-09-18 11:36:56.550 INFO  [payment-service,916d7f9d9e024eca,a5f18622] [settlement-4] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 134ms
+2026-09-18 11:38:04.723 INFO  [payment-service,7d4ccf007e67db3d,aa027d15] [settlement-9] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 108ms
+2026-09-18 11:39:06.640 INFO  [payment-service,d1234f42fd2d1c06,3f6bed02] [http-nio-8081-exec-1] com.example.payment.PaymentRetryClient - Settled reference SET-326936 amount=35849
+2026-09-18 11:40:31.842 INFO  [payment-service,5acf3ba2d1da4063,c9b542ba] [http-nio-8081-exec-7] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 304ms
+2026-09-18 11:41:01.525 WARN  [payment-service,80ae7a123fea87b5,aeadc714] [http-nio-8081-exec-9] com.example.payment.SettlementApiClient - Upstream latency 2284ms exceeds the 1000ms budget
+2026-09-18 11:41:37.257 DEBUG [payment-service,cde9e2dc2660b625,15d10d8d] [settlement-8] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 726ms
+2026-09-18 11:41:59.158 INFO  [payment-service,0a32dd0df03a2bcf,f416cca8] [settlement-8] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 239ms
+2026-09-18 11:43:14.305 DEBUG [payment-service,0e97d53b3b1a7d6d,63b26b60] [settlement-5] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 97ms
+2026-09-18 11:43:29.530 INFO  [payment-service,bb76881f6a86b998,daf6e03d] [http-nio-8081-exec-4] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 79ms
+2026-09-18 11:44:05.424 INFO  [payment-service,661b779e69922aa3,038966d3] [http-nio-8081-exec-9] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 86ms
+2026-09-18 11:45:10.858 INFO  [payment-service,3ca0d026682b5009,5e28ab2d] [settlement-7] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 70ms
+2026-09-18 11:47:19.785 INFO  [payment-service,79613d188ec9c0d3,c001d85c] [settlement-5] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 126ms
+2026-09-18 11:47:45.441 INFO  [payment-service,95c66268ab0330f7,a979be43] [http-nio-8081-exec-9] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 62ms
+2026-09-18 11:48:16.893 WARN  [payment-service,4955e332a16bee79,d073fd37] [settlement-7] com.example.payment.SettlementApiClient - Upstream latency 1828ms exceeds the 1000ms budget
+2026-09-18 11:48:41.233 DEBUG [payment-service,85cf88c68ceb747e,4d451b0c] [settlement-1] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 856ms
+2026-09-18 11:49:36.959 INFO  [payment-service,7fe828f6039f7100,863c71de] [settlement-5] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 136ms
+2026-09-18 11:50:05.265 INFO  [payment-service,da3c02e57c1e9200,eaaf2570] [settlement-2] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 190ms
+2026-09-18 11:51:24.591 INFO  [payment-service,50b277fbc12ab253,744b1b25] [settlement-9] com.example.payment.PaymentRetryClient - Settled reference SET-941093 amount=53341
+2026-09-18 11:54:45.563 INFO  [payment-service,88141de1cba9b8d6,c329492d] [settlement-1] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 120ms
+2026-09-18 11:55:45.959 INFO  [payment-service,0687884f0b09e5ed,e2cf7aa5] [settlement-4] com.example.payment.PaymentRetryClient - Settled reference SET-223741 amount=35455
+2026-09-18 11:55:58.956 INFO  [payment-service,c546e99dfc043f59,a88ba4cb] [settlement-3] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 87ms
+2026-09-18 11:58:29.800 INFO  [payment-service,d101c33c9fc208b9,d0f6a3f1] [settlement-3] com.example.payment.ReconciliationJob - Reconciled 406 rows, 3 mismatches
+2026-09-18 11:58:59.341 WARN  [payment-service,7f8fc767d5f28e2b,80aa4633] [http-nio-8081-exec-5] com.example.payment.SettlementApiClient - Upstream latency 2364ms exceeds the 1000ms budget
+2026-09-18 12:00:00.332 DEBUG [payment-service,e762ccfde65c797c,a55207d9] [settlement-3] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 700ms
+2026-09-18 12:00:32.844 INFO  [payment-service,b7c8a1f2e9628637,ee0a4ddc] [settlement-2] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 254ms
+2026-09-18 12:01:28.151 INFO  [payment-service,f250c59f6a69869b,47f7608a] [settlement-8] com.example.payment.ReconciliationJob - Reconciled 1184 rows, 1 mismatches
+2026-09-18 12:02:28.079 INFO  [payment-service,41a11f24cbbd117b,d78e6476] [settlement-1] com.example.payment.PaymentRetryClient - Settled reference SET-747983 amount=37537
+2026-09-18 12:04:30.307 WARN  [payment-service,35ff8e1e3180e78c,266eaa78] [settlement-8] com.example.payment.SettlementApiClient - Upstream latency 1829ms exceeds the 1000ms budget
+2026-09-18 12:05:24.530 INFO  [payment-service,a25652274d62f9a6,af2c8daa] [http-nio-8081-exec-3] com.example.payment.PaymentRetryClient - Settled reference SET-386713 amount=36636
+2026-09-18 12:05:24.787 DEBUG [payment-service,6da31df891caa3fd,a3f8e63e] [settlement-8] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 659ms
+2026-09-18 12:05:27.015 INFO  [payment-service,d7c67928ed9c6d14,dd73c5dc] [http-nio-8081-exec-5] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 184ms
+2026-09-18 12:05:57.310 WARN  [payment-service,c419a5bdc3949245,f2a7f930] [http-nio-8081-exec-2] com.example.payment.SettlementApiClient - Upstream latency 2446ms exceeds the 1000ms budget
+2026-09-18 12:07:17.632 INFO  [payment-service,e87f3866e75751ee,9e61d0c1] [http-nio-8081-exec-2] com.example.payment.ReconciliationJob - Reconciled 366 rows, 2 mismatches
+2026-09-18 12:07:49.149 INFO  [payment-service,dbd954ebe91fba3a,fb30090d] [http-nio-8081-exec-9] com.example.payment.PaymentRetryClient - Settled reference SET-562150 amount=31586
+2026-09-18 12:10:43.545 WARN  [payment-service,6447983a3ec36f79,e3cf83bd] [settlement-5] com.example.payment.SettlementApiClient - Upstream latency 2288ms exceeds the 1000ms budget
+2026-09-18 12:10:46.058 INFO  [payment-service,ae4bebec4f01adb4,62f5b912] [settlement-5] com.example.payment.PaymentRetryClient - Settled reference SET-786268 amount=47799
+2026-09-18 12:12:32.973 DEBUG [payment-service,b92d850b20f8817c,88b6ff07] [settlement-6] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 612ms
+2026-09-18 12:12:55.151 WARN  [payment-service,d75116ae6d081d95,e378bf3f] [http-nio-8081-exec-9] com.example.payment.SettlementApiClient - Upstream latency 1314ms exceeds the 1000ms budget
+2026-09-18 12:13:25.203 INFO  [payment-service,8ba1c39e85298ac9,9be0c519] [settlement-2] com.example.payment.ReconciliationJob - Reconciled 877 rows, 3 mismatches
+2026-09-18 12:13:51.792 INFO  [payment-service,7832745058360947,749a017e] [settlement-7] com.example.payment.ReconciliationJob - Reconciled 649 rows, 3 mismatches
+2026-09-18 12:14:30.848 INFO  [payment-service,711787194c26d8dd,24d9a83b] [http-nio-8081-exec-7] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 315ms
+2026-09-18 12:14:35.868 INFO  [payment-service,8e5ed55cecb4af5b,11c14f55] [http-nio-8081-exec-7] com.example.payment.PaymentRetryClient - Settled reference SET-925168 amount=4260
+2026-09-18 12:15:01.074 DEBUG [payment-service,58c2a1cd952b78e8,b0e97837] [http-nio-8081-exec-3] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 517ms
+2026-09-18 12:16:01.016 INFO  [payment-service,8e2ace8cd08c3e7a,53c04fe0] [http-nio-8081-exec-4] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 194ms
+2026-09-18 12:16:07.324 WARN  [payment-service,224f1193887c7eb0,9c00f29e] [settlement-5] com.example.payment.SettlementApiClient - Upstream latency 2512ms exceeds the 1000ms budget
+2026-09-18 12:16:37.462 DEBUG [payment-service,e865f8dc55e47cad,3f345366] [http-nio-8081-exec-3] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 428ms
+2026-09-18 12:16:53.102 INFO  [payment-service,cb0be0b7147096ea,b0085072] [settlement-5] com.example.payment.ReconciliationJob - Reconciled 752 rows, 3 mismatches
+2026-09-18 12:18:39.343 INFO  [payment-service,1fa97ac66e7eae27,b571724b] [http-nio-8081-exec-1] com.example.payment.ReconciliationJob - Reconciled 596 rows, 0 mismatches
+2026-09-18 12:19:48.930 INFO  [payment-service,99121c917f2dfb97,b86c92a3] [settlement-6] com.example.payment.ReconciliationJob - Reconciled 344 rows, 1 mismatches
+2026-09-18 12:20:33.128 INFO  [payment-service,63f4119b199dadb2,57b6add5] [http-nio-8081-exec-7] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 216ms
+2026-09-18 12:20:45.453 INFO  [payment-service,af1209674335b53e,e64b27e7] [http-nio-8081-exec-2] com.example.payment.PaymentRetryClient - Settled reference SET-719810 amount=65668
+2026-09-18 12:21:13.001 INFO  [payment-service,a8c09a012cb3e2d7,8bb55013] [settlement-5] com.example.payment.ReconciliationJob - Reconciled 119 rows, 3 mismatches
+2026-09-18 12:22:50.801 INFO  [payment-service,00e29966ca133235,a77a532d] [settlement-4] com.example.payment.ReconciliationJob - Reconciled 397 rows, 1 mismatches
+2026-09-18 12:24:38.616 WARN  [payment-service,2a1cc8ea63f95185,26ebc265] [http-nio-8081-exec-9] com.example.payment.SettlementApiClient - Upstream latency 1481ms exceeds the 1000ms budget
+2026-09-18 12:25:33.599 INFO  [payment-service,99541ef9412d3857,4314d2b1] [http-nio-8081-exec-3] com.example.payment.ReconciliationJob - Reconciled 125 rows, 3 mismatches
+2026-09-18 12:28:10.552 INFO  [payment-service,03e19518846c82a7,4b34c1ba] [settlement-5] com.example.payment.ReconciliationJob - Reconciled 475 rows, 2 mismatches
+2026-09-18 12:29:30.628 WARN  [payment-service,a9e8a8d6375b2ef3,513d6a38] [settlement-4] com.example.payment.SettlementApiClient - Upstream latency 1359ms exceeds the 1000ms budget
+2026-09-18 12:29:59.529 INFO  [payment-service,f4f207aeade2e2b9,1efbc65a] [http-nio-8081-exec-7] com.example.payment.PaymentRetryClient - Settled reference SET-416805 amount=56342
+2026-09-18 12:30:50.222 DEBUG [payment-service,2ab57b30cae34b1e,2c2fb57d] [settlement-1] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 102ms
+2026-09-18 12:31:07.169 INFO  [payment-service,ea8888e1c201cf78,6bfb5af0] [settlement-6] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 229ms
+2026-09-18 12:33:12.477 INFO  [payment-service,e6fafe6addc06707,22514bc1] [http-nio-8081-exec-4] com.example.payment.ReconciliationJob - Reconciled 376 rows, 3 mismatches
+2026-09-18 12:35:11.259 WARN  [payment-service,e5e80e9d98bdbab2,7b5e3cca] [http-nio-8081-exec-5] com.example.payment.SettlementApiClient - Upstream latency 1793ms exceeds the 1000ms budget
+2026-09-18 12:37:00.563 WARN  [payment-service,caea56bb02de78ca,67758a9e] [settlement-3] com.example.payment.SettlementApiClient - Upstream latency 1237ms exceeds the 1000ms budget
+2026-09-18 12:40:26.148 INFO  [payment-service,28bd4e46dbae607a,855d9829] [settlement-7] com.example.payment.ReconciliationJob - Reconciled 1126 rows, 1 mismatches
+2026-09-18 12:40:41.844 DEBUG [payment-service,439e451f5e0197fa,b0f06d1d] [http-nio-8081-exec-2] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 631ms
+2026-09-18 12:41:25.111 INFO  [payment-service,35b074e08ef15573,422f3996] [http-nio-8081-exec-6] com.example.payment.PaymentRetryClient - Settled reference SET-956932 amount=81101
+2026-09-18 12:41:26.244 INFO  [payment-service,52829e2fc9d002bb,97d28d64] [settlement-9] com.example.payment.ReconciliationJob - Reconciled 290 rows, 0 mismatches
+2026-09-18 12:41:57.793 INFO  [payment-service,6097617895889641,bfd0ccce] [http-nio-8081-exec-7] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 128ms
+2026-09-18 12:43:01.997 INFO  [payment-service,dbac9926e1b0fc0c,fa694ff9] [settlement-3] com.example.payment.PaymentRetryClient - Settled reference SET-383594 amount=69179
+2026-09-18 12:43:54.492 INFO  [payment-service,5cefa261c9aa5de6,149354d9] [settlement-4] com.example.payment.PaymentRetryClient - Settled reference SET-866079 amount=57740
+2026-09-18 12:45:42.338 INFO  [payment-service,3085d14d91254a98,0e96629f] [settlement-8] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 227ms
+2026-09-18 12:46:58.890 INFO  [payment-service,340dadcab88c7b73,fa44178d] [settlement-7] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 145ms
+2026-09-18 12:47:06.156 WARN  [payment-service,2a8c78a3b367a9a0,0530fa74] [http-nio-8081-exec-1] com.example.payment.SettlementApiClient - Upstream latency 2458ms exceeds the 1000ms budget
+2026-09-18 12:47:21.035 INFO  [payment-service,3b89344a9f99d3e0,4297e968] [http-nio-8081-exec-9] com.example.payment.ReconciliationJob - Reconciled 684 rows, 3 mismatches
+2026-09-18 12:47:32.417 INFO  [payment-service,8b356b2d2d5f9d7b,e67aca04] [http-nio-8081-exec-1] com.example.payment.ReconciliationJob - Reconciled 700 rows, 0 mismatches
+2026-09-18 12:47:51.882 WARN  [payment-service,93dc16d2d3cc5ccc,f2d9eb62] [http-nio-8081-exec-1] com.example.payment.SettlementApiClient - Upstream latency 1751ms exceeds the 1000ms budget
+2026-09-18 12:48:12.156 INFO  [payment-service,1a7a6b720518af49,8d87fb86] [http-nio-8081-exec-8] com.example.payment.PaymentRetryClient - Settled reference SET-724890 amount=46079
+2026-09-18 12:48:45.099 WARN  [payment-service,f212df5160f7694d,405fddc2] [settlement-1] com.example.payment.SettlementApiClient - Upstream latency 1821ms exceeds the 1000ms budget
+2026-09-18 12:49:03.407 INFO  [payment-service,346469d0a78f6f2e,47d00c39] [http-nio-8081-exec-6] com.example.payment.PaymentRetryClient - Settled reference SET-691156 amount=36493
+2026-09-18 12:50:07.324 DEBUG [payment-service,f88e2e308c9ccdc4,29ee0503] [http-nio-8081-exec-7] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 693ms
+2026-09-18 12:50:45.718 WARN  [payment-service,f3bbf1b527a75c1e,5cf70712] [settlement-9] com.example.payment.SettlementApiClient - Upstream latency 2428ms exceeds the 1000ms budget
+2026-09-18 12:51:01.793 DEBUG [payment-service,026548fd61f79113,d954b690] [http-nio-8081-exec-4] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 284ms
+2026-09-18 12:53:03.076 INFO  [payment-service,352274cc99403d50,8a415b4f] [settlement-6] com.example.payment.ReconciliationJob - Reconciled 1111 rows, 1 mismatches
+2026-09-18 12:53:15.289 INFO  [payment-service,fe0b8f2f1ab378f8,e87f17bb] [settlement-3] com.example.payment.PaymentRetryClient - Settled reference SET-339162 amount=11715
+2026-09-18 12:53:40.860 INFO  [payment-service,cf972b2aa26dfff8,9ee84b10] [http-nio-8081-exec-9] com.example.payment.ReconciliationJob - Reconciled 236 rows, 3 mismatches
+2026-09-18 12:54:02.242 INFO  [payment-service,f62c42dccec25a9e,77b41a78] [settlement-1] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 151ms
+2026-09-18 12:54:06.996 WARN  [payment-service,75f91219adf3087a,18c0bf00] [http-nio-8081-exec-9] com.example.payment.SettlementApiClient - Upstream latency 1971ms exceeds the 1000ms budget
+2026-09-18 12:56:04.719 DEBUG [payment-service,55e2be05f929933d,515107ef] [settlement-8] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 795ms
+2026-09-18 12:57:27.149 INFO  [payment-service,1038ffe47bf5a14d,0241da66] [http-nio-8081-exec-2] com.example.payment.PaymentRetryClient - Settled reference SET-626930 amount=2063
+2026-09-18 12:57:32.943 INFO  [payment-service,ce314e90ba5ca486,4c400ec3] [settlement-8] com.example.payment.PaymentRetryClient - Settled reference SET-750846 amount=4629
+2026-09-18 12:58:55.806 INFO  [payment-service,de5f87a1347f6fc1,42904cd8] [settlement-1] com.example.payment.PaymentRetryClient - Settled reference SET-368319 amount=87986
+2026-09-18 12:59:57.563 INFO  [payment-service,d448890ae0617365,2f5c9b1e] [settlement-4] com.example.payment.PaymentRetryClient - Settled reference SET-133268 amount=35102
+2026-09-18 13:00:06.389 INFO  [payment-service,4e313992a5e54fae,95ec15ff] [http-nio-8081-exec-1] com.example.payment.ReconciliationJob - Reconciled 674 rows, 1 mismatches
+2026-09-18 13:02:50.579 DEBUG [payment-service,533654ff37b7512b,772a5c60] [settlement-2] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 299ms
+2026-09-18 13:03:32.161 INFO  [payment-service,2b377635eaeaa6a6,176dff34] [settlement-4] com.example.payment.ReconciliationJob - Reconciled 1200 rows, 1 mismatches
+2026-09-18 13:04:03.562 INFO  [payment-service,b0da3e7e8f0eb168,397cd393] [settlement-8] com.example.payment.PaymentRetryClient - Settled reference SET-188527 amount=4269
+2026-09-18 13:04:12.322 INFO  [payment-service,362b19d3c66bca9d,210a1e50] [http-nio-8081-exec-5] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 130ms
+2026-09-18 13:04:19.202 INFO  [payment-service,715ce35a144f4c85,f283bc54] [settlement-6] com.example.payment.PaymentRetryClient - Settled reference SET-548000 amount=5345
+2026-09-18 13:06:41.178 INFO  [payment-service,f1bfe295e5124600,ad2d8757] [http-nio-8081-exec-1] com.example.payment.ReconciliationJob - Reconciled 392 rows, 3 mismatches
+2026-09-18 13:07:04.062 INFO  [payment-service,a2d2f4008321a0e2,498c8b63] [http-nio-8081-exec-2] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 89ms
+2026-09-18 13:08:29.271 INFO  [payment-service,859d586875aad3f9,8e11a251] [http-nio-8081-exec-8] com.example.payment.PaymentRetryClient - Settled reference SET-190264 amount=10403
+2026-09-18 13:09:19.386 INFO  [payment-service,946bdc12df16228e,6e067bc9] [http-nio-8081-exec-8] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 279ms
+2026-09-18 13:09:51.023 INFO  [payment-service,3f2c1fa5edfb1d6e,e84fd284] [settlement-1] com.example.payment.ReconciliationJob - Reconciled 197 rows, 0 mismatches
+2026-09-18 13:10:31.262 WARN  [payment-service,a022cfbb9ab78f80,0fb78f7b] [settlement-7] com.example.payment.SettlementApiClient - Upstream latency 2496ms exceeds the 1000ms budget
+2026-09-18 13:10:35.603 INFO  [payment-service,f6816021d5979e23,ac726b47] [settlement-1] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 229ms
+2026-09-18 13:10:54.982 INFO  [payment-service,8d1218abeecf485a,48ec8477] [settlement-4] com.example.payment.ReconciliationJob - Reconciled 550 rows, 1 mismatches
+2026-09-18 13:11:52.498 WARN  [payment-service,80344de7523ed4d7,bfd9a897] [http-nio-8081-exec-8] com.example.payment.SettlementApiClient - Upstream latency 2061ms exceeds the 1000ms budget
+2026-09-18 13:15:32.801 WARN  [payment-service,f56cb7d756236336,b4321e7e] [settlement-4] com.example.payment.SettlementApiClient - Upstream latency 2065ms exceeds the 1000ms budget
+2026-09-18 13:16:10.233 INFO  [payment-service,4cc4626116866110,8f725fd5] [settlement-3] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 230ms
+2026-09-18 13:17:39.741 INFO  [payment-service,3db7cf83dbd36779,578c7c3c] [http-nio-8081-exec-5] com.example.payment.ReconciliationJob - Reconciled 277 rows, 0 mismatches
+2026-09-18 13:18:40.122 INFO  [payment-service,1012b0dae0d7e749,bff46416] [http-nio-8081-exec-8] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 74ms
+2026-09-18 13:20:43.630 INFO  [payment-service,2201294fa90d0d2b,b3b305d8] [settlement-7] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 139ms
+2026-09-18 13:23:11.310 INFO  [payment-service,25b5e1969e09c979,da383097] [http-nio-8081-exec-8] com.example.payment.PaymentRetryClient - Settled reference SET-534695 amount=66017
+2026-09-18 13:25:39.350 INFO  [payment-service,2fb204cb64456fdd,bf49c11f] [settlement-6] com.example.payment.PaymentRetryClient - Settled reference SET-343380 amount=1326
+2026-09-18 13:25:55.189 INFO  [payment-service,6b7a82e26fd951ce,12dc4916] [http-nio-8081-exec-8] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 144ms
+2026-09-18 13:26:23.382 INFO  [payment-service,f22fcf8466329875,f6101ab3] [http-nio-8081-exec-8] com.example.payment.PaymentRetryClient - Settled reference SET-354116 amount=11448
+2026-09-18 13:26:48.201 WARN  [payment-service,8b72c353d86a2bf1,3d69fd7f] [http-nio-8081-exec-6] com.example.payment.SettlementApiClient - Upstream latency 1340ms exceeds the 1000ms budget
+2026-09-18 13:27:02.908 WARN  [payment-service,04de412f0038aa61,767a7ac2] [settlement-1] com.example.payment.SettlementApiClient - Upstream latency 1667ms exceeds the 1000ms budget
+2026-09-18 13:28:00.000 WARN  [payment-service,03b0a8456a056569,956bcd80] [settlement-4] com.example.payment.PaymentRetryClient - Settlement rate limited (HTTP 429, Retry-After=24s), retrying immediately [PaymentRetryClient.java:28]
+2026-09-18 13:28:00.056 WARN  [payment-service,12ec8acd7a8dc86b,d1d75942] [http-nio-8081-exec-2] com.example.payment.PaymentRetryClient - Settlement rate limited (HTTP 429, Retry-After=24s), retrying immediately [PaymentRetryClient.java:28]
+2026-09-18 13:29:31.200 INFO  [payment-service,7795a4f1eeb3fb9f,103dc547] [http-nio-8081-exec-2] com.example.payment.PaymentRetryClient - Settled reference SET-718391 amount=15463
+2026-09-18 13:31:06.081 INFO  [payment-service,3d50c8644c48b9f1,a5087e0d] [http-nio-8081-exec-4] com.example.payment.PaymentRetryClient - Settled reference SET-313627 amount=64036
+2026-09-18 13:31:13.357 DEBUG [payment-service,4807b489eaa7aaec,ecc5615a] [http-nio-8081-exec-9] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 410ms
+2026-09-18 13:32:04.557 INFO  [payment-service,b59555d1b905c191,5bc3bedc] [settlement-1] com.example.payment.PaymentRetryClient - Settled reference SET-867367 amount=4194
+2026-09-18 13:32:19.590 INFO  [payment-service,701c827426babc2c,21af3a94] [http-nio-8081-exec-3] com.example.payment.ReconciliationJob - Reconciled 559 rows, 2 mismatches
+2026-09-18 13:33:00.332 INFO  [payment-service,ba106c5d5e2c3720,e4c7e64f] [http-nio-8081-exec-9] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 196ms
+2026-09-18 13:33:25.567 INFO  [payment-service,b6f6415519e61566,9c1c784c] [http-nio-8081-exec-5] com.example.payment.ReconciliationJob - Reconciled 445 rows, 2 mismatches
+2026-09-18 13:33:38.180 DEBUG [payment-service,2ab21094cd33ad8e,5ab38893] [settlement-3] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 466ms
+2026-09-18 13:34:18.131 INFO  [payment-service,82358d0fa3cbaa56,2e0c5ef1] [settlement-4] com.example.payment.PaymentRetryClient - Settled reference SET-732092 amount=31037
+2026-09-18 13:34:22.177 INFO  [payment-service,9d193a9484087082,f2c57f4f] [http-nio-8081-exec-9] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 97ms
+2026-09-18 13:35:21.540 DEBUG [payment-service,918723f1f0b725b0,b6b9ab05] [http-nio-8081-exec-5] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 335ms
+2026-09-18 13:36:12.382 INFO  [payment-service,efad39893563ad2b,b552b105] [http-nio-8081-exec-8] com.example.payment.ReconciliationJob - Reconciled 557 rows, 2 mismatches
+2026-09-18 13:36:13.219 DEBUG [payment-service,a5a41cda5d65dee9,684ea185] [settlement-5] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 96ms
+2026-09-18 13:37:05.638 INFO  [payment-service,34fe76a03bc60fb3,9b01ccca] [http-nio-8081-exec-5] com.example.payment.PaymentRetryClient - Settled reference SET-949269 amount=19910
+2026-09-18 13:38:26.225 DEBUG [payment-service,44eecf60300bf85e,1ccc9321] [settlement-2] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 897ms
+2026-09-18 13:38:26.561 WARN  [payment-service,2da9b30c6dbdaa7a,67bd5407] [http-nio-8081-exec-5] com.example.payment.SettlementApiClient - Upstream latency 1677ms exceeds the 1000ms budget
+2026-09-18 13:39:01.757 DEBUG [payment-service,7bb36a09e710fe41,b894d387] [settlement-5] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 544ms
+2026-09-18 13:41:05.106 DEBUG [payment-service,71c834bbb5baf6ef,618f8829] [http-nio-8081-exec-5] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 819ms
+2026-09-18 13:41:10.958 INFO  [payment-service,551aa8d551e54fde,dbbd7164] [settlement-3] com.example.payment.PaymentRetryClient - Settled reference SET-481577 amount=70473
+2026-09-18 13:41:51.216 INFO  [payment-service,4fbfb61d4991e540,f1f30f32] [http-nio-8081-exec-3] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 167ms
+2026-09-18 13:42:20.216 WARN  [payment-service,ff5a3dcc6a3ddc3f,597b76e2] [settlement-8] com.example.payment.SettlementApiClient - Upstream latency 1656ms exceeds the 1000ms budget
+2026-09-18 13:42:41.352 INFO  [payment-service,054c206acbcad5a1,ef03b435] [settlement-5] com.example.payment.ReconciliationJob - Reconciled 322 rows, 3 mismatches
+2026-09-18 13:43:36.222 INFO  [payment-service,4d96d3f23d2c8f94,9178a79b] [settlement-2] com.example.payment.ReconciliationJob - Reconciled 669 rows, 1 mismatches
+2026-09-18 13:45:03.415 INFO  [payment-service,d01187484499660b,7926ccbb] [settlement-5] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 85ms
+2026-09-18 13:45:30.148 WARN  [payment-service,a70047721deb603b,52acbdf2] [http-nio-8081-exec-1] com.example.payment.SettlementApiClient - Upstream latency 2385ms exceeds the 1000ms budget
+2026-09-18 13:46:37.580 INFO  [payment-service,28b7b47d9a4e5034,e6be5dfd] [settlement-3] com.example.payment.ReconciliationJob - Reconciled 934 rows, 3 mismatches
+2026-09-18 13:47:39.870 INFO  [payment-service,351c88bea79fefcd,d2a73d8a] [http-nio-8081-exec-5] com.example.payment.PaymentRetryClient - Settled reference SET-946950 amount=63995
+2026-09-18 13:47:43.632 INFO  [payment-service,64fa3e7b9b5959a5,3db137ba] [settlement-4] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 239ms
+2026-09-18 13:47:46.729 INFO  [payment-service,e709cd041626dab3,d5022f27] [settlement-4] com.example.payment.PaymentRetryClient - Settled reference SET-199019 amount=47816
+2026-09-18 13:48:17.713 DEBUG [payment-service,7343f904322d2dda,e1b5950a] [settlement-5] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 577ms
+2026-09-18 13:48:25.394 INFO  [payment-service,352607e6869c153c,5bb7b260] [http-nio-8081-exec-8] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 178ms
+2026-09-18 13:48:27.206 INFO  [payment-service,7a34e339105fea34,cc5808f0] [http-nio-8081-exec-7] com.example.payment.ReconciliationJob - Reconciled 496 rows, 3 mismatches
+2026-09-18 13:48:42.752 INFO  [payment-service,95c46cbdf835a00b,7a53cdc4] [settlement-4] com.example.payment.PaymentRetryClient - Settled reference SET-831750 amount=72310
+2026-09-18 13:49:38.516 DEBUG [payment-service,858cc63e11b5fd02,092bf78b] [http-nio-8081-exec-2] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 562ms
+2026-09-18 13:51:42.876 WARN  [payment-service,70dc93585cf57edd,365200bd] [settlement-8] com.example.payment.SettlementApiClient - Upstream latency 2221ms exceeds the 1000ms budget
+2026-09-18 13:51:53.940 DEBUG [payment-service,415b3e9b5d5d8593,e8a0d70f] [settlement-9] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 537ms
+2026-09-18 13:52:24.246 INFO  [payment-service,34679718aba12580,e2c8c788] [settlement-2] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 54ms
+2026-09-18 13:53:36.518 INFO  [payment-service,bf21c6f860a6c40f,d3b2cfea] [settlement-4] com.example.payment.PaymentRetryClient - Settled reference SET-123878 amount=49439
+2026-09-18 13:53:59.440 INFO  [payment-service,c206211d9835b6a9,6202da54] [http-nio-8081-exec-2] com.example.payment.PaymentRetryClient - Settled reference SET-983478 amount=87580
+2026-09-18 13:58:05.993 INFO  [payment-service,62132ddc21e10daa,e5fde79d] [settlement-3] com.example.payment.PaymentRetryClient - Settled reference SET-463668 amount=41463
+2026-09-18 13:58:48.193 INFO  [payment-service,86c30d7735187976,f0d856cb] [http-nio-8081-exec-6] com.example.payment.ReconciliationJob - Reconciled 448 rows, 0 mismatches
+2026-09-18 13:58:58.607 WARN  [payment-service,90439eb3623d438d,94ea3c30] [settlement-8] com.example.payment.SettlementApiClient - Upstream latency 1343ms exceeds the 1000ms budget
+2026-09-18 13:58:59.499 WARN  [payment-service,801ec6d463b02097,2a7d7380] [settlement-9] com.example.payment.SettlementApiClient - Upstream latency 1612ms exceeds the 1000ms budget
+2026-09-18 13:59:29.129 DEBUG [payment-service,62fa1975c84edc11,ad82083d] [settlement-3] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 617ms
+2026-09-18 14:00:45.598 INFO  [payment-service,c1e8e0504d213e94,2d9a402e] [settlement-7] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 71ms
+2026-09-18 14:01:09.749 DEBUG [payment-service,2fabc471e9258bd6,3eab998d] [http-nio-8081-exec-7] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 465ms
+2026-09-18 14:01:36.599 INFO  [payment-service,310cc924f6732a44,aabef0b9] [http-nio-8081-exec-6] com.example.payment.ReconciliationJob - Reconciled 472 rows, 3 mismatches
+2026-09-18 14:03:07.845 INFO  [payment-service,b18251d24f9560fe,58b6b54f] [settlement-1] com.example.payment.ReconciliationJob - Reconciled 488 rows, 2 mismatches
+2026-09-18 14:03:08.981 INFO  [payment-service,b4ea502a0d97e3bf,f05be2cc] [http-nio-8081-exec-3] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 109ms
+2026-09-18 14:03:17.086 INFO  [payment-service,c958bc00198af533,6f957127] [settlement-5] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 64ms
+2026-09-18 14:03:46.810 INFO  [payment-service,675a6d977075f0c0,24b04731] [http-nio-8081-exec-7] com.example.payment.PaymentRetryClient - Settled reference SET-259658 amount=45196
+2026-09-18 14:04:10.978 DEBUG [payment-service,bf9503cac345e279,a57b2f79] [http-nio-8081-exec-6] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 536ms
+2026-09-18 14:04:17.533 WARN  [payment-service,02e695e6575fc420,1a1d75a3] [http-nio-8081-exec-7] com.example.payment.SettlementApiClient - Upstream latency 2152ms exceeds the 1000ms budget
+2026-09-18 14:05:49.794 WARN  [payment-service,335c1ac9ba069d72,6db2137a] [http-nio-8081-exec-3] com.example.payment.SettlementApiClient - Upstream latency 1383ms exceeds the 1000ms budget
+2026-09-18 14:06:19.829 INFO  [payment-service,d16ad0e84f6ee131,887738a9] [settlement-3] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 167ms
+2026-09-18 14:08:15.694 INFO  [payment-service,45d800dca6b276d6,d77b5189] [http-nio-8081-exec-2] com.example.payment.ReconciliationJob - Reconciled 375 rows, 1 mismatches
+2026-09-18 14:08:29.987 INFO  [payment-service,7f02610abad604ea,d48a1b4d] [http-nio-8081-exec-6] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 315ms
+2026-09-18 14:09:06.836 INFO  [payment-service,18d10797fa4853ec,dcb3ea00] [http-nio-8081-exec-2] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 250ms
+2026-09-18 14:09:18.070 WARN  [payment-service,b944be324e3e5aa5,eab1e740] [http-nio-8081-exec-4] com.example.payment.SettlementApiClient - Upstream latency 1420ms exceeds the 1000ms budget
+2026-09-18 14:10:40.201 WARN  [payment-service,c78a5ac6119c39c8,142689df] [settlement-6] com.example.payment.SettlementApiClient - Upstream latency 2200ms exceeds the 1000ms budget
+2026-09-18 14:11:28.239 DEBUG [payment-service,ae1b69e8fcde1031,835622b1] [settlement-3] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 816ms
+2026-09-18 14:12:54.358 INFO  [payment-service,453d89ad3476a5b9,055b9a2d] [http-nio-8081-exec-4] com.example.payment.ReconciliationJob - Reconciled 879 rows, 2 mismatches
+2026-09-18 14:13:04.240 INFO  [payment-service,8c6391d23e5a06a6,e3dfbe5a] [settlement-9] com.example.payment.ReconciliationJob - Reconciled 1163 rows, 3 mismatches
+2026-09-18 14:13:24.147 INFO  [payment-service,53d5c334ba9fbc14,7e069ad0] [settlement-5] com.example.payment.ReconciliationJob - Reconciled 457 rows, 3 mismatches
+2026-09-18 14:14:18.594 INFO  [payment-service,69ea34fec13aa744,cb3efe35] [settlement-6] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 74ms
+2026-09-18 14:15:17.563 INFO  [payment-service,305410d9080e8e86,863cdc04] [http-nio-8081-exec-1] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 102ms
+2026-09-18 14:16:00.679 INFO  [payment-service,89f42d6732e74e4f,39b11d90] [http-nio-8081-exec-2] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 313ms
+2026-09-18 14:16:10.258 INFO  [payment-service,c86147cb9dcb9f1e,4fff06e3] [settlement-9] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 319ms
+2026-09-18 14:16:23.099 DEBUG [payment-service,c8db7e8cae96a8b0,6aac00b8] [http-nio-8081-exec-2] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 334ms
+2026-09-18 14:16:48.362 INFO  [payment-service,831f777964dc0511,5f5cc5f3] [settlement-2] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 299ms
+2026-09-18 14:16:54.291 WARN  [payment-service,a90e4851c3949f24,a31bfb32] [settlement-4] com.example.payment.SettlementApiClient - Upstream latency 1880ms exceeds the 1000ms budget
+2026-09-18 14:17:45.775 DEBUG [payment-service,19ed8b05d998c6a8,5d7a829c] [settlement-3] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 572ms
+2026-09-18 14:17:45.945 DEBUG [payment-service,cc7925436104740a,395d93f1] [http-nio-8081-exec-7] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 180ms
+2026-09-18 14:18:15.049 DEBUG [payment-service,4779d93ee54e9492,645fd342] [settlement-2] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 149ms
+2026-09-18 14:19:07.639 INFO  [payment-service,c298f079c6152c5a,af448621] [http-nio-8081-exec-8] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 313ms
+2026-09-18 14:19:10.550 WARN  [payment-service,c226cff727eedfa7,1280c378] [http-nio-8081-exec-4] com.example.payment.SettlementApiClient - Upstream latency 1400ms exceeds the 1000ms budget
+2026-09-18 14:19:50.540 INFO  [payment-service,d9e3bbb3055b0865,8145dbf5] [settlement-1] com.example.payment.ReconciliationJob - Reconciled 990 rows, 0 mismatches
+2026-09-18 14:19:51.740 INFO  [payment-service,229bde77d8d4198f,e083ad91] [http-nio-8081-exec-6] com.example.payment.PaymentRetryClient - Settled reference SET-444016 amount=22807
+2026-09-18 14:21:35.489 INFO  [payment-service,6c6d48e332216bf8,8245494f] [http-nio-8081-exec-6] com.example.payment.PaymentRetryClient - Settled reference SET-515697 amount=15955
+2026-09-18 14:23:07.618 WARN  [payment-service,fb84d7faa0485b69,d85b7240] [http-nio-8081-exec-7] com.example.payment.SettlementApiClient - Upstream latency 1262ms exceeds the 1000ms budget
+2026-09-18 14:23:48.321 INFO  [payment-service,a8d945f74da5ab8e,5472cf12] [settlement-9] com.example.payment.PaymentRetryClient - Settled reference SET-179144 amount=48787
+2026-09-18 14:24:18.247 INFO  [payment-service,e290250440e6ab88,919f1bd8] [settlement-8] com.example.payment.ReconciliationJob - Reconciled 1012 rows, 2 mismatches
+2026-09-18 14:24:52.783 INFO  [payment-service,999257b4c94eb43d,4c478e12] [settlement-9] com.example.payment.PaymentRetryClient - Settled reference SET-495312 amount=89643
+2026-09-18 14:24:55.920 INFO  [payment-service,91a66c8d8e7e8f24,bef7adc1] [settlement-3] com.example.payment.PaymentRetryClient - Settled reference SET-648439 amount=57694
+2026-09-18 14:25:45.764 INFO  [payment-service,cd7061a73c16d67e,41947c63] [http-nio-8081-exec-6] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 164ms
+2026-09-18 14:26:51.857 INFO  [payment-service,bbb0db60de69b6f1,9e900e70] [http-nio-8081-exec-3] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 256ms
+2026-09-18 14:27:10.750 WARN  [payment-service,2d15b56ddc888745,563a27cc] [settlement-2] com.example.payment.SettlementApiClient - Upstream latency 1843ms exceeds the 1000ms budget
+2026-09-18 14:28:31.061 DEBUG [payment-service,bff1971d99a5b269,b6a5d86d] [http-nio-8081-exec-8] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 735ms
+2026-09-18 14:29:01.632 DEBUG [payment-service,889ee779c8c5bd9c,2c1e7fcc] [http-nio-8081-exec-8] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 178ms
+2026-09-18 14:30:57.401 INFO  [payment-service,5a43b519ed642760,11e8b5dd] [settlement-2] com.example.payment.ReconciliationJob - Reconciled 510 rows, 0 mismatches
+2026-09-18 14:35:16.835 DEBUG [payment-service,85992d9dc078e24a,c89beb55] [settlement-9] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 80ms
+2026-09-18 14:35:25.318 INFO  [payment-service,69b4664f92f57d6a,9751329a] [settlement-9] com.example.payment.ReconciliationJob - Reconciled 328 rows, 1 mismatches
+2026-09-18 14:35:47.740 DEBUG [payment-service,d752cb7360689d69,cd4b6860] [settlement-6] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 187ms
+2026-09-18 14:37:16.678 INFO  [payment-service,aeab10fcd770cb69,0e632172] [http-nio-8081-exec-1] com.example.payment.ReconciliationJob - Reconciled 910 rows, 1 mismatches
+2026-09-18 14:38:30.371 DEBUG [payment-service,e13aad42218bfe29,19222655] [settlement-5] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 317ms
+2026-09-18 14:40:19.857 DEBUG [payment-service,efca5df014318a6d,f5356118] [http-nio-8081-exec-3] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 532ms
+2026-09-18 14:41:57.730 INFO  [payment-service,228bb77f92abd021,c5406798] [settlement-7] com.example.payment.ReconciliationJob - Reconciled 1071 rows, 1 mismatches
+2026-09-18 14:42:56.849 INFO  [payment-service,cc73d172b17269d0,f7e9df24] [http-nio-8081-exec-1] com.example.payment.ReconciliationJob - Reconciled 473 rows, 0 mismatches
+2026-09-18 14:43:20.905 INFO  [payment-service,dc191764ba4bcc6d,0448bd54] [settlement-6] com.example.payment.PaymentRetryClient - Settled reference SET-437651 amount=81137
+2026-09-18 14:43:24.750 INFO  [payment-service,153d2201b022172b,2033c8e4] [settlement-1] com.example.payment.ReconciliationJob - Reconciled 1174 rows, 3 mismatches
+2026-09-18 14:48:59.372 INFO  [payment-service,3347339737da460a,f86629ba] [settlement-1] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 137ms
+2026-09-18 14:49:44.273 INFO  [payment-service,e6f8e8c6c29d717e,11d7f98c] [http-nio-8081-exec-9] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 165ms
+2026-09-18 14:50:28.963 INFO  [payment-service,cd50f8db9abace82,aff65b2b] [settlement-6] com.example.payment.PaymentRetryClient - Settled reference SET-847952 amount=83163
+2026-09-18 14:51:28.678 INFO  [payment-service,2d0b769ac3f1fa48,13d828e2] [http-nio-8081-exec-8] com.example.payment.PaymentRetryClient - Settled reference SET-184654 amount=75040
+2026-09-18 14:53:12.415 INFO  [payment-service,f7cacca252304113,48b6436f] [http-nio-8081-exec-8] com.example.payment.PaymentRetryClient - Settled reference SET-610095 amount=14926
+2026-09-18 14:54:34.996 INFO  [payment-service,e15c3f87e252464d,1d43de3f] [settlement-5] com.example.payment.ReconciliationJob - Reconciled 330 rows, 2 mismatches
+2026-09-18 14:55:36.290 INFO  [payment-service,015d8d28f51e74b9,c5ee5831] [http-nio-8081-exec-9] com.example.payment.PaymentRetryClient - Settled reference SET-510629 amount=49007
+2026-09-18 14:55:46.750 WARN  [payment-service,aa3fe9ae007c621f,2cad86c7] [settlement-1] com.example.payment.SettlementApiClient - Upstream latency 1990ms exceeds the 1000ms budget
+2026-09-18 14:56:01.110 DEBUG [payment-service,5d104548b062a897,15a91819] [settlement-7] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 304ms
+2026-09-18 14:57:29.413 INFO  [payment-service,01aed3937e1bb05e,f8d809b5] [settlement-1] com.example.payment.PaymentRetryClient - Settled reference SET-631218 amount=24548
+2026-09-18 14:58:21.204 WARN  [payment-service,adbc674a04dc23e5,5414e3c0] [settlement-8] com.example.payment.SettlementApiClient - Upstream latency 2427ms exceeds the 1000ms budget
+2026-09-18 15:02:41.931 INFO  [payment-service,e3d140c01f045767,b03c0e2f] [http-nio-8081-exec-2] com.example.payment.ReconciliationJob - Reconciled 846 rows, 0 mismatches
+2026-09-18 15:06:41.646 WARN  [payment-service,2818a072e0a1289c,fa471ea3] [settlement-4] com.example.payment.SettlementApiClient - Upstream latency 2019ms exceeds the 1000ms budget
+2026-09-18 15:07:37.958 INFO  [payment-service,c48880b3021206f0,095a553b] [settlement-3] com.example.payment.PaymentRetryClient - Settled reference SET-262256 amount=47707
+2026-09-18 15:08:17.518 INFO  [payment-service,a7ebbd981dd66013,173a65e8] [http-nio-8081-exec-7] com.example.payment.PaymentRetryClient - Settled reference SET-785116 amount=8950
+2026-09-18 15:08:37.463 WARN  [payment-service,75ececf7ae865ca9,9ba7423d] [settlement-9] com.example.payment.SettlementApiClient - Upstream latency 2109ms exceeds the 1000ms budget
+2026-09-18 15:08:50.714 INFO  [payment-service,4782cde44491eeed,0bf6b6e9] [settlement-8] com.example.payment.ReconciliationJob - Reconciled 708 rows, 1 mismatches
+2026-09-18 15:09:20.357 INFO  [payment-service,236fa2d9f51c48f1,865ed3d8] [http-nio-8081-exec-5] com.example.payment.ReconciliationJob - Reconciled 903 rows, 1 mismatches
+2026-09-18 15:12:15.192 WARN  [payment-service,459b9dae2dfd6e62,fa31d3b4] [http-nio-8081-exec-7] com.example.payment.SettlementApiClient - Upstream latency 2526ms exceeds the 1000ms budget
+2026-09-18 15:12:41.810 WARN  [payment-service,8e6632f02a29f84e,43667bde] [http-nio-8081-exec-2] com.example.payment.SettlementApiClient - Upstream latency 1221ms exceeds the 1000ms budget
+2026-09-18 15:12:51.969 INFO  [payment-service,13241dd0f71cb2ce,a1b01bf4] [settlement-9] com.example.payment.ReconciliationJob - Reconciled 805 rows, 3 mismatches
+2026-09-18 15:13:52.707 WARN  [payment-service,4e8b35e4ce480d7f,8fa02a04] [http-nio-8081-exec-1] com.example.payment.SettlementApiClient - Upstream latency 2290ms exceeds the 1000ms budget
+2026-09-18 15:14:38.448 WARN  [payment-service,d0d3c95d22d0105d,0166db67] [http-nio-8081-exec-8] com.example.payment.SettlementApiClient - Upstream latency 1426ms exceeds the 1000ms budget
+2026-09-18 15:15:22.494 DEBUG [payment-service,717b48e6984f04bf,db70cee6] [http-nio-8081-exec-4] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 258ms
+2026-09-18 15:15:32.272 DEBUG [payment-service,d5d48fc225827f61,5fee2a88] [settlement-7] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 812ms
+2026-09-18 15:16:30.731 INFO  [payment-service,802f86737a256ee0,9756d4a2] [http-nio-8081-exec-2] com.example.payment.ReconciliationJob - Reconciled 565 rows, 2 mismatches
+2026-09-18 15:18:15.645 DEBUG [payment-service,60f368da757b310c,22a353bb] [settlement-7] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 226ms
+2026-09-18 15:18:34.256 DEBUG [payment-service,96d07e6fe12b2876,12cde0f1] [http-nio-8081-exec-2] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 691ms
+2026-09-18 15:18:44.369 INFO  [payment-service,f3e29a76f666a453,4dd8ebd3] [settlement-9] com.example.payment.ReconciliationJob - Reconciled 841 rows, 3 mismatches
+2026-09-18 15:19:24.682 WARN  [payment-service,b97003238e4f4add,4081acab] [http-nio-8081-exec-2] com.example.payment.SettlementApiClient - Upstream latency 2332ms exceeds the 1000ms budget
+2026-09-18 15:19:51.929 DEBUG [payment-service,adb695ffe533c775,40210e5a] [http-nio-8081-exec-1] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 288ms
+2026-09-18 15:20:15.781 DEBUG [payment-service,ca3c1bbb27c8dd30,cd644f59] [http-nio-8081-exec-2] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 85ms
+2026-09-18 15:24:17.936 INFO  [payment-service,f70bccc14b98872b,5f8a3f0d] [http-nio-8081-exec-2] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 55ms
+2026-09-18 15:24:20.081 DEBUG [payment-service,304a8caa705cd4a0,331b62c4] [http-nio-8081-exec-1] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 793ms
+2026-09-18 15:28:18.649 INFO  [payment-service,f8465a79a2ec4e1a,6c36f530] [http-nio-8081-exec-3] com.example.payment.PaymentRetryClient - Settled reference SET-322580 amount=26837
+2026-09-18 15:29:13.015 INFO  [payment-service,dc1218bf334476a8,5f8614a2] [settlement-3] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 91ms
+2026-09-18 15:29:18.745 INFO  [payment-service,6625a81aa5df2dc8,c6af7387] [settlement-6] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 68ms
+2026-09-18 15:29:56.531 INFO  [payment-service,874dfae7022a37d5,33d0ea96] [settlement-4] com.example.payment.ReconciliationJob - Reconciled 578 rows, 3 mismatches
+2026-09-18 15:30:51.527 DEBUG [payment-service,b4fb2e96a11998ee,412401bf] [settlement-3] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 105ms
+2026-09-18 15:32:09.241 INFO  [payment-service,cfc8b07bc2ac05d6,c6d85cf7] [settlement-8] com.example.payment.PaymentRetryClient - Settled reference SET-152888 amount=23788
+2026-09-18 15:32:09.811 INFO  [payment-service,43ae849e685aa877,3ad5b939] [http-nio-8081-exec-1] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 298ms
+2026-09-18 15:33:20.427 WARN  [payment-service,43ef0227b6aa26a1,67461dfa] [http-nio-8081-exec-9] com.example.payment.SettlementApiClient - Upstream latency 1684ms exceeds the 1000ms budget
+2026-09-18 15:34:01.239 INFO  [payment-service,6d484b73c09e1f71,d996f89e] [http-nio-8081-exec-5] com.example.payment.PaymentRetryClient - Settled reference SET-119565 amount=11348
+2026-09-18 15:34:27.371 DEBUG [payment-service,98cec13120b3c926,5690bb37] [settlement-1] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 493ms
+2026-09-18 15:34:54.943 INFO  [payment-service,da0dc88aa73d98e1,3ef5fbfd] [http-nio-8081-exec-8] com.example.payment.ReconciliationJob - Reconciled 918 rows, 2 mismatches
+2026-09-18 15:35:42.094 INFO  [payment-service,3dc2925150c5f6c6,1c9a310c] [http-nio-8081-exec-5] com.example.payment.PaymentRetryClient - Settled reference SET-705612 amount=38685
+2026-09-18 15:36:10.156 INFO  [payment-service,bb40ca496c2edf48,0ae82ee5] [http-nio-8081-exec-6] com.example.payment.ReconciliationJob - Reconciled 998 rows, 3 mismatches
+2026-09-18 15:37:03.234 INFO  [payment-service,5b725945216576f7,2725ac32] [http-nio-8081-exec-6] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 110ms
+2026-09-18 15:38:36.495 DEBUG [payment-service,7cd7f79349609b50,312c748c] [settlement-5] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 285ms
+2026-09-18 15:40:02.330 DEBUG [payment-service,b4e08acde3e37f97,40f85764] [http-nio-8081-exec-7] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 497ms
+2026-09-18 15:40:21.877 INFO  [payment-service,4cdf19ea6e5cc0ab,0a4b562d] [settlement-9] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 147ms
+2026-09-18 15:41:23.969 WARN  [payment-service,e2fd2637ca23d60d,a3d2b474] [http-nio-8081-exec-4] com.example.payment.SettlementApiClient - Upstream latency 2526ms exceeds the 1000ms budget
+2026-09-18 15:42:39.478 INFO  [payment-service,8daa29495c1e487c,6869f176] [http-nio-8081-exec-5] com.example.payment.ReconciliationJob - Reconciled 626 rows, 1 mismatches
+2026-09-18 15:43:03.900 WARN  [payment-service,ec833eb9621a1f7d,c9cfadad] [http-nio-8081-exec-4] com.example.payment.SettlementApiClient - Upstream latency 1514ms exceeds the 1000ms budget
+2026-09-18 15:44:34.491 WARN  [payment-service,fa21d78dae6d3abf,eafda0a4] [settlement-5] com.example.payment.SettlementApiClient - Upstream latency 1390ms exceeds the 1000ms budget
+2026-09-18 15:44:59.179 DEBUG [payment-service,2b0ad5288c47b825,3dde1e79] [http-nio-8081-exec-1] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 530ms
+2026-09-18 15:45:54.339 INFO  [payment-service,22d47da593cf49b2,74da2dd5] [settlement-4] com.example.payment.ReconciliationJob - Reconciled 796 rows, 3 mismatches
+2026-09-18 15:47:39.386 INFO  [payment-service,bb8f1bbd3016138c,3837c185] [settlement-6] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 222ms
+2026-09-18 15:48:00.943 INFO  [payment-service,f3ccfa780fba7f1d,1d41846b] [settlement-2] com.example.payment.PaymentRetryClient - Settled reference SET-614200 amount=14940
+2026-09-18 15:49:34.024 INFO  [payment-service,4684a56d344922ab,c0f19200] [settlement-2] com.example.payment.PaymentRetryClient - Settled reference SET-254860 amount=43547
+2026-09-18 15:49:35.419 INFO  [payment-service,1d9fc87fcc23d7c1,f22a971e] [http-nio-8081-exec-9] com.example.payment.PaymentRetryClient - Settled reference SET-466908 amount=20898
+2026-09-18 15:50:20.676 WARN  [payment-service,ab2771acc34ed360,18617f93] [http-nio-8081-exec-5] com.example.payment.SettlementApiClient - Upstream latency 1481ms exceeds the 1000ms budget
+2026-09-18 15:52:00.665 INFO  [payment-service,0c93762c71d35dbd,df6ea122] [settlement-8] com.example.payment.PaymentRetryClient - Settled reference SET-587526 amount=30217
+2026-09-18 15:52:51.274 INFO  [payment-service,f55db7fecd9e8802,d8d67761] [http-nio-8081-exec-6] com.example.payment.PaymentRetryClient - Settled reference SET-930994 amount=63518
+2026-09-18 15:54:30.593 INFO  [payment-service,413a0e19f877536c,d0f1a731] [http-nio-8081-exec-1] com.example.payment.PaymentRetryClient - Settled reference SET-910134 amount=55264
+2026-09-18 15:54:35.751 INFO  [payment-service,4e5bf63a70526044,620f5170] [http-nio-8081-exec-3] com.example.payment.ReconciliationJob - Reconciled 630 rows, 0 mismatches
+2026-09-18 15:54:45.548 INFO  [payment-service,969cc3645b84fe6f,55e10851] [http-nio-8081-exec-9] com.example.payment.PaymentRetryClient - Settled reference SET-710968 amount=24965
+2026-09-18 15:54:46.904 INFO  [payment-service,0c94eb56bba312d2,68446950] [settlement-1] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 227ms
+2026-09-18 15:55:59.173 DEBUG [payment-service,b6c97afb9979d909,277d1af9] [settlement-5] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 515ms
+2026-09-18 15:56:09.880 DEBUG [payment-service,57148fa87486f511,afe3baf3] [settlement-2] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 135ms
+2026-09-18 15:56:42.195 WARN  [payment-service,c9909d40ad8f988a,5bee67a6] [http-nio-8081-exec-4] com.example.payment.SettlementApiClient - Upstream latency 1650ms exceeds the 1000ms budget
+2026-09-18 15:56:45.908 INFO  [payment-service,0c8c6fe4d4f68490,f51d1c0e] [http-nio-8081-exec-3] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 68ms
+2026-09-18 15:57:04.882 INFO  [payment-service,b809170f431cb00d,c50d3fa6] [http-nio-8081-exec-9] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 102ms
+2026-09-18 15:57:19.068 WARN  [payment-service,1972794d421a638c,453c4fe0] [http-nio-8081-exec-2] com.example.payment.SettlementApiClient - Upstream latency 2087ms exceeds the 1000ms budget
+2026-09-18 15:58:03.616 INFO  [payment-service,21cbdeaf246fad68,ba1de166] [http-nio-8081-exec-3] com.example.payment.PaymentRetryClient - Settled reference SET-542228 amount=38600
+2026-09-18 16:00:10.722 INFO  [payment-service,2ec1911f5e86dded,b9a74783] [http-nio-8081-exec-3] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 153ms
+2026-09-18 16:00:52.195 WARN  [payment-service,13ed386008a78453,9f46462f] [http-nio-8081-exec-1] com.example.payment.SettlementApiClient - Upstream latency 2298ms exceeds the 1000ms budget
+2026-09-18 16:00:58.622 WARN  [payment-service,59065842f6830b40,08dd7809] [settlement-5] com.example.payment.SettlementApiClient - Upstream latency 2451ms exceeds the 1000ms budget
+2026-09-18 16:01:32.673 WARN  [payment-service,9747ce7c539e77b6,5b49ad08] [http-nio-8081-exec-2] com.example.payment.SettlementApiClient - Upstream latency 1372ms exceeds the 1000ms budget
+2026-09-18 16:01:57.677 DEBUG [payment-service,8203540953fbc779,31f6cb2a] [settlement-9] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 799ms
+2026-09-18 16:02:42.297 INFO  [payment-service,7941af4c431acd0b,90bc9c4c] [settlement-6] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 152ms
+2026-09-18 16:03:01.739 WARN  [payment-service,ae5b999dbc66dd1f,08b672b3] [http-nio-8081-exec-3] com.example.payment.SettlementApiClient - Upstream latency 1420ms exceeds the 1000ms budget
+2026-09-18 16:03:59.763 INFO  [payment-service,952c8c3de2f322d4,4852338c] [http-nio-8081-exec-4] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 301ms
+2026-09-18 16:05:01.381 WARN  [payment-service,dee68f135b9b6235,72714abd] [settlement-3] com.example.payment.SettlementApiClient - Upstream latency 2284ms exceeds the 1000ms budget
+2026-09-18 16:08:01.654 INFO  [payment-service,6112b5d87ad0b81d,ed808674] [settlement-3] com.example.payment.ReconciliationJob - Reconciled 505 rows, 2 mismatches
+2026-09-18 16:08:35.333 WARN  [payment-service,6f909831f6b1f68e,8d408c17] [settlement-1] com.example.payment.SettlementApiClient - Upstream latency 1835ms exceeds the 1000ms budget
+2026-09-18 16:10:04.976 INFO  [payment-service,f81aeaaba6e96664,27ec181e] [http-nio-8081-exec-1] com.example.payment.PaymentRetryClient - Settled reference SET-102762 amount=32489
+2026-09-18 16:11:26.546 INFO  [payment-service,02b0b28749f62f18,c7c6fa35] [settlement-3] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 116ms
+2026-09-18 16:12:40.896 INFO  [payment-service,e0407a2f8f44e552,03159a2a] [settlement-7] com.example.payment.ReconciliationJob - Reconciled 724 rows, 0 mismatches
+2026-09-18 16:13:37.699 WARN  [payment-service,9664adda07e2f195,206f8eb8] [http-nio-8081-exec-4] com.example.payment.SettlementApiClient - Upstream latency 2204ms exceeds the 1000ms budget
+2026-09-18 16:15:27.315 INFO  [payment-service,7abd65141cea610d,c767fae1] [settlement-1] com.example.payment.ReconciliationJob - Reconciled 921 rows, 1 mismatches
+2026-09-18 16:16:54.641 INFO  [payment-service,7afe286cdd3094e7,179b245a] [http-nio-8081-exec-3] com.example.payment.ReconciliationJob - Reconciled 1108 rows, 0 mismatches
+2026-09-18 16:16:55.323 INFO  [payment-service,de016a8900032278,edfca1e9] [settlement-7] com.example.payment.ReconciliationJob - Reconciled 352 rows, 0 mismatches
+2026-09-18 16:17:40.530 INFO  [payment-service,07b93b1a19f0b239,cc09598f] [http-nio-8081-exec-2] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 127ms
+2026-09-18 16:17:59.488 INFO  [payment-service,bb155b3c5628dcde,a06e0ee5] [http-nio-8081-exec-4] com.example.payment.ReconciliationJob - Reconciled 417 rows, 0 mismatches
+2026-09-18 16:19:29.223 DEBUG [payment-service,a297e382ce8c929f,a7193667] [http-nio-8081-exec-7] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 882ms
+2026-09-18 16:19:32.789 INFO  [payment-service,d1285d6c655a9eae,0dc4db81] [http-nio-8081-exec-4] com.example.payment.PaymentRetryClient - Settled reference SET-868010 amount=82818
+2026-09-18 16:20:26.487 INFO  [payment-service,e34af992f21a4a90,7c8917da] [http-nio-8081-exec-4] com.example.payment.PaymentRetryClient - Settled reference SET-773844 amount=44030
+2026-09-18 16:22:08.469 INFO  [payment-service,ceb8a4d0c988e5c7,68ec5757] [http-nio-8081-exec-5] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 121ms
+2026-09-18 16:24:17.190 DEBUG [payment-service,b537e890a570e1c9,928e1456] [http-nio-8081-exec-6] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 419ms
+2026-09-18 16:25:21.021 INFO  [payment-service,bcddf1b3eb18bd0c,384cf886] [http-nio-8081-exec-6] com.example.payment.PaymentRetryClient - Settled reference SET-160003 amount=54627
+2026-09-18 16:25:37.776 WARN  [payment-service,75da692fe9528cc5,67dd910b] [settlement-2] com.example.payment.SettlementApiClient - Upstream latency 2090ms exceeds the 1000ms budget
+2026-09-18 16:26:57.976 WARN  [payment-service,b6ccb282e4a9162c,40142d9d] [http-nio-8081-exec-6] com.example.payment.SettlementApiClient - Upstream latency 1565ms exceeds the 1000ms budget
+2026-09-18 16:27:19.834 DEBUG [payment-service,3aed310cba356496,6bb8d105] [http-nio-8081-exec-5] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 256ms
+2026-09-18 16:27:22.526 INFO  [payment-service,e285228a95a009ea,8c5fe518] [settlement-7] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 209ms
+2026-09-18 16:27:29.194 WARN  [payment-service,8272dfcf4b858d6c,5a1baab1] [http-nio-8081-exec-8] com.example.payment.SettlementApiClient - Upstream latency 1760ms exceeds the 1000ms budget
+2026-09-18 16:27:33.769 INFO  [payment-service,a5c576ded6683cff,1d1bc9b7] [settlement-1] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 107ms
+2026-09-18 16:27:43.961 DEBUG [payment-service,6d4c1035bc81a62f,bf189393] [http-nio-8081-exec-8] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 868ms
+2026-09-18 16:27:57.270 DEBUG [payment-service,429ee6e054447d3e,962ceb97] [http-nio-8081-exec-1] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 538ms
+2026-09-18 16:28:16.449 DEBUG [payment-service,b4d4b1bc8f9abdcf,69e7974f] [http-nio-8081-exec-6] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 810ms
+2026-09-18 16:28:42.189 INFO  [payment-service,6afcc680b3ef8a5f,1325cc97] [settlement-7] com.example.payment.ReconciliationJob - Reconciled 659 rows, 2 mismatches
+2026-09-18 16:28:59.114 DEBUG [payment-service,f7b7bee9a79434bd,5c5f7b07] [settlement-2] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 864ms
+2026-09-18 16:30:17.488 WARN  [payment-service,671e87bb826e44a2,efe0b61a] [http-nio-8081-exec-1] com.example.payment.SettlementApiClient - Upstream latency 2409ms exceeds the 1000ms budget
+2026-09-18 16:30:41.322 DEBUG [payment-service,db04453c37cccd6e,83b1e51c] [http-nio-8081-exec-1] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 793ms
+2026-09-18 16:32:19.962 WARN  [payment-service,f449ce95c65471f0,20999a4c] [http-nio-8081-exec-7] com.example.payment.SettlementApiClient - Upstream latency 1948ms exceeds the 1000ms budget
+2026-09-18 16:32:52.789 INFO  [payment-service,763e8078cb5ca308,c24a9725] [http-nio-8081-exec-6] com.example.payment.ReconciliationJob - Reconciled 670 rows, 1 mismatches
+2026-09-18 16:33:21.888 INFO  [payment-service,827e435542f1e2fe,33662a4e] [settlement-7] com.example.payment.PaymentRetryClient - Settled reference SET-689553 amount=29444
+2026-09-18 16:35:15.358 INFO  [payment-service,0582fa773e2a5005,4aacffb5] [settlement-2] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 269ms
+2026-09-18 16:36:17.919 INFO  [payment-service,6a83fd7e1ab2ac98,b13cda53] [http-nio-8081-exec-8] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 144ms
+2026-09-18 16:45:37.090 WARN  [payment-service,abac73c2f0574ddf,7e6021dc] [settlement-2] com.example.payment.SettlementApiClient - Upstream latency 1231ms exceeds the 1000ms budget
+2026-09-18 16:45:42.069 INFO  [payment-service,b08a6cf64deb1a5d,e1a72e4c] [http-nio-8081-exec-5] com.example.payment.PaymentRetryClient - Settled reference SET-938324 amount=39615
+2026-09-18 16:46:30.099 INFO  [payment-service,d86dfab0129629b3,e3a1347e] [http-nio-8081-exec-3] com.example.payment.PaymentRetryClient - Settled reference SET-388222 amount=80514
+2026-09-18 16:48:39.167 INFO  [payment-service,e5cd674a42f05d3c,36c2ce59] [settlement-9] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 66ms
+2026-09-18 16:49:14.369 INFO  [payment-service,bd39223945ffd7d8,053be10f] [http-nio-8081-exec-5] com.example.payment.ReconciliationJob - Reconciled 558 rows, 2 mismatches
+2026-09-18 16:50:07.045 INFO  [payment-service,f3f2ef35732e39da,bb8d8b02] [settlement-1] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 165ms
+2026-09-18 16:53:06.060 DEBUG [payment-service,8ac7fdf6e5299e63,fd152ff5] [http-nio-8081-exec-1] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 254ms
+2026-09-18 16:54:08.496 INFO  [payment-service,4ded3b19b0669bf2,071ce29f] [http-nio-8081-exec-8] com.example.payment.PaymentRetryClient - Settled reference SET-118736 amount=7844
+2026-09-18 16:54:29.406 INFO  [payment-service,f469fcd38fe5d876,8de784ed] [http-nio-8081-exec-4] com.example.payment.ReconciliationJob - Reconciled 789 rows, 1 mismatches
+2026-09-18 16:58:57.467 WARN  [payment-service,6a1bd6e8140ee4ce,43d95253] [settlement-5] com.example.payment.SettlementApiClient - Upstream latency 2103ms exceeds the 1000ms budget
+2026-09-18 16:59:43.906 INFO  [payment-service,b93a19c178c52fe2,0ac4861f] [settlement-1] com.example.payment.ReconciliationJob - Reconciled 888 rows, 2 mismatches
+2026-09-18 17:00:39.193 DEBUG [payment-service,6ad99000340ab6f3,851f2108] [settlement-6] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 531ms
+2026-09-18 17:01:02.357 INFO  [payment-service,3867ad9b18539e71,6d8f09de] [settlement-9] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 286ms
+2026-09-18 17:01:27.258 DEBUG [payment-service,6fd6d197b41aaa6c,a64be5f7] [http-nio-8081-exec-4] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 643ms
+2026-09-18 17:01:57.680 INFO  [payment-service,ef2ce88f262cc18b,31666075] [settlement-6] com.example.payment.PaymentRetryClient - Settled reference SET-970323 amount=34209
+2026-09-18 17:02:43.497 DEBUG [payment-service,f3cee9f427bf58b3,02e02705] [http-nio-8081-exec-6] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 325ms
+2026-09-18 17:02:46.844 INFO  [payment-service,d5c0e9b53dc512a5,c7c4b437] [settlement-1] com.example.payment.PaymentRetryClient - Settled reference SET-348125 amount=27713
+2026-09-18 17:03:43.981 WARN  [payment-service,e6199795e22108f8,27a4704d] [settlement-1] com.example.payment.SettlementApiClient - Upstream latency 1420ms exceeds the 1000ms budget
+2026-09-18 17:04:05.219 INFO  [payment-service,380180dc58ecf68d,efe1453a] [settlement-6] com.example.payment.PaymentRetryClient - Settled reference SET-296413 amount=29231
+2026-09-18 17:04:22.342 INFO  [payment-service,b6cf85ad74199d67,e88a9400] [http-nio-8081-exec-8] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 133ms
+2026-09-18 17:05:31.074 INFO  [payment-service,60cd25bd447f0ddf,35437f07] [settlement-9] com.example.payment.PaymentRetryClient - Settled reference SET-293225 amount=54040
+2026-09-18 17:06:57.676 DEBUG [payment-service,3742aaba5afb4286,21b03695] [settlement-6] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 134ms
+2026-09-18 17:06:57.999 WARN  [payment-service,2475f3133f7bf826,1de77060] [settlement-1] com.example.payment.SettlementApiClient - Upstream latency 1227ms exceeds the 1000ms budget
+2026-09-18 17:07:24.870 INFO  [payment-service,4f526a09b085808f,c9cae491] [http-nio-8081-exec-1] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 42ms
+2026-09-18 17:07:54.767 INFO  [payment-service,b3838cc8378e8f80,feac82e1] [http-nio-8081-exec-5] com.example.payment.PaymentRetryClient - Settled reference SET-468299 amount=6609
+2026-09-18 17:10:25.294 DEBUG [payment-service,cae9cb87daeaf3d5,b1496acd] [http-nio-8081-exec-4] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 883ms
+2026-09-18 17:12:12.478 DEBUG [payment-service,51b87d8bffc5b825,3cbaaeb7] [http-nio-8081-exec-4] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 708ms
+2026-09-18 17:12:26.831 INFO  [payment-service,f7af77acfd44048a,75ebbd53] [settlement-1] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 309ms
+2026-09-18 17:12:40.875 INFO  [payment-service,5ce36f15b9313b0d,4a018746] [http-nio-8081-exec-5] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 298ms
+2026-09-18 17:13:03.721 INFO  [payment-service,e7281e83f893562a,eeea1bd2] [http-nio-8081-exec-3] com.example.payment.PaymentRetryClient - Settled reference SET-782433 amount=89665
+2026-09-18 17:13:18.072 INFO  [payment-service,c6b2f47406829d82,b3073103] [http-nio-8081-exec-1] com.example.payment.PaymentRetryClient - Settled reference SET-724116 amount=49909
+2026-09-18 17:14:03.401 WARN  [payment-service,80a76a7ec84e0ff9,cc54ca5f] [settlement-9] com.example.payment.SettlementApiClient - Upstream latency 1620ms exceeds the 1000ms budget
+2026-09-18 17:14:46.832 DEBUG [payment-service,6c589c9ca585d8b6,6856ea07] [http-nio-8081-exec-9] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 561ms
+2026-09-18 17:15:33.594 INFO  [payment-service,a47a45b26fdb108f,1d32f79b] [settlement-2] com.example.payment.ReconciliationJob - Reconciled 628 rows, 0 mismatches
+2026-09-18 17:15:41.341 INFO  [payment-service,ff5d8942b7b88a5f,1c31449f] [http-nio-8081-exec-5] com.example.payment.ReconciliationJob - Reconciled 722 rows, 1 mismatches
+2026-09-18 17:20:20.231 DEBUG [payment-service,146f83e550f37b64,0e7d0237] [settlement-9] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 363ms
+2026-09-18 17:21:03.940 INFO  [payment-service,d82c0db2824a0ab0,c4ea21a3] [http-nio-8081-exec-7] com.example.payment.PaymentRetryClient - Settled reference SET-143196 amount=64014
+2026-09-18 17:21:29.732 INFO  [payment-service,eba7e15b0b9c5c04,af54875c] [settlement-8] com.example.payment.ReconciliationJob - Reconciled 435 rows, 3 mismatches
+2026-09-18 17:21:49.501 INFO  [payment-service,5b14a24d3b29db1a,ce1def21] [http-nio-8081-exec-7] com.example.payment.ReconciliationJob - Reconciled 1116 rows, 0 mismatches
+2026-09-18 17:22:01.252 INFO  [payment-service,b192f1a324e90e9c,3cdf8a8a] [http-nio-8081-exec-8] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 81ms
+2026-09-18 17:22:22.597 INFO  [payment-service,3e1f9e83aa001f7c,b3954915] [settlement-9] com.example.payment.PaymentRetryClient - Settled reference SET-321609 amount=27041
+2026-09-18 17:23:07.445 INFO  [payment-service,087e872f3e97ad9b,f919a913] [settlement-2] com.example.payment.PaymentRetryClient - Settled reference SET-278178 amount=61952
+2026-09-18 17:23:18.785 DEBUG [payment-service,6dcd705c446951a9,24b7cb56] [settlement-8] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 620ms
+2026-09-18 17:23:48.629 INFO  [payment-service,9a9d5d947a887751,4aba0a67] [settlement-8] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 232ms
+2026-09-18 17:26:43.703 WARN  [payment-service,aa3e4257c77e882c,16e64365] [settlement-6] com.example.payment.SettlementApiClient - Upstream latency 1308ms exceeds the 1000ms budget
+2026-09-18 17:26:44.472 INFO  [payment-service,3e1b27072dd02df1,d8568103] [settlement-5] com.example.payment.ReconciliationJob - Reconciled 955 rows, 1 mismatches
+2026-09-18 17:27:02.524 INFO  [payment-service,6ca96529efd276b7,3e7455fe] [settlement-7] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 68ms
+2026-09-18 17:28:11.618 WARN  [payment-service,bff1600f1805c944,5be61583] [http-nio-8081-exec-5] com.example.payment.SettlementApiClient - Upstream latency 2345ms exceeds the 1000ms budget
+2026-09-18 17:30:36.776 INFO  [payment-service,d1495b9931772563,51371a01] [http-nio-8081-exec-6] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 67ms
+2026-09-18 17:31:04.829 INFO  [payment-service,43a1c4cc2dcf8854,c7dcbfb7] [settlement-3] com.example.payment.PaymentRetryClient - Settled reference SET-611911 amount=12226
+2026-09-18 17:31:48.038 DEBUG [payment-service,cd5cf1add6d94ae3,5122e7e4] [settlement-1] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 887ms
+2026-09-18 17:31:54.105 INFO  [payment-service,9e9c1c665d6dd3da,63bc843f] [settlement-1] com.example.payment.PaymentRetryClient - Settled reference SET-352352 amount=53334
+2026-09-18 17:32:47.021 DEBUG [payment-service,e27850be31b65e36,97af67bd] [http-nio-8081-exec-7] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 620ms
+2026-09-18 17:33:08.977 INFO  [payment-service,a7e864d4c1a33e81,1abe85db] [settlement-4] com.example.payment.PaymentRetryClient - Settled reference SET-153802 amount=25608
+2026-09-18 17:33:11.738 DEBUG [payment-service,e1b9a3e0627cceb2,9c0a01f9] [http-nio-8081-exec-9] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 414ms
+2026-09-18 17:33:45.259 INFO  [payment-service,5719a9774a7ad569,830dbbd7] [settlement-1] com.example.payment.ReconciliationJob - Reconciled 1143 rows, 1 mismatches
+2026-09-18 17:35:00.051 INFO  [payment-service,6eacf07473632487,a12ff4f6] [http-nio-8081-exec-8] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 63ms
+2026-09-18 17:36:08.209 INFO  [payment-service,abc5bffbba1473c4,527db6aa] [http-nio-8081-exec-9] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 48ms
+2026-09-18 17:37:18.002 DEBUG [payment-service,975b859ea2bc3925,4cfaed51] [settlement-1] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 471ms
+2026-09-18 17:38:45.702 WARN  [payment-service,3e6962f461b5248b,01160869] [settlement-2] com.example.payment.SettlementApiClient - Upstream latency 1583ms exceeds the 1000ms budget
+2026-09-18 17:40:15.715 INFO  [payment-service,f57629fb69c6260c,44818c9f] [http-nio-8081-exec-9] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 215ms
+2026-09-18 17:41:28.702 WARN  [payment-service,bda08041e4947254,2412bd0e] [http-nio-8081-exec-2] com.example.payment.SettlementApiClient - Upstream latency 1554ms exceeds the 1000ms budget
+2026-09-18 17:41:48.759 INFO  [payment-service,0527d3277f468f75,97967884] [http-nio-8081-exec-5] com.example.payment.PaymentRetryClient - Settled reference SET-602316 amount=38876
+2026-09-18 17:42:57.640 INFO  [payment-service,dee3e2894df61932,c493cfd4] [settlement-2] com.example.payment.ReconciliationJob - Reconciled 1112 rows, 0 mismatches
+2026-09-18 17:44:04.431 INFO  [payment-service,72c28d1c20c762ef,3516a706] [http-nio-8081-exec-1] com.example.payment.ReconciliationJob - Reconciled 1003 rows, 0 mismatches
+2026-09-18 17:44:32.208 INFO  [payment-service,a46d5bd853487535,074f22f2] [settlement-3] com.example.payment.ReconciliationJob - Reconciled 251 rows, 3 mismatches
+2026-09-18 17:46:55.070 WARN  [payment-service,68a6202d17704665,13c9ff37] [http-nio-8081-exec-4] com.example.payment.SettlementApiClient - Upstream latency 2504ms exceeds the 1000ms budget
+2026-09-18 17:48:10.595 INFO  [payment-service,c6416de4d407323e,341e43f3] [http-nio-8081-exec-1] com.example.payment.PaymentRetryClient - Settled reference SET-563020 amount=16455
+2026-09-18 17:48:31.619 WARN  [payment-service,3b7fa88d18ac0cc4,68417c5a] [http-nio-8081-exec-7] com.example.payment.SettlementApiClient - Upstream latency 1429ms exceeds the 1000ms budget
+2026-09-18 17:48:42.961 INFO  [payment-service,2483364a0868ef3e,37292b45] [settlement-2] com.example.payment.ReconciliationJob - Reconciled 170 rows, 2 mismatches
+2026-09-18 17:49:50.792 DEBUG [payment-service,505fb539e5f0125a,47b1ec08] [settlement-3] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 730ms
+2026-09-18 17:53:01.026 INFO  [payment-service,90d862e6de972970,f898b4da] [settlement-5] com.example.payment.PaymentRetryClient - Settled reference SET-507628 amount=26946
+2026-09-18 17:54:53.931 INFO  [payment-service,f563aa2fd09b4d66,6e58d8d5] [settlement-3] com.example.payment.PaymentRetryClient - Settled reference SET-567826 amount=77892
+2026-09-18 17:58:35.701 DEBUG [payment-service,90304233d6eebffb,5d5c591a] [settlement-6] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 387ms
+2026-09-18 17:59:39.127 INFO  [payment-service,e8c4ce5af3a5bc22,490faaa3] [http-nio-8081-exec-2] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 217ms
+2026-09-18 18:00:04.109 INFO  [payment-service,91efad61cbed5274,873b2116] [http-nio-8081-exec-5] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 215ms
+2026-09-18 18:00:43.059 DEBUG [payment-service,a48bf934c70146a5,676f557c] [http-nio-8081-exec-7] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 656ms
+2026-09-18 18:02:55.624 INFO  [payment-service,8c4d8cb029b5758a,1b4692ba] [http-nio-8081-exec-2] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 132ms
+2026-09-18 18:02:56.068 INFO  [payment-service,f4eb293bd695c56a,69dedf48] [settlement-4] com.example.payment.ReconciliationJob - Reconciled 870 rows, 1 mismatches
+2026-09-18 18:04:21.490 INFO  [payment-service,566c53165dac141f,cefa4424] [http-nio-8081-exec-3] com.example.payment.PaymentRetryClient - Settled reference SET-835493 amount=55704
+2026-09-18 18:04:40.994 WARN  [payment-service,818a05e2d700e21d,4e739a7b] [settlement-7] com.example.payment.SettlementApiClient - Upstream latency 1465ms exceeds the 1000ms budget
+2026-09-18 18:05:13.041 INFO  [payment-service,f99fede7074e25bc,893774e9] [settlement-2] com.example.payment.ReconciliationJob - Reconciled 287 rows, 2 mismatches
+2026-09-18 18:07:30.970 DEBUG [payment-service,b9626e3c27b04b64,0299e96d] [settlement-1] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 409ms
+2026-09-18 18:07:52.269 WARN  [payment-service,688a1ea863492b85,c20be58c] [settlement-5] com.example.payment.SettlementApiClient - Upstream latency 1359ms exceeds the 1000ms budget
+2026-09-18 18:08:23.856 INFO  [payment-service,f15d5ea08ae7d34c,b64efa7b] [http-nio-8081-exec-9] com.example.payment.PaymentRetryClient - Settled reference SET-228504 amount=35571
+2026-09-18 18:10:29.983 INFO  [payment-service,2821b9b32572555b,1d1a199e] [http-nio-8081-exec-6] com.example.payment.ReconciliationJob - Reconciled 817 rows, 1 mismatches
+2026-09-18 18:11:26.789 INFO  [payment-service,b82c8766f032dd8e,0621cff8] [settlement-8] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 319ms
+2026-09-18 18:12:36.773 DEBUG [payment-service,35aa7fea28d46640,59f30a12] [http-nio-8081-exec-5] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 698ms
+2026-09-18 18:14:30.724 INFO  [payment-service,0edda9bb9738e5f1,fc09b68d] [http-nio-8081-exec-1] com.example.payment.PaymentRetryClient - Settled reference SET-701010 amount=9749
+2026-09-18 18:15:24.407 INFO  [payment-service,b9ed0ea32c5bbf37,61454735] [settlement-5] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 278ms
+2026-09-18 18:18:57.650 INFO  [payment-service,00b1afd58831d144,12f52daa] [http-nio-8081-exec-8] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 230ms
+2026-09-18 18:20:04.786 INFO  [payment-service,3c1b5f11b68c97a6,ac53b1f9] [settlement-5] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 273ms
+2026-09-18 18:21:23.017 DEBUG [payment-service,faaa0b6aa0afe79c,55d0c308] [settlement-1] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 415ms
+2026-09-18 18:21:55.278 INFO  [payment-service,7881d25aa9234f39,7a4ffa9c] [settlement-4] com.example.payment.ReconciliationJob - Reconciled 874 rows, 0 mismatches
+2026-09-18 18:23:50.716 ERROR [payment-service,febef39f85c5b2f1,323009c9] [settlement-7] com.example.payment.PayoutController - Payout preview failed for payee 65531
+java.lang.NullPointerException: Cannot invoke "String.charAt(int)" because "middleName" is null
+	at com.example.common.NameFormatter.initials(NameFormatter.java:22)
+	at com.example.payment.PaymentProfileEnricher.payeeInitials(PaymentProfileEnricher.java:15)
+	at com.example.payment.PayoutController.preview(PayoutController.java:112)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-09-18 18:23:57.203 INFO  [payment-service,0a94da12efa9685f,63bbdd08] [http-nio-8081-exec-8] com.example.payment.PaymentRetryClient - Settled reference SET-477826 amount=4988
+2026-09-18 18:25:25.499 WARN  [payment-service,742652f503e50e8a,71eceafa] [http-nio-8081-exec-6] com.example.payment.SettlementApiClient - Upstream latency 1405ms exceeds the 1000ms budget
+2026-09-18 18:26:26.331 INFO  [payment-service,d4a63122517d1063,0ee6a066] [settlement-1] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 70ms
+2026-09-18 18:27:16.851 INFO  [payment-service,d976f2c8b5befb14,3e11b520] [settlement-5] com.example.payment.PaymentRetryClient - Settled reference SET-489948 amount=47134
+2026-09-18 18:27:23.003 DEBUG [payment-service,0548d5e555b40b52,6a852709] [settlement-9] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 161ms
+2026-09-18 18:28:37.996 WARN  [payment-service,1a4f29fd0b02d683,838ae0f4] [http-nio-8081-exec-1] com.example.payment.SettlementApiClient - Upstream latency 1666ms exceeds the 1000ms budget
+2026-09-18 18:28:46.311 INFO  [payment-service,32af16698ada6bd2,1b7e76af] [settlement-8] com.example.payment.PaymentRetryClient - Settled reference SET-887782 amount=62927
+2026-09-18 18:30:22.663 DEBUG [payment-service,7e99091e87e8bd5a,c52ae94e] [settlement-9] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 391ms
+2026-09-18 18:30:46.638 DEBUG [payment-service,b02f652d33b0397e,cb1aa34e] [settlement-1] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 843ms
+2026-09-18 18:31:41.839 WARN  [payment-service,ff850ffedf62a965,9391a140] [settlement-6] com.example.payment.SettlementApiClient - Upstream latency 1563ms exceeds the 1000ms budget
+2026-09-18 18:33:21.901 DEBUG [payment-service,432d9a13a39d7c6a,1fd6f711] [settlement-4] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 859ms
+2026-09-18 18:33:37.562 WARN  [payment-service,02f05c29642e3233,15bca8d6] [http-nio-8081-exec-4] com.example.payment.SettlementApiClient - Upstream latency 1253ms exceeds the 1000ms budget
+2026-09-18 18:33:57.550 DEBUG [payment-service,847d6773f9797afd,17238c9e] [settlement-1] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 289ms
+2026-09-18 18:33:58.006 INFO  [payment-service,c2a49d1f215c9f8b,392c4542] [settlement-4] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 70ms
+2026-09-18 18:34:10.613 INFO  [payment-service,831ec806bfb29079,5d68e426] [http-nio-8081-exec-2] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 217ms
+2026-09-18 18:35:16.061 INFO  [payment-service,0119464292e8f7c2,26b00334] [http-nio-8081-exec-6] com.example.payment.PaymentRetryClient - Settled reference SET-289971 amount=89980
+2026-09-18 18:35:22.660 INFO  [payment-service,fe8ea8d20520203c,07b60ec7] [http-nio-8081-exec-4] com.example.payment.PaymentRetryClient - Settled reference SET-901378 amount=2315
+2026-09-18 18:35:23.110 DEBUG [payment-service,4fc763e45e36732b,0cf1ba48] [settlement-2] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 497ms
+2026-09-18 18:37:23.593 WARN  [payment-service,ff536c9c26a8e47a,2bb40c7d] [settlement-4] com.example.payment.SettlementApiClient - Upstream latency 2313ms exceeds the 1000ms budget
+2026-09-18 18:37:29.696 DEBUG [payment-service,5d345495eb7f9042,5ccdd34d] [settlement-7] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 770ms
+2026-09-18 18:38:04.370 INFO  [payment-service,77f503d1966843a5,edfbf591] [http-nio-8081-exec-9] com.example.payment.PaymentRetryClient - Settled reference SET-621640 amount=84013
+2026-09-18 18:40:10.687 INFO  [payment-service,512afe1a3ddae54c,e557514b] [http-nio-8081-exec-9] com.example.payment.PaymentRetryClient - Settled reference SET-616520 amount=65858
+2026-09-18 18:41:25.569 INFO  [payment-service,f3ed13ea89bee6df,b2f364b4] [settlement-3] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 182ms
+2026-09-18 18:41:40.288 WARN  [payment-service,d3ba6cbabecb58cf,d1625947] [http-nio-8081-exec-7] com.example.payment.SettlementApiClient - Upstream latency 2419ms exceeds the 1000ms budget
+2026-09-18 18:42:09.847 WARN  [payment-service,6dd9f5ea6bfbb1d6,7858a138] [settlement-2] com.example.payment.SettlementApiClient - Upstream latency 1512ms exceeds the 1000ms budget
+2026-09-18 18:42:44.575 WARN  [payment-service,028a4c9009849020,e6594f6f] [settlement-5] com.example.payment.SettlementApiClient - Upstream latency 2445ms exceeds the 1000ms budget
+2026-09-18 18:43:11.400 INFO  [payment-service,f25b93fc2a47483b,4156071c] [settlement-8] com.example.payment.ReconciliationJob - Reconciled 1085 rows, 3 mismatches
+2026-09-18 18:44:21.126 DEBUG [payment-service,982e6bc2e64240a7,7729ec51] [settlement-2] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 702ms
+2026-09-18 18:46:36.255 INFO  [payment-service,8d0b2c082bfea9ce,8a785a12] [http-nio-8081-exec-7] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 109ms
+2026-09-18 18:46:47.166 INFO  [payment-service,bf08990350c9d4d3,ecf2165e] [settlement-6] com.example.payment.ReconciliationJob - Reconciled 235 rows, 2 mismatches
+2026-09-18 18:46:49.669 INFO  [payment-service,2e77aba90a014210,b1958969] [http-nio-8081-exec-3] com.example.payment.PaymentRetryClient - Settled reference SET-570095 amount=62904
+2026-09-18 18:48:23.362 INFO  [payment-service,c442df31bb5630c1,b0335fe2] [http-nio-8081-exec-3] com.example.payment.ReconciliationJob - Reconciled 1047 rows, 2 mismatches
+2026-09-18 18:48:55.695 WARN  [payment-service,1a4f555355757b1a,0d3f1af7] [settlement-5] com.example.payment.SettlementApiClient - Upstream latency 1507ms exceeds the 1000ms budget
+2026-09-18 18:49:47.556 INFO  [payment-service,cd11051a3b3b89ac,ff25d772] [http-nio-8081-exec-3] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 274ms
+2026-09-18 18:51:28.953 DEBUG [payment-service,2be8c802507031ea,53b7d04d] [http-nio-8081-exec-2] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 477ms
+2026-09-18 18:52:08.502 WARN  [payment-service,eaf896c618df3b7c,a7cdb0f5] [http-nio-8081-exec-2] com.example.payment.SettlementApiClient - Upstream latency 1324ms exceeds the 1000ms budget
+2026-09-18 18:52:58.282 INFO  [payment-service,00038df78d7a6862,43b9f29d] [settlement-7] com.example.payment.PaymentRetryClient - Settled reference SET-980247 amount=41617
+2026-09-18 18:54:47.348 DEBUG [payment-service,045411d1fea51c97,6a0f8efd] [settlement-6] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 629ms
+2026-09-18 18:55:20.768 INFO  [payment-service,175cdf109bb04048,e2bfe93c] [settlement-8] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 74ms
+2026-09-18 18:55:44.729 INFO  [payment-service,047a9feeb186f682,03e3dceb] [http-nio-8081-exec-3] com.example.payment.PaymentRetryClient - Settled reference SET-539851 amount=34038
+2026-09-18 18:55:46.552 DEBUG [payment-service,cd5ce1efcdc635fe,7d60d0d3] [settlement-7] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 562ms
+2026-09-18 18:56:32.669 INFO  [payment-service,bb94eeb2d9671f94,d8562a26] [http-nio-8081-exec-9] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 145ms
+2026-09-18 18:56:39.964 INFO  [payment-service,4aa5d682f013d6ec,f812ac55] [settlement-7] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 302ms
+2026-09-18 18:56:44.581 INFO  [payment-service,93e1c89dcc72b0e0,5d79896f] [http-nio-8081-exec-1] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 114ms
+2026-09-18 18:57:20.868 WARN  [payment-service,fcb40f4138dc287a,dc4ef94b] [http-nio-8081-exec-8] com.example.payment.SettlementApiClient - Upstream latency 1951ms exceeds the 1000ms budget
+2026-09-18 18:57:49.784 INFO  [payment-service,c80684b9831edd87,4debcf55] [http-nio-8081-exec-1] com.example.payment.ReconciliationJob - Reconciled 782 rows, 3 mismatches
+2026-09-18 18:58:17.983 WARN  [payment-service,8a8737d58eaa06de,0f58f6d8] [http-nio-8081-exec-8] com.example.payment.SettlementApiClient - Upstream latency 1539ms exceeds the 1000ms budget
+2026-09-18 18:58:50.600 WARN  [payment-service,4001639e933730d0,84f08ca4] [settlement-2] com.example.payment.SettlementApiClient - Upstream latency 1531ms exceeds the 1000ms budget
+2026-09-18 18:59:41.193 DEBUG [payment-service,124641f5e065ee34,26dece0e] [settlement-1] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 129ms
+2026-09-18 19:03:31.051 INFO  [payment-service,58ef83c8351c3737,b066a4dc] [settlement-8] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 231ms
+2026-09-18 19:03:34.699 INFO  [payment-service,d672d8d24d3963f5,a1eeb882] [http-nio-8081-exec-3] com.example.payment.ReconciliationJob - Reconciled 1072 rows, 3 mismatches
+2026-09-18 19:04:03.429 INFO  [payment-service,168ad42c07360b46,6a197405] [http-nio-8081-exec-8] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 60ms
+2026-09-18 19:05:32.584 INFO  [payment-service,cc5693dafe889d24,af2a5301] [settlement-7] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 132ms
+2026-09-18 19:05:53.527 INFO  [payment-service,14fbfd991107caba,865323b2] [settlement-9] com.example.payment.PaymentRetryClient - Settled reference SET-855774 amount=7033
+2026-09-18 19:06:59.654 DEBUG [payment-service,10f9411007b8522c,036b5fd4] [settlement-9] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 230ms
+2026-09-18 19:08:30.744 INFO  [payment-service,b88ca5c59dab990e,cad9429a] [http-nio-8081-exec-1] com.example.payment.ReconciliationJob - Reconciled 903 rows, 2 mismatches
+2026-09-18 19:09:18.262 INFO  [payment-service,4a5dbaec6b1200a4,dd3696eb] [settlement-9] com.example.payment.PaymentRetryClient - Settled reference SET-388753 amount=61301
+2026-09-18 19:09:40.173 INFO  [payment-service,49307f2537a45c3d,4d877c89] [http-nio-8081-exec-5] com.example.payment.PaymentRetryClient - Settled reference SET-531480 amount=32896
+2026-09-18 19:09:51.198 DEBUG [payment-service,e89fac1c12dd6c22,0fda843b] [http-nio-8081-exec-8] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 899ms
+2026-09-18 19:10:27.693 DEBUG [payment-service,b8352c58dd0665c0,052b8cc9] [http-nio-8081-exec-3] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 863ms
+2026-09-18 19:11:10.184 INFO  [payment-service,d3f9a8277770d894,99fa2dce] [http-nio-8081-exec-7] com.example.payment.PaymentRetryClient - Settled reference SET-433041 amount=12962
+2026-09-18 19:12:47.580 INFO  [payment-service,18225e4935f74487,6875cb9b] [settlement-5] com.example.payment.PaymentRetryClient - Settled reference SET-400290 amount=60318
+2026-09-18 19:13:44.573 INFO  [payment-service,3cacb95622f0887a,f1a950b8] [settlement-2] com.example.payment.PaymentRetryClient - Settled reference SET-858593 amount=9393
+2026-09-18 19:14:11.174 INFO  [payment-service,5a8c0517fda29b00,5b6422f6] [http-nio-8081-exec-6] com.example.payment.PaymentRetryClient - Settled reference SET-781129 amount=28723
+2026-09-18 19:16:07.163 INFO  [payment-service,775c71ae272ae102,dc5cca92] [settlement-6] com.example.payment.ReconciliationJob - Reconciled 813 rows, 3 mismatches
+2026-09-18 19:16:45.153 INFO  [payment-service,2b6cd581907c84be,d948a69b] [http-nio-8081-exec-1] com.example.payment.ReconciliationJob - Reconciled 656 rows, 2 mismatches
+2026-09-18 19:16:50.529 INFO  [payment-service,b79edd9524949b94,c128afdf] [http-nio-8081-exec-6] com.example.payment.PaymentRetryClient - Settled reference SET-727553 amount=36739
+2026-09-18 19:16:52.797 INFO  [payment-service,2b7d22e5adf96775,17e3c39c] [http-nio-8081-exec-1] com.example.payment.PaymentRetryClient - Settled reference SET-733841 amount=86546
+2026-09-18 19:18:19.754 WARN  [payment-service,f8b9a6d5ba3bcd8e,fd45879b] [http-nio-8081-exec-5] com.example.payment.SettlementApiClient - Upstream latency 2424ms exceeds the 1000ms budget
+2026-09-18 19:18:58.348 WARN  [payment-service,3f256bddb2a33a08,a9b1884c] [http-nio-8081-exec-4] com.example.payment.SettlementApiClient - Upstream latency 1581ms exceeds the 1000ms budget
+2026-09-18 19:20:15.510 WARN  [payment-service,4836dc524596f8ba,e6075ff9] [http-nio-8081-exec-1] com.example.payment.SettlementApiClient - Upstream latency 1351ms exceeds the 1000ms budget
+2026-09-18 19:20:36.027 DEBUG [payment-service,a8913c7915341297,5f6c49c4] [http-nio-8081-exec-5] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 724ms
+2026-09-18 19:20:55.311 INFO  [payment-service,9ab8f6277a342b9f,54129c42] [settlement-7] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 103ms
+2026-09-18 19:20:59.222 INFO  [payment-service,ffa033e1f525b5ff,d13680de] [http-nio-8081-exec-8] com.example.payment.PaymentRetryClient - Settled reference SET-647186 amount=17342
+2026-09-18 19:21:33.288 DEBUG [payment-service,1c0f192946f9ff39,67cf52ba] [http-nio-8081-exec-7] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 455ms
+2026-09-18 19:21:45.392 WARN  [payment-service,a2e67cf8ddcf9835,c13b7e96] [settlement-2] com.example.payment.SettlementApiClient - Upstream latency 1643ms exceeds the 1000ms budget
+2026-09-18 19:22:35.147 INFO  [payment-service,58fc85103b1c1b29,fd2864b0] [settlement-8] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 227ms
+2026-09-18 19:23:32.615 INFO  [payment-service,abb62f5a920abbf0,911cc77c] [settlement-5] com.example.payment.PaymentRetryClient - Settled reference SET-912788 amount=27554
+2026-09-18 19:23:50.253 INFO  [payment-service,f368d38b7c6e4d21,24a35383] [http-nio-8081-exec-5] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 83ms
+2026-09-18 19:26:40.200 INFO  [payment-service,f47896439d90d5c7,90c69469] [settlement-9] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 51ms
+2026-09-18 19:27:39.750 INFO  [payment-service,e26c81d30a4c264c,07e4a7dd] [settlement-1] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 122ms
+2026-09-18 19:28:22.589 INFO  [payment-service,232f293e5a93b664,e8838061] [settlement-5] com.example.payment.ReconciliationJob - Reconciled 1070 rows, 0 mismatches
+2026-09-18 19:29:56.419 INFO  [payment-service,0d5a20683af03a74,173e60c7] [settlement-2] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 298ms
+2026-09-18 19:30:13.919 WARN  [payment-service,4ac45f19f14a9e45,b80674f2] [settlement-5] com.example.payment.SettlementApiClient - Upstream latency 1848ms exceeds the 1000ms budget
+2026-09-18 19:30:19.080 INFO  [payment-service,d2bcf37edfb7ff2a,ba1ddb00] [settlement-6] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 60ms
+2026-09-18 19:30:31.135 INFO  [payment-service,23e2053e89f584c8,4191807c] [settlement-5] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 121ms
+2026-09-18 19:30:31.730 WARN  [payment-service,65c70bb7c4f19191,7a7a40a7] [settlement-1] com.example.payment.SettlementApiClient - Upstream latency 1654ms exceeds the 1000ms budget
+2026-09-18 19:32:00.508 WARN  [payment-service,9837cf6d8e314b98,f888cbc3] [http-nio-8081-exec-7] com.example.payment.SettlementApiClient - Upstream latency 1795ms exceeds the 1000ms budget
+2026-09-18 19:32:08.028 DEBUG [payment-service,fe87241731de0b55,233b1ac0] [http-nio-8081-exec-4] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 213ms
+2026-09-18 19:32:47.590 WARN  [payment-service,cd145841afb906b9,2d8882dc] [settlement-2] com.example.payment.SettlementApiClient - Upstream latency 1207ms exceeds the 1000ms budget
+2026-09-18 19:33:03.444 INFO  [payment-service,a5a8dfa3d7214e80,b6c37046] [http-nio-8081-exec-9] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 292ms
+2026-09-18 19:33:39.111 INFO  [payment-service,5bc933cb450c936a,7f6494fc] [http-nio-8081-exec-8] com.example.payment.ReconciliationJob - Reconciled 405 rows, 2 mismatches
+2026-09-18 19:34:05.605 INFO  [payment-service,398c45d38c0f9104,6e18632b] [http-nio-8081-exec-9] com.example.payment.ReconciliationJob - Reconciled 724 rows, 1 mismatches
+2026-09-18 19:34:36.121 DEBUG [payment-service,790276f9ae83b20c,81179531] [settlement-2] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 159ms
+2026-09-18 19:36:45.981 DEBUG [payment-service,129e85a29c8961db,3bbf8812] [http-nio-8081-exec-3] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 419ms
+2026-09-18 19:37:33.314 INFO  [payment-service,9f0b8d77faba91db,dcfd0846] [settlement-2] com.example.payment.ReconciliationJob - Reconciled 305 rows, 0 mismatches
+2026-09-18 19:37:59.974 DEBUG [payment-service,da726e2bde4c33a3,089dc5af] [settlement-6] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 772ms
+2026-09-18 19:38:45.798 INFO  [payment-service,c3936cc4333be861,a0cf6f97] [settlement-2] com.example.payment.ReconciliationJob - Reconciled 445 rows, 3 mismatches
+2026-09-18 19:39:04.456 DEBUG [payment-service,f36f8f66390a276b,6bb9c77a] [settlement-5] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 194ms
+2026-09-18 19:39:38.526 INFO  [payment-service,f63bc0b917907e1b,0f49ba3e] [settlement-2] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 160ms
+2026-09-18 19:40:39.122 INFO  [payment-service,24167e6d85f74f30,6c615cf7] [settlement-4] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 44ms
+2026-09-18 19:40:42.833 INFO  [payment-service,528511cbb90b6d8e,57e6a88e] [settlement-6] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 226ms
+2026-09-18 19:41:25.858 INFO  [payment-service,1cfb01d99ade2100,f60fef49] [http-nio-8081-exec-3] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 250ms
+2026-09-18 19:43:24.166 WARN  [payment-service,45098146d2dced58,0bb84c28] [settlement-4] com.example.payment.SettlementApiClient - Upstream latency 1560ms exceeds the 1000ms budget
+2026-09-18 19:43:35.125 INFO  [payment-service,0f5b4b2a877b141e,b1f44f5d] [http-nio-8081-exec-1] com.example.payment.ReconciliationJob - Reconciled 1182 rows, 0 mismatches
+2026-09-18 19:43:47.951 INFO  [payment-service,de10af45aa63992b,dd4d6811] [http-nio-8081-exec-4] com.example.payment.PaymentRetryClient - Settled reference SET-902734 amount=73171
+2026-09-18 19:44:41.678 DEBUG [payment-service,236af388cd898587,8f84aa1b] [settlement-6] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 702ms
+2026-09-18 19:45:38.367 WARN  [payment-service,f18b9cb770e80ad1,65bf7d9f] [settlement-7] com.example.payment.SettlementApiClient - Upstream latency 2112ms exceeds the 1000ms budget
+2026-09-18 19:47:16.475 INFO  [payment-service,9e7bcaa68e08499a,42d6626c] [http-nio-8081-exec-4] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 154ms
+2026-09-18 19:48:00.820 INFO  [payment-service,2a4fdd8bd2ce757f,66217525] [http-nio-8081-exec-1] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 218ms
+2026-09-18 19:48:47.315 INFO  [payment-service,5e0daa595e0fc7d6,83235c38] [settlement-5] com.example.payment.ReconciliationJob - Reconciled 377 rows, 3 mismatches
+2026-09-18 19:48:57.811 INFO  [payment-service,8cd87393cc53ee85,cad742fd] [settlement-8] com.example.payment.ReconciliationJob - Reconciled 467 rows, 0 mismatches
+2026-09-18 19:49:01.258 INFO  [payment-service,00949f1c596bb452,ce238af9] [settlement-4] com.example.payment.PaymentRetryClient - Settled reference SET-348762 amount=81564
+2026-09-18 19:49:02.247 INFO  [payment-service,15d6c7d37f632b98,ff3d735b] [http-nio-8081-exec-1] com.example.payment.ReconciliationJob - Reconciled 474 rows, 3 mismatches
+2026-09-18 19:49:31.618 WARN  [payment-service,6154f28928dabd0e,30537483] [settlement-2] com.example.payment.SettlementApiClient - Upstream latency 1503ms exceeds the 1000ms budget
+2026-09-18 19:50:51.736 INFO  [payment-service,b62477f667b81293,c376ac56] [settlement-2] com.example.payment.ReconciliationJob - Reconciled 1042 rows, 3 mismatches
+2026-09-18 19:50:53.867 WARN  [payment-service,a71a89bc078f3845,35cbd174] [settlement-8] com.example.payment.SettlementApiClient - Upstream latency 2383ms exceeds the 1000ms budget
+2026-09-18 19:51:49.761 DEBUG [payment-service,54391f044cf82874,4f2b7726] [settlement-5] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 877ms
+2026-09-18 19:52:03.950 DEBUG [payment-service,fba5c7dae73c721f,c85ac2f6] [settlement-6] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 134ms
+2026-09-18 19:52:23.903 WARN  [payment-service,c82d00ff637cdac6,0523371d] [http-nio-8081-exec-1] com.example.payment.SettlementApiClient - Upstream latency 1284ms exceeds the 1000ms budget
+2026-09-18 19:53:16.853 DEBUG [payment-service,2a8a384f8a5f247e,608d61de] [http-nio-8081-exec-3] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 159ms
+2026-09-18 19:54:11.628 INFO  [payment-service,f7e94af3cc6df9d3,d8322d1c] [http-nio-8081-exec-8] com.example.payment.PaymentRetryClient - Settled reference SET-384217 amount=30314
+2026-09-18 19:55:58.879 DEBUG [payment-service,a1894d77b00f5aa8,995a9577] [settlement-8] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 562ms
+2026-09-18 19:56:11.795 INFO  [payment-service,c6ca7dfa380cc3ba,6d98d329] [settlement-3] com.example.payment.ReconciliationJob - Reconciled 434 rows, 0 mismatches
+2026-09-18 19:56:18.121 INFO  [payment-service,cde3ca9a8b1ec1bf,7a5add53] [http-nio-8081-exec-3] com.example.payment.ReconciliationJob - Reconciled 717 rows, 0 mismatches
+2026-09-18 19:56:49.848 INFO  [payment-service,aa8aa37543bbd8da,1958089e] [http-nio-8081-exec-7] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 177ms
+2026-09-18 19:56:54.230 WARN  [payment-service,ce30cd508a44ea1d,248a13a9] [settlement-9] com.example.payment.SettlementApiClient - Upstream latency 1892ms exceeds the 1000ms budget
+2026-09-18 19:58:12.575 DEBUG [payment-service,79b02dd4cf16772a,2abf3fbf] [settlement-1] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 744ms
+2026-09-18 19:58:32.550 DEBUG [payment-service,0974b70ddb0e260e,123c3f46] [http-nio-8081-exec-3] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 607ms
+2026-09-18 19:58:37.240 DEBUG [payment-service,adc74206f27bbcfe,df077b3e] [settlement-5] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 888ms
+2026-09-18 20:00:06.524 WARN  [payment-service,517d19bf0f6e0658,5ac08bb9] [http-nio-8081-exec-4] org.springframework.boot.context.config.ConfigDataEnvironment - Property 'spring.datasource.initialization-mode' is deprecated and will be removed in a future release
+2026-09-18 20:02:03.834 INFO  [payment-service,a156e1830f06f2ad,ce0e19de] [settlement-3] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 262ms
+2026-09-18 20:18:00.597 DEBUG [payment-service,13e89bccc6ebf7d4,871bb8c1] [settlement-9] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 474ms
+2026-09-18 20:26:39.221 WARN  [payment-service,ea2deeb83f3765f0,d29f8b55] [http-nio-8081-exec-9] com.example.payment.SettlementApiClient - Upstream latency 1583ms exceeds the 1000ms budget
+2026-09-18 20:30:03.325 INFO  [payment-service,edf65579a111b246,cf2b9b2f] [settlement-3] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 141ms
+2026-09-18 20:35:28.899 DEBUG [payment-service,cd95c31ef4b0af29,f5bc6b80] [http-nio-8081-exec-6] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 721ms
+2026-09-18 20:41:05.659 INFO  [payment-service,6872b1b8a4626c51,5e6b5014] [settlement-2] com.example.payment.PaymentRetryClient - Settled reference SET-359045 amount=36498
+2026-09-18 20:50:51.058 INFO  [payment-service,988fdcd40217e608,65dd0f0a] [http-nio-8081-exec-2] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 113ms
+2026-09-18 20:58:54.512 WARN  [payment-service,14784dc1d0148f40,190b0782] [settlement-2] com.example.payment.SettlementApiClient - Upstream latency 2036ms exceeds the 1000ms budget
+2026-09-18 21:03:02.730 INFO  [payment-service,8b643a7ffd0c1448,ec86c40b] [http-nio-8081-exec-3] com.example.payment.PaymentRetryClient - Settled reference SET-598455 amount=86927
+2026-09-18 21:04:52.662 INFO  [payment-service,1bac8972de167b1f,cc567b09] [settlement-8] com.example.payment.PaymentRetryClient - Settled reference SET-622314 amount=79530
+2026-09-18 21:29:47.353 INFO  [payment-service,958172e450ad3aff,5d21bed3] [settlement-1] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 99ms
+2026-09-18 21:36:18.205 INFO  [payment-service,5b3872a885e33ee2,0f9e26c3] [http-nio-8081-exec-9] com.example.payment.PaymentRetryClient - Settled reference SET-194907 amount=54951
+2026-09-18 21:38:35.890 WARN  [payment-service,210e168c248dbe13,3cd3b7fa] [settlement-3] com.example.payment.SettlementApiClient - Upstream latency 1760ms exceeds the 1000ms budget
+2026-09-18 21:40:32.416 INFO  [payment-service,94c46eaae00bba0e,f887f019] [settlement-3] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 126ms
+2026-09-18 21:42:06.032 INFO  [payment-service,f2296aae47d1c3c9,8d423b2d] [settlement-7] com.example.payment.PaymentRetryClient - Settled reference SET-331812 amount=25627
+2026-09-18 21:46:50.044 INFO  [payment-service,2f4b44870a9ad4b1,bd00386d] [settlement-8] com.example.payment.ReconciliationJob - Reconciled 960 rows, 1 mismatches
+2026-09-18 21:47:49.848 WARN  [payment-service,3e380145dcae6bdc,422018e1] [settlement-8] com.example.payment.SettlementApiClient - Upstream latency 2343ms exceeds the 1000ms budget
+2026-09-18 21:49:17.150 WARN  [payment-service,baab3ad3c362e399,612c559a] [http-nio-8081-exec-6] com.example.payment.SettlementApiClient - Upstream latency 2425ms exceeds the 1000ms budget
+2026-09-18 21:50:37.727 INFO  [payment-service,7da418c63596b190,db7a1cc8] [settlement-7] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 190ms
+2026-09-18 21:56:14.360 DEBUG [payment-service,fed4abfa624e519b,07e110b1] [http-nio-8081-exec-1] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 465ms
+2026-09-18 21:57:35.898 INFO  [payment-service,a89a196740911a75,ccbe2443] [settlement-2] com.example.payment.ReconciliationJob - Reconciled 568 rows, 1 mismatches
+2026-09-18 22:11:37.697 WARN  [payment-service,132843551cbdfe27,492f01e5] [http-nio-8081-exec-7] com.example.payment.SettlementApiClient - Upstream latency 2082ms exceeds the 1000ms budget
+2026-09-18 22:20:42.676 DEBUG [payment-service,39fa697fbce4ef12,14ebf243] [http-nio-8081-exec-4] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 684ms
+2026-09-18 22:23:04.730 INFO  [payment-service,e5dba74530fc119e,018cde34] [settlement-5] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 94ms
+2026-09-18 22:33:06.431 INFO  [payment-service,fe9eb5abb49e767a,673f0d94] [http-nio-8081-exec-2] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 270ms
+2026-09-18 22:39:43.107 WARN  [payment-service,3006778180b2b4b9,0f360d7e] [settlement-3] com.example.payment.SettlementApiClient - Upstream latency 2260ms exceeds the 1000ms budget
+2026-09-18 22:40:11.893 INFO  [payment-service,e3d4b16a3ec51190,99e11b14] [settlement-2] com.example.payment.PayoutController - POST /api/v1/payouts 201 in 288ms
+2026-09-18 22:59:37.205 INFO  [payment-service,58bf66f5db0b6e51,1c510f43] [http-nio-8081-exec-4] com.example.payment.PaymentRetryClient - Settled reference SET-250254 amount=17382
+2026-09-18 23:05:12.392 INFO  [payment-service,e037c434242cc4bf,89d42e2b] [settlement-6] com.example.payment.ReconciliationJob - Reconciled 482 rows, 2 mismatches
+2026-09-18 23:11:56.597 ERROR [payment-service,75e835aded8322e0,e6b33bf5] [http-nio-8081-exec-8] com.example.payment.PayoutController - Payout preview failed for payee 12013
+java.lang.NullPointerException: Cannot invoke "String.charAt(int)" because "middleName" is null
+	at com.example.common.NameFormatter.initials(NameFormatter.java:22)
+	at com.example.payment.PaymentProfileEnricher.payeeInitials(PaymentProfileEnricher.java:15)
+	at com.example.payment.PayoutController.preview(PayoutController.java:112)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-09-18 23:13:15.036 DEBUG [payment-service,ea114f77c5acaafa,c11a692c] [http-nio-8081-exec-6] com.example.payment.SettlementApiClient - POST https://bank.example.com/v2/settle -> 200 in 884ms
+2026-09-18 23:15:00.787 WARN  [payment-service,1d4936d61dc46e57,01e0a47d] [http-nio-8081-exec-1] com.example.payment.SettlementApiClient - Upstream latency 2352ms exceeds the 1000ms budget
+2026-09-18 23:28:41.459 WARN  [payment-service,dcebbde0611e484f,46f0f61b] [http-nio-8081-exec-7] com.example.payment.SettlementApiClient - Upstream latency 2570ms exceeds the 1000ms budget

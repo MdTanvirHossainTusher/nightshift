@@ -1,0 +1,68 @@
+# Local reproducible stack: `docker compose up --build`, then open http://localhost:8080
+#
+# Self-contained on purpose — a judge should need no API key, no SMTP account and
+# no GitHub token to see the pipeline run end to end. With no model key the app
+# falls back to the `heuristic` provider, and MailHog catches the email.
+
+name: nightshift
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: nightshift
+      POSTGRES_USER: nightshift
+      POSTGRES_PASSWORD: nightshift
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U nightshift -d nightshift"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  # Catches every notification so the email step is demonstrable with no real
+  # mail account. UI on http://localhost:8025
+  mailhog:
+    image: mailhog/mailhog:v1.0.1
+    ports:
+      - "8025:8025"
+
+  nightshift:
+    build:
+      context: .
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+      - "9091:9091"
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/nightshift
+      SPRING_DATASOURCE_USERNAME: nightshift
+      SPRING_DATASOURCE_PASSWORD: nightshift
+      SPRING_MAIL_HOST: mailhog
+      SPRING_MAIL_PORT: "1025"
+      NIGHTSHIFT_LOG_ROOT: /app/logs
+      NIGHTSHIFT_WORKSPACE: /app/workspace
+      NIGHTSHIFT_LLM_PROVIDER: ${NIGHTSHIFT_LLM_PROVIDER:-heuristic}
+      NIGHTSHIFT_MESSAGING_TRANSPORT: ${NIGHTSHIFT_MESSAGING_TRANSPORT:-local}
+      # All optional. Unset = heuristic provider, no PR push, email to MailHog.
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      GITHUB_TOKEN: ${GITHUB_TOKEN:-}
+      NIGHTSHIFT_GIT_REPO: ${NIGHTSHIFT_GIT_REPO:-}
+    volumes:
+      # Read-only, and the app must never need it otherwise: the checkpoint lives
+      # in Postgres, not in a marker file next to the logs.
+      - ./demo/logs:/app/logs:ro
+      # The target repo the stack traces point at, so the code locator resolves
+      # real files. Writable: patches are applied on a branch in this copy.
+      - ./demo/target-repo:/app/workspace/target-repo
+
+volumes:
+  pgdata:

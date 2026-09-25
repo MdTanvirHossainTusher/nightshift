@@ -1,0 +1,37 @@
+name: Conventional PR title
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, edited, reopened, synchronize, ready_for_review]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pr-title-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Title must be releasable
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check the title
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        run: |
+          pattern='^(feat|fix|perf|docs|refactor|style|test|build|ci|chore)(\([A-Za-z0-9._/-]+\))?!?: [^[:space:]].*$'
+
+          if [[ ! "$PR_TITLE" =~ $pattern ]]; then
+            echo "::error::Invalid PR title: $PR_TITLE"
+            echo
+            echo "Squash merges become the changelog, so the title must be a conventional commit."
+            echo "Examples:"
+            echo "  feat(triage): weight severity by occurrence trend"
+            echo "  fix(scan): reset the byte offset when a log file rotates"
+            echo "  feat!: change the incident API contract"
+            exit 1
+          fi
+
+          echo "OK: $PR_TITLE"

@@ -1,0 +1,1232 @@
+2026-09-21 00:00:41.941 ERROR [farmer-service,f27492730607a5d9,c8e7f2ea] [farmer-sync-1] com.example.farmer.CardRenderJob - Failed to render card label for farmer 26554
+java.lang.NullPointerException: Cannot invoke "String.charAt(int)" because "middleName" is null
+	at com.example.common.NameFormatter.initials(NameFormatter.java:22)
+	at com.example.farmer.FarmerSyncService.cardLabel(FarmerSyncService.java:53)
+	at com.example.farmer.CardRenderJob.render(CardRenderJob.java:74)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-09-21 00:03:38.337 INFO  [farmer-service,25ba92853e8069dd,8b6b9924] [http-nio-8080-exec-3] com.example.farmer.CardRenderJob - Rendered 63 cards in 2178ms
+2026-09-21 00:05:05.533 INFO  [farmer-service,4a72d634db0f75ce,b4850e79] [http-nio-8080-exec-2] com.example.farmer.CardRenderJob - Rendered 5 cards in 324ms
+2026-09-21 00:09:55.043 INFO  [farmer-service,64b9cd0c70db4941,2c22063a] [farmer-sync-6] com.example.farmer.FarmerSyncScheduler - Sync batch 8693 queued, 104 pending records
+2026-09-21 00:11:34.607 DEBUG [farmer-service,80e4c5dc48e62f9f,6fc6011a] [farmer-sync-3] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 32
+2026-09-21 00:12:50.671 INFO  [farmer-service,ee620c1b0ba843c6,8b087f48] [farmer-sync-2] com.example.farmer.FarmerController - GET /api/v1/farmers?page=19 200 in 60ms
+2026-09-21 00:20:11.576 INFO  [farmer-service,543b795b57c7f50e,1a629e97] [farmer-sync-8] com.example.farmer.CardRenderJob - Rendered 48 cards in 339ms
+2026-09-21 00:26:37.980 INFO  [farmer-service,d2778d426668761f,d9da8aa5] [farmer-sync-1] com.example.common.AuditPublisher - Published 30 audit events to nightshift.audit
+2026-09-21 00:46:13.586 DEBUG [farmer-service,ad27a6c906ab77e8,a215039e] [http-nio-8080-exec-5] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 46
+2026-09-21 00:51:28.785 INFO  [farmer-service,4545ac9ba1330d7c,5dac4e66] [http-nio-8080-exec-7] com.example.common.AuditPublisher - Published 24 audit events to nightshift.audit
+2026-09-21 00:51:37.190 ERROR [farmer-service,80f850a24a47fdad,a9139178] [farmer-sync-4] com.example.farmer.FarmerSyncService - Sync failed for batch 8868: could not acquire a database connection
+java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30001ms (total=10, active=10, idle=0, waiting=7)
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181)
+	at com.example.farmer.FarmerSyncService.pushPending(FarmerSyncService.java:36)
+	at com.example.farmer.FarmerSyncScheduler.run(FarmerSyncScheduler.java:58)
+2026-09-21 01:08:13.945 WARN  [farmer-service,3b368feac41ad676,23396d90] [farmer-sync-4] com.example.farmer.FarmerController - Request from 192.0.2.51 missing X-Request-Id header, generated one
+2026-09-21 01:08:18.959 ERROR [farmer-service,71b608a461783c2f,a3c0fc53] [http-nio-8080-exec-4] com.example.farmer.FarmerSyncService - Sync failed for batch 8524: could not acquire a database connection
+java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30001ms (total=10, active=10, idle=0, waiting=7)
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181)
+	at com.example.farmer.FarmerSyncService.pushPending(FarmerSyncService.java:36)
+	at com.example.farmer.FarmerSyncScheduler.run(FarmerSyncScheduler.java:58)
+2026-09-21 01:18:06.998 INFO  [farmer-service,896e7bfec3ebcce6,769dbdb9] [http-nio-8080-exec-5] com.example.common.AuditPublisher - Published 22 audit events to nightshift.audit
+2026-09-21 01:20:38.516 INFO  [farmer-service,fd3ebecf29f4ec47,bb1e7b1c] [farmer-sync-3] com.example.common.AuditPublisher - Published 15 audit events to nightshift.audit
+2026-09-21 01:51:15.063 INFO  [farmer-service,6ed78b4a6a096cc5,ff636e3c] [farmer-sync-3] com.example.farmer.FarmerController - GET /api/v1/farmers?page=33 200 in 101ms
+2026-09-21 01:55:46.095 DEBUG [farmer-service,e89b2a130e459020,6122c44c] [http-nio-8080-exec-6] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 20
+2026-09-21 02:11:25.827 DEBUG [farmer-service,49c69f9a6d6c9e61,ad35e7e7] [farmer-sync-7] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 22
+2026-09-21 02:19:00.295 INFO  [farmer-service,7d90105e323d513d,5ebe5e63] [http-nio-8080-exec-6] com.example.farmer.FarmerController - GET /api/v1/farmers?page=19 200 in 41ms
+2026-09-21 02:19:51.002 DEBUG [farmer-service,f2d4f981eb4d4a16,b332ecc6] [http-nio-8080-exec-3] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 59
+2026-09-21 02:24:47.498 DEBUG [farmer-service,8e45bd46ff045177,0fb35aed] [http-nio-8080-exec-5] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 48
+2026-09-21 02:26:09.275 ERROR [farmer-service,56cbb8f586fc4d94,13a26367] [http-nio-8080-exec-3] com.example.farmer.FarmerSyncService - Sync failed for batch 8098: could not acquire a database connection
+java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30001ms (total=10, active=10, idle=0, waiting=7)
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181)
+	at com.example.farmer.FarmerSyncService.pushPending(FarmerSyncService.java:36)
+	at com.example.farmer.FarmerSyncScheduler.run(FarmerSyncScheduler.java:58)
+2026-09-21 02:27:08.745 WARN  [farmer-service,a1e886518eae97a7,db4e6571] [farmer-sync-3] com.example.farmer.FarmerProfileService - Concurrent update on farmer 6166, retry 1 of 3
+com.example.farmer.FarmerProfileService$OptimisticLockException: Row was updated by another transaction (farmer id=7805)
+	at com.example.farmer.FarmerProfileService.rename(FarmerProfileService.java:27)
+	at com.example.farmer.FarmerController.rename(FarmerController.java:96)
+2026-09-21 02:38:43.457 INFO  [farmer-service,37ac0854a4f59917,99224797] [http-nio-8080-exec-2] com.example.common.AuditPublisher - Published 26 audit events to nightshift.audit
+2026-09-21 02:47:45.071 INFO  [farmer-service,9fc59bc7ee40b10f,729015ec] [farmer-sync-4] com.example.farmer.FarmerSyncScheduler - Sync batch 8915 queued, 120 pending records
+2026-09-21 02:50:55.887 ERROR [farmer-service,ebe384d7d1797ea1,0eb8b9de] [http-nio-8080-exec-4] com.example.farmer.FarmerSyncService - Sync failed for batch 8849: could not acquire a database connection
+java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30001ms (total=10, active=10, idle=0, waiting=7)
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181)
+	at com.example.farmer.FarmerSyncService.pushPending(FarmerSyncService.java:36)
+	at com.example.farmer.FarmerSyncScheduler.run(FarmerSyncScheduler.java:58)
+2026-09-21 02:57:06.202 ERROR [farmer-service,f78b8c64dca8d6b2,71347c1e] [farmer-sync-8] com.example.farmer.FarmerSyncService - Sync failed for batch 8151: could not acquire a database connection
+java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30001ms (total=10, active=10, idle=0, waiting=7)
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181)
+	at com.example.farmer.FarmerSyncService.pushPending(FarmerSyncService.java:36)
+	at com.example.farmer.FarmerSyncScheduler.run(FarmerSyncScheduler.java:58)
+2026-09-21 02:59:02.049 INFO  [farmer-service,78a8ca93da149446,38b2fc8c] [farmer-sync-5] com.example.farmer.CardRenderJob - Rendered 20 cards in 657ms
+2026-09-21 03:00:04.521 INFO  [farmer-service,cfc1e66e223f1ea3,15926fc5] [http-nio-8080-exec-6] com.example.common.AuditPublisher - Published 3 audit events to nightshift.audit
+2026-09-21 03:06:40.697 INFO  [farmer-service,386d92c730f18c68,eaa70c64] [farmer-sync-6] com.example.farmer.FarmerSyncScheduler - Sync batch 8353 queued, 253 pending records
+2026-09-21 03:18:08.899 WARN  [farmer-service,3caff543a6ae39ce,bdf72d10] [farmer-sync-5] org.springframework.boot.context.config.ConfigDataEnvironment - Property 'spring.datasource.initialization-mode' is deprecated and will be removed in a future release
+2026-09-21 03:32:31.258 INFO  [farmer-service,655ae1e146a58afd,9da86adb] [http-nio-8080-exec-7] com.example.farmer.CardRenderJob - Rendered 40 cards in 1660ms
+2026-09-21 03:36:10.381 INFO  [farmer-service,57944b0b4bcb5320,fd5d52c8] [http-nio-8080-exec-1] com.example.farmer.FarmerController - GET /api/v1/farmers?page=23 200 in 116ms
+2026-09-21 03:43:44.818 INFO  [farmer-service,354542a451e7d36b,a95fb15e] [farmer-sync-4] com.example.farmer.FarmerSyncScheduler - Sync batch 8732 queued, 30 pending records
+2026-09-21 03:46:57.042 ERROR [farmer-service,567e2b79550a53cf,9ae2039d] [farmer-sync-8] com.example.farmer.FarmerSyncService - Sync failed for batch 8156: could not acquire a database connection
+java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30001ms (total=10, active=10, idle=0, waiting=7)
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181)
+	at com.example.farmer.FarmerSyncService.pushPending(FarmerSyncService.java:36)
+	at com.example.farmer.FarmerSyncScheduler.run(FarmerSyncScheduler.java:58)
+2026-09-21 03:51:28.849 INFO  [farmer-service,edfbaddfcee41936,5167e9a6] [http-nio-8080-exec-4] com.example.farmer.CardRenderJob - Rendered 58 cards in 1241ms
+2026-09-21 03:57:08.144 INFO  [farmer-service,f662168000967160,e7353a2a] [farmer-sync-7] com.example.common.AuditPublisher - Published 19 audit events to nightshift.audit
+2026-09-21 03:59:28.870 WARN  [farmer-service,27b066914d1753de,54e1202b] [farmer-sync-9] com.example.farmer.FarmerProfileService - Concurrent update on farmer 2446, retry 1 of 3
+com.example.farmer.FarmerProfileService$OptimisticLockException: Row was updated by another transaction (farmer id=1656)
+	at com.example.farmer.FarmerProfileService.rename(FarmerProfileService.java:27)
+	at com.example.farmer.FarmerController.rename(FarmerController.java:96)
+2026-09-21 04:06:23.385 WARN  [farmer-service,6735d505c29d80f2,f4dbe80d] [farmer-sync-3] com.example.farmer.FarmerController - Request from 192.0.2.56 missing X-Request-Id header, generated one
+2026-09-21 04:08:47.437 ERROR [farmer-service,7d7bdd13499cc688,4070d554] [http-nio-8080-exec-3] com.example.farmer.FarmerSyncService - Sync failed for batch 8671: could not acquire a database connection
+java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30001ms (total=10, active=10, idle=0, waiting=7)
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181)
+	at com.example.farmer.FarmerSyncService.pushPending(FarmerSyncService.java:36)
+	at com.example.farmer.FarmerSyncScheduler.run(FarmerSyncScheduler.java:58)
+2026-09-21 04:26:04.269 INFO  [farmer-service,2158890af8a85829,9c3828bb] [http-nio-8080-exec-2] com.example.farmer.CardRenderJob - Rendered 33 cards in 310ms
+2026-09-21 04:34:43.207 DEBUG [farmer-service,31e392b79dd32d85,a6116140] [farmer-sync-6] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 7
+2026-09-21 04:55:44.783 ERROR [farmer-service,1d9f651359a8d902,437510c6] [http-nio-8080-exec-4] com.example.farmer.FarmerSyncService - Sync failed for batch 8066: could not acquire a database connection
+java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30001ms (total=10, active=10, idle=0, waiting=7)
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181)
+	at com.example.farmer.FarmerSyncService.pushPending(FarmerSyncService.java:36)
+	at com.example.farmer.FarmerSyncScheduler.run(FarmerSyncScheduler.java:58)
+2026-09-21 05:06:07.871 INFO  [farmer-service,b931e64a69e5f6de,9b7a9096] [http-nio-8080-exec-8] com.example.farmer.FarmerController - GET /api/v1/farmers?page=4 200 in 96ms
+2026-09-21 05:08:19.681 WARN  [farmer-service,4666bef1765134fd,99c42dd3] [farmer-sync-7] com.example.farmer.FarmerController - Request from 192.0.2.174 missing X-Request-Id header, generated one
+2026-09-21 05:09:40.150 WARN  [farmer-service,75d6ee84eecc5e05,f37e1159] [farmer-sync-1] com.example.farmer.FarmerController - Request from 192.0.2.245 missing X-Request-Id header, generated one
+2026-09-21 05:13:58.488 DEBUG [farmer-service,da53c11453d431a2,02446ed3] [http-nio-8080-exec-6] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 47
+2026-09-21 05:19:49.753 INFO  [farmer-service,06d16e3d9a402a8a,8d3268b0] [http-nio-8080-exec-2] com.example.farmer.CardRenderJob - Rendered 71 cards in 1334ms
+2026-09-21 05:26:01.802 INFO  [farmer-service,79836fef997bacbf,27fb11a9] [farmer-sync-2] com.example.farmer.CardRenderJob - Rendered 80 cards in 930ms
+2026-09-21 05:36:40.937 ERROR [farmer-service,77b941425a3eaa19,fb58c7e9] [http-nio-8080-exec-1] com.example.farmer.FarmerSyncService - Sync failed for batch 8034: could not acquire a database connection
+java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30001ms (total=10, active=10, idle=0, waiting=7)
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181)
+	at com.example.farmer.FarmerSyncService.pushPending(FarmerSyncService.java:36)
+	at com.example.farmer.FarmerSyncScheduler.run(FarmerSyncScheduler.java:58)
+2026-09-21 05:37:15.307 WARN  [farmer-service,32f0839ec47df965,673f7457] [farmer-sync-1] com.example.farmer.FarmerController - Request from 192.0.2.249 missing X-Request-Id header, generated one
+2026-09-21 05:45:36.221 INFO  [farmer-service,e417ddb2690eefd8,5bed6005] [farmer-sync-4] com.example.farmer.FarmerController - GET /api/v1/farmers?page=37 200 in 50ms
+2026-09-21 05:48:54.747 INFO  [farmer-service,be794ae055df7b3f,e1e48dc4] [http-nio-8080-exec-3] com.example.common.AuditPublisher - Published 3 audit events to nightshift.audit
+2026-09-21 05:53:34.698 ERROR [farmer-service,4a9ff32d7362f45a,b7c23762] [farmer-sync-9] com.example.farmer.FarmerSyncService - Sync failed for batch 8805: could not acquire a database connection
+java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30001ms (total=10, active=10, idle=0, waiting=7)
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181)
+	at com.example.farmer.FarmerSyncService.pushPending(FarmerSyncService.java:36)
+	at com.example.farmer.FarmerSyncScheduler.run(FarmerSyncScheduler.java:58)
+2026-09-21 05:56:34.621 INFO  [farmer-service,68fc50dca7f7d34b,08efe915] [farmer-sync-8] com.example.farmer.FarmerController - GET /api/v1/farmers?page=26 200 in 125ms
+2026-09-21 05:57:38.508 WARN  [farmer-service,8d2c6dfb535f478b,c54280c9] [farmer-sync-3] com.example.farmer.FarmerProfileService - Concurrent update on farmer 4589, retry 1 of 3
+com.example.farmer.FarmerProfileService$OptimisticLockException: Row was updated by another transaction (farmer id=6510)
+	at com.example.farmer.FarmerProfileService.rename(FarmerProfileService.java:27)
+	at com.example.farmer.FarmerController.rename(FarmerController.java:96)
+2026-09-21 06:05:52.094 WARN  [farmer-service,db7da586c9ecb3d1,1c458c63] [farmer-sync-5] com.example.farmer.FarmerProfileService - Concurrent update on farmer 4634, retry 1 of 3
+com.example.farmer.FarmerProfileService$OptimisticLockException: Row was updated by another transaction (farmer id=1312)
+	at com.example.farmer.FarmerProfileService.rename(FarmerProfileService.java:27)
+	at com.example.farmer.FarmerController.rename(FarmerController.java:96)
+2026-09-21 06:08:11.962 INFO  [farmer-service,5ea9cff4a2417275,6e79273c] [http-nio-8080-exec-4] com.example.farmer.FarmerSyncScheduler - Sync batch 8765 queued, 87 pending records
+2026-09-21 06:10:07.776 ERROR [farmer-service,30723220197bd48a,5948669f] [farmer-sync-4] com.example.farmer.FarmerSyncService - Sync failed for batch 8436: could not acquire a database connection
+java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30001ms (total=10, active=10, idle=0, waiting=7)
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181)
+	at com.example.farmer.FarmerSyncService.pushPending(FarmerSyncService.java:36)
+	at com.example.farmer.FarmerSyncScheduler.run(FarmerSyncScheduler.java:58)
+2026-09-21 06:18:59.351 DEBUG [farmer-service,6587b8deb8d1714c,fe88362c] [http-nio-8080-exec-6] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 8
+2026-09-21 06:30:21.419 DEBUG [farmer-service,45c0be102f39e1ce,f50c09a0] [farmer-sync-2] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 62
+2026-09-21 06:33:14.215 DEBUG [farmer-service,5318aa40e07d6e0a,4cfc48f8] [farmer-sync-3] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 63
+2026-09-21 06:35:45.178 WARN  [farmer-service,6abc00a9c2c23a54,5275aa6d] [http-nio-8080-exec-3] com.example.farmer.FarmerController - Request from 192.0.2.234 missing X-Request-Id header, generated one
+2026-09-21 06:40:21.623 ERROR [farmer-service,5f463849de17d17f,9abe9dae] [http-nio-8080-exec-8] com.example.farmer.CardRenderJob - Failed to render card label for farmer 19434
+java.lang.NullPointerException: Cannot invoke "String.charAt(int)" because "middleName" is null
+	at com.example.common.NameFormatter.initials(NameFormatter.java:22)
+	at com.example.farmer.FarmerSyncService.cardLabel(FarmerSyncService.java:53)
+	at com.example.farmer.CardRenderJob.render(CardRenderJob.java:74)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-09-21 06:42:44.591 INFO  [farmer-service,ee87b98b18902886,a46b738b] [farmer-sync-3] com.example.common.AuditPublisher - Published 17 audit events to nightshift.audit
+2026-09-21 06:46:02.649 WARN  [farmer-service,4cb3e7f4e384dcb3,850e17fc] [http-nio-8080-exec-2] com.example.farmer.FarmerProfileService - Concurrent update on farmer 4328, retry 1 of 3
+com.example.farmer.FarmerProfileService$OptimisticLockException: Row was updated by another transaction (farmer id=2743)
+	at com.example.farmer.FarmerProfileService.rename(FarmerProfileService.java:27)
+	at com.example.farmer.FarmerController.rename(FarmerController.java:96)
+2026-09-21 06:49:13.342 ERROR [farmer-service,9e2e783d46f44039,d71bb3a3] [farmer-sync-5] com.example.farmer.FarmerSyncService - Sync failed for batch 8133: could not acquire a database connection
+java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30001ms (total=10, active=10, idle=0, waiting=7)
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181)
+	at com.example.farmer.FarmerSyncService.pushPending(FarmerSyncService.java:36)
+	at com.example.farmer.FarmerSyncScheduler.run(FarmerSyncScheduler.java:58)
+2026-09-21 06:52:30.685 INFO  [farmer-service,dbd042cf5c3e9702,f66b2a8a] [farmer-sync-8] com.example.farmer.CardRenderJob - Rendered 51 cards in 720ms
+2026-09-21 07:03:36.655 ERROR [farmer-service,fc73890ed3b776bf,11ca6a95] [http-nio-8080-exec-5] com.example.farmer.FarmerSyncService - Sync failed for batch 8761: could not acquire a database connection
+java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30001ms (total=10, active=10, idle=0, waiting=7)
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181)
+	at com.example.farmer.FarmerSyncService.pushPending(FarmerSyncService.java:36)
+	at com.example.farmer.FarmerSyncScheduler.run(FarmerSyncScheduler.java:58)
+2026-09-21 07:06:11.053 INFO  [farmer-service,ed9f0d02672300d7,481b2a4b] [http-nio-8080-exec-9] com.example.common.AuditPublisher - Published 9 audit events to nightshift.audit
+2026-09-21 07:09:14.888 INFO  [farmer-service,d21c98d9cc51773e,09ef2e00] [farmer-sync-4] com.example.farmer.CardRenderJob - Rendered 16 cards in 1064ms
+2026-09-21 07:10:23.245 DEBUG [farmer-service,ea805e482fd4ba5c,900bcac1] [farmer-sync-2] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 59
+2026-09-21 07:23:48.038 ERROR [farmer-service,a51266bf38ce55ce,46c2c0fb] [farmer-sync-5] com.example.farmer.FarmerSyncService - Sync failed for batch 8603: could not acquire a database connection
+java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30001ms (total=10, active=10, idle=0, waiting=7)
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181)
+	at com.example.farmer.FarmerSyncService.pushPending(FarmerSyncService.java:36)
+	at com.example.farmer.FarmerSyncScheduler.run(FarmerSyncScheduler.java:58)
+2026-09-21 07:24:22.537 INFO  [farmer-service,3d6de761c85d1277,2b5df1dc] [http-nio-8080-exec-2] com.example.farmer.FarmerController - GET /api/v1/farmers?page=13 200 in 38ms
+2026-09-21 07:33:49.293 WARN  [farmer-service,25c76d35cab7d07c,b1a34aa3] [http-nio-8080-exec-6] com.example.farmer.FarmerProfileService - Concurrent update on farmer 8021, retry 1 of 3
+com.example.farmer.FarmerProfileService$OptimisticLockException: Row was updated by another transaction (farmer id=7451)
+	at com.example.farmer.FarmerProfileService.rename(FarmerProfileService.java:27)
+	at com.example.farmer.FarmerController.rename(FarmerController.java:96)
+2026-09-21 07:35:41.491 INFO  [farmer-service,2cf5df53e7129fb9,3897ebf9] [http-nio-8080-exec-2] com.example.common.AuditPublisher - Published 17 audit events to nightshift.audit
+2026-09-21 07:44:21.533 INFO  [farmer-service,ecd87055aa48cf70,2b95a8aa] [http-nio-8080-exec-3] com.example.common.AuditPublisher - Published 23 audit events to nightshift.audit
+2026-09-21 07:51:00.037 WARN  [farmer-service,cd05a160c3adc148,41e170be] [farmer-sync-2] com.example.farmer.FarmerController - Request from 192.0.2.202 missing X-Request-Id header, generated one
+2026-09-21 08:03:34.887 INFO  [farmer-service,fe4dd72f968fb403,ffdf152a] [farmer-sync-4] com.example.common.AuditPublisher - Published 29 audit events to nightshift.audit
+2026-09-21 08:03:34.916 INFO  [farmer-service,2e83848f431f3da9,059005fd] [farmer-sync-4] com.example.farmer.CardRenderJob - Rendered 37 cards in 1213ms
+2026-09-21 08:03:35.269 INFO  [farmer-service,f26688d0b0fa0a19,b94e083f] [http-nio-8080-exec-5] com.example.farmer.FarmerSyncScheduler - Sync batch 8675 queued, 229 pending records
+2026-09-21 08:08:08.883 WARN  [farmer-service,7d51fdb3c4a2f18c,a79599fa] [http-nio-8080-exec-3] com.example.farmer.FarmerController - Request from 192.0.2.146 missing X-Request-Id header, generated one
+2026-09-21 08:09:45.238 INFO  [farmer-service,40fbfb4e1e224e96,b6e45a73] [http-nio-8080-exec-1] com.example.common.AuditPublisher - Published 10 audit events to nightshift.audit
+2026-09-21 08:09:48.639 WARN  [farmer-service,53c9fcc09c3fe0a1,11e9103b] [farmer-sync-4] com.example.farmer.FarmerController - Request from 192.0.2.135 missing X-Request-Id header, generated one
+2026-09-21 08:10:13.872 WARN  [farmer-service,6d461177ca698c91,b53ab411] [farmer-sync-5] com.example.farmer.FarmerController - Request from 192.0.2.26 missing X-Request-Id header, generated one
+2026-09-21 08:11:36.195 DEBUG [farmer-service,1ec695f328c69555,6b0c013f] [http-nio-8080-exec-5] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 31
+2026-09-21 08:12:28.549 INFO  [farmer-service,5882dcde47c9bf67,107e3dfb] [farmer-sync-7] com.example.farmer.FarmerSyncScheduler - Sync batch 8306 queued, 381 pending records
+2026-09-21 08:13:23.823 INFO  [farmer-service,0c1d1cb41a588843,0f9b9cb1] [http-nio-8080-exec-7] com.example.common.AuditPublisher - Published 20 audit events to nightshift.audit
+2026-09-21 08:13:39.572 INFO  [farmer-service,01fe2e33b3210aeb,2b4827d8] [farmer-sync-7] com.example.common.AuditPublisher - Published 12 audit events to nightshift.audit
+2026-09-21 08:13:53.145 WARN  [farmer-service,2c0f11fc358d05be,22542b12] [http-nio-8080-exec-5] com.example.farmer.FarmerController - Request from 192.0.2.102 missing X-Request-Id header, generated one
+2026-09-21 08:14:39.263 INFO  [farmer-service,9d99cb238ae83f89,b471b3d3] [farmer-sync-7] com.example.farmer.FarmerController - GET /api/v1/farmers?page=16 200 in 115ms
+2026-09-21 08:16:07.124 DEBUG [farmer-service,df5ee3f7389d6c72,13cc7594] [farmer-sync-5] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 49
+2026-09-21 08:16:32.816 INFO  [farmer-service,ffc46b3f26d35c6c,3243e417] [http-nio-8080-exec-5] com.example.farmer.FarmerSyncScheduler - Sync batch 8983 queued, 276 pending records
+2026-09-21 08:17:25.620 INFO  [farmer-service,bb00f7d619b08c57,afac1e53] [farmer-sync-7] com.example.common.AuditPublisher - Published 28 audit events to nightshift.audit
+2026-09-21 08:17:30.617 DEBUG [farmer-service,a82ec49380fbf9eb,853b8405] [farmer-sync-9] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 44
+2026-09-21 08:17:36.495 INFO  [farmer-service,383c1c3321997a18,ee63b2cb] [farmer-sync-8] com.example.farmer.CardRenderJob - Rendered 5 cards in 780ms
+2026-09-21 08:18:24.577 INFO  [farmer-service,04ca39d798eb9962,553601a5] [farmer-sync-2] com.example.farmer.FarmerController - GET /api/v1/farmers?page=9 200 in 72ms
+2026-09-21 08:20:04.830 DEBUG [farmer-service,ee782ac65bf68c4e,b6ece8cc] [http-nio-8080-exec-6] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 44
+2026-09-21 08:20:18.441 INFO  [farmer-service,c331e51ee12e84af,54b28d0d] [farmer-sync-7] com.example.farmer.FarmerController - GET /api/v1/farmers?page=34 200 in 124ms
+2026-09-21 08:21:17.420 INFO  [farmer-service,b58ac758c8d291e6,26d4a429] [http-nio-8080-exec-4] com.example.common.AuditPublisher - Published 12 audit events to nightshift.audit
+2026-09-21 08:21:39.196 INFO  [farmer-service,4aada81ec4ad749d,166845b0] [http-nio-8080-exec-6] com.example.farmer.FarmerSyncScheduler - Sync batch 8508 queued, 325 pending records
+2026-09-21 08:21:52.587 INFO  [farmer-service,e536ca8b77022929,ad37f1a0] [farmer-sync-3] com.example.common.AuditPublisher - Published 6 audit events to nightshift.audit
+2026-09-21 08:21:53.258 ERROR [farmer-service,2e3088d6b3e63d82,974a55bb] [http-nio-8080-exec-1] com.example.farmer.FarmerSyncService - Sync failed for batch 8393: could not acquire a database connection
+java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30001ms (total=10, active=10, idle=0, waiting=7)
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181)
+	at com.example.farmer.FarmerSyncService.pushPending(FarmerSyncService.java:36)
+	at com.example.farmer.FarmerSyncScheduler.run(FarmerSyncScheduler.java:58)
+2026-09-21 08:22:59.787 INFO  [farmer-service,70456e9b38b93f42,625c8f51] [farmer-sync-2] com.example.farmer.FarmerController - GET /api/v1/farmers?page=40 200 in 15ms
+2026-09-21 08:23:17.316 WARN  [farmer-service,f062617ff4192580,dabaaa66] [http-nio-8080-exec-8] com.example.farmer.FarmerController - Request from 192.0.2.5 missing X-Request-Id header, generated one
+2026-09-21 08:25:03.842 INFO  [farmer-service,5221f86b32b6a809,fb2d9b0e] [farmer-sync-1] com.example.farmer.CardRenderJob - Rendered 53 cards in 896ms
+2026-09-21 08:25:06.389 INFO  [farmer-service,f5f4fface007336c,95d51776] [http-nio-8080-exec-7] com.example.farmer.FarmerController - GET /api/v1/farmers?page=19 200 in 33ms
+2026-09-21 08:25:31.463 INFO  [farmer-service,5cc3502fcf6f7884,b1b1cd10] [farmer-sync-6] com.example.farmer.FarmerSyncScheduler - Sync batch 8830 queued, 175 pending records
+2026-09-21 08:26:50.171 WARN  [farmer-service,c641e910ebc6eeaa,84098529] [http-nio-8080-exec-4] com.example.farmer.FarmerController - Request from 192.0.2.139 missing X-Request-Id header, generated one
+2026-09-21 08:27:11.790 INFO  [farmer-service,e63469b3944aa97b,6840fd9c] [farmer-sync-6] com.example.common.AuditPublisher - Published 10 audit events to nightshift.audit
+2026-09-21 08:29:06.571 INFO  [farmer-service,a1a55d03255fc86a,921d3a7a] [http-nio-8080-exec-8] com.example.farmer.CardRenderJob - Rendered 17 cards in 1046ms
+2026-09-21 08:29:15.497 INFO  [farmer-service,a5e2975547fbe364,8e68ee16] [http-nio-8080-exec-4] com.example.farmer.CardRenderJob - Rendered 69 cards in 600ms
+2026-09-21 08:29:44.807 INFO  [farmer-service,4fab06bcd62b8c70,db0f0a5c] [http-nio-8080-exec-2] com.example.common.AuditPublisher - Published 5 audit events to nightshift.audit
+2026-09-21 08:30:38.526 INFO  [farmer-service,7087a39ef608958d,8f8afda0] [farmer-sync-8] com.example.farmer.FarmerController - GET /api/v1/farmers?page=32 200 in 79ms
+2026-09-21 08:33:27.405 INFO  [farmer-service,8f9c26ee6045a1c8,e60225c9] [farmer-sync-4] com.example.farmer.FarmerController - GET /api/v1/farmers?page=14 200 in 44ms
+2026-09-21 08:34:26.885 INFO  [farmer-service,f315ac0ae9155628,afe28cb6] [http-nio-8080-exec-2] com.example.farmer.FarmerSyncScheduler - Sync batch 8546 queued, 283 pending records
+2026-09-21 08:34:46.017 INFO  [farmer-service,6f03dad15cb9db65,72812a65] [farmer-sync-3] com.example.farmer.CardRenderJob - Rendered 71 cards in 678ms
+2026-09-21 08:35:07.271 INFO  [farmer-service,061adb02004168b7,9a3bc4b9] [farmer-sync-9] com.example.farmer.CardRenderJob - Rendered 72 cards in 1665ms
+2026-09-21 08:35:12.759 DEBUG [farmer-service,87468d9a26574dc2,6ec7c1ad] [http-nio-8080-exec-3] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 55
+2026-09-21 08:37:55.314 INFO  [farmer-service,535c2e7f4761f8f8,df84da72] [farmer-sync-7] com.example.farmer.FarmerController - GET /api/v1/farmers?page=8 200 in 40ms
+2026-09-21 08:38:35.487 DEBUG [farmer-service,b5e5ea2a70fab117,418f30af] [http-nio-8080-exec-9] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 21
+2026-09-21 08:39:08.257 INFO  [farmer-service,79fa0c6b61f0a6f3,dd8d0825] [farmer-sync-4] com.example.farmer.CardRenderJob - Rendered 86 cards in 1252ms
+2026-09-21 08:40:25.948 WARN  [farmer-service,7849cd66590e07da,008a009a] [farmer-sync-4] com.example.farmer.FarmerController - Request from 192.0.2.151 missing X-Request-Id header, generated one
+2026-09-21 08:42:30.628 INFO  [farmer-service,ec85ebf1b9d8dfca,f1c4469e] [farmer-sync-1] com.example.farmer.CardRenderJob - Rendered 26 cards in 2065ms
+2026-09-21 08:42:40.570 DEBUG [farmer-service,fc111a6d0ca72ee0,4051da4e] [farmer-sync-1] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 38
+2026-09-21 08:42:44.001 INFO  [farmer-service,95c14a5fc9f43b95,07872075] [farmer-sync-7] com.example.farmer.FarmerController - GET /api/v1/farmers?page=16 200 in 50ms
+2026-09-21 08:43:26.579 INFO  [farmer-service,6b3a772935951f5b,35ecd8e0] [http-nio-8080-exec-6] com.example.common.AuditPublisher - Published 18 audit events to nightshift.audit
+2026-09-21 08:44:07.160 INFO  [farmer-service,ff18389cc8cc536d,803ddafa] [http-nio-8080-exec-6] com.example.farmer.FarmerSyncScheduler - Sync batch 8219 queued, 31 pending records
+2026-09-21 08:45:37.018 WARN  [farmer-service,223df3a57631d785,437bf6e6] [http-nio-8080-exec-3] com.example.farmer.FarmerController - Request from 192.0.2.201 missing X-Request-Id header, generated one
+2026-09-21 08:45:59.229 WARN  [farmer-service,ae4184dba08251dc,554f57aa] [http-nio-8080-exec-8] com.example.farmer.FarmerController - Request from 192.0.2.73 missing X-Request-Id header, generated one
+2026-09-21 08:46:22.909 INFO  [farmer-service,4c05d3768381e077,d5f8337e] [http-nio-8080-exec-9] com.example.farmer.FarmerSyncScheduler - Sync batch 8199 queued, 371 pending records
+2026-09-21 08:46:34.789 INFO  [farmer-service,c59eca5b6aac59d5,83c0c607] [http-nio-8080-exec-2] com.example.farmer.FarmerController - GET /api/v1/farmers?page=21 200 in 47ms
+2026-09-21 08:47:34.143 INFO  [farmer-service,7d2f1754f1a012d5,a8645c4d] [http-nio-8080-exec-6] com.example.farmer.FarmerController - GET /api/v1/farmers?page=1 200 in 111ms
+2026-09-21 08:48:10.793 ERROR [farmer-service,0a708bb9fb2a4729,372c8d8a] [farmer-sync-1] com.example.farmer.FarmerSyncService - Sync failed for batch 8012: could not acquire a database connection
+java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30001ms (total=10, active=10, idle=0, waiting=7)
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181)
+	at com.example.farmer.FarmerSyncService.pushPending(FarmerSyncService.java:36)
+	at com.example.farmer.FarmerSyncScheduler.run(FarmerSyncScheduler.java:58)
+2026-09-21 08:49:28.058 WARN  [farmer-service,7a2bcc1fbfeb3bde,a500ed2c] [http-nio-8080-exec-7] com.example.farmer.FarmerController - Request from 192.0.2.53 missing X-Request-Id header, generated one
+2026-09-21 08:51:48.199 DEBUG [farmer-service,9346cd412701d0d9,f61a0642] [farmer-sync-2] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 20
+2026-09-21 08:51:49.721 WARN  [farmer-service,46c760ec9f245565,9f10b328] [http-nio-8080-exec-6] com.example.farmer.FarmerController - Request from 192.0.2.207 missing X-Request-Id header, generated one
+2026-09-21 08:52:05.698 DEBUG [farmer-service,e64a5d86ae66f9c6,4462ab17] [http-nio-8080-exec-5] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 26
+2026-09-21 08:52:56.760 INFO  [farmer-service,68b5ca306c8e18dc,0e365773] [farmer-sync-3] com.example.farmer.FarmerSyncScheduler - Sync batch 8800 queued, 34 pending records
+2026-09-21 08:53:26.843 DEBUG [farmer-service,5e39e60a7a95b503,7c8b77d2] [farmer-sync-7] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 54
+2026-09-21 08:53:36.523 INFO  [farmer-service,8f7c2df27e79ebb4,0f7abc89] [http-nio-8080-exec-6] com.example.farmer.FarmerSyncScheduler - Sync batch 8429 queued, 139 pending records
+2026-09-21 08:54:53.536 WARN  [farmer-service,2f8aadfb2b4103ec,1bd4a297] [farmer-sync-7] com.example.farmer.FarmerController - Request from 192.0.2.243 missing X-Request-Id header, generated one
+2026-09-21 08:55:40.908 DEBUG [farmer-service,d888f005d499a1f8,8e3cecf8] [http-nio-8080-exec-3] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 64
+2026-09-21 08:57:25.909 DEBUG [farmer-service,e9f8c7f00a8956c7,38fcb4f0] [farmer-sync-6] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 10
+2026-09-21 08:59:14.714 INFO  [farmer-service,f3838375a2dd1d2b,95fad6ac] [http-nio-8080-exec-1] com.example.farmer.FarmerController - GET /api/v1/farmers?page=11 200 in 44ms
+2026-09-21 08:59:16.138 INFO  [farmer-service,3dc135d183f76688,69b76c97] [http-nio-8080-exec-1] com.example.common.AuditPublisher - Published 3 audit events to nightshift.audit
+2026-09-21 08:59:18.641 INFO  [farmer-service,3655e835176c6381,375bb6c4] [farmer-sync-4] com.example.common.AuditPublisher - Published 7 audit events to nightshift.audit
+2026-09-21 08:59:26.935 DEBUG [farmer-service,4649d8f9c5d3d376,cbafd3dd] [farmer-sync-7] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 19
+2026-09-21 09:01:41.659 INFO  [farmer-service,8c5c94e703a48fbc,e13ffe60] [http-nio-8080-exec-8] com.example.common.AuditPublisher - Published 16 audit events to nightshift.audit
+2026-09-21 09:02:11.823 INFO  [farmer-service,eb53842e152016ac,9c97bf3a] [http-nio-8080-exec-1] com.example.farmer.FarmerSyncScheduler - Sync batch 8915 queued, 247 pending records
+2026-09-21 09:02:12.634 INFO  [farmer-service,223c593abe1cc3e8,eebc156a] [farmer-sync-4] com.example.farmer.CardRenderJob - Rendered 67 cards in 2298ms
+2026-09-21 09:02:14.174 INFO  [farmer-service,c5c905f1fca86fcf,1ea2a027] [http-nio-8080-exec-9] com.example.farmer.CardRenderJob - Rendered 19 cards in 228ms
+2026-09-21 09:03:00.002 INFO  [farmer-service,2071543d10d334a7,893c9ed5] [http-nio-8080-exec-7] com.example.farmer.CardRenderJob - Rendered 28 cards in 2114ms
+2026-09-21 09:03:06.861 INFO  [farmer-service,4dbe48115d5a64e2,63195257] [http-nio-8080-exec-9] com.example.common.AuditPublisher - Published 22 audit events to nightshift.audit
+2026-09-21 09:03:20.630 INFO  [farmer-service,edd8cb7a6bafeac2,c9d890d0] [http-nio-8080-exec-8] com.example.common.AuditPublisher - Published 25 audit events to nightshift.audit
+2026-09-21 09:03:28.814 INFO  [farmer-service,43faa2b561401738,a2d9b9c6] [farmer-sync-3] com.example.farmer.CardRenderJob - Rendered 50 cards in 1038ms
+2026-09-21 09:04:17.422 INFO  [farmer-service,105e8410abb9f37e,bae3875e] [farmer-sync-6] com.example.farmer.FarmerController - GET /api/v1/farmers?page=3 200 in 53ms
+2026-09-21 09:04:22.698 INFO  [farmer-service,7eabb13d200fbba2,779368c0] [farmer-sync-9] com.example.common.AuditPublisher - Published 2 audit events to nightshift.audit
+2026-09-21 09:05:19.700 WARN  [farmer-service,227728306836f732,2b768002] [http-nio-8080-exec-4] com.example.farmer.FarmerController - Request from 192.0.2.227 missing X-Request-Id header, generated one
+2026-09-21 09:06:26.622 INFO  [farmer-service,25ec5ef84cab61b9,ec5c38c7] [http-nio-8080-exec-5] com.example.common.AuditPublisher - Published 10 audit events to nightshift.audit
+2026-09-21 09:07:01.624 DEBUG [farmer-service,e5364190133d5d22,cdb19576] [farmer-sync-5] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 20
+2026-09-21 09:08:26.688 WARN  [farmer-service,43a31fbf5b6e12fb,b34abda4] [http-nio-8080-exec-4] com.example.farmer.FarmerController - Request from 192.0.2.191 missing X-Request-Id header, generated one
+2026-09-21 09:10:17.114 INFO  [farmer-service,54a0a26ff34e5911,93bef5fc] [http-nio-8080-exec-2] com.example.farmer.FarmerSyncScheduler - Sync batch 8585 queued, 373 pending records
+2026-09-21 09:12:04.298 INFO  [farmer-service,b7ba6c7be664eb4d,adebbc00] [http-nio-8080-exec-7] com.example.common.AuditPublisher - Published 27 audit events to nightshift.audit
+2026-09-21 09:14:37.475 INFO  [farmer-service,0f26697fe75e5120,04e2c4ce] [http-nio-8080-exec-8] com.example.farmer.FarmerController - GET /api/v1/farmers?page=2 200 in 54ms
+2026-09-21 09:14:45.696 ERROR [farmer-service,91f1e16d98465b38,7208590c] [http-nio-8080-exec-1] com.example.farmer.FarmerSyncService - Sync failed for batch 8467: could not acquire a database connection
+java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30001ms (total=10, active=10, idle=0, waiting=7)
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181)
+	at com.example.farmer.FarmerSyncService.pushPending(FarmerSyncService.java:36)
+	at com.example.farmer.FarmerSyncScheduler.run(FarmerSyncScheduler.java:58)
+2026-09-21 09:16:03.490 INFO  [farmer-service,707f43f34e3a2840,095f5f5c] [http-nio-8080-exec-1] com.example.farmer.FarmerController - GET /api/v1/farmers?page=0 200 in 133ms
+2026-09-21 09:16:43.525 DEBUG [farmer-service,cea0952e8fa9f946,19c9cbd3] [farmer-sync-8] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 60
+2026-09-21 09:17:07.969 WARN  [farmer-service,727d990b1156c13b,986f5b68] [farmer-sync-6] com.example.farmer.FarmerController - Request from 192.0.2.92 missing X-Request-Id header, generated one
+2026-09-21 09:17:49.208 WARN  [farmer-service,447c850978bc9b2b,c4f60433] [farmer-sync-7] com.example.farmer.FarmerController - Request from 192.0.2.176 missing X-Request-Id header, generated one
+2026-09-21 09:18:18.494 INFO  [farmer-service,e429d3d17d5c71ba,ffeefc64] [http-nio-8080-exec-7] com.example.farmer.FarmerSyncScheduler - Sync batch 8649 queued, 142 pending records
+2026-09-21 09:18:47.623 DEBUG [farmer-service,198827cbe1d2d575,935eafb5] [farmer-sync-8] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 33
+2026-09-21 09:20:38.317 INFO  [farmer-service,366e7d81adfbc24c,135ebbca] [farmer-sync-1] com.example.common.AuditPublisher - Published 11 audit events to nightshift.audit
+2026-09-21 09:21:18.710 WARN  [farmer-service,0563fa4d401ae899,0a5044ab] [farmer-sync-5] com.example.farmer.FarmerController - Request from 192.0.2.175 missing X-Request-Id header, generated one
+2026-09-21 09:23:14.034 DEBUG [farmer-service,56bb1a31ee379e54,dc6ee2f8] [farmer-sync-3] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 32
+2026-09-21 09:25:35.734 INFO  [farmer-service,fd767c2bf332295c,b8d9d49a] [farmer-sync-2] com.example.farmer.FarmerSyncScheduler - Sync batch 8863 queued, 322 pending records
+2026-09-21 09:27:32.260 INFO  [farmer-service,f0e01439532a08bd,7d8af272] [http-nio-8080-exec-7] com.example.common.AuditPublisher - Published 23 audit events to nightshift.audit
+2026-09-21 09:27:59.258 WARN  [farmer-service,90490764a696a9c7,35e55164] [http-nio-8080-exec-3] com.example.farmer.FarmerController - Request from 192.0.2.240 missing X-Request-Id header, generated one
+2026-09-21 09:28:39.096 INFO  [farmer-service,9c502c5295a3e45f,17e9499a] [farmer-sync-7] com.example.common.AuditPublisher - Published 19 audit events to nightshift.audit
+2026-09-21 09:28:40.760 WARN  [farmer-service,edc236ec90ae1f8d,649c2999] [http-nio-8080-exec-1] com.example.farmer.FarmerProfileService - Concurrent update on farmer 3964, retry 2 of 3
+com.example.farmer.FarmerProfileService$OptimisticLockException: Row was updated by another transaction (farmer id=3661)
+	at com.example.farmer.FarmerProfileService.rename(FarmerProfileService.java:27)
+	at com.example.farmer.FarmerController.rename(FarmerController.java:96)
+2026-09-21 09:30:28.140 INFO  [farmer-service,ce61bdb2d6a9700e,84cc1455] [http-nio-8080-exec-5] com.example.common.AuditPublisher - Published 1 audit events to nightshift.audit
+2026-09-21 09:31:23.490 INFO  [farmer-service,e02ac6bb3cb10f01,a254fb75] [farmer-sync-6] com.example.farmer.FarmerController - GET /api/v1/farmers?page=1 200 in 134ms
+2026-09-21 09:31:51.843 INFO  [farmer-service,7d57aaa8f4c827d1,57bbd03a] [http-nio-8080-exec-6] com.example.farmer.FarmerSyncScheduler - Sync batch 8190 queued, 99 pending records
+2026-09-21 09:32:44.442 INFO  [farmer-service,63a9c5a6e59c2772,66f3de07] [farmer-sync-7] com.example.farmer.FarmerController - GET /api/v1/farmers?page=37 200 in 118ms
+2026-09-21 09:34:18.602 WARN  [farmer-service,14345f1a2dc6b130,117dc98a] [farmer-sync-5] com.example.farmer.FarmerController - Request from 192.0.2.105 missing X-Request-Id header, generated one
+2026-09-21 09:34:45.681 INFO  [farmer-service,a85d8b2dc8874c94,2a9ddd18] [http-nio-8080-exec-8] com.example.farmer.FarmerSyncScheduler - Sync batch 8490 queued, 53 pending records
+2026-09-21 09:35:01.368 INFO  [farmer-service,46a7bf24f80581cd,f634a654] [http-nio-8080-exec-9] com.example.farmer.CardRenderJob - Rendered 62 cards in 1510ms
+2026-09-21 09:35:20.891 INFO  [farmer-service,f3457c0cc083261f,a2ee7181] [farmer-sync-4] com.example.common.AuditPublisher - Published 18 audit events to nightshift.audit
+2026-09-21 09:36:10.307 WARN  [farmer-service,98d7d7025cbca54d,cb273bdc] [farmer-sync-4] com.example.farmer.FarmerController - Request from 192.0.2.250 missing X-Request-Id header, generated one
+2026-09-21 09:37:09.871 ERROR [farmer-service,8726d5c237c169ad,d0e626be] [http-nio-8080-exec-1] com.example.farmer.FarmerSyncService - Sync failed for batch 8841: could not acquire a database connection
+java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30001ms (total=10, active=10, idle=0, waiting=7)
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181)
+	at com.example.farmer.FarmerSyncService.pushPending(FarmerSyncService.java:36)
+	at com.example.farmer.FarmerSyncScheduler.run(FarmerSyncScheduler.java:58)
+2026-09-21 09:37:10.773 DEBUG [farmer-service,25178daa46fa9f86,271d35f2] [http-nio-8080-exec-1] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 38
+2026-09-21 09:37:55.320 INFO  [farmer-service,48150307c3ad5776,028b0d19] [http-nio-8080-exec-3] com.example.farmer.FarmerController - GET /api/v1/farmers?page=17 200 in 53ms
+2026-09-21 09:38:31.099 INFO  [farmer-service,23d0dd3af18dace5,622d89d0] [http-nio-8080-exec-6] com.example.farmer.FarmerController - GET /api/v1/farmers?page=26 200 in 52ms
+2026-09-21 09:39:09.550 INFO  [farmer-service,f5d1caa6d7b7002b,c8263db3] [http-nio-8080-exec-5] com.example.farmer.FarmerSyncScheduler - Sync batch 8988 queued, 363 pending records
+2026-09-21 09:39:32.976 DEBUG [farmer-service,2a4adee9ed108fd2,a95fdb28] [http-nio-8080-exec-2] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 36
+2026-09-21 09:40:02.327 INFO  [farmer-service,66b578ba32d40d78,00fd1584] [farmer-sync-5] com.example.farmer.FarmerController - GET /api/v1/farmers?page=1 200 in 137ms
+2026-09-21 09:40:13.811 DEBUG [farmer-service,1bd4ef04860087d5,764dec25] [farmer-sync-8] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 46
+2026-09-21 09:40:56.940 INFO  [farmer-service,85d42e64efb58fc4,a684e046] [farmer-sync-7] com.example.farmer.CardRenderJob - Rendered 56 cards in 1436ms
+2026-09-21 09:40:57.766 DEBUG [farmer-service,44184400437dc530,c6947856] [http-nio-8080-exec-7] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 32
+2026-09-21 09:41:13.050 INFO  [farmer-service,37a4ea6adff8f3ca,d0cd3ac9] [http-nio-8080-exec-7] com.example.farmer.CardRenderJob - Rendered 9 cards in 942ms
+2026-09-21 09:41:15.327 WARN  [farmer-service,8aa078c6ffaf77ea,7e47a21a] [http-nio-8080-exec-7] com.example.farmer.FarmerController - Request from 192.0.2.213 missing X-Request-Id header, generated one
+2026-09-21 09:41:44.523 WARN  [farmer-service,0a226c860906ac95,10305902] [http-nio-8080-exec-9] com.example.farmer.FarmerController - Request from 192.0.2.204 missing X-Request-Id header, generated one
+2026-09-21 09:43:29.338 INFO  [farmer-service,700d2048bd7729e0,96d04c73] [farmer-sync-4] com.example.common.AuditPublisher - Published 30 audit events to nightshift.audit
+2026-09-21 09:43:43.271 WARN  [farmer-service,ecd7207d5b5e1c51,9bd62089] [farmer-sync-5] com.example.farmer.FarmerController - Request from 192.0.2.167 missing X-Request-Id header, generated one
+2026-09-21 09:44:08.492 WARN  [farmer-service,935d6b91b4759d5a,a26960fb] [farmer-sync-3] com.example.farmer.FarmerController - Request from 192.0.2.34 missing X-Request-Id header, generated one
+2026-09-21 09:44:40.957 DEBUG [farmer-service,262e7f19597c180f,1ce00a14] [farmer-sync-6] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 24
+2026-09-21 09:44:45.066 INFO  [farmer-service,284de797e9be59f0,7dc97231] [farmer-sync-3] com.example.farmer.FarmerController - GET /api/v1/farmers?page=0 200 in 130ms
+2026-09-21 09:44:59.564 WARN  [farmer-service,015874e178a4d290,3009700b] [farmer-sync-1] com.example.farmer.FarmerController - Request from 192.0.2.219 missing X-Request-Id header, generated one
+2026-09-21 09:46:20.737 INFO  [farmer-service,65f77c1d4daf5010,225551c2] [farmer-sync-6] com.example.common.AuditPublisher - Published 5 audit events to nightshift.audit
+2026-09-21 09:46:24.259 INFO  [farmer-service,95baf2c8b8ec58a4,2d858fd9] [http-nio-8080-exec-6] com.example.farmer.FarmerController - GET /api/v1/farmers?page=26 200 in 93ms
+2026-09-21 09:46:40.366 INFO  [farmer-service,6bef7ec634726b8f,9d245174] [http-nio-8080-exec-9] com.example.common.AuditPublisher - Published 4 audit events to nightshift.audit
+2026-09-21 09:47:08.521 INFO  [farmer-service,2e625fb5a15ecaf8,d7f94a69] [http-nio-8080-exec-6] com.example.common.AuditPublisher - Published 13 audit events to nightshift.audit
+2026-09-21 09:48:28.965 WARN  [farmer-service,2895d2bce45da4cb,e8eb68c7] [farmer-sync-1] com.example.farmer.FarmerProfileService - Concurrent update on farmer 1104, retry 2 of 3
+com.example.farmer.FarmerProfileService$OptimisticLockException: Row was updated by another transaction (farmer id=7224)
+	at com.example.farmer.FarmerProfileService.rename(FarmerProfileService.java:27)
+	at com.example.farmer.FarmerController.rename(FarmerController.java:96)
+2026-09-21 09:48:32.178 INFO  [farmer-service,44079426cf35aefb,fd61703c] [http-nio-8080-exec-9] com.example.farmer.FarmerController - GET /api/v1/farmers?page=36 200 in 81ms
+2026-09-21 09:49:25.135 WARN  [farmer-service,de19b4ab18933799,f2e1cded] [http-nio-8080-exec-5] com.example.farmer.FarmerController - Request from 192.0.2.45 missing X-Request-Id header, generated one
+2026-09-21 09:49:49.412 INFO  [farmer-service,b656873aa96e0096,0e94f944] [http-nio-8080-exec-9] com.example.farmer.FarmerSyncScheduler - Sync batch 8222 queued, 333 pending records
+2026-09-21 09:50:12.414 INFO  [farmer-service,68356f409a6caa70,a220c530] [http-nio-8080-exec-5] com.example.farmer.CardRenderJob - Rendered 46 cards in 219ms
+2026-09-21 09:50:56.010 WARN  [farmer-service,1da6a4da72b02201,2ecf7b59] [farmer-sync-5] com.example.farmer.FarmerController - Request from 192.0.2.82 missing X-Request-Id header, generated one
+2026-09-21 09:52:26.650 INFO  [farmer-service,6ec63b066575d8dd,41658e62] [farmer-sync-9] com.example.farmer.FarmerSyncScheduler - Sync batch 8025 queued, 50 pending records
+2026-09-21 09:54:04.006 INFO  [farmer-service,1ca26b12a053e48f,5a262e0f] [farmer-sync-8] com.example.common.AuditPublisher - Published 15 audit events to nightshift.audit
+2026-09-21 09:54:28.773 DEBUG [farmer-service,c75ad18a86735282,b2e2e735] [http-nio-8080-exec-7] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 60
+2026-09-21 09:54:35.888 INFO  [farmer-service,405414a23451debb,6f581586] [http-nio-8080-exec-8] com.example.farmer.FarmerSyncScheduler - Sync batch 8655 queued, 323 pending records
+2026-09-21 09:54:44.267 INFO  [farmer-service,a0956897f9079512,7eb08305] [http-nio-8080-exec-5] com.example.farmer.FarmerController - GET /api/v1/farmers?page=28 200 in 129ms
+2026-09-21 09:55:54.867 DEBUG [farmer-service,51616cc03fea1ce1,ad4e51e1] [farmer-sync-9] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 57
+2026-09-21 09:56:14.469 INFO  [farmer-service,5858be0bfbf466e1,01bbadc9] [farmer-sync-2] com.example.farmer.CardRenderJob - Rendered 48 cards in 2065ms
+2026-09-21 09:57:46.320 WARN  [farmer-service,f679351a2aa8cc81,c7317ebc] [http-nio-8080-exec-9] com.example.farmer.FarmerController - Request from 192.0.2.135 missing X-Request-Id header, generated one
+2026-09-21 09:58:16.861 INFO  [farmer-service,3c9d495f9bff2479,73b0a834] [http-nio-8080-exec-1] com.example.farmer.FarmerController - GET /api/v1/farmers?page=40 200 in 20ms
+2026-09-21 09:58:16.955 DEBUG [farmer-service,eaa82db869712275,23835ca4] [farmer-sync-5] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 19
+2026-09-21 09:58:56.228 DEBUG [farmer-service,bb3c0e0164defb93,470a103d] [http-nio-8080-exec-5] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 47
+2026-09-21 09:59:22.216 WARN  [farmer-service,73830a67f665322d,91cbdac4] [farmer-sync-6] com.example.farmer.FarmerController - Request from 192.0.2.98 missing X-Request-Id header, generated one
+2026-09-21 09:59:29.525 INFO  [farmer-service,86fee8cbe365b317,6e38689c] [http-nio-8080-exec-7] com.example.farmer.FarmerSyncScheduler - Sync batch 8216 queued, 395 pending records
+2026-09-21 09:59:31.640 INFO  [farmer-service,1a51aca853ad4e45,e9177731] [farmer-sync-2] com.example.farmer.FarmerSyncScheduler - Sync batch 8180 queued, 64 pending records
+2026-09-21 10:01:20.819 INFO  [farmer-service,d8eaa9f926549da7,68db8561] [farmer-sync-7] com.example.farmer.FarmerSyncScheduler - Sync batch 8933 queued, 161 pending records
+2026-09-21 10:01:48.273 INFO  [farmer-service,6ca68d8b7622034f,05a54212] [http-nio-8080-exec-8] com.example.common.AuditPublisher - Published 3 audit events to nightshift.audit
+2026-09-21 10:02:47.048 INFO  [farmer-service,ff0e98d3eabf9aaf,edec30e8] [farmer-sync-6] com.example.common.AuditPublisher - Published 26 audit events to nightshift.audit
+2026-09-21 10:03:39.837 INFO  [farmer-service,88c75ffe30d3d68d,eb0cddcf] [farmer-sync-8] com.example.common.AuditPublisher - Published 23 audit events to nightshift.audit
+2026-09-21 10:04:21.253 INFO  [farmer-service,9e586810e2fa3558,749465c8] [http-nio-8080-exec-6] com.example.farmer.FarmerController - GET /api/v1/farmers?page=21 200 in 52ms
+2026-09-21 10:04:27.546 INFO  [farmer-service,b00beedf0711ea18,7140daf2] [http-nio-8080-exec-7] com.example.farmer.FarmerController - GET /api/v1/farmers?page=33 200 in 81ms
+2026-09-21 10:04:28.406 WARN  [farmer-service,3f044572c75ec34b,55bf5009] [farmer-sync-8] com.example.farmer.FarmerController - Request from 192.0.2.71 missing X-Request-Id header, generated one
+2026-09-21 10:04:35.841 INFO  [farmer-service,a46b7965b50a1148,7cca0bb3] [http-nio-8080-exec-4] com.example.farmer.FarmerSyncScheduler - Sync batch 8723 queued, 29 pending records
+2026-09-21 10:06:39.183 INFO  [farmer-service,9940e04a310ebadc,3c836fa3] [http-nio-8080-exec-9] com.example.farmer.FarmerSyncScheduler - Sync batch 8028 queued, 126 pending records
+2026-09-21 10:07:18.272 WARN  [farmer-service,6c627cd6fd156318,e279246f] [farmer-sync-3] com.example.farmer.FarmerController - Request from 192.0.2.243 missing X-Request-Id header, generated one
+2026-09-21 10:07:42.525 INFO  [farmer-service,d4d6c5ca9a9c428d,cb375c7d] [farmer-sync-9] com.example.farmer.CardRenderJob - Rendered 84 cards in 972ms
+2026-09-21 10:11:57.103 WARN  [farmer-service,fb5bcae7be4b6aea,8272a1a2] [farmer-sync-1] com.example.farmer.FarmerController - Request from 192.0.2.68 missing X-Request-Id header, generated one
+2026-09-21 10:14:00.186 WARN  [farmer-service,b49e9990e0f752ea,35f1e2fe] [farmer-sync-8] com.example.farmer.FarmerController - Request from 192.0.2.17 missing X-Request-Id header, generated one
+2026-09-21 10:15:15.978 WARN  [farmer-service,e89e47b924b08624,0302fe80] [farmer-sync-7] com.example.farmer.FarmerController - Request from 192.0.2.39 missing X-Request-Id header, generated one
+2026-09-21 10:15:44.128 INFO  [farmer-service,b07e54f4c148af3e,e10a4fa0] [http-nio-8080-exec-1] com.example.farmer.FarmerController - GET /api/v1/farmers?page=40 200 in 114ms
+2026-09-21 10:16:45.921 INFO  [farmer-service,e0034c5b17a091e5,d7e3ded9] [farmer-sync-3] com.example.farmer.FarmerSyncScheduler - Sync batch 8442 queued, 142 pending records
+2026-09-21 10:17:49.525 WARN  [farmer-service,ebac31a2ccb2d984,43859697] [farmer-sync-2] com.example.farmer.FarmerController - Request from 192.0.2.142 missing X-Request-Id header, generated one
+2026-09-21 10:19:11.581 INFO  [farmer-service,031cfd0bc0b615b5,89aa82e6] [farmer-sync-5] com.example.farmer.FarmerSyncScheduler - Sync batch 8153 queued, 195 pending records
+2026-09-21 10:20:14.386 INFO  [farmer-service,5aa5b81a4fa470f3,0d1de4cf] [farmer-sync-9] com.example.common.AuditPublisher - Published 2 audit events to nightshift.audit
+2026-09-21 10:20:19.397 INFO  [farmer-service,bdef496ac1324589,4f513795] [farmer-sync-2] com.example.common.AuditPublisher - Published 26 audit events to nightshift.audit
+2026-09-21 10:20:30.663 INFO  [farmer-service,e2e9a83f8be389a0,22442dd7] [farmer-sync-5] com.example.farmer.FarmerSyncScheduler - Sync batch 8131 queued, 234 pending records
+2026-09-21 10:22:03.238 INFO  [farmer-service,2e1ce7c2ef11a011,d719194f] [farmer-sync-9] com.example.farmer.CardRenderJob - Rendered 23 cards in 2112ms
+2026-09-21 10:22:04.986 ERROR [farmer-service,e5cc01cf8d8eb6aa,ad27370b] [farmer-sync-8] com.example.farmer.FarmerSyncService - Sync failed for batch 8404: could not acquire a database connection
+java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30001ms (total=10, active=10, idle=0, waiting=7)
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181)
+	at com.example.farmer.FarmerSyncService.pushPending(FarmerSyncService.java:36)
+	at com.example.farmer.FarmerSyncScheduler.run(FarmerSyncScheduler.java:58)
+2026-09-21 10:23:26.288 INFO  [farmer-service,8386c9a6f2f4a5a8,101a8540] [http-nio-8080-exec-2] com.example.common.AuditPublisher - Published 15 audit events to nightshift.audit
+2026-09-21 10:23:33.042 WARN  [farmer-service,73c7a4fe66891695,834167be] [farmer-sync-7] com.example.farmer.FarmerController - Request from 192.0.2.189 missing X-Request-Id header, generated one
+2026-09-21 10:24:11.833 DEBUG [farmer-service,f3656feb6269b2c3,4c2f4ce2] [http-nio-8080-exec-5] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 61
+2026-09-21 10:25:02.752 WARN  [farmer-service,9e330daefc706729,bfef4da5] [http-nio-8080-exec-5] com.example.farmer.FarmerController - Request from 192.0.2.253 missing X-Request-Id header, generated one
+2026-09-21 10:25:46.397 INFO  [farmer-service,43a24e0a5114f4f4,fb16fbae] [farmer-sync-2] com.example.common.AuditPublisher - Published 15 audit events to nightshift.audit
+2026-09-21 10:28:08.756 WARN  [farmer-service,c1a36257e31a6066,3a906a11] [farmer-sync-9] com.example.farmer.FarmerController - Request from 192.0.2.139 missing X-Request-Id header, generated one
+2026-09-21 10:30:28.253 DEBUG [farmer-service,99f94a52ebdc4f1c,15ce2e9d] [farmer-sync-2] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 3
+2026-09-21 10:31:56.273 DEBUG [farmer-service,a798a0c29cc97ca5,ad103809] [farmer-sync-6] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 39
+2026-09-21 10:32:30.800 WARN  [farmer-service,c575fc5c82fd3956,0ac1ce4e] [farmer-sync-5] com.example.farmer.FarmerController - Request from 192.0.2.87 missing X-Request-Id header, generated one
+2026-09-21 10:34:04.099 INFO  [farmer-service,296c0e8b503e69b0,b527b006] [http-nio-8080-exec-6] com.example.farmer.CardRenderJob - Rendered 9 cards in 555ms
+2026-09-21 10:34:52.230 DEBUG [farmer-service,7ede0af015dd4ea0,807cf8a5] [farmer-sync-1] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 3
+2026-09-21 10:35:29.643 INFO  [farmer-service,b92eb85c5d94a24b,1a7e030d] [farmer-sync-6] com.example.farmer.CardRenderJob - Rendered 44 cards in 1586ms
+2026-09-21 10:35:31.630 INFO  [farmer-service,b6e79c147dfdb7c4,f1ce83f8] [farmer-sync-8] com.example.farmer.FarmerController - GET /api/v1/farmers?page=39 200 in 114ms
+2026-09-21 10:38:15.195 INFO  [farmer-service,abf5fc1633ca49b4,b38201ee] [farmer-sync-7] com.example.farmer.FarmerSyncScheduler - Sync batch 8598 queued, 181 pending records
+2026-09-21 10:38:29.913 DEBUG [farmer-service,839dcb48feb07aa4,5578a45f] [http-nio-8080-exec-2] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 6
+2026-09-21 10:39:26.637 INFO  [farmer-service,29150e8a05dd7dfc,93436103] [farmer-sync-5] com.example.farmer.CardRenderJob - Rendered 28 cards in 2107ms
+2026-09-21 10:39:38.934 INFO  [farmer-service,40f16825fed5dcec,3cdd885d] [http-nio-8080-exec-1] com.example.farmer.FarmerController - GET /api/v1/farmers?page=25 200 in 33ms
+2026-09-21 10:39:48.020 INFO  [farmer-service,9f6817a6d900a0b0,e0224efd] [http-nio-8080-exec-2] com.example.farmer.FarmerController - GET /api/v1/farmers?page=22 200 in 117ms
+2026-09-21 10:39:50.296 INFO  [farmer-service,0f619c664346cb40,a4878fc9] [farmer-sync-6] com.example.common.AuditPublisher - Published 19 audit events to nightshift.audit
+2026-09-21 10:40:02.969 INFO  [farmer-service,2fce0a86b75047ec,2c012260] [farmer-sync-1] com.example.farmer.FarmerController - GET /api/v1/farmers?page=32 200 in 123ms
+2026-09-21 10:40:12.756 WARN  [farmer-service,dcd3dc58d3372a0f,7d009a46] [http-nio-8080-exec-1] com.example.farmer.FarmerController - Request from 192.0.2.118 missing X-Request-Id header, generated one
+2026-09-21 10:40:38.245 DEBUG [farmer-service,63818f4d7be38d4c,f2056280] [http-nio-8080-exec-9] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 63
+2026-09-21 10:42:08.017 INFO  [farmer-service,7585ad23f0c2b179,2130541f] [farmer-sync-1] com.example.farmer.FarmerSyncScheduler - Sync batch 8102 queued, 95 pending records
+2026-09-21 10:42:14.795 DEBUG [farmer-service,9944d880c4ca96aa,83f58716] [farmer-sync-8] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 1
+2026-09-21 10:42:28.973 INFO  [farmer-service,0f94fae1dac14df1,521e5d14] [farmer-sync-8] com.example.farmer.FarmerSyncScheduler - Sync batch 8100 queued, 219 pending records
+2026-09-21 10:42:30.709 WARN  [farmer-service,e997a3363f25d930,e8349423] [farmer-sync-9] com.example.farmer.FarmerController - Request from 192.0.2.3 missing X-Request-Id header, generated one
+2026-09-21 10:42:34.671 INFO  [farmer-service,0e13a065f9a07193,3baa85b4] [http-nio-8080-exec-6] com.example.farmer.FarmerSyncScheduler - Sync batch 8854 queued, 137 pending records
+2026-09-21 10:43:44.348 WARN  [farmer-service,313be4b3a8623711,0b6279a5] [http-nio-8080-exec-3] com.example.farmer.FarmerController - Request from 192.0.2.57 missing X-Request-Id header, generated one
+2026-09-21 10:43:48.466 INFO  [farmer-service,36854789e3354af0,11038127] [farmer-sync-2] com.example.common.AuditPublisher - Published 16 audit events to nightshift.audit
+2026-09-21 10:43:55.382 DEBUG [farmer-service,ba7a582412c16012,c6d36595] [farmer-sync-6] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 61
+2026-09-21 10:44:41.737 INFO  [farmer-service,8b7c4d334ac7187f,65856752] [http-nio-8080-exec-3] com.example.farmer.CardRenderJob - Rendered 7 cards in 702ms
+2026-09-21 10:47:50.234 INFO  [farmer-service,caec160834195791,d0e471ed] [farmer-sync-3] com.example.farmer.FarmerController - GET /api/v1/farmers?page=35 200 in 18ms
+2026-09-21 10:48:22.446 INFO  [farmer-service,a1b9b489d8b3687e,bf06c603] [http-nio-8080-exec-2] com.example.farmer.FarmerSyncScheduler - Sync batch 8004 queued, 240 pending records
+2026-09-21 10:48:39.410 DEBUG [farmer-service,6c5d1ad74da422db,28d16feb] [farmer-sync-5] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 4
+2026-09-21 10:49:11.183 ERROR [farmer-service,86cc57b0b7bb277c,3151ffed] [http-nio-8080-exec-6] com.example.farmer.FarmerSyncService - Sync failed for batch 8867: could not acquire a database connection
+java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30001ms (total=10, active=10, idle=0, waiting=7)
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181)
+	at com.example.farmer.FarmerSyncService.pushPending(FarmerSyncService.java:36)
+	at com.example.farmer.FarmerSyncScheduler.run(FarmerSyncScheduler.java:58)
+2026-09-21 10:51:21.625 INFO  [farmer-service,e4f0f1d178520cf3,0def950f] [farmer-sync-9] com.example.farmer.FarmerController - GET /api/v1/farmers?page=4 200 in 74ms
+2026-09-21 10:53:00.442 INFO  [farmer-service,30d5efb7fd6aca72,a3b404b2] [http-nio-8080-exec-9] com.example.common.AuditPublisher - Published 30 audit events to nightshift.audit
+2026-09-21 10:53:16.564 WARN  [farmer-service,57fb6eb24fc4abf4,15df6ade] [http-nio-8080-exec-2] com.example.farmer.FarmerController - Request from 192.0.2.87 missing X-Request-Id header, generated one
+2026-09-21 10:53:29.387 INFO  [farmer-service,2fa3b99219e639a5,1c708eb7] [http-nio-8080-exec-2] com.example.farmer.FarmerController - GET /api/v1/farmers?page=4 200 in 42ms
+2026-09-21 10:53:36.508 WARN  [farmer-service,af7cf8799cf9f678,c68dd1ed] [farmer-sync-6] com.example.farmer.FarmerController - Request from 192.0.2.23 missing X-Request-Id header, generated one
+2026-09-21 10:54:09.179 INFO  [farmer-service,cf190b384ea28ca3,80accd2e] [http-nio-8080-exec-1] com.example.farmer.FarmerController - GET /api/v1/farmers?page=23 200 in 30ms
+2026-09-21 10:54:56.372 INFO  [farmer-service,e7d32d9e72bb759f,6c3332e7] [farmer-sync-1] com.example.common.AuditPublisher - Published 13 audit events to nightshift.audit
+2026-09-21 10:55:26.180 INFO  [farmer-service,12c7dfaf1b616812,8fb2b462] [farmer-sync-8] com.example.common.AuditPublisher - Published 9 audit events to nightshift.audit
+2026-09-21 10:55:30.791 INFO  [farmer-service,4ca446b0440933cf,9a6f346d] [farmer-sync-5] com.example.farmer.FarmerController - GET /api/v1/farmers?page=11 200 in 136ms
+2026-09-21 10:56:12.456 WARN  [farmer-service,d7f73ac57bca7f54,20e7758e] [farmer-sync-2] com.example.farmer.FarmerController - Request from 192.0.2.172 missing X-Request-Id header, generated one
+2026-09-21 10:56:43.416 DEBUG [farmer-service,77f5a77e49c75e39,57cc0aba] [farmer-sync-1] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 62
+2026-09-21 10:58:51.130 INFO  [farmer-service,ad682527f38a0883,90cb42a7] [http-nio-8080-exec-7] com.example.farmer.FarmerSyncScheduler - Sync batch 8842 queued, 270 pending records
+2026-09-21 10:58:58.063 INFO  [farmer-service,006270d0731a7fd8,e0e7ef21] [farmer-sync-3] com.example.common.AuditPublisher - Published 13 audit events to nightshift.audit
+2026-09-21 10:59:11.092 INFO  [farmer-service,2930e0227660ecf9,04e1eb7a] [http-nio-8080-exec-2] com.example.farmer.FarmerSyncScheduler - Sync batch 8040 queued, 335 pending records
+2026-09-21 11:00:41.568 INFO  [farmer-service,1d09b47bbea6b370,e279840c] [farmer-sync-3] com.example.common.AuditPublisher - Published 30 audit events to nightshift.audit
+2026-09-21 11:00:44.076 INFO  [farmer-service,07cb082fd6e25659,f405d1f7] [http-nio-8080-exec-9] com.example.common.AuditPublisher - Published 22 audit events to nightshift.audit
+2026-09-21 11:01:08.040 INFO  [farmer-service,5b96b3f96d9bad40,b0131c46] [farmer-sync-5] com.example.farmer.FarmerController - GET /api/v1/farmers?page=23 200 in 16ms
+2026-09-21 11:02:11.289 WARN  [farmer-service,06052325b55d67dc,70664e70] [http-nio-8080-exec-3] com.example.farmer.FarmerController - Request from 192.0.2.240 missing X-Request-Id header, generated one
+2026-09-21 11:02:19.078 WARN  [farmer-service,d52a1fec5f5c08b0,f0d5cdff] [http-nio-8080-exec-7] com.example.farmer.FarmerController - Request from 192.0.2.7 missing X-Request-Id header, generated one
+2026-09-21 11:02:19.970 WARN  [farmer-service,f50f0e02cfc4583e,b3aaffd1] [farmer-sync-8] com.example.farmer.FarmerController - Request from 192.0.2.28 missing X-Request-Id header, generated one
+2026-09-21 11:02:36.520 INFO  [farmer-service,d84e00701465e63f,9d1f4ebd] [http-nio-8080-exec-5] com.example.farmer.CardRenderJob - Rendered 44 cards in 1992ms
+2026-09-21 11:03:01.323 INFO  [farmer-service,532531cdeb8b757a,2c8a3654] [farmer-sync-6] com.example.farmer.FarmerSyncScheduler - Sync batch 8501 queued, 258 pending records
+2026-09-21 11:03:12.498 INFO  [farmer-service,5c85785471fc8642,8bbc7905] [farmer-sync-2] com.example.farmer.FarmerController - GET /api/v1/farmers?page=38 200 in 91ms
+2026-09-21 11:03:18.254 DEBUG [farmer-service,daedc1cdf4ba99dd,22af02a5] [http-nio-8080-exec-4] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 31
+2026-09-21 11:05:55.974 INFO  [farmer-service,fe0f5c4501120a49,a1499e6e] [farmer-sync-9] com.example.farmer.FarmerController - GET /api/v1/farmers?page=35 200 in 60ms
+2026-09-21 11:06:55.119 WARN  [farmer-service,386a006a44df8005,067266d9] [http-nio-8080-exec-3] com.example.farmer.FarmerController - Request from 192.0.2.37 missing X-Request-Id header, generated one
+2026-09-21 11:08:19.894 DEBUG [farmer-service,f284325f1e8ded2f,555a54da] [http-nio-8080-exec-7] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 32
+2026-09-21 11:08:48.204 INFO  [farmer-service,c4443e231ee76133,d117b5c6] [farmer-sync-4] com.example.common.AuditPublisher - Published 6 audit events to nightshift.audit
+2026-09-21 11:09:37.338 INFO  [farmer-service,cb311822f5bec5fb,4b3dbb6a] [http-nio-8080-exec-6] com.example.farmer.FarmerController - GET /api/v1/farmers?page=19 200 in 91ms
+2026-09-21 11:09:54.478 INFO  [farmer-service,bbc0ffe7e3e564ab,b8f82d4a] [farmer-sync-2] com.example.farmer.CardRenderJob - Rendered 63 cards in 879ms
+2026-09-21 11:12:04.673 WARN  [farmer-service,a55a543e88761d95,1b97c72a] [farmer-sync-3] com.example.farmer.FarmerController - Request from 192.0.2.184 missing X-Request-Id header, generated one
+2026-09-21 11:12:06.929 INFO  [farmer-service,a4acb87c2f346572,03376909] [farmer-sync-1] com.example.farmer.CardRenderJob - Rendered 23 cards in 2041ms
+2026-09-21 11:13:21.993 INFO  [farmer-service,ed42256e431d9886,c20e7de8] [http-nio-8080-exec-9] com.example.farmer.CardRenderJob - Rendered 13 cards in 1236ms
+2026-09-21 11:13:28.219 INFO  [farmer-service,5c54c4a452dead30,b41a5e5e] [http-nio-8080-exec-6] com.example.farmer.CardRenderJob - Rendered 61 cards in 1622ms
+2026-09-21 11:13:57.757 ERROR [farmer-service,62f057a6f21cb1ea,c05756c7] [farmer-sync-3] com.example.farmer.FarmerSyncService - Sync failed for batch 8496: could not acquire a database connection
+java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30001ms (total=10, active=10, idle=0, waiting=7)
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181)
+	at com.example.farmer.FarmerSyncService.pushPending(FarmerSyncService.java:36)
+	at com.example.farmer.FarmerSyncScheduler.run(FarmerSyncScheduler.java:58)
+2026-09-21 11:14:00.326 INFO  [farmer-service,6b220419ac8071fc,aad35383] [http-nio-8080-exec-5] com.example.farmer.FarmerSyncScheduler - Sync batch 8502 queued, 265 pending records
+2026-09-21 11:14:39.421 INFO  [farmer-service,08e78d16b3936513,f827c42f] [farmer-sync-9] com.example.farmer.FarmerSyncScheduler - Sync batch 8187 queued, 32 pending records
+2026-09-21 11:15:10.058 INFO  [farmer-service,fe24de5a1e244c00,a8fd52bc] [farmer-sync-2] com.example.common.AuditPublisher - Published 5 audit events to nightshift.audit
+2026-09-21 11:15:37.430 INFO  [farmer-service,c7df81ed8fb6e652,452aae34] [farmer-sync-8] com.example.farmer.FarmerController - GET /api/v1/farmers?page=1 200 in 31ms
+2026-09-21 11:15:44.082 WARN  [farmer-service,db0e0a2001fd002c,057fb0c9] [farmer-sync-3] com.example.farmer.FarmerController - Request from 192.0.2.95 missing X-Request-Id header, generated one
+2026-09-21 11:15:50.918 DEBUG [farmer-service,d26a6bd6f52db92b,ea6788ba] [http-nio-8080-exec-6] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 36
+2026-09-21 11:16:27.020 DEBUG [farmer-service,85d3b6f4953ef810,58095a2d] [http-nio-8080-exec-1] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 56
+2026-09-21 11:16:37.502 WARN  [farmer-service,b6553d0cbf7e14ae,c0764af0] [farmer-sync-8] com.example.farmer.FarmerController - Request from 192.0.2.72 missing X-Request-Id header, generated one
+2026-09-21 11:17:15.720 DEBUG [farmer-service,3397e7553f50c0ad,71422ee0] [farmer-sync-8] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 55
+2026-09-21 11:17:16.104 INFO  [farmer-service,60245d3a6a5adb96,8ece3768] [farmer-sync-4] com.example.farmer.FarmerSyncScheduler - Sync batch 8950 queued, 62 pending records
+2026-09-21 11:18:04.722 DEBUG [farmer-service,88c7957a25b8ff14,aba27b7a] [http-nio-8080-exec-3] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 49
+2026-09-21 11:18:08.431 INFO  [farmer-service,37c4406bd85f8642,b1287909] [http-nio-8080-exec-9] com.example.farmer.FarmerController - GET /api/v1/farmers?page=27 200 in 111ms
+2026-09-21 11:18:12.055 INFO  [farmer-service,c04dab6adcd32b17,ea8272e5] [http-nio-8080-exec-5] com.example.farmer.FarmerSyncScheduler - Sync batch 8008 queued, 169 pending records
+2026-09-21 11:18:36.339 WARN  [farmer-service,cd28cdf239634807,e4083275] [farmer-sync-2] com.example.farmer.FarmerController - Request from 192.0.2.213 missing X-Request-Id header, generated one
+2026-09-21 11:20:38.643 INFO  [farmer-service,7436147817697ecd,f4ea657c] [farmer-sync-6] com.example.farmer.FarmerController - GET /api/v1/farmers?page=36 200 in 94ms
+2026-09-21 11:22:02.662 INFO  [farmer-service,2db8ec21e8aec28a,3e58ee0d] [farmer-sync-7] com.example.farmer.FarmerSyncScheduler - Sync batch 8660 queued, 264 pending records
+2026-09-21 11:22:34.974 DEBUG [farmer-service,b9af887a67e7cfc7,7288fb7c] [http-nio-8080-exec-8] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 18
+2026-09-21 11:22:35.865 ERROR [farmer-service,fbb23d8513e89af5,ba5a1f2f] [http-nio-8080-exec-9] com.example.farmer.FarmerSyncService - Sync failed for batch 8316: could not acquire a database connection
+java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30001ms (total=10, active=10, idle=0, waiting=7)
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181)
+	at com.example.farmer.FarmerSyncService.pushPending(FarmerSyncService.java:36)
+	at com.example.farmer.FarmerSyncScheduler.run(FarmerSyncScheduler.java:58)
+2026-09-21 11:23:23.912 DEBUG [farmer-service,647491ee591028f1,763d6717] [http-nio-8080-exec-1] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 9
+2026-09-21 11:23:36.153 DEBUG [farmer-service,6891dda0f0f6dd00,cf023aba] [farmer-sync-6] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 22
+2026-09-21 11:24:22.744 INFO  [farmer-service,70907119c45c8594,fe587537] [http-nio-8080-exec-4] com.example.farmer.CardRenderJob - Rendered 16 cards in 1046ms
+2026-09-21 11:24:29.022 INFO  [farmer-service,2a73e210abf8654f,a7d4c741] [http-nio-8080-exec-5] com.example.farmer.CardRenderJob - Rendered 48 cards in 1473ms
+2026-09-21 11:25:48.214 DEBUG [farmer-service,120f1c91ecdde511,5bea83cb] [farmer-sync-6] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 14
+2026-09-21 11:25:51.857 INFO  [farmer-service,f961aeb1414225a3,513d7d9e] [http-nio-8080-exec-9] com.example.common.AuditPublisher - Published 5 audit events to nightshift.audit
+2026-09-21 11:26:11.977 INFO  [farmer-service,5d1d956fa36f3128,d9a64ad8] [farmer-sync-5] com.example.farmer.FarmerController - GET /api/v1/farmers?page=39 200 in 38ms
+2026-09-21 11:26:26.515 INFO  [farmer-service,8fef42e9e994fe0e,6f68f82f] [http-nio-8080-exec-2] com.example.farmer.CardRenderJob - Rendered 7 cards in 257ms
+2026-09-21 11:27:15.389 INFO  [farmer-service,8434e08e6bb00f1f,b7f747dc] [http-nio-8080-exec-7] com.example.farmer.FarmerSyncScheduler - Sync batch 8307 queued, 20 pending records
+2026-09-21 11:29:27.921 INFO  [farmer-service,12b5edf0ce795b2f,7b02895b] [http-nio-8080-exec-2] com.example.common.AuditPublisher - Published 9 audit events to nightshift.audit
+2026-09-21 11:29:43.094 WARN  [farmer-service,a8ddee1e5127cb2b,a5e7875b] [farmer-sync-3] com.example.farmer.FarmerController - Request from 192.0.2.163 missing X-Request-Id header, generated one
+2026-09-21 11:30:03.326 INFO  [farmer-service,57779c66c27cef1d,a328de13] [http-nio-8080-exec-6] com.example.farmer.FarmerController - GET /api/v1/farmers?page=0 200 in 16ms
+2026-09-21 11:30:27.360 WARN  [farmer-service,25a53912fd219d32,478dfff8] [farmer-sync-2] com.example.farmer.FarmerProfileService - Concurrent update on farmer 6468, retry 1 of 3
+com.example.farmer.FarmerProfileService$OptimisticLockException: Row was updated by another transaction (farmer id=3206)
+	at com.example.farmer.FarmerProfileService.rename(FarmerProfileService.java:27)
+	at com.example.farmer.FarmerController.rename(FarmerController.java:96)
+2026-09-21 11:31:43.809 INFO  [farmer-service,ee285e1372fdc894,089bda8e] [farmer-sync-5] com.example.farmer.FarmerController - GET /api/v1/farmers?page=36 200 in 28ms
+2026-09-21 11:33:13.254 INFO  [farmer-service,6094dd34acaa67df,07f216fb] [http-nio-8080-exec-4] com.example.common.AuditPublisher - Published 3 audit events to nightshift.audit
+2026-09-21 11:33:17.145 INFO  [farmer-service,5ada9002de3c15b6,fd7804f8] [http-nio-8080-exec-1] com.example.common.AuditPublisher - Published 27 audit events to nightshift.audit
+2026-09-21 11:34:54.276 INFO  [farmer-service,dae91cabebfa5ca2,7b14faf8] [farmer-sync-9] com.example.farmer.FarmerController - GET /api/v1/farmers?page=3 200 in 43ms
+2026-09-21 11:35:24.439 WARN  [farmer-service,f6e987ed110eba67,a4c5d379] [http-nio-8080-exec-1] com.example.farmer.FarmerController - Request from 192.0.2.111 missing X-Request-Id header, generated one
+2026-09-21 11:36:33.268 DEBUG [farmer-service,cb3455be586294e9,ffc76b16] [farmer-sync-3] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 14
+2026-09-21 11:37:25.853 INFO  [farmer-service,d28a3ae7a8c6b73c,c181244a] [http-nio-8080-exec-2] com.example.common.AuditPublisher - Published 1 audit events to nightshift.audit
+2026-09-21 11:39:31.513 INFO  [farmer-service,bcf37e855354f881,66d5198a] [http-nio-8080-exec-3] com.example.common.AuditPublisher - Published 2 audit events to nightshift.audit
+2026-09-21 11:39:41.268 WARN  [farmer-service,7a1d61e4e3ae0088,9511a92f] [http-nio-8080-exec-5] com.example.farmer.FarmerController - Request from 192.0.2.18 missing X-Request-Id header, generated one
+2026-09-21 11:40:17.275 INFO  [farmer-service,121fc6509365a519,ba2b0430] [http-nio-8080-exec-4] com.example.common.AuditPublisher - Published 18 audit events to nightshift.audit
+2026-09-21 11:40:35.438 INFO  [farmer-service,098be43a9427f286,8ca57a99] [farmer-sync-8] com.example.farmer.FarmerSyncScheduler - Sync batch 8519 queued, 380 pending records
+2026-09-21 11:42:19.578 INFO  [farmer-service,76269264da49edc7,00e06766] [farmer-sync-3] com.example.farmer.FarmerSyncScheduler - Sync batch 8187 queued, 269 pending records
+2026-09-21 11:42:44.112 INFO  [farmer-service,7f43b113f194756b,8e04d6d4] [http-nio-8080-exec-4] com.example.common.AuditPublisher - Published 24 audit events to nightshift.audit
+2026-09-21 11:42:58.146 INFO  [farmer-service,e21f57162adabc6b,84b8eabf] [http-nio-8080-exec-4] com.example.farmer.FarmerSyncScheduler - Sync batch 8580 queued, 59 pending records
+2026-09-21 11:43:58.846 INFO  [farmer-service,447ee91d58b44360,1905f79f] [farmer-sync-1] com.example.farmer.FarmerSyncScheduler - Sync batch 8126 queued, 265 pending records
+2026-09-21 11:44:35.235 INFO  [farmer-service,e7d0b7480a9730e0,96865a7c] [http-nio-8080-exec-7] com.example.farmer.FarmerSyncScheduler - Sync batch 8581 queued, 63 pending records
+2026-09-21 11:47:35.250 ERROR [farmer-service,30ba121b5abbe92d,66d82efc] [farmer-sync-3] com.example.farmer.FarmerSyncService - Sync failed for batch 8520: could not acquire a database connection
+java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30001ms (total=10, active=10, idle=0, waiting=7)
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181)
+	at com.example.farmer.FarmerSyncService.pushPending(FarmerSyncService.java:36)
+	at com.example.farmer.FarmerSyncScheduler.run(FarmerSyncScheduler.java:58)
+2026-09-21 11:48:11.717 INFO  [farmer-service,27d732027674bf76,4ddd1b29] [http-nio-8080-exec-7] com.example.farmer.FarmerController - GET /api/v1/farmers?page=21 200 in 49ms
+2026-09-21 11:48:12.609 INFO  [farmer-service,62d807ab85e1a2b9,5cdc18c3] [http-nio-8080-exec-2] com.example.farmer.FarmerSyncScheduler - Sync batch 8111 queued, 378 pending records
+2026-09-21 11:48:55.495 INFO  [farmer-service,d9e7d6a54a33c54c,4338158c] [farmer-sync-2] com.example.common.AuditPublisher - Published 26 audit events to nightshift.audit
+2026-09-21 11:49:22.244 INFO  [farmer-service,e761467759d59498,acb4eca6] [http-nio-8080-exec-8] com.example.farmer.FarmerController - GET /api/v1/farmers?page=6 200 in 61ms
+2026-09-21 11:49:42.228 DEBUG [farmer-service,3e9d239ac15fc77b,47bed98c] [farmer-sync-2] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 17
+2026-09-21 11:53:30.272 INFO  [farmer-service,c2597cd6b30c3700,14063954] [farmer-sync-2] com.example.farmer.FarmerController - GET /api/v1/farmers?page=34 200 in 54ms
+2026-09-21 11:55:43.054 WARN  [farmer-service,4266d5fd058af54f,47e2963f] [farmer-sync-1] com.example.farmer.FarmerController - Request from 192.0.2.78 missing X-Request-Id header, generated one
+2026-09-21 11:56:07.300 DEBUG [farmer-service,1bdcdfd0ba2d95d8,6a486c0f] [http-nio-8080-exec-6] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 19
+2026-09-21 11:56:23.945 DEBUG [farmer-service,e6cb10919696ac7b,4f275b89] [farmer-sync-8] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 18
+2026-09-21 11:57:10.748 INFO  [farmer-service,e98e6c5c215809ab,d3f63cf9] [farmer-sync-9] com.example.common.AuditPublisher - Published 7 audit events to nightshift.audit
+2026-09-21 11:57:21.691 DEBUG [farmer-service,6b1cc5037643ab9d,1ccc89ee] [farmer-sync-1] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 23
+2026-09-21 11:59:24.380 INFO  [farmer-service,9c33f44b740cf8ef,515cd2f4] [farmer-sync-6] com.example.farmer.CardRenderJob - Rendered 18 cards in 1038ms
+2026-09-21 11:59:34.399 INFO  [farmer-service,efbbc00d8208c9ee,41740256] [farmer-sync-3] com.example.common.AuditPublisher - Published 12 audit events to nightshift.audit
+2026-09-21 12:00:07.139 WARN  [farmer-service,ef74f2f06d3e2205,1e6b11ad] [http-nio-8080-exec-3] com.example.farmer.FarmerController - Request from 192.0.2.193 missing X-Request-Id header, generated one
+2026-09-21 12:02:27.457 INFO  [farmer-service,8482e4b05e09cea2,8c005c45] [farmer-sync-5] com.example.common.AuditPublisher - Published 20 audit events to nightshift.audit
+2026-09-21 12:03:37.928 ERROR [farmer-service,bf2c79c7b9764b71,61970caa] [http-nio-8080-exec-9] com.example.farmer.FarmerSyncService - Sync failed for batch 8368: could not acquire a database connection
+java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30001ms (total=10, active=10, idle=0, waiting=7)
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181)
+	at com.example.farmer.FarmerSyncService.pushPending(FarmerSyncService.java:36)
+	at com.example.farmer.FarmerSyncScheduler.run(FarmerSyncScheduler.java:58)
+2026-09-21 12:04:02.866 INFO  [farmer-service,725d66e4adc5dd58,df68f480] [farmer-sync-8] com.example.farmer.FarmerSyncScheduler - Sync batch 8400 queued, 367 pending records
+2026-09-21 12:04:11.245 INFO  [farmer-service,ace92d78fbaeaf9f,68d952c4] [http-nio-8080-exec-2] com.example.farmer.FarmerSyncScheduler - Sync batch 8824 queued, 240 pending records
+2026-09-21 12:04:59.901 WARN  [farmer-service,1fe87f6d3bf1e72b,1b28ac5f] [farmer-sync-3] com.example.farmer.FarmerController - Request from 192.0.2.60 missing X-Request-Id header, generated one
+2026-09-21 12:05:18.907 DEBUG [farmer-service,f5c5628e03d147cb,e968632d] [http-nio-8080-exec-2] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 17
+2026-09-21 12:07:01.262 INFO  [farmer-service,a07dec70f4bed94a,f6fb89a5] [http-nio-8080-exec-6] com.example.farmer.FarmerSyncScheduler - Sync batch 8477 queued, 335 pending records
+2026-09-21 12:07:30.348 INFO  [farmer-service,a08987adeb42c658,a272bb67] [farmer-sync-4] com.example.farmer.CardRenderJob - Rendered 68 cards in 1837ms
+2026-09-21 12:08:37.247 INFO  [farmer-service,595a37c3ce05a03e,723c12df] [farmer-sync-6] com.example.farmer.FarmerController - GET /api/v1/farmers?page=3 200 in 106ms
+2026-09-21 12:08:46.991 INFO  [farmer-service,115dbdea4ec2a10b,f8d0671a] [farmer-sync-6] com.example.farmer.FarmerController - GET /api/v1/farmers?page=28 200 in 89ms
+2026-09-21 12:09:04.930 INFO  [farmer-service,c0612eb2cb911c8d,83fce87b] [farmer-sync-5] com.example.common.AuditPublisher - Published 10 audit events to nightshift.audit
+2026-09-21 12:11:04.396 INFO  [farmer-service,6e6847ca198fa76f,056cf4c0] [farmer-sync-3] com.example.common.AuditPublisher - Published 1 audit events to nightshift.audit
+2026-09-21 12:11:15.060 INFO  [farmer-service,8f399edc43b5d01e,3738ccd2] [farmer-sync-8] com.example.farmer.FarmerController - GET /api/v1/farmers?page=12 200 in 113ms
+2026-09-21 12:11:25.370 INFO  [farmer-service,ccbd54fd46d95524,b526fe1b] [farmer-sync-9] com.example.common.AuditPublisher - Published 5 audit events to nightshift.audit
+2026-09-21 12:11:32.807 INFO  [farmer-service,eee662aef411b772,bc47ee23] [http-nio-8080-exec-1] com.example.farmer.FarmerSyncScheduler - Sync batch 8074 queued, 279 pending records
+2026-09-21 12:12:30.596 INFO  [farmer-service,a35f458a51732b5a,954ece09] [http-nio-8080-exec-2] com.example.farmer.CardRenderJob - Rendered 53 cards in 2394ms
+2026-09-21 12:14:19.952 INFO  [farmer-service,30f25dc6c540ff48,1ab77682] [http-nio-8080-exec-6] com.example.farmer.CardRenderJob - Rendered 48 cards in 618ms
+2026-09-21 12:14:51.094 INFO  [farmer-service,c68dbe12c89d416a,676664d2] [farmer-sync-8] com.example.farmer.FarmerController - GET /api/v1/farmers?page=21 200 in 127ms
+2026-09-21 12:15:07.179 INFO  [farmer-service,46950e1fb492c017,43c5269c] [http-nio-8080-exec-2] com.example.common.AuditPublisher - Published 26 audit events to nightshift.audit
+2026-09-21 12:17:25.043 INFO  [farmer-service,0b91c8bb3c3250a3,8675ee01] [http-nio-8080-exec-4] com.example.farmer.FarmerSyncScheduler - Sync batch 8526 queued, 285 pending records
+2026-09-21 12:18:24.211 DEBUG [farmer-service,9cb94966457afb2d,c705520a] [farmer-sync-6] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 38
+2026-09-21 12:18:51.114 DEBUG [farmer-service,3020e328e1334872,c1116f96] [http-nio-8080-exec-3] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 63
+2026-09-21 12:19:16.022 INFO  [farmer-service,340df382bc2fa49d,ec51bcd1] [farmer-sync-6] com.example.farmer.CardRenderJob - Rendered 82 cards in 1658ms
+2026-09-21 12:20:10.317 INFO  [farmer-service,bbe8cbc8ea5d1724,539b43cf] [http-nio-8080-exec-6] com.example.farmer.CardRenderJob - Rendered 45 cards in 208ms
+2026-09-21 12:20:56.681 INFO  [farmer-service,d52d12b1241782a3,dd808907] [farmer-sync-2] com.example.common.AuditPublisher - Published 28 audit events to nightshift.audit
+2026-09-21 12:22:03.316 INFO  [farmer-service,c2d2865fef95c96f,5ef96ba9] [farmer-sync-6] com.example.common.AuditPublisher - Published 15 audit events to nightshift.audit
+2026-09-21 12:22:29.622 INFO  [farmer-service,6f3043e7ec95b239,69f05475] [farmer-sync-7] com.example.farmer.CardRenderJob - Rendered 25 cards in 424ms
+2026-09-21 12:23:45.776 INFO  [farmer-service,6f2369ee5dbce4cb,3ef61eb8] [http-nio-8080-exec-8] com.example.farmer.FarmerController - GET /api/v1/farmers?page=36 200 in 49ms
+2026-09-21 12:25:38.667 INFO  [farmer-service,f6e8012022468218,a91db2c9] [http-nio-8080-exec-7] com.example.farmer.FarmerSyncScheduler - Sync batch 8220 queued, 353 pending records
+2026-09-21 12:26:26.231 INFO  [farmer-service,ee7ad7ef608806f8,670270d1] [farmer-sync-6] com.example.common.AuditPublisher - Published 24 audit events to nightshift.audit
+2026-09-21 12:28:50.007 INFO  [farmer-service,a679919455f46bd7,5aec16ff] [farmer-sync-1] com.example.farmer.CardRenderJob - Rendered 86 cards in 1979ms
+2026-09-21 12:29:14.271 WARN  [farmer-service,37fecba983d3d1ad,eae3c726] [http-nio-8080-exec-4] com.example.farmer.FarmerController - Request from 192.0.2.237 missing X-Request-Id header, generated one
+2026-09-21 12:29:50.627 INFO  [farmer-service,d72c0df202a6454f,dfa18152] [http-nio-8080-exec-1] com.example.common.AuditPublisher - Published 16 audit events to nightshift.audit
+2026-09-21 12:31:23.332 WARN  [farmer-service,1d3f501ff5924741,8f542309] [http-nio-8080-exec-8] com.example.farmer.FarmerController - Request from 192.0.2.215 missing X-Request-Id header, generated one
+2026-09-21 12:32:58.461 DEBUG [farmer-service,8034c05ee231821a,00e75ae0] [farmer-sync-9] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 54
+2026-09-21 12:33:00.333 INFO  [farmer-service,2c258136d2e2ffea,47b50b5b] [farmer-sync-5] com.example.common.AuditPublisher - Published 3 audit events to nightshift.audit
+2026-09-21 12:33:55.333 DEBUG [farmer-service,4af4c38993c345ad,1dcbc393] [http-nio-8080-exec-6] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 62
+2026-09-21 12:34:24.799 INFO  [farmer-service,1b3e97b4629cd35f,b0600b3a] [farmer-sync-9] com.example.farmer.FarmerController - GET /api/v1/farmers?page=19 200 in 126ms
+2026-09-21 12:36:46.202 DEBUG [farmer-service,698093673bb5a0f5,3fb8f4f3] [http-nio-8080-exec-1] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 56
+2026-09-21 12:39:55.532 INFO  [farmer-service,53cbdb868e532676,ab83d5f7] [http-nio-8080-exec-8] com.example.common.AuditPublisher - Published 12 audit events to nightshift.audit
+2026-09-21 12:40:08.024 DEBUG [farmer-service,59edcda1f563e070,cc47604a] [http-nio-8080-exec-5] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 13
+2026-09-21 12:40:09.501 DEBUG [farmer-service,564b16e2c727850d,9d321e7b] [farmer-sync-4] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 24
+2026-09-21 12:40:12.283 INFO  [farmer-service,7fd2674076bbae03,d5b1526b] [farmer-sync-4] com.example.farmer.FarmerController - GET /api/v1/farmers?page=28 200 in 116ms
+2026-09-21 12:41:01.384 INFO  [farmer-service,fec9a13f997cbe03,c974926c] [farmer-sync-7] com.example.common.AuditPublisher - Published 10 audit events to nightshift.audit
+2026-09-21 12:42:35.846 INFO  [farmer-service,2b9729638b74590e,df2ea1d1] [farmer-sync-9] com.example.farmer.FarmerSyncScheduler - Sync batch 8459 queued, 58 pending records
+2026-09-21 12:42:51.156 INFO  [farmer-service,6218f0ffc6caf983,9b0dc380] [farmer-sync-8] com.example.common.AuditPublisher - Published 11 audit events to nightshift.audit
+2026-09-21 12:44:14.078 INFO  [farmer-service,a4a4d0812de7d395,0c7503e7] [http-nio-8080-exec-6] com.example.farmer.FarmerController - GET /api/v1/farmers?page=38 200 in 22ms
+2026-09-21 12:44:35.400 INFO  [farmer-service,83a0cd160ed57880,fe692492] [http-nio-8080-exec-1] com.example.farmer.FarmerController - GET /api/v1/farmers?page=8 200 in 132ms
+2026-09-21 12:44:56.656 WARN  [farmer-service,d1640dc2f67661d6,b62a02e0] [farmer-sync-8] com.example.farmer.FarmerController - Request from 192.0.2.44 missing X-Request-Id header, generated one
+2026-09-21 12:45:06.235 WARN  [farmer-service,c1f2755dfbbe4e96,ee5fd6a0] [http-nio-8080-exec-4] com.example.farmer.FarmerController - Request from 192.0.2.35 missing X-Request-Id header, generated one
+2026-09-21 12:45:41.951 DEBUG [farmer-service,ac870b5346398b71,d91f00f0] [http-nio-8080-exec-1] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 40
+2026-09-21 12:45:55.841 ERROR [farmer-service,a201c35b092269cd,e1b95971] [http-nio-8080-exec-4] com.example.farmer.FarmerSyncService - Sync failed for batch 8583: could not acquire a database connection
+java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30001ms (total=10, active=10, idle=0, waiting=7)
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181)
+	at com.example.farmer.FarmerSyncService.pushPending(FarmerSyncService.java:36)
+	at com.example.farmer.FarmerSyncScheduler.run(FarmerSyncScheduler.java:58)
+2026-09-21 12:46:18.772 WARN  [farmer-service,303416d618529688,587367a1] [farmer-sync-9] com.example.farmer.FarmerController - Request from 192.0.2.77 missing X-Request-Id header, generated one
+2026-09-21 12:46:25.970 INFO  [farmer-service,1662f899d0d923b5,25d89c32] [http-nio-8080-exec-9] com.example.farmer.CardRenderJob - Rendered 28 cards in 391ms
+2026-09-21 12:49:51.727 INFO  [farmer-service,85d35f38a5948785,b8e741e9] [farmer-sync-3] com.example.farmer.FarmerSyncScheduler - Sync batch 8541 queued, 381 pending records
+2026-09-21 12:52:17.655 DEBUG [farmer-service,c913b0e0b82b37ec,832ff76c] [farmer-sync-5] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 1
+2026-09-21 12:52:36.144 WARN  [farmer-service,855e5784006f807f,371f1ad3] [http-nio-8080-exec-5] com.example.farmer.FarmerController - Request from 192.0.2.83 missing X-Request-Id header, generated one
+2026-09-21 12:54:09.537 INFO  [farmer-service,f4a4333c920f623c,f20b049a] [http-nio-8080-exec-3] com.example.common.AuditPublisher - Published 17 audit events to nightshift.audit
+2026-09-21 12:54:35.500 DEBUG [farmer-service,24f766bdce5afceb,bdfc67be] [http-nio-8080-exec-8] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 52
+2026-09-21 12:54:41.277 INFO  [farmer-service,a3f477e2faab2db8,1463b944] [farmer-sync-4] com.example.farmer.CardRenderJob - Rendered 7 cards in 706ms
+2026-09-21 12:54:43.918 DEBUG [farmer-service,68ee3512d26083d9,69b6edf5] [farmer-sync-6] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 27
+2026-09-21 12:58:03.694 INFO  [farmer-service,46c507ad9bf6389f,6e119eda] [farmer-sync-1] com.example.farmer.CardRenderJob - Rendered 54 cards in 1322ms
+2026-09-21 12:58:46.657 DEBUG [farmer-service,ac194dbe97ddad75,9acaadd2] [farmer-sync-6] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 7
+2026-09-21 13:00:11.721 WARN  [farmer-service,7c5e6204429258d1,ba6d6d18] [http-nio-8080-exec-6] com.example.farmer.FarmerController - Request from 192.0.2.247 missing X-Request-Id header, generated one
+2026-09-21 13:00:33.457 INFO  [farmer-service,adda2ed40351baa6,46dfef1d] [http-nio-8080-exec-2] com.example.common.AuditPublisher - Published 18 audit events to nightshift.audit
+2026-09-21 13:01:11.608 INFO  [farmer-service,7f4103bf02e51264,da13b4c2] [http-nio-8080-exec-5] com.example.farmer.CardRenderJob - Rendered 40 cards in 2225ms
+2026-09-21 13:01:59.853 INFO  [farmer-service,d482326fc23eedb5,354e2035] [http-nio-8080-exec-1] com.example.farmer.CardRenderJob - Rendered 87 cards in 667ms
+2026-09-21 13:03:41.540 INFO  [farmer-service,bc3eb1cc78e0cfe8,15048eb1] [farmer-sync-4] com.example.farmer.FarmerController - GET /api/v1/farmers?page=31 200 in 97ms
+2026-09-21 13:04:32.838 INFO  [farmer-service,dda62bcedba7aaf4,fa0d8f79] [farmer-sync-2] com.example.farmer.CardRenderJob - Rendered 54 cards in 1061ms
+2026-09-21 13:05:28.866 ERROR [farmer-service,1b2938ea2c75ce68,0b9c0424] [http-nio-8080-exec-9] com.example.farmer.CardRenderJob - Failed to render card label for farmer 83308
+java.lang.NullPointerException: Cannot invoke "String.charAt(int)" because "middleName" is null
+	at com.example.common.NameFormatter.initials(NameFormatter.java:22)
+	at com.example.farmer.FarmerSyncService.cardLabel(FarmerSyncService.java:53)
+	at com.example.farmer.CardRenderJob.render(CardRenderJob.java:74)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-09-21 13:08:19.886 WARN  [farmer-service,2576499272cf35be,0651400e] [farmer-sync-1] com.example.farmer.FarmerController - Request from 192.0.2.163 missing X-Request-Id header, generated one
+2026-09-21 13:08:23.222 WARN  [farmer-service,fd398f1acfc078dc,93c0f856] [http-nio-8080-exec-5] com.example.farmer.FarmerController - Request from 192.0.2.239 missing X-Request-Id header, generated one
+2026-09-21 13:08:27.442 DEBUG [farmer-service,25e9632d9c179596,e0164286] [http-nio-8080-exec-2] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 9
+2026-09-21 13:08:31.040 INFO  [farmer-service,d37cabc70361c43d,d7611486] [farmer-sync-8] com.example.farmer.FarmerSyncScheduler - Sync batch 8725 queued, 125 pending records
+2026-09-21 13:08:59.782 INFO  [farmer-service,a445b06b9687a604,bf919294] [http-nio-8080-exec-4] com.example.common.AuditPublisher - Published 27 audit events to nightshift.audit
+2026-09-21 13:10:46.048 INFO  [farmer-service,b5c465ab0bf09da6,d1ad48f2] [farmer-sync-5] com.example.farmer.FarmerController - GET /api/v1/farmers?page=20 200 in 59ms
+2026-09-21 13:10:48.773 WARN  [farmer-service,a8c1280df01baf7a,dc9236bb] [http-nio-8080-exec-4] com.example.farmer.FarmerController - Request from 192.0.2.134 missing X-Request-Id header, generated one
+2026-09-21 13:11:12.130 INFO  [farmer-service,ea2e15071d8e254b,a012be32] [farmer-sync-9] com.example.common.AuditPublisher - Published 17 audit events to nightshift.audit
+2026-09-21 13:11:29.746 INFO  [farmer-service,8bace48a90b63931,82df26f5] [farmer-sync-2] com.example.common.AuditPublisher - Published 17 audit events to nightshift.audit
+2026-09-21 13:11:33.382 INFO  [farmer-service,ba7adf88ed8c5c52,8f203dab] [farmer-sync-2] com.example.farmer.FarmerSyncScheduler - Sync batch 8699 queued, 356 pending records
+2026-09-21 13:11:33.501 INFO  [farmer-service,bbacd062eb4fe217,74e1a866] [http-nio-8080-exec-5] com.example.farmer.FarmerSyncScheduler - Sync batch 8449 queued, 305 pending records
+2026-09-21 13:13:41.469 INFO  [farmer-service,9afabbd5cb621007,d05d4bf7] [farmer-sync-2] com.example.farmer.CardRenderJob - Rendered 45 cards in 586ms
+2026-09-21 13:14:26.230 INFO  [farmer-service,2c03f3de8efe314d,07934476] [http-nio-8080-exec-9] com.example.farmer.CardRenderJob - Rendered 34 cards in 522ms
+2026-09-21 13:14:43.953 INFO  [farmer-service,bc2650740aa2c4fd,48cc36cc] [farmer-sync-4] com.example.farmer.FarmerSyncScheduler - Sync batch 8885 queued, 383 pending records
+2026-09-21 13:18:13.478 INFO  [farmer-service,3bc2f21371f350c0,f65aeca6] [farmer-sync-8] com.example.farmer.FarmerController - GET /api/v1/farmers?page=11 200 in 98ms
+2026-09-21 13:19:03.531 ERROR [farmer-service,c0d7e376afe08517,7425ba1b] [http-nio-8080-exec-5] com.example.farmer.CardRenderJob - Failed to render card label for farmer 83111
+java.lang.NullPointerException: Cannot invoke "String.charAt(int)" because "middleName" is null
+	at com.example.common.NameFormatter.initials(NameFormatter.java:22)
+	at com.example.farmer.FarmerSyncService.cardLabel(FarmerSyncService.java:53)
+	at com.example.farmer.CardRenderJob.render(CardRenderJob.java:74)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-09-21 13:19:33.469 INFO  [farmer-service,cf246cd056d3e031,86dee442] [http-nio-8080-exec-6] com.example.farmer.FarmerSyncScheduler - Sync batch 8049 queued, 260 pending records
+2026-09-21 13:19:52.451 INFO  [farmer-service,7d8610727d2b9dcf,245cd210] [http-nio-8080-exec-5] com.example.common.AuditPublisher - Published 9 audit events to nightshift.audit
+2026-09-21 13:21:02.251 WARN  [farmer-service,d6bfaa598755c711,d10cda62] [http-nio-8080-exec-9] com.example.farmer.FarmerController - Request from 192.0.2.86 missing X-Request-Id header, generated one
+2026-09-21 13:22:55.925 WARN  [farmer-service,85beb4b4731023ac,ca1f2b83] [http-nio-8080-exec-2] com.example.farmer.FarmerController - Request from 192.0.2.251 missing X-Request-Id header, generated one
+2026-09-21 13:23:59.540 INFO  [farmer-service,ca796f285bd14eae,8154e903] [farmer-sync-8] com.example.farmer.FarmerController - GET /api/v1/farmers?page=6 200 in 119ms
+2026-09-21 13:27:03.302 INFO  [farmer-service,48127ac51504a15a,c1f0d867] [farmer-sync-7] com.example.farmer.FarmerSyncScheduler - Sync batch 8664 queued, 381 pending records
+2026-09-21 13:27:55.283 INFO  [farmer-service,e1cca9aed5f99d46,997a46e6] [http-nio-8080-exec-1] com.example.farmer.FarmerController - GET /api/v1/farmers?page=8 200 in 76ms
+2026-09-21 13:28:02.106 INFO  [farmer-service,6a609686341bdb1a,fb612eef] [farmer-sync-6] com.example.common.AuditPublisher - Published 7 audit events to nightshift.audit
+2026-09-21 13:28:34.920 DEBUG [farmer-service,3a871f6f16e31b75,954e3060] [http-nio-8080-exec-5] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 9
+2026-09-21 13:29:25.128 INFO  [farmer-service,e594c3951eda29e6,2c0bdcd5] [http-nio-8080-exec-4] com.example.common.AuditPublisher - Published 2 audit events to nightshift.audit
+2026-09-21 13:30:02.673 INFO  [farmer-service,df345ec8332810b3,74cc6e0d] [http-nio-8080-exec-2] com.example.common.AuditPublisher - Published 11 audit events to nightshift.audit
+2026-09-21 13:30:39.529 INFO  [farmer-service,f43e21ccef121148,af437be0] [farmer-sync-7] com.example.common.AuditPublisher - Published 17 audit events to nightshift.audit
+2026-09-21 13:31:05.577 ERROR [farmer-service,512fcf1f48327ec9,73e203f0] [farmer-sync-5] com.example.farmer.CardRenderJob - Failed to render card label for farmer 81737
+java.lang.NullPointerException: Cannot invoke "String.charAt(int)" because "middleName" is null
+	at com.example.common.NameFormatter.initials(NameFormatter.java:22)
+	at com.example.farmer.FarmerSyncService.cardLabel(FarmerSyncService.java:53)
+	at com.example.farmer.CardRenderJob.render(CardRenderJob.java:74)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-09-21 13:32:13.435 INFO  [farmer-service,e9697395e8fdb0dc,b78a0318] [farmer-sync-9] com.example.common.AuditPublisher - Published 25 audit events to nightshift.audit
+2026-09-21 13:34:16.714 INFO  [farmer-service,0a3afb0e97ec7e90,581dc547] [http-nio-8080-exec-9] com.example.common.AuditPublisher - Published 25 audit events to nightshift.audit
+2026-09-21 13:35:18.916 DEBUG [farmer-service,d37ff79784950390,215ab212] [farmer-sync-7] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 8
+2026-09-21 13:35:35.952 DEBUG [farmer-service,a9459052232b157b,0973e803] [http-nio-8080-exec-8] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 4
+2026-09-21 13:36:03.681 INFO  [farmer-service,204d0318d49963c3,eb016f2b] [http-nio-8080-exec-5] com.example.farmer.FarmerSyncScheduler - Sync batch 8767 queued, 189 pending records
+2026-09-21 13:38:52.111 INFO  [farmer-service,8f8b4b6c43dc2182,f41c68aa] [farmer-sync-2] com.example.farmer.FarmerSyncScheduler - Sync batch 8631 queued, 162 pending records
+2026-09-21 13:39:36.332 DEBUG [farmer-service,1171c351d49c3af3,904b07df] [farmer-sync-3] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 1
+2026-09-21 13:40:03.970 WARN  [farmer-service,3c54ff64e8c4c41b,788b3cf0] [http-nio-8080-exec-8] com.example.farmer.FarmerController - Request from 192.0.2.35 missing X-Request-Id header, generated one
+2026-09-21 13:40:45.307 INFO  [farmer-service,5346a71527ee4d21,80a607a5] [farmer-sync-7] com.example.common.AuditPublisher - Published 27 audit events to nightshift.audit
+2026-09-21 13:41:20.551 INFO  [farmer-service,97a4a44368c4e6b1,bd409643] [farmer-sync-4] com.example.farmer.FarmerController - GET /api/v1/farmers?page=35 200 in 30ms
+2026-09-21 13:41:55.130 ERROR [farmer-service,a21309d7f332219e,9e38bbe0] [http-nio-8080-exec-3] com.example.farmer.FarmerSyncService - Sync failed for batch 8031: could not acquire a database connection
+java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30001ms (total=10, active=10, idle=0, waiting=7)
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181)
+	at com.example.farmer.FarmerSyncService.pushPending(FarmerSyncService.java:36)
+	at com.example.farmer.FarmerSyncScheduler.run(FarmerSyncScheduler.java:58)
+2026-09-21 13:41:59.798 DEBUG [farmer-service,ea2fda6fef0fe1dc,37f7166c] [farmer-sync-1] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 32
+2026-09-21 13:42:40.627 INFO  [farmer-service,89171b8c895751ac,42d8bdc3] [http-nio-8080-exec-5] com.example.farmer.CardRenderJob - Rendered 19 cards in 1983ms
+2026-09-21 13:43:01.282 WARN  [farmer-service,18d3500714fc9f50,1a4674a7] [farmer-sync-2] com.example.farmer.FarmerController - Request from 192.0.2.98 missing X-Request-Id header, generated one
+2026-09-21 13:43:02.811 DEBUG [farmer-service,f08a7dc37f7d6f20,a911f6bc] [http-nio-8080-exec-8] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 1
+2026-09-21 13:43:27.919 DEBUG [farmer-service,af7306f240327e53,1d54f5b6] [http-nio-8080-exec-7] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 35
+2026-09-21 13:43:36.833 INFO  [farmer-service,c389b39a63fce530,d73523eb] [farmer-sync-7] com.example.farmer.FarmerController - GET /api/v1/farmers?page=16 200 in 129ms
+2026-09-21 13:44:01.881 DEBUG [farmer-service,1309bd94391532e1,ebc35d5c] [http-nio-8080-exec-8] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 13
+2026-09-21 13:45:02.217 DEBUG [farmer-service,f640c4d061b00529,40463cbf] [http-nio-8080-exec-2] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 50
+2026-09-21 13:46:11.277 INFO  [farmer-service,95a59daca884aba2,c9a529d9] [farmer-sync-4] com.example.farmer.FarmerSyncScheduler - Sync batch 8214 queued, 314 pending records
+2026-09-21 13:46:54.327 DEBUG [farmer-service,272088e45a406425,d2fbd667] [farmer-sync-5] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 47
+2026-09-21 13:47:19.863 INFO  [farmer-service,b9570b2fc84799c1,b76630fb] [farmer-sync-1] com.example.common.AuditPublisher - Published 12 audit events to nightshift.audit
+2026-09-21 13:48:21.962 INFO  [farmer-service,e7a83cf410edde66,abab8821] [farmer-sync-6] com.example.farmer.CardRenderJob - Rendered 12 cards in 1853ms
+2026-09-21 13:48:48.811 INFO  [farmer-service,1721369207e98794,f541201f] [farmer-sync-9] com.example.common.AuditPublisher - Published 29 audit events to nightshift.audit
+2026-09-21 13:49:22.682 INFO  [farmer-service,3ce5224d21dd3dda,b19bed5e] [farmer-sync-8] com.example.farmer.CardRenderJob - Rendered 61 cards in 507ms
+2026-09-21 13:49:43.174 WARN  [farmer-service,21f7de4f30bff0af,956d4465] [http-nio-8080-exec-7] com.example.farmer.FarmerController - Request from 192.0.2.34 missing X-Request-Id header, generated one
+2026-09-21 13:50:05.510 DEBUG [farmer-service,9e332ea510d2df3b,723fd6a7] [http-nio-8080-exec-7] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 15
+2026-09-21 13:51:40.739 INFO  [farmer-service,3b98f717c1e8aaf3,37decf04] [farmer-sync-1] com.example.farmer.FarmerSyncScheduler - Sync batch 8189 queued, 129 pending records
+2026-09-21 13:54:20.730 INFO  [farmer-service,aedb8206b3d298b4,85a66dec] [farmer-sync-3] com.example.farmer.FarmerController - GET /api/v1/farmers?page=2 200 in 102ms
+2026-09-21 13:55:00.455 INFO  [farmer-service,aa4413c045c830ca,133330a4] [farmer-sync-4] com.example.farmer.FarmerSyncScheduler - Sync batch 8286 queued, 67 pending records
+2026-09-21 13:55:55.188 INFO  [farmer-service,12f4698061230aac,ce2ed323] [farmer-sync-6] com.example.farmer.FarmerController - GET /api/v1/farmers?page=36 200 in 83ms
+2026-09-21 13:56:18.880 INFO  [farmer-service,c167a253f9b1ed60,27bfff28] [http-nio-8080-exec-8] com.example.farmer.CardRenderJob - Rendered 62 cards in 267ms
+2026-09-21 13:56:27.992 INFO  [farmer-service,ba29f42dd19b0d4f,1c73c26c] [http-nio-8080-exec-1] com.example.farmer.FarmerSyncScheduler - Sync batch 8021 queued, 297 pending records
+2026-09-21 13:57:58.649 INFO  [farmer-service,9443991c8130c8dd,8914be48] [farmer-sync-2] com.example.farmer.FarmerSyncScheduler - Sync batch 8199 queued, 369 pending records
+2026-09-21 13:58:06.160 INFO  [farmer-service,0c385650363917e6,301c16bd] [http-nio-8080-exec-8] com.example.common.AuditPublisher - Published 5 audit events to nightshift.audit
+2026-09-21 13:58:58.211 INFO  [farmer-service,a213b347eaf4ccac,b3d11fd2] [http-nio-8080-exec-9] com.example.farmer.FarmerSyncScheduler - Sync batch 8292 queued, 246 pending records
+2026-09-21 14:00:59.274 INFO  [farmer-service,e6561adbf8a6c34f,e6ecb2f1] [http-nio-8080-exec-3] com.example.farmer.CardRenderJob - Rendered 39 cards in 2030ms
+2026-09-21 14:01:57.045 WARN  [farmer-service,f7dec76b24b1c9b8,d14d18e8] [farmer-sync-9] com.example.farmer.FarmerController - Request from 192.0.2.184 missing X-Request-Id header, generated one
+2026-09-21 14:02:29.510 INFO  [farmer-service,2f632926244027ce,bd4563f7] [farmer-sync-7] com.example.common.AuditPublisher - Published 22 audit events to nightshift.audit
+2026-09-21 14:04:07.408 WARN  [farmer-service,e74e4f4950aa869c,69cd87a6] [farmer-sync-5] com.example.farmer.FarmerController - Request from 192.0.2.20 missing X-Request-Id header, generated one
+2026-09-21 14:04:31.720 WARN  [farmer-service,f8a957af29a0d279,6f9edbb2] [http-nio-8080-exec-2] com.example.farmer.FarmerController - Request from 192.0.2.156 missing X-Request-Id header, generated one
+2026-09-21 14:07:59.181 DEBUG [farmer-service,7fa62b33ca350160,ab6af9ca] [http-nio-8080-exec-2] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 31
+2026-09-21 14:08:31.045 WARN  [farmer-service,8d616a89817716e4,e8540e86] [farmer-sync-6] com.example.farmer.FarmerController - Request from 192.0.2.163 missing X-Request-Id header, generated one
+2026-09-21 14:09:07.999 WARN  [farmer-service,20a27370613eb39e,dc2b05a2] [farmer-sync-3] com.example.farmer.FarmerController - Request from 192.0.2.51 missing X-Request-Id header, generated one
+2026-09-21 14:09:18.785 DEBUG [farmer-service,5faf572064a7785f,a9bf5527] [farmer-sync-6] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 22
+2026-09-21 14:10:40.514 DEBUG [farmer-service,4e8034f0be384c1c,bbd32c88] [farmer-sync-9] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 48
+2026-09-21 14:11:07.216 INFO  [farmer-service,9727af28ce60e753,a42b5bd7] [http-nio-8080-exec-1] com.example.farmer.FarmerController - GET /api/v1/farmers?page=20 200 in 51ms
+2026-09-21 14:12:33.868 INFO  [farmer-service,cf32e5dd39f61169,38df6afc] [http-nio-8080-exec-9] com.example.farmer.FarmerSyncScheduler - Sync batch 8559 queued, 379 pending records
+2026-09-21 14:14:07.314 WARN  [farmer-service,9864c2d1a7bd030d,e84be72b] [http-nio-8080-exec-9] com.example.farmer.FarmerController - Request from 192.0.2.138 missing X-Request-Id header, generated one
+2026-09-21 14:14:20.600 INFO  [farmer-service,b14e720db544864d,8248f2db] [http-nio-8080-exec-4] com.example.farmer.CardRenderJob - Rendered 38 cards in 1083ms
+2026-09-21 14:15:11.064 INFO  [farmer-service,afa85b2e81dcf2d1,7c01d3b5] [farmer-sync-9] com.example.farmer.FarmerController - GET /api/v1/farmers?page=10 200 in 124ms
+2026-09-21 14:16:53.510 INFO  [farmer-service,2ba09598dce062ef,3e5e564b] [farmer-sync-9] com.example.farmer.CardRenderJob - Rendered 54 cards in 2045ms
+2026-09-21 14:16:56.211 INFO  [farmer-service,5396c59ae6d87809,b4d73a11] [http-nio-8080-exec-4] com.example.farmer.CardRenderJob - Rendered 79 cards in 1395ms
+2026-09-21 14:17:16.995 INFO  [farmer-service,2b04354de3e05635,94f8e1a2] [farmer-sync-7] com.example.farmer.FarmerSyncScheduler - Sync batch 8210 queued, 37 pending records
+2026-09-21 14:17:44.748 WARN  [farmer-service,89c9bbfc41c27c95,39baf4e1] [farmer-sync-1] com.example.farmer.FarmerController - Request from 192.0.2.230 missing X-Request-Id header, generated one
+2026-09-21 14:18:00.388 INFO  [farmer-service,6d057d5941492a5e,2a4540d6] [farmer-sync-4] com.example.farmer.CardRenderJob - Rendered 42 cards in 1102ms
+2026-09-21 14:18:09.659 DEBUG [farmer-service,db4f8f7d51ef0134,82ecca0d] [farmer-sync-4] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 17
+2026-09-21 14:18:20.183 DEBUG [farmer-service,9a074ab686b52353,3473be25] [farmer-sync-1] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 7
+2026-09-21 14:18:26.622 DEBUG [farmer-service,5668fff21cbe8daf,f3bb92ad] [http-nio-8080-exec-9] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 12
+2026-09-21 14:18:47.004 WARN  [farmer-service,00c4368cc06e3cdd,5e8883f5] [farmer-sync-5] com.example.farmer.FarmerController - Request from 192.0.2.228 missing X-Request-Id header, generated one
+2026-09-21 14:19:34.566 INFO  [farmer-service,09be59c0a90c1525,fc47404c] [farmer-sync-2] com.example.farmer.FarmerSyncScheduler - Sync batch 8090 queued, 64 pending records
+2026-09-21 14:19:38.286 INFO  [farmer-service,836a30c57f4bf117,dea86887] [http-nio-8080-exec-5] com.example.common.AuditPublisher - Published 12 audit events to nightshift.audit
+2026-09-21 14:21:01.820 ERROR [farmer-service,7a9ace7cfe705ca4,218d620c] [farmer-sync-2] com.example.farmer.FarmerSyncService - Sync failed for batch 8986: could not acquire a database connection
+java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30001ms (total=10, active=10, idle=0, waiting=7)
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181)
+	at com.example.farmer.FarmerSyncService.pushPending(FarmerSyncService.java:36)
+	at com.example.farmer.FarmerSyncScheduler.run(FarmerSyncScheduler.java:58)
+2026-09-21 14:26:13.679 INFO  [farmer-service,b6800b30e18b6c1e,dcc5e609] [http-nio-8080-exec-1] com.example.farmer.FarmerSyncScheduler - Sync batch 8939 queued, 364 pending records
+2026-09-21 14:26:34.410 WARN  [farmer-service,56a8e0ec107811f3,1139434c] [farmer-sync-3] com.example.farmer.FarmerController - Request from 192.0.2.27 missing X-Request-Id header, generated one
+2026-09-21 14:27:28.446 INFO  [farmer-service,67429bf1f1ad566e,f5044a32] [farmer-sync-5] com.example.common.AuditPublisher - Published 28 audit events to nightshift.audit
+2026-09-21 14:27:36.010 INFO  [farmer-service,9d28a180abd02113,b48067d6] [http-nio-8080-exec-3] com.example.farmer.FarmerSyncScheduler - Sync batch 8765 queued, 115 pending records
+2026-09-21 14:28:25.858 INFO  [farmer-service,52cea4999483ab3e,8395c174] [http-nio-8080-exec-1] com.example.farmer.CardRenderJob - Rendered 12 cards in 292ms
+2026-09-21 14:29:29.127 INFO  [farmer-service,7a7581c0617e9c6b,fd144af3] [farmer-sync-5] com.example.common.AuditPublisher - Published 29 audit events to nightshift.audit
+2026-09-21 14:29:46.479 DEBUG [farmer-service,d69c8d6c8bdeff38,012f60b4] [http-nio-8080-exec-3] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 60
+2026-09-21 14:31:17.029 DEBUG [farmer-service,8abd8f6d4a86a0a9,996f55d0] [farmer-sync-6] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 20
+2026-09-21 14:31:34.395 DEBUG [farmer-service,6bf0a2d1c9272196,3f91758f] [farmer-sync-3] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 27
+2026-09-21 14:34:47.177 DEBUG [farmer-service,fb3b6c57739dee29,58c90c07] [farmer-sync-3] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 4
+2026-09-21 14:34:57.640 WARN  [farmer-service,5b123d954fc39590,e5673acd] [farmer-sync-4] com.example.farmer.FarmerController - Request from 192.0.2.144 missing X-Request-Id header, generated one
+2026-09-21 14:35:49.343 WARN  [farmer-service,93ca18a042f10857,a1f7c415] [http-nio-8080-exec-2] com.example.farmer.FarmerController - Request from 192.0.2.51 missing X-Request-Id header, generated one
+2026-09-21 14:36:14.123 DEBUG [farmer-service,3797feb1be1d017f,1e897984] [http-nio-8080-exec-7] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 13
+2026-09-21 14:39:49.231 INFO  [farmer-service,5dce3716652697c5,5a72f80c] [http-nio-8080-exec-5] com.example.common.AuditPublisher - Published 25 audit events to nightshift.audit
+2026-09-21 14:39:52.605 INFO  [farmer-service,8f03900ade84dbb3,34f5ec9b] [farmer-sync-9] com.example.farmer.FarmerSyncScheduler - Sync batch 8629 queued, 357 pending records
+2026-09-21 14:40:02.527 ERROR [farmer-service,c6c8d9f218a66b2a,4d81e998] [http-nio-8080-exec-7] com.example.farmer.FarmerSyncService - Sync failed for batch 8489: could not acquire a database connection
+java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30001ms (total=10, active=10, idle=0, waiting=7)
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181)
+	at com.example.farmer.FarmerSyncService.pushPending(FarmerSyncService.java:36)
+	at com.example.farmer.FarmerSyncScheduler.run(FarmerSyncScheduler.java:58)
+2026-09-21 14:40:36.883 INFO  [farmer-service,4e1469885da0c85c,a3d6695c] [http-nio-8080-exec-2] com.example.farmer.FarmerController - GET /api/v1/farmers?page=12 200 in 135ms
+2026-09-21 14:41:27.299 INFO  [farmer-service,dd2ef3131cc2aae5,73844812] [http-nio-8080-exec-9] com.example.common.AuditPublisher - Published 28 audit events to nightshift.audit
+2026-09-21 14:43:10.304 DEBUG [farmer-service,aee6e7945dbaa6b0,82758eaf] [farmer-sync-7] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 18
+2026-09-21 14:43:23.081 INFO  [farmer-service,6d0c579bec6769e7,1ddee131] [farmer-sync-7] com.example.farmer.CardRenderJob - Rendered 25 cards in 2070ms
+2026-09-21 14:43:34.714 INFO  [farmer-service,a5fff473c644f592,f8960dd1] [farmer-sync-8] com.example.farmer.FarmerController - GET /api/v1/farmers?page=16 200 in 34ms
+2026-09-21 14:44:27.015 DEBUG [farmer-service,6f0fdebe9c624cd7,2e3aa3d8] [http-nio-8080-exec-9] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 34
+2026-09-21 14:45:00.660 WARN  [farmer-service,673bab644ad1d695,621f868d] [http-nio-8080-exec-3] com.example.farmer.FarmerController - Request from 192.0.2.105 missing X-Request-Id header, generated one
+2026-09-21 14:45:55.869 DEBUG [farmer-service,142dbf19927fe44d,d5770336] [http-nio-8080-exec-6] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 57
+2026-09-21 14:45:57.190 INFO  [farmer-service,ba7e5534bf060e3b,948daf3a] [farmer-sync-8] com.example.farmer.CardRenderJob - Rendered 64 cards in 1179ms
+2026-09-21 14:47:19.506 INFO  [farmer-service,6bce081eee1b4b31,02ea7bc1] [http-nio-8080-exec-8] com.example.common.AuditPublisher - Published 26 audit events to nightshift.audit
+2026-09-21 14:47:26.101 INFO  [farmer-service,18b33758547b5b4d,a4bedee4] [farmer-sync-7] com.example.farmer.FarmerSyncScheduler - Sync batch 8455 queued, 378 pending records
+2026-09-21 14:47:29.068 DEBUG [farmer-service,cdaf9574ef346339,1923e4a9] [http-nio-8080-exec-1] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 50
+2026-09-21 14:48:41.033 INFO  [farmer-service,c341d5862b9b169d,385e18bb] [farmer-sync-6] com.example.farmer.FarmerSyncScheduler - Sync batch 8763 queued, 250 pending records
+2026-09-21 14:48:41.714 DEBUG [farmer-service,3e8bcc55ecd4bcd6,4530843d] [farmer-sync-4] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 48
+2026-09-21 14:48:43.810 DEBUG [farmer-service,24d3c46d1b9d1361,cfb425bf] [farmer-sync-3] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 59
+2026-09-21 14:50:06.672 INFO  [farmer-service,6304340a65cf5227,5d2d685a] [http-nio-8080-exec-3] com.example.farmer.CardRenderJob - Rendered 64 cards in 1790ms
+2026-09-21 14:50:28.069 WARN  [farmer-service,2f7b5117be60f48b,65da3b67] [farmer-sync-4] com.example.farmer.FarmerController - Request from 192.0.2.118 missing X-Request-Id header, generated one
+2026-09-21 14:50:38.434 WARN  [farmer-service,3552d610dfa9c4bb,fd16c31a] [http-nio-8080-exec-2] com.example.farmer.FarmerController - Request from 192.0.2.141 missing X-Request-Id header, generated one
+2026-09-21 14:51:22.660 INFO  [farmer-service,fb83ac26f1ae2e30,f143008e] [farmer-sync-8] com.example.farmer.FarmerSyncScheduler - Sync batch 8577 queued, 69 pending records
+2026-09-21 14:53:09.813 DEBUG [farmer-service,7b8592ec13648c1b,6163ae2d] [http-nio-8080-exec-7] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 51
+2026-09-21 14:53:30.688 INFO  [farmer-service,9e6a5972bd9c3e76,6e92971d] [http-nio-8080-exec-2] com.example.common.AuditPublisher - Published 30 audit events to nightshift.audit
+2026-09-21 14:55:24.728 INFO  [farmer-service,62ab8bdafc56114c,138ef701] [http-nio-8080-exec-3] com.example.common.AuditPublisher - Published 25 audit events to nightshift.audit
+2026-09-21 14:56:17.580 INFO  [farmer-service,cf17a261c7aff72f,6f6cb565] [http-nio-8080-exec-6] com.example.farmer.CardRenderJob - Rendered 25 cards in 1105ms
+2026-09-21 14:56:47.887 WARN  [farmer-service,4efd2ec9b2b1a35e,719e39b7] [farmer-sync-7] org.springframework.boot.context.config.ConfigDataEnvironment - Property 'spring.datasource.initialization-mode' is deprecated and will be removed in a future release
+2026-09-21 14:58:25.269 INFO  [farmer-service,1c059e77a7824a01,a7b2559b] [farmer-sync-9] com.example.farmer.CardRenderJob - Rendered 28 cards in 439ms
+2026-09-21 14:59:51.159 INFO  [farmer-service,8807ba6d89e6a3a6,2e193224] [http-nio-8080-exec-4] com.example.common.AuditPublisher - Published 28 audit events to nightshift.audit
+2026-09-21 15:01:35.239 INFO  [farmer-service,ffbe16c65d87b65a,7b3b11c3] [farmer-sync-1] com.example.farmer.FarmerController - GET /api/v1/farmers?page=7 200 in 61ms
+2026-09-21 15:01:58.656 INFO  [farmer-service,9bac8d6381a7dd3a,3b2d1acc] [http-nio-8080-exec-8] com.example.farmer.FarmerController - GET /api/v1/farmers?page=4 200 in 134ms
+2026-09-21 15:04:33.822 INFO  [farmer-service,2da8b80d152ef26e,9e4602b9] [farmer-sync-6] com.example.common.AuditPublisher - Published 11 audit events to nightshift.audit
+2026-09-21 15:06:18.112 INFO  [farmer-service,e70ab86258954663,6dce1642] [http-nio-8080-exec-9] com.example.farmer.CardRenderJob - Rendered 22 cards in 2081ms
+2026-09-21 15:06:32.082 INFO  [farmer-service,c4bea3b34d99e887,76bb39ff] [farmer-sync-9] com.example.farmer.FarmerController - GET /api/v1/farmers?page=15 200 in 32ms
+2026-09-21 15:07:03.878 WARN  [farmer-service,600dc673d950c305,92db5311] [http-nio-8080-exec-8] com.example.farmer.FarmerController - Request from 192.0.2.111 missing X-Request-Id header, generated one
+2026-09-21 15:08:22.199 WARN  [farmer-service,4ce4f607b4eba32a,51f8794f] [farmer-sync-5] com.example.farmer.FarmerController - Request from 192.0.2.163 missing X-Request-Id header, generated one
+2026-09-21 15:08:29.549 INFO  [farmer-service,792246cbe50c1c90,a9590d03] [http-nio-8080-exec-5] com.example.farmer.CardRenderJob - Rendered 46 cards in 2322ms
+2026-09-21 15:08:45.585 DEBUG [farmer-service,8373ecc922e5fd04,25770cad] [farmer-sync-7] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 50
+2026-09-21 15:11:59.285 INFO  [farmer-service,ad0f79e00843870d,1143f3cc] [farmer-sync-9] com.example.common.AuditPublisher - Published 6 audit events to nightshift.audit
+2026-09-21 15:12:28.315 DEBUG [farmer-service,844051af5b36de96,161acfbb] [http-nio-8080-exec-2] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 2
+2026-09-21 15:15:56.450 WARN  [farmer-service,fd00ca349937bbb9,ef8e67e4] [farmer-sync-8] com.example.farmer.FarmerController - Request from 192.0.2.207 missing X-Request-Id header, generated one
+2026-09-21 15:15:59.655 INFO  [farmer-service,0836cbc5f6fb10cf,2c889b21] [farmer-sync-7] com.example.common.AuditPublisher - Published 12 audit events to nightshift.audit
+2026-09-21 15:16:46.076 INFO  [farmer-service,0c53e0a434a4eb1e,90cda25e] [farmer-sync-9] com.example.farmer.CardRenderJob - Rendered 67 cards in 1199ms
+2026-09-21 15:17:08.099 WARN  [farmer-service,53bfc7d17a3b0724,cb5b2a03] [farmer-sync-2] com.example.farmer.FarmerController - Request from 192.0.2.91 missing X-Request-Id header, generated one
+2026-09-21 15:18:14.317 INFO  [farmer-service,65a970dff8d4a24f,4fd34bd8] [farmer-sync-4] com.example.farmer.FarmerSyncScheduler - Sync batch 8147 queued, 68 pending records
+2026-09-21 15:18:35.363 WARN  [farmer-service,80a31d41b0f7bfe3,0087dbb2] [http-nio-8080-exec-1] com.example.farmer.FarmerController - Request from 192.0.2.235 missing X-Request-Id header, generated one
+2026-09-21 15:18:35.666 DEBUG [farmer-service,dda63d948518ecff,39da2097] [http-nio-8080-exec-7] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 58
+2026-09-21 15:19:04.977 INFO  [farmer-service,a633d3dbdc1eb58b,3a447ad9] [http-nio-8080-exec-4] com.example.farmer.FarmerController - GET /api/v1/farmers?page=15 200 in 121ms
+2026-09-21 15:19:14.589 INFO  [farmer-service,2a2b518f52d8b924,df898575] [farmer-sync-6] com.example.common.AuditPublisher - Published 30 audit events to nightshift.audit
+2026-09-21 15:19:53.309 WARN  [farmer-service,3f24eb0f52ea60d3,bee190a6] [http-nio-8080-exec-8] com.example.farmer.FarmerController - Request from 192.0.2.118 missing X-Request-Id header, generated one
+2026-09-21 15:19:58.455 WARN  [farmer-service,d3d1b5009246d73f,5718534c] [http-nio-8080-exec-1] com.example.farmer.FarmerController - Request from 192.0.2.126 missing X-Request-Id header, generated one
+2026-09-21 15:20:05.081 INFO  [farmer-service,6ffef2ec49c458ba,21d35f39] [http-nio-8080-exec-9] com.example.farmer.CardRenderJob - Rendered 45 cards in 2301ms
+2026-09-21 15:20:20.078 INFO  [farmer-service,ac2e3b4ec0d37136,178677d4] [http-nio-8080-exec-9] com.example.common.AuditPublisher - Published 15 audit events to nightshift.audit
+2026-09-21 15:21:23.352 INFO  [farmer-service,aadf7f7c5d683bd2,c4713c37] [http-nio-8080-exec-4] com.example.farmer.FarmerSyncScheduler - Sync batch 8233 queued, 372 pending records
+2026-09-21 15:21:46.133 INFO  [farmer-service,302970d4f6b59b60,cac31488] [http-nio-8080-exec-8] com.example.farmer.FarmerController - GET /api/v1/farmers?page=18 200 in 85ms
+2026-09-21 15:22:03.526 INFO  [farmer-service,759da2af79e5af28,1877c187] [farmer-sync-2] com.example.farmer.FarmerController - GET /api/v1/farmers?page=34 200 in 113ms
+2026-09-21 15:22:26.145 INFO  [farmer-service,5866eaf8daeca8fe,dbd1fbc1] [http-nio-8080-exec-8] com.example.farmer.CardRenderJob - Rendered 83 cards in 2199ms
+2026-09-21 15:23:07.370 INFO  [farmer-service,1d2ad3b1f81bb4e6,346a91bc] [http-nio-8080-exec-3] com.example.farmer.CardRenderJob - Rendered 54 cards in 612ms
+2026-09-21 15:23:35.020 WARN  [farmer-service,7dbb58905182a49f,04753524] [farmer-sync-2] com.example.farmer.FarmerProfileService - Concurrent update on farmer 3881, retry 1 of 3
+com.example.farmer.FarmerProfileService$OptimisticLockException: Row was updated by another transaction (farmer id=7440)
+	at com.example.farmer.FarmerProfileService.rename(FarmerProfileService.java:27)
+	at com.example.farmer.FarmerController.rename(FarmerController.java:96)
+2026-09-21 15:24:05.442 INFO  [farmer-service,206668331bde0a2f,011fb04d] [http-nio-8080-exec-7] com.example.farmer.CardRenderJob - Rendered 51 cards in 954ms
+2026-09-21 15:24:31.782 INFO  [farmer-service,4d8030faac09285f,6c344743] [http-nio-8080-exec-5] com.example.farmer.FarmerSyncScheduler - Sync batch 8551 queued, 364 pending records
+2026-09-21 15:26:22.131 INFO  [farmer-service,45fa17f8cc2016f4,eb674949] [http-nio-8080-exec-9] com.example.farmer.FarmerController - GET /api/v1/farmers?page=8 200 in 60ms
+2026-09-21 15:28:06.823 INFO  [farmer-service,be7ad206406b328a,356aaf1f] [farmer-sync-1] com.example.farmer.CardRenderJob - Rendered 22 cards in 1490ms
+2026-09-21 15:28:39.160 INFO  [farmer-service,46b5df66c48a7927,53c0bad2] [http-nio-8080-exec-8] com.example.farmer.CardRenderJob - Rendered 15 cards in 869ms
+2026-09-21 15:29:49.762 DEBUG [farmer-service,ea13ec3910aa4aa9,6acee3e8] [http-nio-8080-exec-1] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 24
+2026-09-21 15:29:49.943 INFO  [farmer-service,e11dc97bafd8de0f,d37fb381] [http-nio-8080-exec-7] com.example.common.AuditPublisher - Published 27 audit events to nightshift.audit
+2026-09-21 15:29:53.427 DEBUG [farmer-service,968d440a94b5c2d4,4c6b6b53] [http-nio-8080-exec-8] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 63
+2026-09-21 15:30:25.386 INFO  [farmer-service,cd4a650edf043c8c,c0d1ab1e] [http-nio-8080-exec-3] com.example.farmer.FarmerSyncScheduler - Sync batch 8278 queued, 68 pending records
+2026-09-21 15:30:31.859 WARN  [farmer-service,51810f1506c69e88,a3944517] [farmer-sync-9] com.example.farmer.FarmerController - Request from 192.0.2.219 missing X-Request-Id header, generated one
+2026-09-21 15:30:45.133 INFO  [farmer-service,e7c8a6062bb4ab31,c7917af2] [http-nio-8080-exec-6] com.example.farmer.CardRenderJob - Rendered 89 cards in 1970ms
+2026-09-21 15:31:05.888 WARN  [farmer-service,6852dfc4040eb331,6db1b0e4] [http-nio-8080-exec-9] com.example.farmer.FarmerController - Request from 192.0.2.92 missing X-Request-Id header, generated one
+2026-09-21 15:31:16.612 INFO  [farmer-service,42f483e2702d6fc4,3a81cb40] [http-nio-8080-exec-5] com.example.farmer.FarmerSyncScheduler - Sync batch 8138 queued, 139 pending records
+2026-09-21 15:32:27.189 INFO  [farmer-service,420d2f2b7bbd28c8,7542eec0] [http-nio-8080-exec-8] com.example.farmer.CardRenderJob - Rendered 84 cards in 2261ms
+2026-09-21 15:33:28.078 DEBUG [farmer-service,8166a880db538504,e0080faf] [farmer-sync-5] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 39
+2026-09-21 15:34:08.741 INFO  [farmer-service,17fc0e9be7ad74f4,1bcf3e67] [http-nio-8080-exec-8] com.example.farmer.FarmerSyncScheduler - Sync batch 8812 queued, 162 pending records
+2026-09-21 15:34:11.891 INFO  [farmer-service,2050e02e9744f27e,79332697] [farmer-sync-9] com.example.farmer.FarmerController - GET /api/v1/farmers?page=32 200 in 54ms
+2026-09-21 15:35:06.960 INFO  [farmer-service,32eadac498efe0e5,ee5fb85d] [http-nio-8080-exec-7] com.example.farmer.FarmerSyncScheduler - Sync batch 8551 queued, 196 pending records
+2026-09-21 15:36:13.899 WARN  [farmer-service,d3874fa9e00f7468,29b505e7] [http-nio-8080-exec-2] com.example.farmer.FarmerController - Request from 192.0.2.46 missing X-Request-Id header, generated one
+2026-09-21 15:36:21.521 INFO  [farmer-service,8021432d425fc5d9,b808ed8a] [http-nio-8080-exec-8] com.example.farmer.FarmerSyncScheduler - Sync batch 8903 queued, 164 pending records
+2026-09-21 15:36:22.829 INFO  [farmer-service,5eda891759300c83,aadd35e1] [http-nio-8080-exec-3] com.example.farmer.FarmerController - GET /api/v1/farmers?page=8 200 in 131ms
+2026-09-21 15:36:32.789 WARN  [farmer-service,5706918d2bff5a65,fc795529] [farmer-sync-6] com.example.farmer.FarmerController - Request from 192.0.2.154 missing X-Request-Id header, generated one
+2026-09-21 15:38:05.319 INFO  [farmer-service,92b08af8379065c6,8364a726] [farmer-sync-7] com.example.farmer.FarmerSyncScheduler - Sync batch 8726 queued, 105 pending records
+2026-09-21 15:38:10.380 INFO  [farmer-service,7821049157dc651a,e58ae620] [farmer-sync-1] com.example.farmer.CardRenderJob - Rendered 88 cards in 908ms
+2026-09-21 15:39:45.097 INFO  [farmer-service,e30e5a3b03062455,94f0905c] [farmer-sync-1] com.example.farmer.FarmerSyncScheduler - Sync batch 8255 queued, 79 pending records
+2026-09-21 15:41:10.802 INFO  [farmer-service,e6a6003a6f7a30bc,5455cb02] [http-nio-8080-exec-2] com.example.common.AuditPublisher - Published 16 audit events to nightshift.audit
+2026-09-21 15:42:22.292 DEBUG [farmer-service,1574479e775afffb,8d7d8511] [farmer-sync-3] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 25
+2026-09-21 15:42:39.403 INFO  [farmer-service,f0e14498452cde4e,e977655c] [http-nio-8080-exec-1] com.example.farmer.FarmerController - GET /api/v1/farmers?page=26 200 in 82ms
+2026-09-21 15:42:49.294 INFO  [farmer-service,50a6e2aad2e766ec,3cf851d7] [farmer-sync-7] com.example.farmer.FarmerController - GET /api/v1/farmers?page=19 200 in 45ms
+2026-09-21 15:43:09.513 WARN  [farmer-service,373aa0f4d6114417,5d2de257] [farmer-sync-2] com.example.farmer.FarmerController - Request from 192.0.2.45 missing X-Request-Id header, generated one
+2026-09-21 15:43:31.665 INFO  [farmer-service,aa3674f9b47b9652,6eec0187] [farmer-sync-9] com.example.farmer.FarmerController - GET /api/v1/farmers?page=17 200 in 95ms
+2026-09-21 15:43:58.317 DEBUG [farmer-service,a127fbaef3a02fc9,06f31cf5] [farmer-sync-4] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 49
+2026-09-21 15:45:26.815 DEBUG [farmer-service,60d4f93d82b16aa9,cdc071ee] [farmer-sync-5] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 46
+2026-09-21 15:45:41.869 INFO  [farmer-service,e83c835f95f13b24,078acfb0] [http-nio-8080-exec-2] com.example.farmer.FarmerController - GET /api/v1/farmers?page=39 200 in 29ms
+2026-09-21 15:46:44.238 WARN  [farmer-service,c6bdad740ae3d1bc,da4a3472] [http-nio-8080-exec-4] com.example.farmer.FarmerController - Request from 192.0.2.15 missing X-Request-Id header, generated one
+2026-09-21 15:46:47.219 INFO  [farmer-service,62bc18459088656b,d58c6f33] [http-nio-8080-exec-3] com.example.common.AuditPublisher - Published 16 audit events to nightshift.audit
+2026-09-21 15:47:14.434 ERROR [farmer-service,740941c101409fe3,c2ca8c3a] [http-nio-8080-exec-6] com.example.farmer.CardRenderJob - Failed to render card label for farmer 73861
+java.lang.NullPointerException: Cannot invoke "String.charAt(int)" because "middleName" is null
+	at com.example.common.NameFormatter.initials(NameFormatter.java:22)
+	at com.example.farmer.FarmerSyncService.cardLabel(FarmerSyncService.java:53)
+	at com.example.farmer.CardRenderJob.render(CardRenderJob.java:74)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-09-21 15:47:45.380 INFO  [farmer-service,cdc9e2b2ffee9a48,1296b029] [farmer-sync-9] com.example.farmer.FarmerController - GET /api/v1/farmers?page=19 200 in 90ms
+2026-09-21 15:48:18.520 WARN  [farmer-service,092d87948122a41a,7b4b73bf] [farmer-sync-5] com.example.farmer.FarmerController - Request from 192.0.2.105 missing X-Request-Id header, generated one
+2026-09-21 15:48:42.874 INFO  [farmer-service,8e57b482bf89b33d,6b87e9b8] [http-nio-8080-exec-8] com.example.common.AuditPublisher - Published 3 audit events to nightshift.audit
+2026-09-21 15:48:49.641 INFO  [farmer-service,05e5715cade7d299,28bb4699] [farmer-sync-7] com.example.farmer.CardRenderJob - Rendered 64 cards in 944ms
+2026-09-21 15:51:11.496 INFO  [farmer-service,e1ee30f9b47a09d1,ff33e84b] [farmer-sync-1] com.example.farmer.FarmerController - GET /api/v1/farmers?page=15 200 in 95ms
+2026-09-21 15:51:14.378 INFO  [farmer-service,f69168f08cf7a0ed,7bb141b5] [farmer-sync-3] com.example.farmer.CardRenderJob - Rendered 17 cards in 2392ms
+2026-09-21 15:51:20.840 INFO  [farmer-service,00098c6d0bab1388,1a12b49f] [farmer-sync-6] com.example.farmer.CardRenderJob - Rendered 77 cards in 362ms
+2026-09-21 15:52:38.747 INFO  [farmer-service,b6e58cf843e79d4d,3dc558f9] [farmer-sync-1] com.example.farmer.FarmerSyncScheduler - Sync batch 8451 queued, 63 pending records
+2026-09-21 15:54:09.042 INFO  [farmer-service,618eb5d33e971eef,3229dd42] [farmer-sync-7] com.example.common.AuditPublisher - Published 28 audit events to nightshift.audit
+2026-09-21 15:56:25.249 INFO  [farmer-service,ef2067d221bbdb57,c805007f] [http-nio-8080-exec-5] com.example.farmer.CardRenderJob - Rendered 81 cards in 2015ms
+2026-09-21 15:57:34.440 INFO  [farmer-service,5e9e6cac0143c3eb,b006b9aa] [http-nio-8080-exec-3] com.example.common.AuditPublisher - Published 2 audit events to nightshift.audit
+2026-09-21 15:57:41.842 INFO  [farmer-service,398bd3f12dd9638f,ef901761] [farmer-sync-1] com.example.farmer.FarmerSyncScheduler - Sync batch 8496 queued, 316 pending records
+2026-09-21 16:01:02.537 WARN  [farmer-service,9fe49c781c26674a,5f8bec47] [http-nio-8080-exec-8] com.example.farmer.FarmerController - Request from 192.0.2.109 missing X-Request-Id header, generated one
+2026-09-21 16:01:51.067 DEBUG [farmer-service,dc9afe73ef3eedde,54e49440] [farmer-sync-4] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 52
+2026-09-21 16:02:34.878 DEBUG [farmer-service,ed6bd720455a78d6,1c2b8a20] [http-nio-8080-exec-8] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 35
+2026-09-21 16:03:31.447 INFO  [farmer-service,26c6ae3baaac8ba0,749f7073] [farmer-sync-2] com.example.farmer.FarmerController - GET /api/v1/farmers?page=30 200 in 58ms
+2026-09-21 16:04:07.427 INFO  [farmer-service,b87e62b3dd38eae8,68dff79b] [http-nio-8080-exec-9] com.example.farmer.FarmerSyncScheduler - Sync batch 8017 queued, 365 pending records
+2026-09-21 16:04:22.794 INFO  [farmer-service,d0d8528f95f34676,ae86177f] [farmer-sync-8] com.example.farmer.FarmerSyncScheduler - Sync batch 8486 queued, 388 pending records
+2026-09-21 16:04:44.116 INFO  [farmer-service,337e9763025aea43,82812004] [http-nio-8080-exec-6] com.example.common.AuditPublisher - Published 13 audit events to nightshift.audit
+2026-09-21 16:05:30.422 INFO  [farmer-service,d0a791fca2f1591e,5613fe90] [farmer-sync-2] com.example.farmer.FarmerSyncScheduler - Sync batch 8161 queued, 273 pending records
+2026-09-21 16:06:07.024 INFO  [farmer-service,b714888db5391d22,2bbfc5c5] [farmer-sync-7] com.example.common.AuditPublisher - Published 7 audit events to nightshift.audit
+2026-09-21 16:07:01.759 WARN  [farmer-service,cc7304c2f44ff25a,4ccd5e2b] [farmer-sync-1] com.example.farmer.FarmerProfileService - Concurrent update on farmer 1153, retry 1 of 3
+com.example.farmer.FarmerProfileService$OptimisticLockException: Row was updated by another transaction (farmer id=4743)
+	at com.example.farmer.FarmerProfileService.rename(FarmerProfileService.java:27)
+	at com.example.farmer.FarmerController.rename(FarmerController.java:96)
+2026-09-21 16:07:48.029 WARN  [farmer-service,034620b0c0cd54c3,b49ee2c1] [http-nio-8080-exec-2] com.example.farmer.FarmerController - Request from 192.0.2.185 missing X-Request-Id header, generated one
+2026-09-21 16:08:04.672 INFO  [farmer-service,ce83fa475f8217d1,939c3de0] [farmer-sync-5] com.example.common.AuditPublisher - Published 10 audit events to nightshift.audit
+2026-09-21 16:09:04.877 WARN  [farmer-service,61c58ba60bf52de7,6696f5f1] [farmer-sync-2] com.example.farmer.FarmerProfileService - Concurrent update on farmer 1541, retry 2 of 3
+com.example.farmer.FarmerProfileService$OptimisticLockException: Row was updated by another transaction (farmer id=4884)
+	at com.example.farmer.FarmerProfileService.rename(FarmerProfileService.java:27)
+	at com.example.farmer.FarmerController.rename(FarmerController.java:96)
+2026-09-21 16:10:01.391 WARN  [farmer-service,173f158c82f7993b,75a844cc] [http-nio-8080-exec-2] com.example.farmer.FarmerController - Request from 192.0.2.154 missing X-Request-Id header, generated one
+2026-09-21 16:11:06.082 INFO  [farmer-service,59f9ffaed689f7dc,30816c44] [farmer-sync-1] com.example.farmer.CardRenderJob - Rendered 78 cards in 560ms
+2026-09-21 16:13:10.584 WARN  [farmer-service,edd5768e251c9342,51fb0f8c] [http-nio-8080-exec-4] com.example.farmer.FarmerController - Request from 192.0.2.226 missing X-Request-Id header, generated one
+2026-09-21 16:13:38.391 INFO  [farmer-service,618979603c6c76d1,22603fe5] [farmer-sync-1] com.example.farmer.FarmerSyncScheduler - Sync batch 8747 queued, 105 pending records
+2026-09-21 16:14:09.891 INFO  [farmer-service,bc611df9cd3bd572,721cbb62] [http-nio-8080-exec-3] com.example.farmer.FarmerController - GET /api/v1/farmers?page=29 200 in 138ms
+2026-09-21 16:15:04.088 WARN  [farmer-service,17c3d15509b83d38,8ca77cc1] [http-nio-8080-exec-8] com.example.farmer.FarmerController - Request from 192.0.2.210 missing X-Request-Id header, generated one
+2026-09-21 16:16:03.568 INFO  [farmer-service,f154600e06c0dea9,139ca207] [http-nio-8080-exec-3] com.example.farmer.FarmerSyncScheduler - Sync batch 8446 queued, 367 pending records
+2026-09-21 16:16:13.936 INFO  [farmer-service,36f8619a46d3abb7,e910e173] [farmer-sync-2] com.example.farmer.FarmerSyncScheduler - Sync batch 8915 queued, 35 pending records
+2026-09-21 16:17:52.292 INFO  [farmer-service,b37ee677f8fc1ba9,f609d86b] [farmer-sync-9] com.example.farmer.FarmerSyncScheduler - Sync batch 8981 queued, 247 pending records
+2026-09-21 16:17:56.782 WARN  [farmer-service,ce2afb9c3eec3fbd,79433a42] [farmer-sync-5] com.example.farmer.FarmerController - Request from 192.0.2.219 missing X-Request-Id header, generated one
+2026-09-21 16:18:16.333 INFO  [farmer-service,e3a86e1142ed1b25,d523d605] [farmer-sync-7] com.example.farmer.FarmerSyncScheduler - Sync batch 8307 queued, 186 pending records
+2026-09-21 16:20:42.628 INFO  [farmer-service,a9d7fdca99760b2c,287bcec1] [farmer-sync-5] com.example.farmer.FarmerController - GET /api/v1/farmers?page=37 200 in 112ms
+2026-09-21 16:22:16.667 INFO  [farmer-service,aaae902dd5342b80,b630fe60] [http-nio-8080-exec-7] com.example.farmer.CardRenderJob - Rendered 89 cards in 1639ms
+2026-09-21 16:24:04.612 INFO  [farmer-service,a6db621bc7371916,b8b30abb] [farmer-sync-5] com.example.farmer.FarmerController - GET /api/v1/farmers?page=5 200 in 60ms
+2026-09-21 16:24:59.611 INFO  [farmer-service,ef5c86c90b743e75,f2f40d72] [http-nio-8080-exec-5] com.example.common.AuditPublisher - Published 12 audit events to nightshift.audit
+2026-09-21 16:25:11.497 DEBUG [farmer-service,60a85e0f433da8de,c0095910] [farmer-sync-3] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 27
+2026-09-21 16:28:05.807 INFO  [farmer-service,f34039dc40087714,1c843dbb] [farmer-sync-4] com.example.common.AuditPublisher - Published 6 audit events to nightshift.audit
+2026-09-21 16:28:11.157 INFO  [farmer-service,991758f88d8056a0,d6626a50] [farmer-sync-7] com.example.common.AuditPublisher - Published 10 audit events to nightshift.audit
+2026-09-21 16:29:05.068 INFO  [farmer-service,01c33e949d419547,4474b173] [farmer-sync-3] com.example.farmer.FarmerController - GET /api/v1/farmers?page=14 200 in 119ms
+2026-09-21 16:29:13.513 INFO  [farmer-service,2c41751f3e3c60e6,9c1180b3] [http-nio-8080-exec-7] com.example.farmer.FarmerSyncScheduler - Sync batch 8869 queued, 114 pending records
+2026-09-21 16:29:17.950 DEBUG [farmer-service,af72f640d04eca54,7cf71094] [http-nio-8080-exec-1] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 14
+2026-09-21 16:29:36.011 WARN  [farmer-service,131b62638590d81e,5505f63a] [farmer-sync-6] com.example.farmer.FarmerController - Request from 192.0.2.6 missing X-Request-Id header, generated one
+2026-09-21 16:29:37.456 DEBUG [farmer-service,3501170fe2058f56,c2f17da5] [farmer-sync-3] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 58
+2026-09-21 16:30:39.003 WARN  [farmer-service,fcaafb8d1b747c3b,8bb666b4] [farmer-sync-2] com.example.farmer.FarmerProfileService - Concurrent update on farmer 7796, retry 2 of 3
+com.example.farmer.FarmerProfileService$OptimisticLockException: Row was updated by another transaction (farmer id=8456)
+	at com.example.farmer.FarmerProfileService.rename(FarmerProfileService.java:27)
+	at com.example.farmer.FarmerController.rename(FarmerController.java:96)
+2026-09-21 16:33:09.564 INFO  [farmer-service,e71dc08558bf4468,856418d9] [http-nio-8080-exec-4] com.example.farmer.CardRenderJob - Rendered 83 cards in 1613ms
+2026-09-21 16:34:01.768 INFO  [farmer-service,f86bd67848b666ee,4cc07d9f] [http-nio-8080-exec-5] com.example.farmer.FarmerController - GET /api/v1/farmers?page=9 200 in 105ms
+2026-09-21 16:35:48.964 DEBUG [farmer-service,053e4031e726bcd3,82f17752] [http-nio-8080-exec-8] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 43
+2026-09-21 16:36:04.070 WARN  [farmer-service,7f66cf0170c6c2c0,db59f942] [http-nio-8080-exec-5] com.example.farmer.FarmerController - Request from 192.0.2.15 missing X-Request-Id header, generated one
+2026-09-21 16:38:06.009 WARN  [farmer-service,ded07f4150c42ae7,0ab02f2b] [http-nio-8080-exec-8] com.example.farmer.FarmerController - Request from 192.0.2.50 missing X-Request-Id header, generated one
+2026-09-21 16:40:01.972 INFO  [farmer-service,23bdb20e63c9f260,963d0f08] [http-nio-8080-exec-7] com.example.common.AuditPublisher - Published 17 audit events to nightshift.audit
+2026-09-21 16:40:26.944 DEBUG [farmer-service,8df5dfb66fdb1145,10337f5f] [farmer-sync-9] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 21
+2026-09-21 16:41:26.556 INFO  [farmer-service,45ac1e059cb4e184,b18dd355] [http-nio-8080-exec-6] com.example.common.AuditPublisher - Published 22 audit events to nightshift.audit
+2026-09-21 16:41:57.926 INFO  [farmer-service,02a4f877d702c040,282d239a] [http-nio-8080-exec-5] com.example.farmer.FarmerController - GET /api/v1/farmers?page=2 200 in 111ms
+2026-09-21 16:42:47.031 INFO  [farmer-service,15738ca7ed3ab997,458308ea] [http-nio-8080-exec-3] com.example.farmer.FarmerController - GET /api/v1/farmers?page=29 200 in 120ms
+2026-09-21 16:43:43.344 DEBUG [farmer-service,aa2e4c87e46ad70d,3283e6a3] [farmer-sync-9] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 60
+2026-09-21 16:44:03.535 INFO  [farmer-service,054650865dd51560,27c2bd02] [farmer-sync-4] com.example.farmer.FarmerController - GET /api/v1/farmers?page=22 200 in 110ms
+2026-09-21 16:45:22.370 INFO  [farmer-service,ef5bd97a25829192,67d53d5a] [http-nio-8080-exec-3] com.example.common.AuditPublisher - Published 10 audit events to nightshift.audit
+2026-09-21 16:47:30.551 INFO  [farmer-service,4782ab553c4b0cd1,169a3997] [farmer-sync-9] com.example.common.AuditPublisher - Published 15 audit events to nightshift.audit
+2026-09-21 16:48:31.819 INFO  [farmer-service,c0b5d969ab82b8eb,a2657f34] [http-nio-8080-exec-1] com.example.common.AuditPublisher - Published 22 audit events to nightshift.audit
+2026-09-21 16:51:13.404 INFO  [farmer-service,b7a82f8c8a14974e,fdc9b7db] [http-nio-8080-exec-4] com.example.farmer.FarmerController - GET /api/v1/farmers?page=22 200 in 49ms
+2026-09-21 16:51:21.383 INFO  [farmer-service,007fab08390eb5c3,522428f5] [farmer-sync-3] com.example.farmer.FarmerSyncScheduler - Sync batch 8816 queued, 107 pending records
+2026-09-21 16:51:24.768 WARN  [farmer-service,51b34ce72dd3e0de,1fc821b1] [farmer-sync-5] com.example.farmer.FarmerController - Request from 192.0.2.90 missing X-Request-Id header, generated one
+2026-09-21 16:52:22.149 INFO  [farmer-service,7406a4c93ef0933a,bf860a4b] [farmer-sync-6] com.example.common.AuditPublisher - Published 26 audit events to nightshift.audit
+2026-09-21 16:53:53.642 INFO  [farmer-service,7d0918a27b76794d,8143776a] [farmer-sync-2] com.example.common.AuditPublisher - Published 15 audit events to nightshift.audit
+2026-09-21 16:56:18.033 INFO  [farmer-service,8ef1efdedfeeca94,abf63829] [farmer-sync-2] com.example.farmer.FarmerSyncScheduler - Sync batch 8173 queued, 28 pending records
+2026-09-21 16:57:35.819 INFO  [farmer-service,5f5d1d2c15ac9fab,f1d9615e] [http-nio-8080-exec-2] com.example.farmer.FarmerController - GET /api/v1/farmers?page=17 200 in 109ms
+2026-09-21 16:58:29.001 INFO  [farmer-service,6526563c3eed0c7b,00bbb653] [http-nio-8080-exec-6] com.example.farmer.CardRenderJob - Rendered 67 cards in 724ms
+2026-09-21 16:59:00.107 WARN  [farmer-service,fc9ccad4981552c9,8dd87929] [http-nio-8080-exec-4] com.example.farmer.FarmerController - Request from 192.0.2.153 missing X-Request-Id header, generated one
+2026-09-21 16:59:09.021 DEBUG [farmer-service,4af9c1e26e5800f3,51a19298] [http-nio-8080-exec-2] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 51
+2026-09-21 16:59:11.846 INFO  [farmer-service,aa368bcec50df709,084138b5] [http-nio-8080-exec-2] com.example.farmer.FarmerSyncScheduler - Sync batch 8380 queued, 135 pending records
+2026-09-21 17:01:23.405 ERROR [farmer-service,3856020bc409bd6b,336c0aaf] [http-nio-8080-exec-7] com.example.farmer.FarmerSyncService - Sync failed for batch 8529: could not acquire a database connection
+java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30001ms (total=10, active=10, idle=0, waiting=7)
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181)
+	at com.example.farmer.FarmerSyncService.pushPending(FarmerSyncService.java:36)
+	at com.example.farmer.FarmerSyncScheduler.run(FarmerSyncScheduler.java:58)
+2026-09-21 17:01:28.156 INFO  [farmer-service,dd3d2c73eed86510,6f5f6906] [http-nio-8080-exec-3] com.example.farmer.CardRenderJob - Rendered 23 cards in 1970ms
+2026-09-21 17:01:45.382 INFO  [farmer-service,e9698fa3a5ca8cd0,b399189a] [http-nio-8080-exec-6] com.example.farmer.FarmerController - GET /api/v1/farmers?page=25 200 in 13ms
+2026-09-21 17:02:00.256 INFO  [farmer-service,45d12c0112390be2,dfe11951] [farmer-sync-1] com.example.farmer.FarmerController - GET /api/v1/farmers?page=16 200 in 76ms
+2026-09-21 17:03:22.802 WARN  [farmer-service,bf6d6dd11b2122ac,0c57cb8c] [farmer-sync-8] com.example.farmer.FarmerController - Request from 192.0.2.174 missing X-Request-Id header, generated one
+2026-09-21 17:05:23.110 WARN  [farmer-service,2e1c253c5346ba40,236dc51a] [farmer-sync-5] com.example.farmer.FarmerController - Request from 192.0.2.40 missing X-Request-Id header, generated one
+2026-09-21 17:05:26.895 WARN  [farmer-service,06c83db383aed8d0,fed767e6] [http-nio-8080-exec-9] com.example.farmer.FarmerController - Request from 192.0.2.10 missing X-Request-Id header, generated one
+2026-09-21 17:06:26.973 WARN  [farmer-service,099544ccc2de8b68,4c08bd07] [http-nio-8080-exec-9] com.example.farmer.FarmerController - Request from 192.0.2.37 missing X-Request-Id header, generated one
+2026-09-21 17:08:47.035 WARN  [farmer-service,b0501b230c200cfb,e600d7f6] [farmer-sync-4] org.springframework.boot.context.config.ConfigDataEnvironment - Property 'spring.datasource.initialization-mode' is deprecated and will be removed in a future release
+2026-09-21 17:09:25.530 INFO  [farmer-service,7e91415b5d09f8df,b0a2b899] [http-nio-8080-exec-6] com.example.farmer.FarmerSyncScheduler - Sync batch 8107 queued, 255 pending records
+2026-09-21 17:10:36.142 INFO  [farmer-service,917538990328a05c,773c924b] [farmer-sync-6] com.example.farmer.FarmerController - GET /api/v1/farmers?page=39 200 in 23ms
+2026-09-21 17:11:03.507 INFO  [farmer-service,3e5917101f30c93f,8357ec84] [http-nio-8080-exec-6] com.example.farmer.FarmerSyncScheduler - Sync batch 8578 queued, 252 pending records
+2026-09-21 17:11:32.332 INFO  [farmer-service,0f883230a9276fc1,312b68df] [http-nio-8080-exec-2] com.example.common.AuditPublisher - Published 11 audit events to nightshift.audit
+2026-09-21 17:11:39.623 WARN  [farmer-service,1a76d69443a3ca2e,aaebe001] [farmer-sync-4] com.example.farmer.FarmerController - Request from 192.0.2.198 missing X-Request-Id header, generated one
+2026-09-21 17:13:22.825 INFO  [farmer-service,1f187ed7356c0ec8,45721aa8] [farmer-sync-5] com.example.farmer.FarmerController - GET /api/v1/farmers?page=24 200 in 37ms
+2026-09-21 17:15:24.480 INFO  [farmer-service,8c839dd62dfabe66,167101a9] [http-nio-8080-exec-5] com.example.common.AuditPublisher - Published 27 audit events to nightshift.audit
+2026-09-21 17:16:52.796 INFO  [farmer-service,1a09f36396041684,b0b246b7] [http-nio-8080-exec-7] com.example.farmer.FarmerSyncScheduler - Sync batch 8405 queued, 194 pending records
+2026-09-21 17:17:01.312 INFO  [farmer-service,b7af53840af9be6f,29bd5cfc] [http-nio-8080-exec-7] com.example.farmer.FarmerSyncScheduler - Sync batch 8732 queued, 179 pending records
+2026-09-21 17:17:27.739 INFO  [farmer-service,c7d463e0d33dd9d0,d29793e7] [farmer-sync-5] com.example.common.AuditPublisher - Published 28 audit events to nightshift.audit
+2026-09-21 17:18:38.419 WARN  [farmer-service,6a056cde69858ebf,a673dc70] [farmer-sync-6] com.example.farmer.FarmerController - Request from 192.0.2.73 missing X-Request-Id header, generated one
+2026-09-21 17:19:19.231 INFO  [farmer-service,312a2bbceed1b6c1,697f1030] [http-nio-8080-exec-3] com.example.farmer.FarmerController - GET /api/v1/farmers?page=29 200 in 33ms
+2026-09-21 17:21:37.367 INFO  [farmer-service,cff80b49b0c9181c,3fb633cc] [http-nio-8080-exec-3] com.example.farmer.CardRenderJob - Rendered 32 cards in 1033ms
+2026-09-21 17:21:41.818 INFO  [farmer-service,177c37b29a5d5630,f8cb7983] [http-nio-8080-exec-8] com.example.farmer.FarmerSyncScheduler - Sync batch 8958 queued, 292 pending records
+2026-09-21 17:21:56.252 INFO  [farmer-service,61347c4c73338fa4,d4d4e519] [http-nio-8080-exec-4] com.example.farmer.FarmerController - GET /api/v1/farmers?page=11 200 in 97ms
+2026-09-21 17:23:15.286 INFO  [farmer-service,ad67cf2da78d6ae1,a3631c45] [http-nio-8080-exec-4] com.example.farmer.FarmerController - GET /api/v1/farmers?page=6 200 in 73ms
+2026-09-21 17:25:51.812 DEBUG [farmer-service,1f5fc4867d6dea85,ae1419e5] [http-nio-8080-exec-4] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 54
+2026-09-21 17:28:19.368 DEBUG [farmer-service,31e7ebde0411c4f6,23b2a6ba] [farmer-sync-8] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 37
+2026-09-21 17:30:09.557 INFO  [farmer-service,f229a9d820b00467,0bc7d6f0] [farmer-sync-4] com.example.common.AuditPublisher - Published 16 audit events to nightshift.audit
+2026-09-21 17:31:21.169 INFO  [farmer-service,eb2e0f615e5eb585,a19a68b2] [http-nio-8080-exec-1] com.example.farmer.FarmerController - GET /api/v1/farmers?page=6 200 in 21ms
+2026-09-21 17:32:43.669 INFO  [farmer-service,b54eb4ad5baf7e0e,428a3f87] [farmer-sync-2] com.example.common.AuditPublisher - Published 16 audit events to nightshift.audit
+2026-09-21 17:33:26.597 INFO  [farmer-service,1560971f92930b81,9259c3dc] [http-nio-8080-exec-3] com.example.farmer.CardRenderJob - Rendered 75 cards in 1412ms
+2026-09-21 17:34:09.930 INFO  [farmer-service,24b68ce5d0930942,a0af81bb] [http-nio-8080-exec-8] com.example.common.AuditPublisher - Published 20 audit events to nightshift.audit
+2026-09-21 17:34:19.531 INFO  [farmer-service,2101c323a1afe5e9,c6bff52c] [http-nio-8080-exec-9] com.example.farmer.FarmerSyncScheduler - Sync batch 8047 queued, 67 pending records
+2026-09-21 17:35:07.192 INFO  [farmer-service,ded6d832383989ca,29a9ed85] [farmer-sync-4] com.example.common.AuditPublisher - Published 17 audit events to nightshift.audit
+2026-09-21 17:35:26.269 INFO  [farmer-service,83f140060b53c211,a7eb80de] [farmer-sync-2] com.example.farmer.FarmerSyncScheduler - Sync batch 8737 queued, 217 pending records
+2026-09-21 17:35:28.104 DEBUG [farmer-service,7f9121ff05cf61c6,ff982118] [farmer-sync-3] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 13
+2026-09-21 17:36:25.617 INFO  [farmer-service,b5bc89140b0a85dd,ca0fc883] [http-nio-8080-exec-5] com.example.common.AuditPublisher - Published 16 audit events to nightshift.audit
+2026-09-21 17:38:06.482 INFO  [farmer-service,9695fef1a6f3f90d,3f5f5ec5] [http-nio-8080-exec-7] com.example.common.AuditPublisher - Published 4 audit events to nightshift.audit
+2026-09-21 17:39:06.603 INFO  [farmer-service,545afb0dd2364c2d,3913ba97] [http-nio-8080-exec-6] com.example.farmer.CardRenderJob - Rendered 40 cards in 744ms
+2026-09-21 17:40:24.896 INFO  [farmer-service,f0578f96c73f2bb2,fb6b4a22] [http-nio-8080-exec-4] com.example.common.AuditPublisher - Published 10 audit events to nightshift.audit
+2026-09-21 17:41:10.839 DEBUG [farmer-service,500384e68afc9f23,88a568a9] [http-nio-8080-exec-2] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 62
+2026-09-21 17:41:56.759 INFO  [farmer-service,b04e4f2b23463f90,c10bf3e0] [farmer-sync-8] com.example.farmer.FarmerController - GET /api/v1/farmers?page=12 200 in 20ms
+2026-09-21 17:41:57.291 INFO  [farmer-service,b7d537987c64e993,fe40a903] [farmer-sync-6] com.example.farmer.FarmerSyncScheduler - Sync batch 8557 queued, 84 pending records
+2026-09-21 17:42:23.902 DEBUG [farmer-service,dd920221d0e5b824,cedcb5eb] [http-nio-8080-exec-9] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 46
+2026-09-21 17:43:15.116 INFO  [farmer-service,4564b7301db0756e,dd433472] [http-nio-8080-exec-9] com.example.farmer.FarmerController - GET /api/v1/farmers?page=7 200 in 44ms
+2026-09-21 17:44:57.280 WARN  [farmer-service,3d2981a257f5c020,7cd0651c] [farmer-sync-2] com.example.farmer.FarmerProfileService - Concurrent update on farmer 1466, retry 1 of 3
+com.example.farmer.FarmerProfileService$OptimisticLockException: Row was updated by another transaction (farmer id=4624)
+	at com.example.farmer.FarmerProfileService.rename(FarmerProfileService.java:27)
+	at com.example.farmer.FarmerController.rename(FarmerController.java:96)
+2026-09-21 17:45:06.685 DEBUG [farmer-service,4e5fd00467c5bf57,c359f236] [http-nio-8080-exec-1] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 47
+2026-09-21 17:45:58.715 INFO  [farmer-service,d7620fc01dbebdf4,2070988d] [farmer-sync-7] com.example.farmer.FarmerController - GET /api/v1/farmers?page=16 200 in 17ms
+2026-09-21 17:46:20.647 ERROR [farmer-service,3ce2cee4b4db77cc,3fd723bc] [farmer-sync-5] com.example.farmer.FarmerSyncService - Sync failed for batch 8642: could not acquire a database connection
+java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30001ms (total=10, active=10, idle=0, waiting=7)
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181)
+	at com.example.farmer.FarmerSyncService.pushPending(FarmerSyncService.java:36)
+	at com.example.farmer.FarmerSyncScheduler.run(FarmerSyncScheduler.java:58)
+2026-09-21 17:46:30.523 INFO  [farmer-service,89b22c9504f8ff39,f9f91041] [farmer-sync-1] com.example.common.AuditPublisher - Published 22 audit events to nightshift.audit
+2026-09-21 17:47:34.053 WARN  [farmer-service,5f1cc268d0ccea10,e14f4638] [farmer-sync-4] com.example.farmer.FarmerProfileService - Concurrent update on farmer 5982, retry 2 of 3
+com.example.farmer.FarmerProfileService$OptimisticLockException: Row was updated by another transaction (farmer id=6408)
+	at com.example.farmer.FarmerProfileService.rename(FarmerProfileService.java:27)
+	at com.example.farmer.FarmerController.rename(FarmerController.java:96)
+2026-09-21 17:50:35.865 INFO  [farmer-service,a618e8f91a27a544,5b494e2b] [farmer-sync-8] com.example.farmer.FarmerController - GET /api/v1/farmers?page=28 200 in 106ms
+2026-09-21 17:52:40.406 WARN  [farmer-service,c15a1755ba806479,47458913] [http-nio-8080-exec-1] com.example.farmer.FarmerProfileService - Concurrent update on farmer 8222, retry 1 of 3
+com.example.farmer.FarmerProfileService$OptimisticLockException: Row was updated by another transaction (farmer id=8017)
+	at com.example.farmer.FarmerProfileService.rename(FarmerProfileService.java:27)
+	at com.example.farmer.FarmerController.rename(FarmerController.java:96)
+2026-09-21 17:53:44.317 DEBUG [farmer-service,bd1b6160329ad880,79d5580c] [farmer-sync-4] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 28
+2026-09-21 17:53:49.473 INFO  [farmer-service,b39191f564e3ea5a,fe6d613d] [http-nio-8080-exec-5] com.example.farmer.CardRenderJob - Rendered 60 cards in 2177ms
+2026-09-21 17:55:03.644 DEBUG [farmer-service,6080cc8ad0590450,8718e3d7] [farmer-sync-5] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 25
+2026-09-21 17:56:33.328 DEBUG [farmer-service,775e8670471a5efc,b91246e5] [http-nio-8080-exec-4] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 46
+2026-09-21 17:57:57.827 INFO  [farmer-service,004455a66b8f3144,1a9dfafb] [farmer-sync-8] com.example.farmer.FarmerSyncScheduler - Sync batch 8084 queued, 165 pending records
+2026-09-21 17:58:28.879 WARN  [farmer-service,f2760a65961686e1,69f441a3] [http-nio-8080-exec-9] com.example.farmer.FarmerController - Request from 192.0.2.202 missing X-Request-Id header, generated one
+2026-09-21 17:58:36.191 DEBUG [farmer-service,71066c98a4672791,b25470be] [http-nio-8080-exec-6] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 36
+2026-09-21 17:58:59.817 INFO  [farmer-service,6fa6b8b1740e81ae,6f7b2f40] [farmer-sync-8] com.example.farmer.FarmerController - GET /api/v1/farmers?page=15 200 in 57ms
+2026-09-21 17:59:06.619 INFO  [farmer-service,3f47006ff3f4ef05,905710c4] [http-nio-8080-exec-5] com.example.common.AuditPublisher - Published 6 audit events to nightshift.audit
+2026-09-21 18:00:22.596 INFO  [farmer-service,49784724414d727e,cf6de37b] [farmer-sync-2] com.example.common.AuditPublisher - Published 6 audit events to nightshift.audit
+2026-09-21 18:01:38.319 ERROR [farmer-service,4d80e0763b48c69e,96fd79f6] [farmer-sync-9] com.example.farmer.FarmerSyncService - Sync failed for batch 8687: could not acquire a database connection
+java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30001ms (total=10, active=10, idle=0, waiting=7)
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181)
+	at com.example.farmer.FarmerSyncService.pushPending(FarmerSyncService.java:36)
+	at com.example.farmer.FarmerSyncScheduler.run(FarmerSyncScheduler.java:58)
+2026-09-21 18:02:25.129 INFO  [farmer-service,86aec1224437cca5,baf3b5eb] [http-nio-8080-exec-7] com.example.farmer.CardRenderJob - Rendered 21 cards in 285ms
+2026-09-21 18:06:08.150 DEBUG [farmer-service,50b72a8d81c50c76,d31d65d0] [http-nio-8080-exec-5] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 10
+2026-09-21 18:06:25.519 INFO  [farmer-service,8042d21bc13ece27,2c751b77] [http-nio-8080-exec-2] com.example.farmer.FarmerController - GET /api/v1/farmers?page=9 200 in 43ms
+2026-09-21 18:07:22.647 INFO  [farmer-service,3f4e8c55d3339714,7685b942] [http-nio-8080-exec-4] com.example.farmer.FarmerSyncScheduler - Sync batch 8502 queued, 105 pending records
+2026-09-21 18:07:40.091 DEBUG [farmer-service,1ee2b3140bb1e7e4,b29dacde] [farmer-sync-7] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 11
+2026-09-21 18:08:05.846 DEBUG [farmer-service,9b39d47d0ac0d45e,f3fc250a] [farmer-sync-4] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 48
+2026-09-21 18:08:19.327 INFO  [farmer-service,e771e58b86e81b2a,cc5dc0a7] [farmer-sync-3] com.example.common.AuditPublisher - Published 15 audit events to nightshift.audit
+2026-09-21 18:08:31.057 WARN  [farmer-service,a7d85642234e121c,d9cdc468] [farmer-sync-7] com.example.farmer.FarmerController - Request from 192.0.2.102 missing X-Request-Id header, generated one
+2026-09-21 18:09:58.234 INFO  [farmer-service,ff8de1ae6e9ace54,b691af57] [farmer-sync-2] com.example.farmer.FarmerController - GET /api/v1/farmers?page=39 200 in 30ms
+2026-09-21 18:09:58.841 WARN  [farmer-service,eafc0fd26158201c,a850cc24] [farmer-sync-2] com.example.farmer.FarmerController - Request from 192.0.2.23 missing X-Request-Id header, generated one
+2026-09-21 18:11:01.662 INFO  [farmer-service,d562ed3bd54b6678,aa8600af] [farmer-sync-7] com.example.farmer.CardRenderJob - Rendered 27 cards in 1900ms
+2026-09-21 18:11:09.303 DEBUG [farmer-service,cf48a4bc379256c7,9e616593] [farmer-sync-8] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 8
+2026-09-21 18:12:21.580 WARN  [farmer-service,661e477f2f9c1f6f,22d22f05] [farmer-sync-5] com.example.farmer.FarmerController - Request from 192.0.2.27 missing X-Request-Id header, generated one
+2026-09-21 18:13:15.735 INFO  [farmer-service,b97d40b5dc47e6bf,65f32c17] [http-nio-8080-exec-3] com.example.farmer.CardRenderJob - Rendered 50 cards in 1407ms
+2026-09-21 18:16:01.136 INFO  [farmer-service,0535e476880a0b63,8ded3904] [farmer-sync-3] com.example.common.AuditPublisher - Published 8 audit events to nightshift.audit
+2026-09-21 18:18:06.409 WARN  [farmer-service,40662e211cfef7c6,33e5a88b] [http-nio-8080-exec-7] com.example.farmer.FarmerController - Request from 192.0.2.169 missing X-Request-Id header, generated one
+2026-09-21 18:18:27.990 INFO  [farmer-service,020c6fe54e51413a,9a239c75] [farmer-sync-4] com.example.common.AuditPublisher - Published 25 audit events to nightshift.audit
+2026-09-21 18:18:50.907 INFO  [farmer-service,bd40621db45f762b,47898ebb] [http-nio-8080-exec-5] com.example.common.AuditPublisher - Published 11 audit events to nightshift.audit
+2026-09-21 18:19:59.453 INFO  [farmer-service,7b22da5a9faa0952,c9694b6f] [http-nio-8080-exec-2] com.example.farmer.FarmerSyncScheduler - Sync batch 8577 queued, 332 pending records
+2026-09-21 18:20:28.466 WARN  [farmer-service,3cdda7b5327f7a85,5ba14b56] [http-nio-8080-exec-9] com.example.farmer.FarmerController - Request from 192.0.2.229 missing X-Request-Id header, generated one
+2026-09-21 18:20:28.512 INFO  [farmer-service,09c6875d3b37014b,c97467d8] [farmer-sync-6] com.example.farmer.FarmerSyncScheduler - Sync batch 8916 queued, 84 pending records
+2026-09-21 18:20:35.111 WARN  [farmer-service,36bd295e27ab2c26,a60bdc13] [farmer-sync-3] com.example.farmer.FarmerController - Request from 192.0.2.39 missing X-Request-Id header, generated one
+2026-09-21 18:21:03.175 INFO  [farmer-service,76d370da190b4e98,b12bb4fc] [http-nio-8080-exec-9] com.example.farmer.CardRenderJob - Rendered 78 cards in 485ms
+2026-09-21 18:21:04.340 INFO  [farmer-service,4f18efbfabf06a43,ea33e428] [http-nio-8080-exec-3] com.example.farmer.FarmerController - GET /api/v1/farmers?page=30 200 in 66ms
+2026-09-21 18:21:14.605 INFO  [farmer-service,8e201a41f3345c0c,7978a548] [http-nio-8080-exec-5] com.example.farmer.CardRenderJob - Rendered 21 cards in 1304ms
+2026-09-21 18:22:16.289 DEBUG [farmer-service,1f65998bec9e72e2,892410a4] [http-nio-8080-exec-2] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 61
+2026-09-21 18:23:01.030 INFO  [farmer-service,fd5cc7891a8f9c64,3ebeba16] [farmer-sync-7] com.example.farmer.FarmerSyncScheduler - Sync batch 8639 queued, 320 pending records
+2026-09-21 18:23:19.250 INFO  [farmer-service,e822c3b910665306,da06648a] [http-nio-8080-exec-6] com.example.farmer.CardRenderJob - Rendered 45 cards in 427ms
+2026-09-21 18:24:25.085 INFO  [farmer-service,52aca62f4269f079,2d473a2d] [farmer-sync-9] com.example.farmer.FarmerSyncScheduler - Sync batch 8843 queued, 30 pending records
+2026-09-21 18:26:53.529 WARN  [farmer-service,32fba4947c5bdcb3,c30f2072] [farmer-sync-3] com.example.farmer.FarmerController - Request from 192.0.2.7 missing X-Request-Id header, generated one
+2026-09-21 18:26:55.319 INFO  [farmer-service,780f26044bba1900,267f83ef] [farmer-sync-8] com.example.common.AuditPublisher - Published 14 audit events to nightshift.audit
+2026-09-21 18:27:14.656 INFO  [farmer-service,4159009c2883ff8c,41a46538] [http-nio-8080-exec-9] com.example.farmer.FarmerController - GET /api/v1/farmers?page=8 200 in 116ms
+2026-09-21 18:28:00.505 INFO  [farmer-service,7d7f743e01d1a45a,60623219] [http-nio-8080-exec-5] com.example.farmer.CardRenderJob - Rendered 35 cards in 1570ms
+2026-09-21 18:28:04.851 WARN  [farmer-service,5c7d19115ac86837,dde384c5] [http-nio-8080-exec-2] com.example.farmer.FarmerController - Request from 192.0.2.65 missing X-Request-Id header, generated one
+2026-09-21 18:28:07.311 INFO  [farmer-service,e84786a3e5f425b4,496ec099] [farmer-sync-1] com.example.farmer.FarmerController - GET /api/v1/farmers?page=3 200 in 35ms
+2026-09-21 18:28:56.418 DEBUG [farmer-service,59dc5c32e06e76b0,ff80ce0a] [http-nio-8080-exec-8] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 35
+2026-09-21 18:29:10.241 INFO  [farmer-service,fac850aee0372db4,1a445164] [http-nio-8080-exec-4] com.example.farmer.FarmerController - GET /api/v1/farmers?page=4 200 in 33ms
+2026-09-21 18:30:22.891 INFO  [farmer-service,f74d4fea5b0bb13b,8ffba10a] [http-nio-8080-exec-7] com.example.common.AuditPublisher - Published 16 audit events to nightshift.audit
+2026-09-21 18:30:36.576 DEBUG [farmer-service,fa50da31b2a68746,ce6f6dae] [farmer-sync-2] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 30
+2026-09-21 18:30:38.930 DEBUG [farmer-service,cdde060954a1b22e,be75ca8e] [http-nio-8080-exec-6] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 19
+2026-09-21 18:33:21.406 INFO  [farmer-service,345dec09a8e9f938,35edaca0] [farmer-sync-4] com.example.common.AuditPublisher - Published 2 audit events to nightshift.audit
+2026-09-21 18:33:35.738 INFO  [farmer-service,a5390ba9118ec9e2,ba4bf79c] [http-nio-8080-exec-5] com.example.common.AuditPublisher - Published 29 audit events to nightshift.audit
+2026-09-21 18:35:36.438 INFO  [farmer-service,24d721a00a30988a,a9607579] [http-nio-8080-exec-6] com.example.farmer.FarmerSyncScheduler - Sync batch 8049 queued, 36 pending records
+2026-09-21 18:35:51.164 INFO  [farmer-service,5981b290850cc5c1,c9ee8d00] [farmer-sync-6] com.example.farmer.FarmerController - GET /api/v1/farmers?page=20 200 in 140ms
+2026-09-21 18:36:17.214 INFO  [farmer-service,751aa983abd67893,f1f45978] [http-nio-8080-exec-1] com.example.farmer.FarmerController - GET /api/v1/farmers?page=7 200 in 43ms
+2026-09-21 18:37:36.024 INFO  [farmer-service,aae32a99c4d8f18c,b6e670ea] [farmer-sync-7] com.example.farmer.CardRenderJob - Rendered 13 cards in 1250ms
+2026-09-21 18:39:18.938 WARN  [farmer-service,6d9547a9456f0e21,05117dd2] [http-nio-8080-exec-5] com.example.farmer.FarmerController - Request from 192.0.2.245 missing X-Request-Id header, generated one
+2026-09-21 18:40:44.564 INFO  [farmer-service,74532b1c980ed8a0,dbf4c8d6] [farmer-sync-9] com.example.common.AuditPublisher - Published 8 audit events to nightshift.audit
+2026-09-21 18:40:46.454 INFO  [farmer-service,0abaa082a7eefa14,ef2499b1] [http-nio-8080-exec-3] com.example.common.AuditPublisher - Published 4 audit events to nightshift.audit
+2026-09-21 18:41:06.119 DEBUG [farmer-service,c8139693eebaa12f,13138e8b] [farmer-sync-8] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 13
+2026-09-21 18:42:44.126 DEBUG [farmer-service,3606afb4ae29d886,bd25235e] [farmer-sync-7] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 52
+2026-09-21 18:45:14.245 INFO  [farmer-service,92cef61c76d8169e,b3be576e] [farmer-sync-9] com.example.farmer.FarmerController - GET /api/v1/farmers?page=25 200 in 135ms
+2026-09-21 18:46:25.833 WARN  [farmer-service,5ea516e09b661442,26cdca20] [farmer-sync-6] com.example.farmer.FarmerController - Request from 192.0.2.127 missing X-Request-Id header, generated one
+2026-09-21 18:48:19.458 INFO  [farmer-service,8a0fc0aed242730e,a41d0883] [http-nio-8080-exec-3] com.example.farmer.FarmerController - GET /api/v1/farmers?page=28 200 in 103ms
+2026-09-21 18:48:51.474 WARN  [farmer-service,2c89cd53e2f2d17b,aebd46f8] [http-nio-8080-exec-4] com.example.farmer.FarmerController - Request from 192.0.2.223 missing X-Request-Id header, generated one
+2026-09-21 18:49:07.148 WARN  [farmer-service,37793475451db4cd,db33b43b] [http-nio-8080-exec-5] com.example.farmer.FarmerController - Request from 192.0.2.14 missing X-Request-Id header, generated one
+2026-09-21 18:49:44.076 WARN  [farmer-service,37324d45e1eae8f5,16556796] [farmer-sync-2] com.example.farmer.FarmerController - Request from 192.0.2.197 missing X-Request-Id header, generated one
+2026-09-21 18:50:42.431 INFO  [farmer-service,e374e8430532d3a1,67790b9e] [farmer-sync-7] com.example.farmer.FarmerSyncScheduler - Sync batch 8319 queued, 253 pending records
+2026-09-21 18:51:40.960 INFO  [farmer-service,45c8196a639ca3a2,52b7e98d] [farmer-sync-1] com.example.farmer.FarmerSyncScheduler - Sync batch 8595 queued, 258 pending records
+2026-09-21 18:53:12.033 DEBUG [farmer-service,037adabef6fa5c23,e700a365] [farmer-sync-8] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 14
+2026-09-21 18:53:48.217 WARN  [farmer-service,c0ede36d82295dc9,3fd42dc6] [farmer-sync-8] com.example.farmer.FarmerController - Request from 192.0.2.156 missing X-Request-Id header, generated one
+2026-09-21 18:54:39.588 DEBUG [farmer-service,604f69a8569c07e6,ec23f758] [http-nio-8080-exec-8] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 38
+2026-09-21 18:54:50.243 INFO  [farmer-service,e2d3ca57f27b0864,b2fb61de] [http-nio-8080-exec-7] com.example.farmer.FarmerController - GET /api/v1/farmers?page=2 200 in 73ms
+2026-09-21 18:55:18.543 WARN  [farmer-service,f7f5320913e5d3ba,e54bc3a9] [http-nio-8080-exec-3] com.example.farmer.FarmerController - Request from 192.0.2.232 missing X-Request-Id header, generated one
+2026-09-21 18:55:27.842 WARN  [farmer-service,d5adb2c494e9f015,3d12cd1e] [http-nio-8080-exec-5] com.example.farmer.FarmerProfileService - Concurrent update on farmer 8858, retry 1 of 3
+com.example.farmer.FarmerProfileService$OptimisticLockException: Row was updated by another transaction (farmer id=1581)
+	at com.example.farmer.FarmerProfileService.rename(FarmerProfileService.java:27)
+	at com.example.farmer.FarmerController.rename(FarmerController.java:96)
+2026-09-21 18:57:42.223 INFO  [farmer-service,ac200ee425e93be2,f0e33eb1] [farmer-sync-9] com.example.farmer.FarmerSyncScheduler - Sync batch 8744 queued, 357 pending records
+2026-09-21 18:59:19.505 INFO  [farmer-service,cbd5c7e48d72f132,bcea6815] [farmer-sync-6] com.example.farmer.CardRenderJob - Rendered 38 cards in 895ms
+2026-09-21 19:00:19.317 INFO  [farmer-service,3d9b8641d58771d5,6e6ebeae] [farmer-sync-8] com.example.farmer.CardRenderJob - Rendered 39 cards in 2373ms
+2026-09-21 19:01:58.647 INFO  [farmer-service,9fd61231e5c9755d,328b7ec9] [http-nio-8080-exec-3] com.example.farmer.FarmerSyncScheduler - Sync batch 8600 queued, 265 pending records
+2026-09-21 19:02:41.955 INFO  [farmer-service,112a433df1af3dfe,e3c5ea3f] [farmer-sync-8] com.example.farmer.CardRenderJob - Rendered 19 cards in 1562ms
+2026-09-21 19:03:06.062 WARN  [farmer-service,fa09b7e1528d63ee,74cb805e] [http-nio-8080-exec-1] com.example.farmer.FarmerController - Request from 192.0.2.97 missing X-Request-Id header, generated one
+2026-09-21 19:06:05.286 INFO  [farmer-service,f2f0aa1861adb1ca,ef043cbf] [http-nio-8080-exec-6] com.example.farmer.FarmerSyncScheduler - Sync batch 8949 queued, 129 pending records
+2026-09-21 19:07:06.111 WARN  [farmer-service,a8d363bf50be07ea,b9a6a10e] [farmer-sync-5] com.example.farmer.FarmerController - Request from 192.0.2.181 missing X-Request-Id header, generated one
+2026-09-21 19:07:31.654 INFO  [farmer-service,1b7c037dcd90afe0,593e80a7] [farmer-sync-2] com.example.farmer.FarmerController - GET /api/v1/farmers?page=17 200 in 40ms
+2026-09-21 19:07:37.304 INFO  [farmer-service,3b7e5912905c091e,a4b150a6] [farmer-sync-1] com.example.farmer.FarmerSyncScheduler - Sync batch 8050 queued, 206 pending records
+2026-09-21 19:10:26.073 INFO  [farmer-service,865a02910aadd71a,6cf41ec4] [farmer-sync-1] com.example.common.AuditPublisher - Published 28 audit events to nightshift.audit
+2026-09-21 19:10:44.854 INFO  [farmer-service,80b4ec28a755bb4e,a9fa62e1] [http-nio-8080-exec-6] com.example.common.AuditPublisher - Published 26 audit events to nightshift.audit
+2026-09-21 19:10:52.494 INFO  [farmer-service,2a99c8a3f59c875a,4b42e9b4] [farmer-sync-6] com.example.farmer.FarmerSyncScheduler - Sync batch 8795 queued, 175 pending records
+2026-09-21 19:11:17.111 WARN  [farmer-service,06ba70695403e9c6,c2cfdb63] [http-nio-8080-exec-3] com.example.farmer.FarmerController - Request from 192.0.2.18 missing X-Request-Id header, generated one
+2026-09-21 19:16:17.063 WARN  [farmer-service,d6bd4ff6cf5c8fc4,b88c1841] [farmer-sync-7] com.example.farmer.FarmerController - Request from 192.0.2.162 missing X-Request-Id header, generated one
+2026-09-21 19:16:48.585 WARN  [farmer-service,b77784a3bb025cf9,b0fbd10c] [http-nio-8080-exec-9] com.example.farmer.FarmerController - Request from 192.0.2.98 missing X-Request-Id header, generated one
+2026-09-21 19:17:45.558 INFO  [farmer-service,045312ae04a11303,a57208e9] [http-nio-8080-exec-6] com.example.common.AuditPublisher - Published 11 audit events to nightshift.audit
+2026-09-21 19:18:56.838 INFO  [farmer-service,ecc7145fd9da424c,13aece3f] [farmer-sync-5] com.example.farmer.CardRenderJob - Rendered 9 cards in 654ms
+2026-09-21 19:19:27.609 INFO  [farmer-service,75888c9c20284bc0,793dd549] [farmer-sync-3] com.example.common.AuditPublisher - Published 30 audit events to nightshift.audit
+2026-09-21 19:20:36.530 INFO  [farmer-service,60dabf4625283a21,e5e5ef93] [http-nio-8080-exec-6] com.example.farmer.FarmerController - GET /api/v1/farmers?page=20 200 in 135ms
+2026-09-21 19:22:07.784 INFO  [farmer-service,22936f2c44f7168d,8fc36d8a] [farmer-sync-6] com.example.common.AuditPublisher - Published 18 audit events to nightshift.audit
+2026-09-21 19:25:59.637 WARN  [farmer-service,c5d0ee3a79e2c04c,29fa79f7] [http-nio-8080-exec-8] com.example.farmer.FarmerController - Request from 192.0.2.43 missing X-Request-Id header, generated one
+2026-09-21 19:26:29.300 INFO  [farmer-service,1c1eb3f7ca02732f,de462bfc] [farmer-sync-3] com.example.farmer.FarmerSyncScheduler - Sync batch 8789 queued, 130 pending records
+2026-09-21 19:26:55.098 INFO  [farmer-service,8650f277b3661cdd,9fa21ade] [http-nio-8080-exec-7] com.example.farmer.FarmerSyncScheduler - Sync batch 8262 queued, 63 pending records
+2026-09-21 19:27:57.511 INFO  [farmer-service,f972f9a4349d1720,237762fa] [http-nio-8080-exec-9] com.example.common.AuditPublisher - Published 25 audit events to nightshift.audit
+2026-09-21 19:28:37.654 DEBUG [farmer-service,92a8aeea6724dbdb,8deeed12] [http-nio-8080-exec-3] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 12
+2026-09-21 19:29:17.058 INFO  [farmer-service,46d1d69efbc829c5,99154fe2] [http-nio-8080-exec-5] com.example.farmer.FarmerSyncScheduler - Sync batch 8663 queued, 311 pending records
+2026-09-21 19:29:37.039 INFO  [farmer-service,125d7748bf76eee5,f0cd10b1] [farmer-sync-1] com.example.farmer.CardRenderJob - Rendered 29 cards in 2311ms
+2026-09-21 19:30:06.250 WARN  [farmer-service,a8d5d1f125b1ddba,1989048b] [http-nio-8080-exec-7] com.example.farmer.FarmerController - Request from 192.0.2.139 missing X-Request-Id header, generated one
+2026-09-21 19:30:07.313 INFO  [farmer-service,16b7989057121a56,dffcae64] [http-nio-8080-exec-5] com.example.farmer.FarmerSyncScheduler - Sync batch 8253 queued, 173 pending records
+2026-09-21 19:31:37.089 INFO  [farmer-service,cdeb7f88ab292883,65bc8b17] [farmer-sync-6] com.example.common.AuditPublisher - Published 24 audit events to nightshift.audit
+2026-09-21 19:32:34.982 DEBUG [farmer-service,9a6a591f1c7b1c63,54ebcbab] [farmer-sync-2] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 43
+2026-09-21 19:33:24.741 INFO  [farmer-service,d52ffcac91c6864c,521f45e9] [http-nio-8080-exec-1] com.example.farmer.CardRenderJob - Rendered 45 cards in 2045ms
+2026-09-21 19:34:23.217 INFO  [farmer-service,fbdf027320f04bce,f70471a6] [farmer-sync-6] com.example.common.AuditPublisher - Published 27 audit events to nightshift.audit
+2026-09-21 19:35:11.408 INFO  [farmer-service,513337af64f7800a,fb373d73] [http-nio-8080-exec-2] com.example.farmer.CardRenderJob - Rendered 56 cards in 1627ms
+2026-09-21 19:36:35.453 INFO  [farmer-service,03ce22e63b3f532c,f55e399e] [http-nio-8080-exec-4] com.example.farmer.CardRenderJob - Rendered 36 cards in 465ms
+2026-09-21 19:39:11.688 WARN  [farmer-service,c5f04c81a9a4c783,de1a48fa] [http-nio-8080-exec-2] com.example.farmer.FarmerController - Request from 192.0.2.200 missing X-Request-Id header, generated one
+2026-09-21 19:39:47.537 WARN  [farmer-service,ea1214c8158ccd40,e74a537b] [farmer-sync-1] com.example.farmer.FarmerController - Request from 192.0.2.201 missing X-Request-Id header, generated one
+2026-09-21 19:39:57.344 WARN  [farmer-service,3dd23fc23e5e6d3d,7e61d9bb] [farmer-sync-3] com.example.farmer.FarmerController - Request from 192.0.2.189 missing X-Request-Id header, generated one
+2026-09-21 19:40:00.080 INFO  [farmer-service,971e0f6d80aacb02,1081729f] [farmer-sync-7] com.example.farmer.FarmerSyncScheduler - Sync batch 8511 queued, 84 pending records
+2026-09-21 19:40:27.300 INFO  [farmer-service,1e4748ae9d425ed4,cd9d0a7b] [farmer-sync-8] com.example.common.AuditPublisher - Published 10 audit events to nightshift.audit
+2026-09-21 19:40:47.655 INFO  [farmer-service,18516b0decb6ba69,54e621d5] [farmer-sync-9] com.example.farmer.CardRenderJob - Rendered 50 cards in 2128ms
+2026-09-21 19:41:09.325 WARN  [farmer-service,ee037dfecd4d707f,24357153] [farmer-sync-5] com.example.farmer.FarmerController - Request from 192.0.2.178 missing X-Request-Id header, generated one
+2026-09-21 19:42:32.261 INFO  [farmer-service,06ecb6b041b1c328,c70ebda4] [http-nio-8080-exec-7] com.example.farmer.CardRenderJob - Rendered 79 cards in 621ms
+2026-09-21 19:43:11.773 INFO  [farmer-service,7098c951f4522acb,a9f89a99] [farmer-sync-7] com.example.farmer.FarmerSyncScheduler - Sync batch 8093 queued, 167 pending records
+2026-09-21 19:43:31.595 ERROR [farmer-service,e99ec3f997fa04d1,4e4532a8] [farmer-sync-3] com.example.farmer.FarmerSyncService - Sync failed for batch 8145: could not acquire a database connection
+java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30001ms (total=10, active=10, idle=0, waiting=7)
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181)
+	at com.example.farmer.FarmerSyncService.pushPending(FarmerSyncService.java:36)
+	at com.example.farmer.FarmerSyncScheduler.run(FarmerSyncScheduler.java:58)
+2026-09-21 19:44:27.784 INFO  [farmer-service,93f631bada640a8f,58973e38] [http-nio-8080-exec-9] com.example.farmer.FarmerController - GET /api/v1/farmers?page=15 200 in 44ms
+2026-09-21 19:44:36.329 WARN  [farmer-service,e7c22d19a7739db3,6363e3c8] [http-nio-8080-exec-5] com.example.farmer.FarmerController - Request from 192.0.2.214 missing X-Request-Id header, generated one
+2026-09-21 19:45:05.149 INFO  [farmer-service,b87695bbc7b119db,028399e7] [farmer-sync-1] com.example.farmer.CardRenderJob - Rendered 15 cards in 999ms
+2026-09-21 19:45:58.627 INFO  [farmer-service,5e0d1c890d26f8f2,9ca23a50] [farmer-sync-6] com.example.common.AuditPublisher - Published 30 audit events to nightshift.audit
+2026-09-21 19:46:25.374 INFO  [farmer-service,2646eae50bcd2f4c,277db1b7] [farmer-sync-4] com.example.common.AuditPublisher - Published 6 audit events to nightshift.audit
+2026-09-21 19:46:45.819 INFO  [farmer-service,baaab4ed5e4ccf96,74f3db89] [http-nio-8080-exec-4] com.example.common.AuditPublisher - Published 25 audit events to nightshift.audit
+2026-09-21 19:46:49.378 INFO  [farmer-service,67904116a700a1d6,342234f1] [http-nio-8080-exec-5] com.example.farmer.FarmerController - GET /api/v1/farmers?page=30 200 in 66ms
+2026-09-21 19:47:18.331 INFO  [farmer-service,57bf78e0051177d9,61962be6] [farmer-sync-7] com.example.farmer.FarmerSyncScheduler - Sync batch 8925 queued, 89 pending records
+2026-09-21 19:48:20.942 INFO  [farmer-service,af12ec6453b61afb,93c276a5] [http-nio-8080-exec-6] com.example.farmer.CardRenderJob - Rendered 27 cards in 533ms
+2026-09-21 19:48:33.111 INFO  [farmer-service,66d904b299a88618,27bdb1b7] [http-nio-8080-exec-6] com.example.farmer.CardRenderJob - Rendered 72 cards in 1037ms
+2026-09-21 19:48:36.323 INFO  [farmer-service,aa765b985dc3b2b6,3108030c] [http-nio-8080-exec-7] com.example.farmer.FarmerController - GET /api/v1/farmers?page=25 200 in 79ms
+2026-09-21 19:48:46.313 INFO  [farmer-service,e91a875dd32f3714,b610bd78] [http-nio-8080-exec-6] com.example.common.AuditPublisher - Published 20 audit events to nightshift.audit
+2026-09-21 19:50:21.903 DEBUG [farmer-service,40b8a1ad3c9ac6bc,c0297193] [farmer-sync-6] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 62
+2026-09-21 19:52:24.320 INFO  [farmer-service,bff0191ae3e15ab5,37ee9ea5] [farmer-sync-4] com.example.farmer.CardRenderJob - Rendered 86 cards in 1165ms
+2026-09-21 19:52:51.384 INFO  [farmer-service,7bf6a66d9a423de2,8244a548] [http-nio-8080-exec-9] com.example.common.AuditPublisher - Published 7 audit events to nightshift.audit
+2026-09-21 19:53:02.348 WARN  [farmer-service,9089267bce54f388,4497ca28] [http-nio-8080-exec-6] com.example.farmer.FarmerController - Request from 192.0.2.253 missing X-Request-Id header, generated one
+2026-09-21 19:53:07.092 DEBUG [farmer-service,b3678b6220f7027c,8f552af8] [http-nio-8080-exec-7] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 16
+2026-09-21 19:53:40.806 WARN  [farmer-service,8ed9e67b74899c54,14297de2] [http-nio-8080-exec-1] com.example.farmer.FarmerController - Request from 192.0.2.230 missing X-Request-Id header, generated one
+2026-09-21 19:53:54.116 INFO  [farmer-service,255d9bfee4d1587d,8cfea510] [http-nio-8080-exec-3] com.example.farmer.FarmerController - GET /api/v1/farmers?page=27 200 in 11ms
+2026-09-21 19:54:54.908 INFO  [farmer-service,71bef4ddcef52b7a,db792fc9] [farmer-sync-9] com.example.farmer.CardRenderJob - Rendered 85 cards in 1203ms
+2026-09-21 19:55:05.894 WARN  [farmer-service,18776cc64124815e,272bfe3a] [farmer-sync-7] com.example.farmer.FarmerController - Request from 192.0.2.4 missing X-Request-Id header, generated one
+2026-09-21 19:55:35.369 DEBUG [farmer-service,0d14ad545e31d255,dd901579] [http-nio-8080-exec-3] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 61
+2026-09-21 19:56:10.090 INFO  [farmer-service,1887f17e51260563,259eb10f] [farmer-sync-9] com.example.common.AuditPublisher - Published 6 audit events to nightshift.audit
+2026-09-21 19:58:00.367 INFO  [farmer-service,d07249d6a5661ef3,73330b93] [http-nio-8080-exec-4] com.example.farmer.FarmerSyncScheduler - Sync batch 8238 queued, 316 pending records
+2026-09-21 19:58:14.327 ERROR [farmer-service,185fe966a804603f,160d75ac] [farmer-sync-8] com.example.farmer.FarmerSyncService - Sync failed for batch 8553: could not acquire a database connection
+java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30001ms (total=10, active=10, idle=0, waiting=7)
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181)
+	at com.example.farmer.FarmerSyncService.pushPending(FarmerSyncService.java:36)
+	at com.example.farmer.FarmerSyncScheduler.run(FarmerSyncScheduler.java:58)
+2026-09-21 19:58:52.275 WARN  [farmer-service,ad1177cd25e8255d,cffde420] [farmer-sync-8] com.example.farmer.FarmerController - Request from 192.0.2.73 missing X-Request-Id header, generated one
+2026-09-21 19:59:27.701 INFO  [farmer-service,e58d4c2cd7f23e77,e5d5a9fe] [http-nio-8080-exec-9] com.example.farmer.CardRenderJob - Rendered 59 cards in 1752ms
+2026-09-21 19:59:46.804 INFO  [farmer-service,ab81e4cca7fd835f,e185ea35] [http-nio-8080-exec-5] com.example.farmer.FarmerSyncScheduler - Sync batch 8297 queued, 308 pending records
+2026-09-21 19:59:55.056 DEBUG [farmer-service,89d1f2e40b945e70,a7e139f4] [farmer-sync-4] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 47
+2026-09-21 20:08:53.085 INFO  [farmer-service,b16adbd467106f91,274f0419] [farmer-sync-3] com.example.farmer.FarmerController - GET /api/v1/farmers?page=23 200 in 76ms
+2026-09-21 20:20:44.442 WARN  [farmer-service,3949322bc67379f3,0cb51eb5] [farmer-sync-3] com.example.farmer.FarmerController - Request from 192.0.2.149 missing X-Request-Id header, generated one
+2026-09-21 20:23:59.826 INFO  [farmer-service,94f0dca4cd4c9962,baf1d426] [http-nio-8080-exec-7] com.example.farmer.FarmerSyncScheduler - Sync batch 8150 queued, 384 pending records
+2026-09-21 20:33:41.366 WARN  [farmer-service,a14dcd61dbe3191d,3e72d51e] [farmer-sync-8] com.example.farmer.FarmerProfileService - Concurrent update on farmer 2345, retry 2 of 3
+com.example.farmer.FarmerProfileService$OptimisticLockException: Row was updated by another transaction (farmer id=4349)
+	at com.example.farmer.FarmerProfileService.rename(FarmerProfileService.java:27)
+	at com.example.farmer.FarmerController.rename(FarmerController.java:96)
+2026-09-21 20:34:17.543 WARN  [farmer-service,8f370dfcedbf0137,9b28d6a2] [http-nio-8080-exec-3] com.example.farmer.FarmerController - Request from 192.0.2.208 missing X-Request-Id header, generated one
+2026-09-21 20:34:24.507 INFO  [farmer-service,91a15128360d51aa,aedd6b55] [http-nio-8080-exec-8] com.example.farmer.FarmerSyncScheduler - Sync batch 8067 queued, 72 pending records
+2026-09-21 20:38:47.459 WARN  [farmer-service,109233171f6dd843,7160c756] [http-nio-8080-exec-4] com.example.farmer.FarmerController - Request from 192.0.2.163 missing X-Request-Id header, generated one
+2026-09-21 21:02:24.697 INFO  [farmer-service,f35bebe8a8943eec,4ddb4ea3] [farmer-sync-5] com.example.common.AuditPublisher - Published 17 audit events to nightshift.audit
+2026-09-21 21:03:32.708 INFO  [farmer-service,75a928c39ac0d0cc,adcac7ce] [http-nio-8080-exec-8] com.example.farmer.FarmerController - GET /api/v1/farmers?page=13 200 in 23ms
+2026-09-21 21:14:17.901 DEBUG [farmer-service,182363398cb956df,992d5352] [http-nio-8080-exec-8] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 44
+2026-09-21 21:15:43.811 INFO  [farmer-service,9a3a8a1859e2c789,be5251ee] [http-nio-8080-exec-1] com.example.farmer.FarmerSyncScheduler - Sync batch 8860 queued, 325 pending records
+2026-09-21 21:22:20.560 ERROR [farmer-service,d237c452f010a4bf,5b205940] [farmer-sync-1] com.example.farmer.CardRenderJob - Failed to render card label for farmer 18181
+java.lang.NullPointerException: Cannot invoke "String.charAt(int)" because "middleName" is null
+	at com.example.common.NameFormatter.initials(NameFormatter.java:22)
+	at com.example.farmer.FarmerSyncService.cardLabel(FarmerSyncService.java:53)
+	at com.example.farmer.CardRenderJob.render(CardRenderJob.java:74)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-09-21 21:45:15.965 DEBUG [farmer-service,562e885b7dc496e7,38514b6d] [http-nio-8080-exec-1] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 5
+2026-09-21 22:00:31.243 INFO  [farmer-service,649ea27e5bb24818,50fa00a9] [http-nio-8080-exec-8] com.example.farmer.CardRenderJob - Rendered 52 cards in 1057ms
+2026-09-21 22:06:16.871 INFO  [farmer-service,26322cd3981a3c42,ed5fb3c8] [http-nio-8080-exec-8] com.example.farmer.FarmerController - GET /api/v1/farmers?page=8 200 in 19ms
+2026-09-21 22:06:27.359 INFO  [farmer-service,9907e40092d730df,92229fb8] [farmer-sync-2] com.example.common.AuditPublisher - Published 5 audit events to nightshift.audit
+2026-09-21 22:07:36.925 INFO  [farmer-service,fc244a9a1976906b,1358dbac] [farmer-sync-7] com.example.common.AuditPublisher - Published 4 audit events to nightshift.audit
+2026-09-21 22:11:28.336 INFO  [farmer-service,9e840633ea1657dd,22c6f736] [farmer-sync-2] com.example.farmer.FarmerSyncScheduler - Sync batch 8033 queued, 188 pending records
+2026-09-21 22:19:23.850 INFO  [farmer-service,d0d2b83e30a2630e,77c8e25a] [farmer-sync-8] com.example.farmer.FarmerController - GET /api/v1/farmers?page=5 200 in 138ms
+2026-09-21 22:29:28.693 ERROR [farmer-service,b241bc32e9b49846,274e4750] [farmer-sync-8] com.example.farmer.FarmerSyncService - Sync failed for batch 8813: could not acquire a database connection
+java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30001ms (total=10, active=10, idle=0, waiting=7)
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181)
+	at com.example.farmer.FarmerSyncService.pushPending(FarmerSyncService.java:36)
+	at com.example.farmer.FarmerSyncScheduler.run(FarmerSyncScheduler.java:58)
+2026-09-21 22:50:00.935 INFO  [farmer-service,40f173abbb13a7f6,15c43acd] [http-nio-8080-exec-6] com.example.farmer.CardRenderJob - Rendered 12 cards in 2013ms
+2026-09-21 22:51:24.044 DEBUG [farmer-service,701376e9e4dfbcee,38689d81] [farmer-sync-3] com.example.farmer.FarmerRepository - select f.* from farmer f where f.region_id = 5
+2026-09-21 22:59:54.635 WARN  [farmer-service,3898cf50b07b41a3,4a164430] [farmer-sync-9] com.example.farmer.FarmerController - Request from 192.0.2.213 missing X-Request-Id header, generated one
+2026-09-21 23:29:03.540 INFO  [farmer-service,2b3e98cea54505fb,bd1c1c25] [farmer-sync-8] com.example.farmer.FarmerController - GET /api/v1/farmers?page=12 200 in 69ms
+2026-09-21 23:48:47.657 INFO  [farmer-service,cae6e918e6757d7a,6db16ed5] [http-nio-8080-exec-2] com.example.common.AuditPublisher - Published 16 audit events to nightshift.audit
+2026-09-21 23:50:01.700 WARN  [farmer-service,b93d7972c5287a95,ce33009d] [farmer-sync-9] com.example.farmer.FarmerProfileService - Concurrent update on farmer 2029, retry 1 of 3
+com.example.farmer.FarmerProfileService$OptimisticLockException: Row was updated by another transaction (farmer id=9953)
+	at com.example.farmer.FarmerProfileService.rename(FarmerProfileService.java:27)
+	at com.example.farmer.FarmerController.rename(FarmerController.java:96)

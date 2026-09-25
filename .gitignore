@@ -1,0 +1,46 @@
+# Build output
+build/
+out/
+bin/
+.gradle/
+!gradle/wrapper/gradle-wrapper.jar
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+
+# Local config and secrets — never commit a real key
+.env
+.env.local
+*.pem
+*.p12
+
+# Internal working documents, kept out of the public submission repo.
+# PROMPT.md is the build brief for Bob IDE and docs/ is the working documentation;
+# both are local-only by choice. Anything a judge or a reader needs is in README.md.
+PROMPT.md
+docs/
+bob_sessions/README.md
+
+# Runtime scratch: cloned target repos, applied patches
+workspace/
+
+# Logs produced by running Nightshift itself. demo/logs/ IS committed on purpose
+# (it is the demo dataset) and is re-included below.
+#
+# The leading slash is load-bearing: a bare `logs/` matches a directory named
+# `logs` at ANY depth, so it excludes demo/logs/ as a whole directory — and git
+# never descends into an excluded directory, which makes the !demo/logs/**
+# negation below unreachable. Anchoring it to the repo root is what keeps the
+# demo dataset committable.
+/logs/
+*.log
+!demo/logs/**
+
+# OS
+.DS_Store
+Thumbs.db

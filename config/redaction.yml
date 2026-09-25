@@ -1,0 +1,42 @@
+# Applied to every log excerpt before it enters a prompt, a PR body, an email, or
+# an agent_step row. Order matters: the broadest patterns run last.
+#
+# This is a guard, not a guarantee. The real protection is that Nightshift only
+# ever reads logs it was pointed at, and the demo dataset is synthetic.
+
+patterns:
+  - name: bearer-token
+    regex: '(?i)(bearer\s+)[A-Za-z0-9._\-]{16,}'
+    replacement: '$1[REDACTED]'
+
+  - name: jdbc-password
+    regex: '(?i)(password=)[^&\s,;"]+'
+    replacement: '$1[REDACTED]'
+
+  - name: api-key
+    regex: '(?i)(api[_-]?key["'"'"']?\s*[:=]\s*["'"'"']?)[A-Za-z0-9._\-]{12,}'
+    replacement: '$1[REDACTED]'
+
+  - name: provider-key-prefix
+    regex: '(sk-|ghp_|github_pat_|AIza)[A-Za-z0-9._\-]{10,}'
+    replacement: '[REDACTED_KEY]'
+
+  - name: email
+    regex: '[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}'
+    replacement: '[REDACTED_EMAIL]'
+
+  - name: authorization-header
+    regex: '(?i)(authorization:\s*)\S+'
+    replacement: '$1[REDACTED]'
+
+  # Long digit runs: card numbers, national ids, account numbers. Deliberately
+  # blunt — a false positive costs a reader nothing, a false negative leaks.
+  - name: long-digit-run
+    regex: '\b\d{10,}\b'
+    replacement: '[REDACTED_NUMBER]'
+
+# Anything matching these is dropped from the excerpt entirely rather than masked,
+# because the surrounding text is not worth the risk.
+drop_lines_matching:
+  - '(?i)private[_-]?key'
+  - '(?i)BEGIN (RSA|OPENSSH|PRIVATE) KEY'

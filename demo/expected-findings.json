@@ -1,0 +1,186 @@
+{
+  "$comment": [
+    "Ground truth for the demo dataset. The evaluation harness scores a",
+    "pipeline run against this file and prints precision / recall / F1.",
+    "",
+    "Scoring rules:",
+    "  true positive  - an incident matching `match` with severity within `severity_tolerance`",
+    "  false negative - an expected finding with no matching incident",
+    "  false positive - a reported incident matching nothing here, OR a pull request opened",
+    "                   for a finding whose `should_open_pr` is false",
+    "",
+    "The last rule is the one that matters. A tool that opens 8 pull requests for 8 log",
+    "patterns scores worse than one that opens 5, because two of these must be recognised as",
+    "not worth a human's time and two must be recognised as the same problem."
+  ],
+
+  "dataset": {
+    "generator": "demo/generate-logs.mjs",
+    "seed": "fixed (mulberry32, 0x9e3779b9)",
+    "window": "2026-09-18 .. 2026-09-24",
+    "services": ["farmer-service", "payment-service", "sync-service"],
+    "files": 21,
+    "total_lines": 23070,
+    "target_repo": "demo/target-repo"
+  },
+
+  "expected_totals": {
+    "distinct_incidents": 7,
+    "pull_requests": 5,
+    "$why": "8 seeded defects, minus 1 because #2 and #8 are the same fault reached from two services. Of the 7 incidents, #6 is already correctly handled and #7 is a deprecation notice, so neither earns a PR."
+  },
+
+  "findings": [
+    {
+      "defect": 1,
+      "title": "Database connection leaked on the exception path",
+      "match": {
+        "exception_type": "java.sql.SQLTransientConnectionException",
+        "top_frame": "com.example.farmer.FarmerSyncService.pushPending"
+      },
+      "expected_severity": "CRITICAL",
+      "severity_tolerance": ["BLOCKER", "CRITICAL"],
+      "expected_category": "RESOURCE_LEAK",
+      "occurrences": 365,
+      "trend": "rising",
+      "code_location": {
+        "file": "src/main/java/com/example/farmer/FarmerSyncService.java",
+        "marker": "NS_FRAME_POOL"
+      },
+      "should_open_pr": true,
+      "expected_fix": "Borrow the connection inside try-with-resources so it is returned on the exception path.",
+      "must_mention_in_future_impact": ["pool", "exhaust"],
+      "$why_this_case": "The severity comes from the trend, not the log level. A pipeline that ranks by level alone will rate the flat NPE above this, and get the priority order wrong."
+    },
+    {
+      "defect": 2,
+      "title": "NullPointerException on an optional middle name",
+      "match": {
+        "exception_type": "java.lang.NullPointerException",
+        "top_frame": "com.example.common.NameFormatter.initials"
+      },
+      "expected_severity": "MAJOR",
+      "severity_tolerance": ["CRITICAL", "MAJOR"],
+      "expected_category": "NULL_DEREFERENCE",
+      "occurrences": 92,
+      "folds_defects": [2, 8],
+      "code_location": {
+        "file": "src/main/java/com/example/common/NameFormatter.java",
+        "marker": "NS_FRAME"
+      },
+      "should_open_pr": true,
+      "expected_fix": "Treat middleName as optional: skip it when null or blank rather than dereferencing it.",
+      "$why_this_case": "The happy path, and the deduplication test. Reported as two incidents, this is a false positive."
+    },
+    {
+      "defect": 3,
+      "title": "N+1 query in the daily dealer report",
+      "match": {
+        "exception_type": null,
+        "logger_name": "com.example.sync.InventoryReportService",
+        "message_contains": "Slow report build"
+      },
+      "expected_severity": "MAJOR",
+      "severity_tolerance": ["MAJOR", "MINOR"],
+      "expected_category": "PERFORMANCE",
+      "occurrences": 214,
+      "code_location": {
+        "file": "src/main/java/com/example/sync/InventoryReportService.java",
+        "marker": "NS_FRAME_NPLUSONE"
+      },
+      "should_open_pr": true,
+      "expected_fix": "Replace the per-dealer query with one batched lookup outside the loop.",
+      "$why_this_case": "WARN only, and it never throws, so there is no stack trace to resolve. `grep ERROR` misses it entirely and the locator has to fall back to the logger name."
+    },
+    {
+      "defect": 4,
+      "title": "Unbounded retry against a rate-limited upstream",
+      "match": {
+        "exception_type": null,
+        "logger_name": "com.example.payment.PaymentRetryClient",
+        "message_contains": "rate limited"
+      },
+      "expected_severity": "CRITICAL",
+      "severity_tolerance": ["CRITICAL", "MAJOR"],
+      "expected_category": "RETRY_STORM",
+      "occurrences": 327,
+      "trend": "bursty",
+      "code_location": {
+        "file": "src/main/java/com/example/payment/PaymentRetryClient.java",
+        "marker": "NS_FRAME_RETRY"
+      },
+      "should_open_pr": true,
+      "expected_fix": "Bound the attempts, add exponential backoff with jitter, honour Retry-After.",
+      "$why_this_case": "The fix is a policy, not a line. An agent that adds a Thread.sleep and calls it done should be caught by the verifier."
+    },
+    {
+      "defect": 5,
+      "title": "Malformed Kafka events dropped with no dead-letter path",
+      "match": {
+        "exception_type": "com.example.sync.ShipmentEventConsumer$DeserializationException",
+        "top_frame": "com.example.sync.ShipmentEventConsumer.onMessage"
+      },
+      "expected_severity": "MAJOR",
+      "severity_tolerance": ["CRITICAL", "MAJOR"],
+      "expected_category": "DATA_LOSS",
+      "occurrences": 49,
+      "code_location": {
+        "file": "src/main/java/com/example/sync/ShipmentEventConsumer.java",
+        "marker": "NS_FRAME_DESER"
+      },
+      "should_open_pr": true,
+      "expected_fix": "Route the failed payload to a dead-letter topic and increment a counter instead of returning.",
+      "$why_this_case": "Severity has to come from what the code does with the failure, not from the log level. 49 WARNs, 49 lost messages."
+    },
+    {
+      "defect": 6,
+      "title": "OptimisticLockException on concurrent profile update",
+      "match": {
+        "exception_type": "com.example.farmer.FarmerProfileService$OptimisticLockException",
+        "top_frame": "com.example.farmer.FarmerProfileService.rename"
+      },
+      "expected_severity": "MINOR",
+      "severity_tolerance": ["MINOR", "TRIVIAL"],
+      "expected_category": "CONCURRENCY",
+      "occurrences": 117,
+      "code_location": {
+        "file": "src/main/java/com/example/farmer/FarmerProfileService.java",
+        "marker": "NS_FRAME_OPTLOCK"
+      },
+      "should_open_pr": false,
+      "expected_verdict": "already_handled",
+      "must_mention_in_rationale": ["retr"],
+      "$why_this_case": "Looks alarming, is working as designed: the caller already retries with a bounded attempt count. Opening a PR here is review noise, and noise is the cost that kills adoption."
+    },
+    {
+      "defect": 7,
+      "title": "Deprecated configuration property",
+      "match": {
+        "exception_type": null,
+        "logger_name": "org.springframework.boot.context.config.ConfigDataEnvironment",
+        "message_contains": "deprecated"
+      },
+      "expected_severity": "TRIVIAL",
+      "severity_tolerance": ["TRIVIAL", "MINOR"],
+      "expected_category": "MAINTENANCE",
+      "occurrences": 63,
+      "code_location": null,
+      "should_open_pr": false,
+      "expected_verdict": "framework_noise",
+      "$why_this_case": "63 occurrences and a third-party logger. High frequency must not be sufficient on its own, or the pipeline drowns the reviewer in deprecation PRs."
+    }
+  ],
+
+  "baseline_comparison": {
+    "$comment": "Run the same corpus through a single prompt with no tools and no code access, and record it here. The gap is the argument for the tool-grounded pipeline.",
+    "prompt_only": {
+      "expected_weaknesses": [
+        "invents file paths and line numbers that do not exist in the repo",
+        "reports #2 and #8 as two separate problems",
+        "opens a pull request for #7 because it occurs 63 times",
+        "cannot tell #6 is already handled without reading FarmerProfileService",
+        "misses #3 entirely when the input is filtered to ERROR"
+      ]
+    }
+  }
+}

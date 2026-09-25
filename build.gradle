@@ -1,0 +1,153 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.4.3'
+	id 'io.spring.dependency-management' version '1.1.7'
+	id 'jacoco'
+}
+
+group = 'io.nightshift'
+version = '0.1.0'	// x-release-please-version
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
+
+ext {
+	mapstructVersion = '1.6.3'
+	lombokMapstructBindingVersion = '0.2.0'
+	flywayVersion = '10.22.0'
+	springdocVersion = '2.8.4'
+	testcontainersBomVersion = '1.20.4'
+	jgitVersion = '7.1.0.202411261347-r'
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "org.testcontainers:testcontainers-bom:${testcontainersBomVersion}"
+	}
+}
+
+dependencies {
+	// ── Spring Boot starters ──────────────────────────────────────────────────
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.boot:spring-boot-starter-mail'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'io.micrometer:micrometer-registry-prometheus'
+
+	// Outbox relay transport. Kafka is optional at runtime: see
+	// `nightshift.messaging.transport` (local | kafka) in application.yaml.
+	implementation 'org.springframework.kafka:spring-kafka'
+
+	// ── Database ──────────────────────────────────────────────────────────────
+	runtimeOnly 'org.postgresql:postgresql'
+	implementation "org.flywaydb:flyway-core:${flywayVersion}"
+	implementation "org.flywaydb:flyway-database-postgresql:${flywayVersion}"
+	// `standalone` profile only, so judges can run the whole thing without Docker.
+	runtimeOnly 'com.h2database:h2'
+
+	// ── Git + patch plumbing ──────────────────────────────────────────────────
+	// The publisher needs to branch, commit and push without shelling out to git,
+	// which keeps the container image slim and the behaviour identical on Windows.
+	implementation "org.eclipse.jgit:org.eclipse.jgit:${jgitVersion}"
+
+	// ── OpenAPI / Swagger ─────────────────────────────────────────────────────
+	implementation "org.springdoc:springdoc-openapi-starter-webmvc-ui:${springdocVersion}"
+
+	// ── MapStruct + Lombok ────────────────────────────────────────────────────
+	implementation "org.mapstruct:mapstruct:${mapstructVersion}"
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	annotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
+	annotationProcessor "org.projectlombok:lombok-mapstruct-binding:${lombokMapstructBindingVersion}"
+
+	// ── Misc ──────────────────────────────────────────────────────────────────
+	// UUID v7: time-ordered ids keep incident/scan primary keys index-friendly.
+	implementation 'com.github.f4b6a3:uuid-creator:6.0.0'
+	implementation 'io.hypersistence:hypersistence-utils-hibernate-63:3.9.0'
+
+	// ── Test ──────────────────────────────────────────────────────────────────
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.testcontainers:junit-jupiter'
+	testImplementation 'org.testcontainers:postgresql'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('compileJava') {
+	options.encoding = 'UTF-8'
+	options.compilerArgs += [
+			'-Amapstruct.defaultComponentModel=spring',
+			'-Amapstruct.unmappedTargetPolicy=IGNORE'
+	]
+}
+
+tasks.named('compileTestJava') {
+	options.encoding = 'UTF-8'
+}
+
+tasks.named('test') {
+	maxHeapSize = '2g'
+	// Testcontainers is only needed by tests tagged `integration`; the default run
+	// stays hermetic so `./gradlew test` works on a laptop with no Docker.
+	useJUnitPlatform {
+		excludeTags 'integration'
+	}
+	finalizedBy tasks.named('jacocoTestReport')
+}
+
+tasks.register('integrationTest', Test) {
+	description = 'Runs tests that need Docker (Testcontainers Postgres).'
+	group = 'verification'
+	useJUnitPlatform {
+		includeTags 'integration'
+	}
+	shouldRunAfter tasks.named('test')
+}
+
+def resourceProjectVersion = version.toString()
+
+processResources {
+	// @token@ delimiters, so Spring's ${...} placeholders are left alone.
+	filesMatching('*.yaml') {
+		filter(org.apache.tools.ant.filters.ReplaceTokens,
+				beginToken: '@', endToken: '@',
+				tokens: ['project.version': resourceProjectVersion])
+	}
+}
+
+// ─── JaCoCo ─────────────────────────────────────────────────────────────────
+
+jacoco {
+	toolVersion = '0.8.12'
+}
+
+jacocoTestReport {
+	dependsOn tasks.named('test')
+	reports {
+		xml.required = true
+		csv.required = false
+		html.required = true
+	}
+	afterEvaluate {
+		classDirectories.setFrom(files(classDirectories.files.collect {
+			fileTree(dir: it, exclude: [
+					'**/config/**',
+					'**/exception/**',
+					'**/model/**',
+					'**/payload/**',
+					'**/*Application*',
+					'**/*MapperImpl*',
+			])
+		}))
+	}
+}
