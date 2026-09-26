@@ -35,6 +35,10 @@ COPY --from=builder /workspace/build/extracted/spring-boot-loader/ ./
 COPY --from=builder /workspace/build/extracted/snapshot-dependencies/ ./
 COPY --from=builder /workspace/build/extracted/application/ ./
 
+# Seed demo dataset and fixture repo into the container
+COPY --chown=nightshift:nightshift demo/logs /app/logs
+COPY --chown=nightshift:nightshift demo/target-repo /app/workspace/target-repo
+
 # Where the log folder is mounted read-only, and where target repos are cloned.
 ENV NIGHTSHIFT_LOG_ROOT=/app/logs \
     NIGHTSHIFT_WORKSPACE=/app/workspace \

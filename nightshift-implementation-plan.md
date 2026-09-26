@@ -588,7 +588,7 @@ enforced in CI so a regression breaks the build.
 
 ## Task 17 — Deploy to Railway + Postgres
 
-**Status:** `[ ] pending`
+**Status:** `[x] complete`
 
 **Intent:** Deploy the full stack to Railway, wire the managed Postgres database, mount a
 persistent volume for logs, and verify the public URL is reachable.

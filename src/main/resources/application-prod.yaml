@@ -1,0 +1,25 @@
+# Production profile for Railway and cloud deployments
+# Active when SPRING_PROFILES_ACTIVE=prod
+
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+  flyway:
+    enabled: true
+
+nightshift:
+  log-root: ${NIGHTSHIFT_LOG_ROOT:/app/logs}
+  workspace: ${NIGHTSHIFT_WORKSPACE:/app/workspace}
+  llm:
+    provider: ${NIGHTSHIFT_LLM_PROVIDER:heuristic}
+  publish:
+    dry-run: ${NIGHTSHIFT_PUBLISH_DRY_RUN:true}
+  messaging:
+    transport: ${NIGHTSHIFT_MESSAGING_TRANSPORT:local}
