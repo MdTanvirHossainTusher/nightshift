@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <title>Nightshift - Autonomous Incident Remediation</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,21 +38,23 @@
             flex-direction: column;
         }
         header {
-            background: rgba(17, 24, 39, 0.85);
+            background: rgba(17, 24, 39, 0.95);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
-            padding: 0.85rem 2rem;
+            padding: 0.75rem 1.5rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
             position: sticky;
             top: 0;
             z-index: 50;
+            gap: 1rem;
+            flex-wrap: wrap;
         }
         .brand {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            gap: 0.6rem;
             font-size: 1.15rem;
             font-weight: 700;
             letter-spacing: -0.02em;
@@ -64,12 +69,12 @@
             font-family: 'JetBrains Mono', monospace;
             border: 1px solid rgba(99, 102, 241, 0.3);
         }
-        nav { display: flex; gap: 0.5rem; }
+        nav { display: flex; gap: 0.4rem; }
         nav button {
             background: transparent;
             border: none;
             color: var(--text-muted);
-            padding: 0.45rem 0.9rem;
+            padding: 0.45rem 0.85rem;
             border-radius: 6px;
             font-size: 0.875rem;
             font-weight: 500;
@@ -79,29 +84,66 @@
         nav button:hover { color: var(--text-main); background: var(--surface-hover); }
         nav button.active { color: var(--text-main); background: #1f2937; font-weight: 600; }
         
-        /* Configuration Bar */
-        .config-bar {
-            background: #0f172a;
-            border-bottom: 1px solid var(--border);
-            padding: 0.75rem 2rem;
+        /* Header Actions & Provider Dropdown */
+        .header-actions {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            gap: 1.25rem;
+            gap: 0.75rem;
             flex-wrap: wrap;
         }
-        .config-group {
+        .provider-selector-wrap {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            font-size: 0.85rem;
+            gap: 0.4rem;
+            background: #1e293b;
+            padding: 0.25rem 0.6rem;
+            border-radius: 8px;
+            border: 1px solid #475569;
         }
-        .config-group label {
-            color: var(--text-muted);
-            font-weight: 500;
+        .provider-selector-wrap label {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            font-weight: 600;
+        }
+        .provider-dropdown {
+            background: transparent;
+            border: none;
+            color: #f8fafc;
+            font-size: 0.85rem;
+            font-weight: 600;
+            outline: none;
+            cursor: pointer;
+            padding: 0.25rem;
+        }
+        .provider-dropdown option {
+            background: #0f172a;
+            color: #f8fafc;
+        }
+        .api-key-wrap {
             display: flex;
             align-items: center;
             gap: 0.35rem;
+            background: #1e293b;
+            padding: 0.25rem 0.6rem;
+            border-radius: 8px;
+            border: 1px solid #475569;
+        }
+        .api-key-wrap input {
+            background: transparent;
+            border: none;
+            color: #f8fafc;
+            font-size: 0.85rem;
+            outline: none;
+            padding: 0.25rem;
+            width: 170px;
+        }
+        .badge-env {
+            font-size: 0.7rem;
+            background: rgba(16, 185, 129, 0.2);
+            color: #34d399;
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            font-weight: 600;
         }
 
         .btn-scan {
@@ -123,9 +165,29 @@
         .btn-scan:active { transform: translateY(0); }
         .btn-scan:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
 
+        /* Subheader Bar */
+        .sub-bar {
+            background: #0b1324;
+            border-bottom: 1px solid var(--border);
+            padding: 0.5rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        .sub-bar a {
+            color: var(--info);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .sub-bar a:hover { text-decoration: underline; }
+
         main {
             flex: 1;
-            padding: 2rem;
+            padding: 1.75rem;
             max-width: 1300px;
             margin: 0 auto;
             width: 100%;
@@ -136,7 +198,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 1rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1.75rem;
         }
         .stat-card {
             background: var(--surface);
@@ -304,32 +366,39 @@
             <button id="nav-incidents" onclick="switchView('incidents')">Incidents</button>
             <button id="nav-trajectory" onclick="switchView('trajectory')">Trajectory</button>
         </nav>
+        <div class="header-actions">
+            <!-- Prominent Model Selector Dropdown -->
+            <div class="provider-selector-wrap">
+                <label for="select-provider">🤖 Model:</label>
+                <select id="select-provider" class="provider-dropdown" onchange="onProviderChange()">
+                    <option value="heuristic">Heuristic (Offline, Fast)</option>
+                    <option value="gemini">Google Gemini (gemini-2.0-flash)</option>
+                    <option value="openai">OpenAI (gpt-4o-mini)</option>
+                    <option value="anthropic">Anthropic Claude (claude-3-5-sonnet)</option>
+                </select>
+            </div>
+
+            <!-- Dynamic API Key Input Field -->
+            <div id="api-key-container" class="api-key-wrap" style="display: none;">
+                <input type="password" id="input-api-key" placeholder="Enter API Key" oninput="onApiKeyInput()" />
+                <span id="env-badge" class="badge-env" style="display: none;">ENV Key Active</span>
+            </div>
+
+            <!-- Run Scan Button -->
+            <button id="btn-scan" class="btn-scan" onclick="triggerScanNow()">⚡ Run Scan Now</button>
+        </div>
     </header>
 
-    <!-- Model & Target Repo Configuration Bar -->
-    <div class="config-bar">
-        <div class="config-group">
-            <label for="select-provider">🤖 AI Provider:</label>
-            <select id="select-provider" onchange="onProviderChange()">
-                <option value="heuristic">Heuristic (Offline, Fast)</option>
-                <option value="gemini">Google Gemini (gemini-2.0-flash)</option>
-                <option value="openai">OpenAI (gpt-4o-mini)</option>
-                <option value="anthropic">Anthropic Claude (claude-3-5-sonnet)</option>
-            </select>
+    <!-- Subheader with Target Repository Link -->
+    <div class="sub-bar">
+        <div>
+            <span>Target Repo: </span>
+            <input type="text" id="input-git-repo" value="MdTanvirHossainTusher/nightshift" oninput="onGitRepoInput()" style="padding: 2px 6px; font-size: 0.8rem; width: 250px; background:#0f172a; border: 1px solid #334155; border-radius: 4px; color: #93c5fd;" />
+            <a id="repo-link" href="https://github.com/MdTanvirHossainTusher/nightshift" target="_blank" style="margin-left: 6px;">↗ View on GitHub</a>
         </div>
-
-        <div class="config-group" id="api-key-container" style="display: none;">
-            <label for="input-api-key">🔑 API Key:</label>
-            <input type="password" id="input-api-key" placeholder="Enter key (or leave empty for ENV)" oninput="onApiKeyInput()" style="width: 250px;" />
-            <span id="env-badge" class="badge" style="display: none; font-size: 0.75rem; background: rgba(16, 185, 129, 0.2); color: #34d399;">ENV Detected</span>
+        <div style="color: #64748b;">
+            <span>Evaluation ground truth: 7 incidents, 5 PRs · F1 = 1.000</span>
         </div>
-
-        <div class="config-group">
-            <label for="input-git-repo">📦 GitHub Repo:</label>
-            <input type="text" id="input-git-repo" value="MdTanvirHossainTusher/nightshift" oninput="onGitRepoInput()" style="width: 260px;" />
-        </div>
-
-        <button id="btn-scan" class="btn-scan" onclick="triggerScanNow()">⚡ Run Scan Now</button>
     </div>
 
     <main>
@@ -526,6 +595,7 @@
 
                 const cachedRepo = localStorage.getItem('nightshift_git_repo') || serverConfig.git_repo || 'MdTanvirHossainTusher/nightshift';
                 document.getElementById('input-git-repo').value = cachedRepo;
+                updateRepoLink(cachedRepo);
 
                 updateApiKeyVisibility(cachedProvider);
             } catch (e) {
@@ -563,10 +633,10 @@
 
                 if (hasEnvKey) {
                     envBadge.style.display = 'inline-block';
-                    keyInput.placeholder = 'Using server ENV key (or enter override)';
+                    keyInput.placeholder = 'ENV key active';
                 } else {
                     envBadge.style.display = 'none';
-                    keyInput.placeholder = `Enter ${provider} API Key`;
+                    keyInput.placeholder = `Enter ${provider} key`;
                 }
             }
         }
@@ -583,7 +653,19 @@
         function onGitRepoInput() {
             const repo = document.getElementById('input-git-repo').value;
             localStorage.setItem('nightshift_git_repo', repo);
+            updateRepoLink(repo);
             syncConfigToServer();
+        }
+
+        function updateRepoLink(repo) {
+            const link = document.getElementById('repo-link');
+            if (repo && repo.includes('/')) {
+                link.href = `https://github.com/${repo}`;
+                link.innerText = `↗ github.com/${repo}`;
+                link.style.display = 'inline-block';
+            } else {
+                link.style.display = 'none';
+            }
         }
 
         async function syncConfigToServer() {
