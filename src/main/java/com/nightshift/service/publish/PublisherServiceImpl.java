@@ -80,28 +80,51 @@ public class PublisherServiceImpl implements PublisherService {
                 ? props.getGit().getBaseBranch()
                 : "main";
 
-        if (pullRequestRepository.existsByRepoFullNameAndBranchName(repoFullName, branchName)) {
-            throw new BadResourceRequestException(ErrorCodes.PR_ALREADY_OPEN,
-                    "Pull request already exists for branch: " + branchName);
+        boolean dryRun = props.getPublish() != null && props.getPublish().isDryRun();
+        String githubToken = System.getProperty("GITHUB_TOKEN");
+        if (githubToken == null || githubToken.isBlank()) {
+            githubToken = System.getenv("GITHUB_TOKEN");
         }
+        boolean isDryRun = dryRun || githubToken == null || githubToken.isBlank();
 
         String scope = incident.getServiceName() != null ? incident.getServiceName() : "core";
         String commitTitle = "fix(" + scope + "): " + incident.getTitle();
         String prBody = prBodyRenderer.render(incident, proposal, scanRun);
-
         String inputSummary = "repo=" + repoFullName + " branch=" + branchName;
 
-        boolean dryRun = props.getPublish() != null && props.getPublish().isDryRun();
-        String githubToken = System.getenv("GITHUB_TOKEN");
-        if (githubToken == null || githubToken.isBlank()) {
-            githubToken = System.getProperty("GITHUB_TOKEN");
+        java.util.Optional<PullRequest> existingOpt = pullRequestRepository.findByRepoFullNameAndBranchName(repoFullName, branchName);
+        if (existingOpt.isPresent()) {
+            PullRequest existing = existingOpt.get();
+            if ("SIMULATED".equalsIgnoreCase(existing.getProvider()) && !isDryRun) {
+                log.info("Promoting simulated PR for branch {} to live GitHub PR...", branchName);
+                try {
+                    executeGitPublish(branchName, baseBranch, proposal.getUnifiedDiff(), commitTitle, incident.getFingerprint(), githubToken);
+                    PrApiResult result = openGitHubPullRequest(repoFullName, commitTitle, prBody, branchName, baseBranch, githubToken);
+                    existing.setProvider("GITHUB");
+                    existing.setPrNumber(result.number());
+                    existing.setPrUrl(result.url());
+                    existing.setState(PrState.OPEN);
+                    existing.setOpenedAt(Instant.now());
+                    existing = pullRequestRepository.save(existing);
+                    notificationService.createNotificationAndOutbox(existing);
+                    return existing;
+                } catch (Exception e) {
+                    long latency = System.currentTimeMillis() - start;
+                    recorder.recordToolCall(scanRun, incident, AgentRole.PUBLISH, 0,
+                            "publisher", inputSummary, "FAILED: " + e.getMessage(), latency, e);
+                    throw new ExternalServiceException(ErrorCodes.UPSTREAM_SERVICE_UNAVAILABLE,
+                            "Failed to publish PR to GitHub: " + e.getMessage());
+                }
+            }
+            throw new BadResourceRequestException(ErrorCodes.PR_ALREADY_OPEN,
+                    "Pull request already exists for branch: " + branchName);
         }
 
         int prNumber;
         String prUrl;
 
-        if (dryRun || githubToken == null || githubToken.isBlank()) {
-            log.info("[DRY-RUN] Creating PR for incident {}: repo={} branch={} base={}",
+        if (isDryRun) {
+            log.info("[DRY-RUN] Creating simulated PR for incident {}: repo={} branch={} base={}",
                     incident.getFingerprint(), repoFullName, branchName, baseBranch);
             prNumber = Math.abs((incident.getFingerprint() + branchName).hashCode() % 9000) + 100;
             prUrl = "https://github.com/" + repoFullName + "/pull/" + prNumber;
@@ -124,7 +147,7 @@ public class PublisherServiceImpl implements PublisherService {
         PullRequest pr = PullRequest.builder()
                 .incident(incident)
                 .patchProposal(proposal)
-                .provider("GITHUB")
+                .provider(isDryRun ? "SIMULATED" : "GITHUB")
                 .repoFullName(repoFullName)
                 .branchName(branchName)
                 .baseBranch(baseBranch)
@@ -159,10 +182,32 @@ public class PublisherServiceImpl implements PublisherService {
                                    String title, String fingerprint, String token) throws Exception {
         String wsPath = props.getWorkspace() != null ? props.getWorkspace() : "./workspace";
         File repoDir = new File(wsPath);
+        if (!new File(repoDir, ".git").exists()) {
+            File targetRepoDir = new File(repoDir, "target-repo");
+            if (new File(targetRepoDir, ".git").exists()) {
+                repoDir = targetRepoDir;
+            } else {
+                log.info("Initializing local git repo at {} for publishing...", repoDir.getAbsolutePath());
+                Git.init().setDirectory(repoDir).call();
+            }
+        }
+
+        String repoFullName = props.getGit() != null && !props.getGit().getRepo().isBlank()
+                ? props.getGit().getRepo()
+                : "MdTanvirHossainTusher/nightshift";
+        String remoteUrl = "https://github.com/" + repoFullName + ".git";
 
         try (Git git = Git.open(repoDir)) {
-            // Checkout base branch
-            git.checkout().setName(baseBranch).call();
+            boolean hasOrigin = git.remoteList().call().stream().anyMatch(r -> "origin".equalsIgnoreCase(r.getName()));
+            if (!hasOrigin) {
+                git.remoteAdd().setName("origin").setUri(new org.eclipse.jgit.transport.URIish(remoteUrl)).call();
+            }
+
+            try {
+                git.checkout().setName(baseBranch).call();
+            } catch (Exception ignored) {
+                // If base branch doesn't exist locally, create or proceed
+            }
 
             // Create new branch
             git.checkout().setCreateBranch(true).setName(branchName).call();

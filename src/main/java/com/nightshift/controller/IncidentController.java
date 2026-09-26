@@ -54,11 +54,28 @@ public class IncidentController {
     public ResponseEntity<ApiResponse<List<IncidentResponse>>> listIncidents(
             @RequestParam(required = false) IncidentStatus status,
             @RequestParam(required = false) Severity severity,
+            @RequestParam(required = false) UUID scanRunId,
             @RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "20") int size
+            @RequestParam(defaultValue = "50") int size
     ) {
-        Page<Incident> incidentPage = incidentRepository.findByFilters(status, severity, PageRequest.of(page, size));
-        PageResult<IncidentResponse> result = PageResult.of(incidentPage, IncidentResponse::from);
+        Page<Incident> incidentPage = incidentRepository.findByFilters(status, severity, scanRunId, PageRequest.of(page, size));
+
+        List<UUID> incidentIds = incidentPage.getContent().stream().map(Incident::getId).toList();
+        java.util.Map<UUID, UUID> runIdMap = new java.util.HashMap<>();
+        if (!incidentIds.isEmpty()) {
+            List<Object[]> rows = incidentOccurrenceRepository.findLatestScanRunPerIncident(incidentIds);
+            if (rows != null) {
+                for (Object[] row : rows) {
+                    if (row != null && row.length >= 2 && row[0] instanceof UUID incId && row[1] instanceof UUID rId) {
+                        runIdMap.putIfAbsent(incId, rId);
+                    }
+                }
+            }
+        }
+
+        PageResult<IncidentResponse> result = PageResult.of(incidentPage, i ->
+                IncidentResponse.from(i, runIdMap.getOrDefault(i.getId(), scanRunId))
+        );
         return ResponseBuilder.ok(result);
     }
 
@@ -168,6 +185,26 @@ public class IncidentController {
                 SuccessCodes.INCIDENT_MUTED,
                 "Incident muted successfully."
         );
+    }
+
+    @Operation(summary = "Query audit trail trajectory across runs and incidents")
+    @GetMapping("/trajectory")
+    public ResponseEntity<ApiResponse<List<AgentStepResponse>>> queryTrajectory(
+            @RequestParam(required = false) UUID scanRunId,
+            @RequestParam(required = false) UUID incidentId
+    ) {
+        List<AgentStep> steps;
+        if (scanRunId != null && incidentId != null) {
+            steps = agentStepRepository.findByScanRunIdAndIncidentIdOrderByStepIndexAsc(scanRunId, incidentId);
+        } else if (scanRunId != null) {
+            steps = agentStepRepository.findByScanRunIdOrderByCreatedAtAsc(scanRunId);
+        } else if (incidentId != null) {
+            steps = agentStepRepository.findByIncidentIdOrderByStepIndexAsc(incidentId);
+        } else {
+            steps = agentStepRepository.findAllByOrderByCreatedAtDesc(PageRequest.of(0, 100)).getContent();
+        }
+        List<AgentStepResponse> responses = steps.stream().map(AgentStepResponse::from).toList();
+        return ResponseBuilder.ok(responses);
     }
 
     @Operation(summary = "Get audit trail trajectory (model and tool steps) for an incident")

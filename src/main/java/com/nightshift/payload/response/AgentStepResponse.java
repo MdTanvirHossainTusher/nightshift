@@ -9,6 +9,9 @@ import java.util.UUID;
 
 public record AgentStepResponse(
         UUID id,
+        UUID scanRunId,
+        UUID incidentId,
+        String incidentTitle,
         AgentRole agentRole,
         int stepIndex,
         StepType stepType,
@@ -28,6 +31,9 @@ public record AgentStepResponse(
         if (s == null) return null;
         return new AgentStepResponse(
                 s.getId(),
+                s.getScanRun() != null ? s.getScanRun().getId() : null,
+                s.getIncident() != null ? s.getIncident().getId() : null,
+                s.getIncident() != null ? s.getIncident().getTitle() : null,
                 s.getAgentRole(),
                 s.getStepIndex(),
                 s.getStepType(),

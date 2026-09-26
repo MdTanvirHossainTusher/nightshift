@@ -281,6 +281,16 @@ public class ScanServiceImpl implements ScanService {
         return true;
     }
 
+    /** The fix stage gave up on this incident; reflect that instead of leaving it TRIAGED. */
+    private void markPatchRejected(Incident incident) {
+        incidentRepository.findById(incident.getId()).ifPresent(current -> {
+            if (current.getStatus() == IncidentStatus.TRIAGED) {
+                current.setStatus(IncidentStatus.TRIAGED_PATCH_REJECTED);
+                incidentRepository.save(current);
+            }
+        });
+    }
+
     private void processIncidentsPipeline(ScanRun run) {
         TriageAgent triageAgent = triageAgentProvider.getIfAvailable();
         CodeLocatorService codeLocatorService = codeLocatorServiceProvider.getIfAvailable();
@@ -326,6 +336,7 @@ public class ScanServiceImpl implements ScanService {
                 Optional<PatchProposal> propOpt = fixAgent.proposeFix(incident, location, run);
                 if (propOpt.isEmpty()) {
                     log.info("No patch generated for incident {}", incident.getFingerprint());
+                    markPatchRejected(incident);
                     continue;
                 }
                 PatchProposal proposal = propOpt.get();
@@ -343,6 +354,9 @@ public class ScanServiceImpl implements ScanService {
                     run.setPrsOpened(run.getPrsOpened() + 1);
                     scanRunRepository.save(run);
                 }
+            } catch (com.nightshift.exception.PatchRejectedException e) {
+                log.info("Patch rejected for incident {}: {} - {}", incident.getFingerprint(), e.getCode(), e.getMessage());
+                markPatchRejected(incident);
             } catch (Exception e) {
                 log.warn("Error running pipeline on incident {}: {}", incident.getFingerprint(), e.getMessage());
             }

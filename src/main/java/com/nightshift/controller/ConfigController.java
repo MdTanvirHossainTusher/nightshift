@@ -62,17 +62,17 @@ public class ConfigController {
             log.info("Base URL configured dynamically for provider {}: {}", provider, baseUrl);
         }
 
-        if (req.getApiKey() != null && !req.getApiKey().isBlank()) {
+        if (req.getApiKey() != null) {
             String key = req.getApiKey().trim();
             if ("gemini".equalsIgnoreCase(provider)) {
-                props.getLlm().getGemini().setApiKey(key);
-                System.setProperty("GEMINI_API_KEY", key);
+                props.getLlm().getGemini().setApiKey(key.isEmpty() ? null : key);
+                if (key.isEmpty()) System.clearProperty("GEMINI_API_KEY"); else System.setProperty("GEMINI_API_KEY", key);
             } else if ("openai".equalsIgnoreCase(provider)) {
-                props.getLlm().getOpenai().setApiKey(key);
-                System.setProperty("OPENAI_API_KEY", key);
+                props.getLlm().getOpenai().setApiKey(key.isEmpty() ? null : key);
+                if (key.isEmpty()) System.clearProperty("OPENAI_API_KEY"); else System.setProperty("OPENAI_API_KEY", key);
             } else if ("anthropic".equalsIgnoreCase(provider)) {
-                props.getLlm().getAnthropic().setApiKey(key);
-                System.setProperty("ANTHROPIC_API_KEY", key);
+                props.getLlm().getAnthropic().setApiKey(key.isEmpty() ? null : key);
+                if (key.isEmpty()) System.clearProperty("ANTHROPIC_API_KEY"); else System.setProperty("ANTHROPIC_API_KEY", key);
             }
             log.info("API key configured dynamically for provider: {}", provider);
         }
@@ -81,8 +81,13 @@ public class ConfigController {
             props.getGit().setRepo(req.getGitRepo().trim());
         }
 
-        if (req.getGithubToken() != null && !req.getGithubToken().isBlank()) {
-            System.setProperty("GITHUB_TOKEN", req.getGithubToken().trim());
+        if (req.getGithubToken() != null) {
+            String token = req.getGithubToken().trim();
+            if (token.isEmpty()) {
+                System.clearProperty("GITHUB_TOKEN");
+            } else {
+                System.setProperty("GITHUB_TOKEN", token);
+            }
         }
 
         if (req.getDryRun() != null) {
@@ -92,21 +97,22 @@ public class ConfigController {
         return ResponseBuilder.ok(buildConfigResponse());
     }
 
+    private static boolean isSet(String val) {
+        return val != null && !val.trim().isEmpty();
+    }
+
+    private boolean hasKey(String propKey, String envVarName) {
+        if (isSet(propKey)) return true;
+        if (isSet(System.getenv(envVarName))) return true;
+        if (isSet(System.getProperty(envVarName))) return true;
+        return false;
+    }
+
     private ConfigResponse buildConfigResponse() {
-        boolean hasOpenAi = (props.getLlm().getOpenai().getApiKey() != null && !props.getLlm().getOpenai().getApiKey().isBlank())
-                || System.getenv("OPENAI_API_KEY") != null
-                || System.getProperty("OPENAI_API_KEY") != null;
-
-        boolean hasGemini = (props.getLlm().getGemini().getApiKey() != null && !props.getLlm().getGemini().getApiKey().isBlank())
-                || System.getenv("GEMINI_API_KEY") != null
-                || System.getProperty("GEMINI_API_KEY") != null;
-
-        boolean hasAnthropic = (props.getLlm().getAnthropic().getApiKey() != null && !props.getLlm().getAnthropic().getApiKey().isBlank())
-                || System.getenv("ANTHROPIC_API_KEY") != null
-                || System.getProperty("ANTHROPIC_API_KEY") != null;
-
-        boolean hasGithubToken = System.getenv("GITHUB_TOKEN") != null
-                || System.getProperty("GITHUB_TOKEN") != null;
+        boolean hasOpenAi = hasKey(props.getLlm().getOpenai().getApiKey(), "OPENAI_API_KEY");
+        boolean hasGemini = hasKey(props.getLlm().getGemini().getApiKey(), "GEMINI_API_KEY");
+        boolean hasAnthropic = hasKey(props.getLlm().getAnthropic().getApiKey(), "ANTHROPIC_API_KEY");
+        boolean hasGithubToken = hasKey(null, "GITHUB_TOKEN");
 
         String repo = props.getGit() != null && !props.getGit().getRepo().isBlank()
                 ? props.getGit().getRepo()

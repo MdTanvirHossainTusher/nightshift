@@ -35,6 +35,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 @Import({
         FixAgentImpl.class,
         PatchGuard.class,
+        com.nightshift.util.EditDiffBuilder.class,
         AgentStepRecorder.class,
         LlmClientRegistry.class,
         HeuristicLlmClient.class,

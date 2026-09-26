@@ -224,20 +224,7 @@ public class PatchGuard {
                     i++;
                 }
 
-                int matchedStart = -1;
-                if (matchesAt(targetLines, nominalIdx, currentHunk)) {
-                    matchedStart = nominalIdx;
-                } else {
-                    for (int offset = -5; offset <= 5; offset++) {
-                        int candidate = nominalIdx + offset;
-                        if (candidate >= lastTargetEnd && candidate < targetLines.size()) {
-                            if (matchesAt(targetLines, candidate, currentHunk)) {
-                                matchedStart = candidate;
-                                break;
-                            }
-                        }
-                    }
-                }
+                int matchedStart = findHunkStart(targetLines, nominalIdx, lastTargetEnd, currentHunk);
 
                 if (matchedStart == -1) {
                     throw new PatchRejectedException(ErrorCodes.PATCH_DOES_NOT_APPLY,
@@ -254,6 +241,121 @@ public class PatchGuard {
             } else {
                 i++;
             }
+        }
+    }
+
+    /**
+     * Rewrites every hunk header so its start lines and counts match where the hunk body
+     * actually sits in the target file. Model-written diffs routinely carry guessed line
+     * numbers and miscounted sizes, which JGit's apply rejects even when the body is right.
+     * Hunks that cannot be located are left untouched for {@link #checkApplies} to reject.
+     */
+    public String realign(String unifiedDiff, Path targetRepo) {
+        if (unifiedDiff == null || unifiedDiff.isBlank() || targetRepo == null || !Files.exists(targetRepo)) {
+            return unifiedDiff;
+        }
+
+        List<String> in = unifiedDiff.replace("\r\n", "\n").lines().toList();
+        StringBuilder out = new StringBuilder(unifiedDiff.length() + 64);
+        List<String> targetLines = null;
+        int lastTargetEnd = 0;
+        int delta = 0;
+        int i = 0;
+
+        while (i < in.size()) {
+            String line = in.get(i);
+            if (line.startsWith("+++ ")) {
+                String path = line.substring(4).strip();
+                if (path.startsWith("b/")) path = path.substring(2);
+                targetLines = readLinesOrNull(targetRepo.resolve(normalizePath(path)));
+                lastTargetEnd = 0;
+                delta = 0;
+                out.append(line).append('\n');
+                i++;
+                continue;
+            }
+
+            Matcher matcher = HUNK_HEADER_PATTERN.matcher(line);
+            if (!matcher.find()) {
+                out.append(line).append('\n');
+                i++;
+                continue;
+            }
+
+            List<String> hunk = new ArrayList<>();
+            i++;
+            while (i < in.size() && !HUNK_HEADER_PATTERN.matcher(in.get(i)).find()
+                    && !in.get(i).startsWith("--- ") && !in.get(i).startsWith("+++ ")) {
+                String hl = in.get(i);
+                hunk.add(hl.isEmpty() ? " " : hl);
+                i++;
+            }
+            while (!hunk.isEmpty() && hunk.get(hunk.size() - 1).isBlank()) {
+                hunk.remove(hunk.size() - 1);
+            }
+
+            int oldCount = 0;
+            int newCount = 0;
+            for (String hl : hunk) {
+                if (hl.startsWith("-")) oldCount++;
+                else if (hl.startsWith("+")) newCount++;
+                else if (hl.startsWith(" ")) { oldCount++; newCount++; }
+            }
+
+            int oldStart = Integer.parseInt(matcher.group(1));
+            if (targetLines != null) {
+                int found = findHunkStart(targetLines, Math.max(0, oldStart - 1), lastTargetEnd, hunk);
+                if (found >= 0) {
+                    oldStart = found + 1;
+                    lastTargetEnd = found + oldCount;
+                }
+            }
+            int newStart = oldStart + delta;
+            delta += newCount - oldCount;
+
+            out.append("@@ -").append(oldStart).append(',').append(oldCount)
+                    .append(" +").append(newStart).append(',').append(newCount).append(" @@\n");
+            for (String hl : hunk) {
+                out.append(hl).append('\n');
+            }
+        }
+        return out.toString();
+    }
+
+    /**
+     * Locates a hunk body in the target: first at the stated line, then within ±5 lines, then
+     * anywhere after the previous hunk (nearest to the stated line wins).
+     */
+    private int findHunkStart(List<String> targetLines, int nominalIdx, int lastTargetEnd, List<String> hunkBody) {
+        if (nominalIdx >= lastTargetEnd && matchesAt(targetLines, nominalIdx, hunkBody)) {
+            return nominalIdx;
+        }
+        for (int offset = -5; offset <= 5; offset++) {
+            int candidate = nominalIdx + offset;
+            if (candidate >= lastTargetEnd && candidate < targetLines.size()
+                    && matchesAt(targetLines, candidate, hunkBody)) {
+                return candidate;
+            }
+        }
+        int best = -1;
+        int bestDistance = Integer.MAX_VALUE;
+        for (int candidate = lastTargetEnd; candidate < targetLines.size(); candidate++) {
+            if (matchesAt(targetLines, candidate, hunkBody)) {
+                int distance = Math.abs(candidate - nominalIdx);
+                if (distance < bestDistance) {
+                    best = candidate;
+                    bestDistance = distance;
+                }
+            }
+        }
+        return best;
+    }
+
+    private List<String> readLinesOrNull(Path file) {
+        try {
+            return Files.exists(file) ? Files.readAllLines(file, StandardCharsets.UTF_8) : null;
+        } catch (IOException e) {
+            return null;
         }
     }
 

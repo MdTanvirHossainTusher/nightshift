@@ -98,164 +98,143 @@
             background: #1e293b;
             padding: 0.25rem 0.6rem;
             border-radius: 8px;
-            border: 1px solid #475569;
+            border: 1px solid #334155;
+            font-size: 0.85rem;
         }
         .provider-selector-wrap label {
-            font-size: 0.8rem;
             color: #94a3b8;
-            font-weight: 600;
+            font-weight: 500;
         }
         .provider-dropdown {
-            background: transparent;
-            border: none;
-            color: #f8fafc;
-            font-size: 0.85rem;
-            font-weight: 600;
-            outline: none;
-            cursor: pointer;
-            padding: 0.25rem;
-        }
-        .provider-dropdown option {
             background: #0f172a;
             color: #f8fafc;
+            border: 1px solid #475569;
+            border-radius: 6px;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.85rem;
+            cursor: pointer;
+            outline: none;
+        }
+        .provider-dropdown:focus {
+            border-color: var(--primary);
         }
         .api-key-wrap {
             display: flex;
             align-items: center;
-            gap: 0.35rem;
+            gap: 0.4rem;
             background: #1e293b;
             padding: 0.25rem 0.6rem;
             border-radius: 8px;
-            border: 1px solid #475569;
+            border: 1px solid #334155;
         }
         .api-key-wrap input {
-            background: transparent;
-            border: none;
+            background: #0f172a;
             color: #f8fafc;
+            border: 1px solid #475569;
+            border-radius: 6px;
+            padding: 0.25rem 0.5rem;
             font-size: 0.85rem;
+            width: 150px;
             outline: none;
-            padding: 0.25rem;
-            width: 170px;
+        }
+        .api-key-wrap input:focus {
+            border-color: var(--primary);
         }
         .badge-env {
-            font-size: 0.7rem;
-            background: rgba(16, 185, 129, 0.2);
-            color: #34d399;
-            padding: 0.15rem 0.4rem;
+            background: rgba(16, 185, 129, 0.15);
+            color: #10b981;
+            font-size: 0.75rem;
+            padding: 0.15rem 0.45rem;
             border-radius: 4px;
-            font-weight: 600;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            white-space: nowrap;
         }
-
         .btn-scan {
-            background: linear-gradient(135deg, #6366f1, #4f46e5);
-            color: white;
+            background: var(--primary);
+            color: #fff;
             border: none;
-            padding: 0.5rem 1.15rem;
+            padding: 0.45rem 1rem;
             border-radius: 6px;
             font-size: 0.875rem;
             font-weight: 600;
             cursor: pointer;
-            box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
-            display: flex;
-            align-items: center;
-            gap: 0.45rem;
-            transition: all 0.2s ease;
+            transition: background 0.15s ease;
         }
-        .btn-scan:hover { opacity: 0.92; transform: translateY(-1px); }
-        .btn-scan:active { transform: translateY(0); }
-        .btn-scan:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
-
+        .btn-scan:hover { background: var(--primary-hover); }
+        .btn-scan:disabled { opacity: 0.6; cursor: not-allowed; }
         .btn-rescan {
-            background: linear-gradient(135deg, #0284c7, #0369a1);
-            color: white;
-            border: 1px solid #38bdf8;
-            padding: 0.5rem 1.15rem;
+            background: #374151;
+            color: #e5e7eb;
+            border: 1px solid #4b5563;
+            padding: 0.45rem 0.85rem;
             border-radius: 6px;
             font-size: 0.875rem;
-            font-weight: 600;
+            font-weight: 500;
             cursor: pointer;
-            box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3);
-            display: flex;
-            align-items: center;
-            gap: 0.45rem;
-            transition: all 0.2s ease;
+            transition: all 0.15s ease;
         }
-        .btn-rescan:hover { opacity: 0.92; transform: translateY(-1px); background: linear-gradient(135deg, #0369a1, #075985); }
-        .btn-rescan:active { transform: translateY(0); }
-        .btn-rescan:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+        .btn-rescan:hover { background: #4b5563; color: #fff; }
 
         /* Subheader Bar */
         .sub-bar {
-            background: #0b1324;
-            border-bottom: 1px solid var(--border);
-            padding: 0.5rem 1.5rem;
+            background: #0b1120;
+            border-bottom: 1px solid #1f2937;
+            padding: 0.4rem 1.5rem;
+            font-size: 0.8rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            font-size: 0.8rem;
-            color: var(--text-muted);
             flex-wrap: wrap;
             gap: 0.75rem;
         }
         .sub-bar a {
-            color: var(--info);
+            color: #60a5fa;
             text-decoration: none;
-            font-weight: 600;
         }
-        .sub-bar a:hover { text-decoration: underline; }
+        .sub-bar a:hover {
+            text-decoration: underline;
+        }
 
         main {
             flex: 1;
-            padding: 1.75rem;
-            max-width: 1300px;
+            padding: 1.5rem;
+            max-width: 1400px;
             margin: 0 auto;
             width: 100%;
         }
-        .view { display: none; }
-        .view.active { display: block; }
+
+        /* Stat cards */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 1rem;
-            margin-bottom: 1.75rem;
+            margin-bottom: 1.5rem;
         }
         .stat-card {
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: 10px;
-            padding: 1.25rem;
+            padding: 1.1rem 1.3rem;
         }
         .stat-title {
             color: var(--text-muted);
             font-size: 0.8rem;
+            font-weight: 500;
             text-transform: uppercase;
-            font-weight: 600;
             letter-spacing: 0.05em;
         }
         .stat-value {
-            font-size: 1.8rem;
+            font-size: 1.75rem;
             font-weight: 700;
             margin-top: 0.35rem;
+            font-family: 'JetBrains Mono', monospace;
         }
-        .toolbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-        .filters { display: flex; gap: 0.75rem; align-items: center; }
-        select, input {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            color: var(--text-main);
-            padding: 0.45rem 0.8rem;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            outline: none;
-        }
-        select:focus, input:focus { border-color: var(--primary); }
+
+        /* Views */
+        .view { display: none; }
+        .view.active { display: block; }
+
+        /* Tables */
         .card-table {
             background: var(--surface);
             border: 1px solid var(--border);
@@ -268,115 +247,147 @@
             text-align: left;
             font-size: 0.875rem;
         }
-        th, td {
-            padding: 0.9rem 1.25rem;
-            border-bottom: 1px solid var(--border);
-        }
         th {
-            background: rgba(255, 255, 255, 0.02);
+            background: #172033;
             color: var(--text-muted);
             font-weight: 600;
             font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border);
         }
-        tbody tr:hover { background: var(--surface-hover); }
+        td {
+            padding: 0.85rem 1rem;
+            border-bottom: 1px solid rgba(55, 65, 81, 0.5);
+            vertical-align: middle;
+        }
+        tr:last-child td { border-bottom: none; }
+        tr:hover td { background: rgba(31, 41, 55, 0.4); }
+
+        /* Chips & Badges */
         .chip {
-            display: inline-block;
-            padding: 0.2rem 0.55rem;
-            border-radius: 4px;
+            display: inline-flex;
+            align-items: center;
+            padding: 0.15rem 0.55rem;
+            border-radius: 9999px;
             font-size: 0.75rem;
             font-weight: 600;
-            text-transform: uppercase;
+            font-family: 'JetBrains Mono', monospace;
         }
-        .chip-blocker { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.4); }
-        .chip-critical { background: rgba(249, 115, 22, 0.2); color: #fb923c; border: 1px solid rgba(249, 115, 22, 0.4); }
-        .chip-major { background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.4); }
-        .chip-minor { background: rgba(59, 130, 246, 0.2); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.4); }
+        .chip-critical { background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
+        .chip-major { background: rgba(249, 115, 22, 0.15); color: #fb923c; border: 1px solid rgba(249, 115, 22, 0.3); }
+        .chip-minor { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); }
+        .chip-blocker { background: rgba(220, 38, 38, 0.25); color: #fca5a5; border: 1px solid rgba(220, 38, 38, 0.5); }
         .chip-trivial { background: rgba(107, 114, 128, 0.2); color: #9ca3af; border: 1px solid rgba(107, 114, 128, 0.4); }
 
         .badge {
-            display: inline-block;
-            padding: 0.2rem 0.5rem;
+            display: inline-flex;
+            align-items: center;
+            padding: 0.15rem 0.5rem;
             border-radius: 4px;
             font-size: 0.75rem;
-            font-family: 'JetBrains Mono', monospace;
+            font-weight: 500;
             background: #1f2937;
             color: #d1d5db;
         }
-        .badge-pr { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
-        .badge-fail { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
-        .badge-running { background: rgba(59, 130, 246, 0.2); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); }
+        .badge-pr { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+        .badge-fail { background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
+        .badge-running { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); }
 
         .btn-action {
             background: #1f2937;
-            border: 1px solid var(--border);
-            color: var(--text-main);
-            padding: 0.4rem 0.8rem;
+            color: #e5e7eb;
+            border: 1px solid #374151;
+            padding: 0.35rem 0.75rem;
             border-radius: 6px;
             font-size: 0.8rem;
             cursor: pointer;
             transition: all 0.15s ease;
         }
-        .btn-action:hover { background: #374151; }
+        .btn-action:hover { background: #374151; color: #fff; }
 
+        /* Toolbar / Filters */
+        .toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .filters { display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; }
+        .filters select {
+            background: var(--surface);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 0.4rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            outline: none;
+        }
+
+        /* Detail Modal / Panel */
         .detail-card {
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: 10px;
-            padding: 1.75rem;
-            margin-bottom: 2rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
         }
         .detail-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 1.5rem;
             border-bottom: 1px solid var(--border);
-            padding-bottom: 1.25rem;
+            padding-bottom: 1rem;
+            margin-bottom: 1.25rem;
             gap: 1rem;
             flex-wrap: wrap;
         }
         .code-box {
             background: var(--code-bg);
             border: 1px solid #1f2937;
-            border-radius: 8px;
-            padding: 1.25rem;
+            border-radius: 6px;
+            padding: 1rem;
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.825rem;
+            font-size: 0.8rem;
+            color: #d1d5db;
             overflow-x: auto;
-            white-space: pre-wrap;
-            color: #e5e7eb;
+            white-space: pre;
             margin-top: 0.5rem;
+            max-height: 380px;
         }
         .alert-box {
             background: rgba(245, 158, 11, 0.1);
             border-left: 4px solid var(--warning);
-            padding: 1rem;
-            border-radius: 0 6px 6px 0;
+            padding: 0.75rem 1rem;
+            border-radius: 4px;
             margin-bottom: 1rem;
             font-size: 0.875rem;
         }
+
+        /* Toast */
         .toast {
             position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: var(--surface);
-            border: 1px solid var(--primary);
-            color: var(--text-main);
+            bottom: 1.5rem;
+            right: 1.5rem;
+            background: #1e293b;
+            color: #fff;
+            border: 1px solid #475569;
             padding: 0.75rem 1.25rem;
             border-radius: 8px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+            font-size: 0.875rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
             display: none;
             z-index: 100;
-            font-size: 0.875rem;
         }
     </style>
 </head>
 <body>
     <header>
         <div class="brand">
-            <span class="logo">🌙</span>
+            <span class="logo">🦉</span>
             <span>Nightshift</span>
             <span class="tag">AI SRE</span>
         </div>
@@ -391,7 +402,7 @@
                 <label for="select-provider">⚡ Engine:</label>
                 <select id="select-provider" class="provider-dropdown" onchange="onProviderChange()">
                     <option value="heuristic">Heuristic (Offline, Fast)</option>
-                    <option value="openai">OpenAI (Luna / GPT-4o)</option>
+                    <option value="openai">OpenAI (GPT-4o / Luna)</option>
                     <option value="gemini">Google Gemini</option>
                     <option value="anthropic">Anthropic Claude</option>
                 </select>
@@ -416,15 +427,29 @@
         </div>
     </header>
 
-    <!-- Subheader with Target Repository Link -->
+    <!-- Subheader with Target Repository Link, GitHub PAT & Dry Run Mode -->
     <div class="sub-bar">
-        <div>
-            <span>Target Repo: </span>
-            <input type="text" id="input-git-repo" value="MdTanvirHossainTusher/nightshift" oninput="onGitRepoInput()" style="padding: 2px 6px; font-size: 0.8rem; width: 250px; background:#0f172a; border: 1px solid #334155; border-radius: 4px; color: #93c5fd;" />
-            <a id="repo-link" href="https://github.com/MdTanvirHossainTusher/nightshift" target="_blank" style="margin-left: 6px;">↗ View on GitHub</a>
+        <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+            <div>
+                <span>Target Repo: </span>
+                <input type="text" id="input-git-repo" value="MdTanvirHossainTusher/nightshift" oninput="onGitRepoInput()" style="padding: 2px 6px; font-size: 0.8rem; width: 230px; background:#0f172a; border: 1px solid #334155; border-radius: 4px; color: #93c5fd;" />
+                <a id="repo-link" href="https://github.com/MdTanvirHossainTusher/nightshift" target="_blank" style="margin-left: 6px;">↗ GitHub</a>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.4rem;">
+                <label for="input-github-token" style="font-size: 0.8rem; color: #94a3b8;">GitHub Token (PAT):</label>
+                <input type="password" id="input-github-token" placeholder="ghp_xxx (optional)" oninput="onGithubTokenInput()" style="padding: 2px 6px; font-size: 0.8rem; width: 160px; background:#0f172a; border: 1px solid #334155; border-radius: 4px; color: #cbd5e1;" />
+                <span id="github-token-badge" class="badge-env" style="display: none;">Token Set</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.35rem;">
+                <label style="font-size: 0.8rem; color: #94a3b8; cursor: pointer; display: flex; align-items: center; gap: 5px;">
+                    <input type="checkbox" id="check-dry-run" checked onchange="onDryRunChange()" />
+                    <span>Publish Dry-Run</span>
+                </label>
+                <span title="In Dry-Run mode, branches and PRs are simulated locally and verified by patch engine without pushing to GitHub." style="cursor: help; color: #64748b; font-size: 0.8rem;">ℹ️</span>
+            </div>
         </div>
-        <div style="color: #64748b;">
-            <span>Evaluation ground truth: 7 incidents, 5 PRs · F1 = 1.000</span>
+        <div style="color: #64748b; font-size: 0.8rem;">
+            <span>Ground truth: 7 incidents, 5 PRs · F1 = 1.000</span>
         </div>
     </div>
 
@@ -457,10 +482,11 @@
                             <th>Lines Parsed</th>
                             <th>Incidents New</th>
                             <th>PRs Opened</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody id="runs-tbody">
-                        <tr><td colspan="7" style="text-align: center; color: var(--text-muted);">Loading scan runs...</td></tr>
+                        <tr><td colspan="8" style="text-align: center; color: var(--text-muted);">Loading scan runs...</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -470,6 +496,9 @@
         <div id="view-incidents" class="view">
             <div class="toolbar">
                 <div class="filters">
+                    <select id="filter-scan-run" onchange="loadIncidents()">
+                        <option value="">All Scan Runs</option>
+                    </select>
                     <select id="filter-status" onchange="loadIncidents()">
                         <option value="">All Statuses</option>
                         <option value="NEW">NEW</option>
@@ -497,6 +526,7 @@
                         <tr>
                             <th>Severity</th>
                             <th>Status</th>
+                            <th>Scan Run</th>
                             <th>Title</th>
                             <th>Service</th>
                             <th>Occurrences</th>
@@ -505,7 +535,7 @@
                         </tr>
                     </thead>
                     <tbody id="incidents-tbody">
-                        <tr><td colspan="7" style="text-align: center; color: var(--text-muted);">Loading incidents...</td></tr>
+                        <tr><td colspan="8" style="text-align: center; color: var(--text-muted);">Loading incidents...</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -513,8 +543,9 @@
 
         <!-- INCIDENT DETAIL VIEW -->
         <div id="view-detail" class="view">
-            <div style="margin-bottom: 1rem;">
+            <div style="margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center;">
                 <button class="btn-action" onclick="switchView('incidents')">← Back to Incidents</button>
+                <div id="detail-run-badge" style="font-size: 0.85rem; color: var(--text-muted);"></div>
             </div>
 
             <div class="detail-card">
@@ -559,7 +590,7 @@
 
                 <div>
                     <h4 style="font-size: 0.9rem; margin-bottom: 0.35rem; color: var(--text-muted);">Pull Request & GitHub Review</h4>
-                    <div id="detail-pr-info" style="font-size: 0.9rem;">No PR opened.</div>
+                    <div id="detail-pr-info" style="font-size: 0.9rem; margin-top: 0.5rem;">No PR opened.</div>
                 </div>
             </div>
         </div>
@@ -569,9 +600,13 @@
             <div class="toolbar">
                 <h3 style="font-size: 1.1rem; font-weight: 600;">Agent Trajectory & Audit Trail</h3>
                 <div class="filters">
-                    <select id="trajectory-incident-select" onchange="loadTrajectoryForSelected()">
-                        <option value="">Select an incident...</option>
+                    <select id="trajectory-run-select" onchange="onTrajectoryRunChanged()">
+                        <option value="">All Scan Runs</option>
                     </select>
+                    <select id="trajectory-incident-select" onchange="loadTrajectoryForSelected()">
+                        <option value="">All Incidents in Run</option>
+                    </select>
+                    <button class="btn-action" onclick="loadTrajectoryForSelected()">🔄 Refresh</button>
                 </div>
             </div>
 
@@ -580,6 +615,8 @@
                     <thead>
                         <tr>
                             <th>Step #</th>
+                            <th>Scan Run</th>
+                            <th>Incident</th>
                             <th>Role</th>
                             <th>Type</th>
                             <th>Provider / Model</th>
@@ -589,7 +626,7 @@
                         </tr>
                     </thead>
                     <tbody id="trajectory-tbody">
-                        <tr><td colspan="7" style="text-align: center; color: var(--text-muted);">Select an incident above to view its agent reasoning trajectory.</td></tr>
+                        <tr><td colspan="9" style="text-align: center; color: var(--text-muted);">Select a scan run or incident above to view its agent reasoning trajectory.</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -601,12 +638,14 @@
     <script>
         let currentIncidentId = null;
         let serverConfig = null;
+        let scanRunsCache = [];
+        let incidentsCache = [];
 
         function showToast(msg) {
             const t = document.getElementById('toast');
             t.innerText = msg;
             t.style.display = 'block';
-            setTimeout(() => { t.style.display = 'none'; }, 4000);
+            setTimeout(() => { t.style.display = 'none'; }, 4500);
         }
 
         const PROVIDER_MODELS = {
@@ -631,20 +670,35 @@
             ]
         };
 
-        // ── Provider & API Key Session Caching ─────────────────────────────────────
+        // ── Provider, Model & API Key Configuration ──────────────────────────────────
         async function loadConfig() {
             try {
                 const res = await fetch('/api/v1/config');
                 const json = await res.json();
                 serverConfig = json.data || {};
 
-                // Restore cached settings from localStorage
+                // Restore cached settings from localStorage or server
                 const cachedProvider = localStorage.getItem('nightshift_provider') || serverConfig.provider || 'heuristic';
                 document.getElementById('select-provider').value = cachedProvider;
 
                 const cachedRepo = localStorage.getItem('nightshift_git_repo') || serverConfig.git_repo || 'MdTanvirHossainTusher/nightshift';
                 document.getElementById('input-git-repo').value = cachedRepo;
                 updateRepoLink(cachedRepo);
+
+                // GitHub Token
+                const cachedToken = localStorage.getItem('nightshift_github_token') || '';
+                if (cachedToken) {
+                    document.getElementById('input-github-token').value = cachedToken;
+                }
+                updateGithubTokenBadge(cachedToken);
+
+                // Dry run
+                const cachedDryRun = localStorage.getItem('nightshift_dry_run');
+                if (cachedDryRun !== null) {
+                    document.getElementById('check-dry-run').checked = (cachedDryRun === 'true');
+                } else if (serverConfig.dry_run !== undefined) {
+                    document.getElementById('check-dry-run').checked = serverConfig.dry_run;
+                }
 
                 updateModelSelector(cachedProvider);
                 updateApiKeyVisibility(cachedProvider);
@@ -745,16 +799,15 @@
                 container.style.display = 'none';
             } else {
                 container.style.display = 'flex';
-                // Load cached key for this specific provider
                 const cachedKey = localStorage.getItem(`nightshift_key_${provider}`) || '';
                 keyInput.value = cachedKey;
 
-                // Check if server already has env key
+                // Check if server already has non-blank env key
                 let hasEnvKey = false;
                 if (serverConfig) {
-                    if (provider === 'gemini') hasEnvKey = serverConfig.has_gemini_key;
-                    if (provider === 'openai') hasEnvKey = serverConfig.has_openai_key;
-                    if (provider === 'anthropic') hasEnvKey = serverConfig.has_anthropic_key;
+                    if (provider === 'gemini') hasEnvKey = !!serverConfig.has_gemini_key;
+                    if (provider === 'openai') hasEnvKey = !!serverConfig.has_openai_key;
+                    if (provider === 'anthropic') hasEnvKey = !!serverConfig.has_anthropic_key;
                 }
 
                 if (hasEnvKey) {
@@ -794,29 +847,59 @@
             }
         }
 
+        function onGithubTokenInput() {
+            const token = document.getElementById('input-github-token').value;
+            localStorage.setItem('nightshift_github_token', token);
+            updateGithubTokenBadge(token);
+            syncConfigToServer();
+        }
+
+        function onDryRunChange() {
+            const dryRun = document.getElementById('check-dry-run').checked;
+            localStorage.setItem('nightshift_dry_run', dryRun);
+            syncConfigToServer();
+        }
+
+        function updateGithubTokenBadge(token) {
+            const badge = document.getElementById('github-token-badge');
+            const hasToken = (token && token.trim().length > 0) || (serverConfig && serverConfig.has_github_token);
+            if (badge) {
+                badge.style.display = hasToken ? 'inline-block' : 'none';
+            }
+        }
+
         async function syncConfigToServer() {
             const provider = document.getElementById('select-provider').value;
             const model = getSelectedModel(provider);
             const apiKey = document.getElementById('input-api-key').value;
             const gitRepo = document.getElementById('input-git-repo').value;
+            const githubToken = document.getElementById('input-github-token').value;
+            const dryRun = document.getElementById('check-dry-run').checked;
 
             try {
-                await fetch('/api/v1/config', {
+                const res = await fetch('/api/v1/config', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         provider: provider,
                         model: model,
                         api_key: apiKey,
-                        git_repo: gitRepo
+                        git_repo: gitRepo,
+                        github_token: githubToken,
+                        dry_run: dryRun
                     })
                 });
+                const json = await res.json();
+                if (json.data) {
+                    serverConfig = json.data;
+                    updateGithubTokenBadge(githubToken);
+                }
             } catch (e) {
                 console.warn('Config sync error:', e);
             }
         }
 
-        // ── View Switching ────────────────────────────────────────────────────────
+        // ── View Switching ────────────────────────────────────────────────────────────
         function switchView(viewName) {
             document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
             document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
@@ -830,6 +913,20 @@
             if (viewName === 'runs') loadRuns();
             if (viewName === 'incidents') loadIncidents();
             if (viewName === 'trajectory') populateTrajectorySelect();
+        }
+
+        function filterIncidentsByRun(runId) {
+            switchView('incidents');
+            const sel = document.getElementById('filter-scan-run');
+            if (sel) sel.value = runId || '';
+            loadIncidents();
+        }
+
+        function filterTrajectoryByRun(runId) {
+            switchView('trajectory');
+            const sel = document.getElementById('trajectory-run-select');
+            if (sel) sel.value = runId || '';
+            onTrajectoryRunChanged();
         }
 
         async function triggerScanNow(isForce = false) {
@@ -846,7 +943,6 @@
                     showToast("⚡ Triggering incremental log scan...");
                 }
 
-                // First ensure backend config has active UI selections
                 await syncConfigToServer();
 
                 const url = isForce ? '/api/v1/scans?force=true' : '/api/v1/scans';
@@ -856,7 +952,13 @@
                     const lines = json.data ? (json.data.lines_parsed || 0) : 0;
                     const inc = json.data ? (json.data.incidents_new || 0) : 0;
                     const prs = json.data ? (json.data.prs_opened || 0) : 0;
-                    showToast(`Scan complete! ${lines.toLocaleString()} lines · ${inc} new incidents · ${prs} PRs`);
+                    if (!isForce && lines === 0) {
+                        // Checkpoints mean an incremental scan only reads bytes appended since the
+                        // last run; switching the engine does not re-process old lines.
+                        showToast("No new log lines since the last scan. Use 🔄 Reset & Re-scan All to re-run the pipeline with the current engine.");
+                    } else {
+                        showToast(`Scan complete! ${lines.toLocaleString()} lines · ${inc} new incidents · ${prs} PRs`);
+                    }
                     loadRuns();
                     loadIncidents();
                     populateTrajectorySelect();
@@ -878,12 +980,13 @@
         async function loadRuns() {
             const tbody = document.getElementById('runs-tbody');
             try {
-                const res = await fetch('/api/v1/scans?page=0&size=20');
+                const res = await fetch('/api/v1/scans?page=0&size=50');
                 const json = await res.json();
                 const runs = json.data || [];
-                
+                scanRunsCache = runs;
+
                 document.getElementById('stat-runs').innerText = json.pagination ? json.pagination.total_count : runs.length;
-                
+
                 let totalInc = 0, totalPrs = 0;
                 runs.forEach(r => {
                     totalInc += (r.incidents_new || 0);
@@ -892,24 +995,57 @@
                 document.getElementById('stat-incidents').innerText = totalInc;
                 document.getElementById('stat-prs').innerText = totalPrs;
 
+                // Populate Run dropdowns in Incidents and Trajectory views
+                populateRunDropdowns(runs);
+
                 if (runs.length === 0) {
-                    tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; color: var(--text-muted);">No scan runs recorded yet. Click "Run Scan Now" above.</td></tr>';
+                    tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; color: var(--text-muted);">No scan runs recorded yet. Click "⚡ Scan New" or "🔄 Reset & Re-scan All" above.</td></tr>';
                     return;
                 }
 
                 tbody.innerHTML = runs.map(r => `
                     <tr>
-                        <td style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem;">${r.id.substring(0, 8)}...</td>
+                        <td style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; font-weight: 600;">${r.id.substring(0, 8)}...</td>
                         <td><span class="badge">${r.trigger_source || 'SCHEDULE'}</span></td>
                         <td><span class="badge ${r.status === 'COMPLETED' ? 'badge-pr' : (r.status === 'RUNNING' ? 'badge-running' : 'badge-fail')}">${r.status}</span></td>
                         <td>${r.started_at ? new Date(r.started_at).toLocaleString() : 'N/A'}</td>
                         <td>${(r.lines_parsed || 0).toLocaleString()}</td>
                         <td><strong>${r.incidents_new || 0}</strong></td>
                         <td><strong>${r.prs_opened || 0}</strong></td>
+                        <td>
+                            <div style="display: flex; gap: 4px;">
+                                <button class="btn-action" onclick="filterIncidentsByRun('${r.id}')" title="View incidents identified in this scan run">🔍 Incidents</button>
+                                <button class="btn-action" onclick="filterTrajectoryByRun('${r.id}')" title="View agent trajectory audit trail for this scan run">📜 Trajectory</button>
+                            </div>
+                        </td>
                     </tr>
                 `).join('');
             } catch (e) {
-                tbody.innerHTML = `<tr><td colspan="7" style="color: var(--danger);">Failed to load runs: ${e.message}</td></tr>`;
+                tbody.innerHTML = `<tr><td colspan="8" style="color: var(--danger);">Failed to load runs: ${e.message}</td></tr>`;
+            }
+        }
+
+        function populateRunDropdowns(runs) {
+            const incRunSel = document.getElementById('filter-scan-run');
+            const trajRunSel = document.getElementById('trajectory-run-select');
+
+            const currentIncVal = incRunSel ? incRunSel.value : '';
+            const currentTrajVal = trajRunSel ? trajRunSel.value : '';
+
+            const optionsHtml = '<option value="">All Scan Runs</option>' +
+                runs.map(r => {
+                    const time = r.started_at ? new Date(r.started_at).toLocaleTimeString() : '';
+                    const shortId = r.id.substring(0, 8);
+                    return `<option value="${r.id}">Run ${shortId}... (${time} · ${r.incidents_new || 0} inc · ${r.prs_opened || 0} PRs)</option>`;
+                }).join('');
+
+            if (incRunSel) {
+                incRunSel.innerHTML = optionsHtml;
+                if (currentIncVal) incRunSel.value = currentIncVal;
+            }
+            if (trajRunSel) {
+                trajRunSel.innerHTML = optionsHtml;
+                if (currentTrajVal) trajRunSel.value = currentTrajVal;
             }
         }
 
@@ -917,27 +1053,39 @@
             const tbody = document.getElementById('incidents-tbody');
             const status = document.getElementById('filter-status').value;
             const severity = document.getElementById('filter-severity').value;
+            const scanRunId = document.getElementById('filter-scan-run').value;
 
-            let url = '/api/v1/incidents?page=0&size=50';
-            if (status) url += `&status=${status}`;
-            if (severity) url += `&severity=${severity}`;
+            let url = '/api/v1/incidents?page=0&size=100';
+            if (status) url += `&status=${encodeURIComponent(status)}`;
+            if (severity) url += `&severity=${encodeURIComponent(severity)}`;
+            if (scanRunId) url += `&scanRunId=${encodeURIComponent(scanRunId)}`;
 
             try {
                 const res = await fetch(url);
                 const json = await res.json();
                 const incidents = json.data || [];
+                incidentsCache = incidents;
 
                 if (incidents.length === 0) {
-                    tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; color: var(--text-muted);">No matching incidents found.</td></tr>';
+                    tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; color: var(--text-muted);">No matching incidents found for the selected filter criteria.</td></tr>';
                     return;
                 }
 
                 tbody.innerHTML = incidents.map(i => {
                     const sev = (i.severity || 'MAJOR').toLowerCase();
+                    const shortRun = i.last_scan_run_id ? i.last_scan_run_id.substring(0, 8) + '...' : 'Global';
+                    const runClickAction = i.last_scan_run_id ? `filterIncidentsByRun('${i.last_scan_run_id}')` : '';
                     return `
                         <tr>
                             <td><span class="chip chip-${sev}">${i.severity || 'MAJOR'}</span></td>
                             <td><span class="badge ${i.status === 'PR_OPEN' ? 'badge-pr' : ''}">${i.status}</span></td>
+                            <td>
+                                <span class="badge" style="cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem;" 
+                                      onclick="${runClickAction}" 
+                                      title="Click to filter incidents from this scan run">
+                                    ${shortRun}
+                                </span>
+                            </td>
                             <td><strong>${escapeHtml(i.title || 'Untitled Incident')}</strong></td>
                             <td style="color: var(--text-muted);">${i.service_name || 'unknown'}</td>
                             <td>${i.occurrence_count || 1}</td>
@@ -949,7 +1097,7 @@
                     `;
                 }).join('');
             } catch (e) {
-                tbody.innerHTML = `<tr><td colspan="7" style="color: var(--danger);">Failed to load incidents: ${e.message}</td></tr>`;
+                tbody.innerHTML = `<tr><td colspan="8" style="color: var(--danger);">Failed to load incidents: ${e.message}</td></tr>`;
             }
         }
 
@@ -965,6 +1113,15 @@
                 document.getElementById('detail-title').innerText = d.title || 'Untitled Incident';
                 document.getElementById('detail-fingerprint').innerText = 'Fingerprint: ' + d.fingerprint;
                 document.getElementById('detail-service').innerText = d.service_name || 'unknown-service';
+
+                // Scan run badge
+                const runBadgeEl = document.getElementById('detail-run-badge');
+                if (d.recent_occurrences && d.recent_occurrences.length > 0 && d.recent_occurrences[0].scan_run_id) {
+                    const runId = d.recent_occurrences[0].scan_run_id;
+                    runBadgeEl.innerHTML = `Identified in Scan Run: <a href="javascript:filterIncidentsByRun('${runId}')" style="color:var(--primary); font-family:'JetBrains Mono',monospace;">${runId.substring(0,8)}...</a>`;
+                } else {
+                    runBadgeEl.innerHTML = '';
+                }
 
                 const sev = (d.severity || 'MAJOR').toLowerCase();
                 const sevEl = document.getElementById('detail-severity');
@@ -999,28 +1156,62 @@
                     diffEl.innerText = 'No patch proposal generated.';
                 }
 
-                // PR with GitHub review & merge buttons
+                // PR with GitHub review & simulated clarification
                 const prEl = document.getElementById('detail-pr-info');
                 if (d.pull_requests && d.pull_requests.length > 0) {
                     const pr = d.pull_requests[0];
-                    const prUrl = pr.pr_url || `https://github.com/${pr.repo_full_name}/pull/${pr.pr_number}`;
-                    const compareUrl = `https://github.com/${pr.repo_full_name}/compare/main...${pr.branch_name}`;
-                    
-                    prEl.innerHTML = `
-                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
-                            <strong>PR #${pr.pr_number || ''}</strong>: 
-                            <a href="${prUrl}" target="_blank" style="color: var(--primary); text-decoration: underline; font-weight: 600;">${prUrl}</a> 
-                            <span class="badge badge-pr">${pr.state}</span>
-                        </div>
-                        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-                            <a href="${prUrl}" target="_blank" class="btn-action" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px; background: #2563eb; color: #fff; font-weight: 600; padding: 0.45rem 1rem;">
-                                🔗 Open & Review on GitHub
-                            </a>
-                            <a href="${compareUrl}" target="_blank" class="btn-action" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px; background: #059669; color: #fff; font-weight: 600; padding: 0.45rem 1rem;">
-                                🚀 Merge / Compare on GitHub
-                            </a>
-                        </div>
-                    `;
+                    const isSimulated = (pr.provider === 'SIMULATED') || (!pr.pr_url) || (serverConfig && serverConfig.dry_run);
+                    const repo = pr.repo_full_name || (serverConfig && serverConfig.git_repo) || 'MdTanvirHossainTusher/nightshift';
+                    const branch = pr.branch_name || 'nightshift/fix-patch';
+                    const baseBranch = pr.base_branch || 'main';
+                    const repoUrl = `https://github.com/${repo}`;
+                    const compareUrl = `https://github.com/${repo}/compare/${baseBranch}...${branch}`;
+                    const prUrl = pr.pr_url || `${repoUrl}/pull/${pr.pr_number}`;
+
+                    if (isSimulated) {
+                        prEl.innerHTML = `
+                            <div style="background: rgba(30, 41, 59, 0.85); border-left: 4px solid #f59e0b; padding: 1rem; border-radius: 8px;">
+                                <div style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
+                                    <span class="badge" style="background: rgba(245, 158, 11, 0.2); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); font-size: 0.8rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 4px;">⚠️ SIMULATED PR (DRY-RUN)</span>
+                                    <strong style="color: #f1f5f9; font-size: 0.95rem;">Simulation PR #${pr.pr_number || ''}</strong>
+                                    <span class="badge" style="font-size: 0.75rem;">Branch: ${escapeHtml(branch)}</span>
+                                </div>
+                                <p style="color: #cbd5e1; font-size: 0.875rem; margin-bottom: 0.75rem; line-height: 1.5;">
+                                    This patch proposal was verified locally in <strong>Dry-Run Mode</strong>. It has not been published to GitHub yet, so clicking a simulated PR number on GitHub would result in a 404 page.
+                                </p>
+                                <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+                                    <a href="${repoUrl}" target="_blank" class="btn-action" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px; background: #334155; color: #f8fafc; font-weight: 600; padding: 0.45rem 1rem;">
+                                        ↗ View Repository (${escapeHtml(repo)})
+                                    </a>
+                                    <a href="${compareUrl}" target="_blank" class="btn-action" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px; background: #059669; color: #fff; font-weight: 600; padding: 0.45rem 1rem;">
+                                        🌿 Compare / Create PR on GitHub
+                                    </a>
+                                    <button class="btn-action" onclick="triggerPublishLive()" style="display: inline-flex; align-items: center; gap: 6px; background: #2563eb; color: #fff; font-weight: 600; padding: 0.45rem 1rem;">
+                                        🚀 Publish Live to GitHub (PAT required)
+                                    </button>
+                                </div>
+                            </div>
+                        `;
+                    } else {
+                        prEl.innerHTML = `
+                            <div style="background: rgba(30, 41, 59, 0.85); border-left: 4px solid #10b981; padding: 1rem; border-radius: 8px;">
+                                <div style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
+                                    <span class="badge" style="background: rgba(16, 185, 129, 0.2); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.4); font-size: 0.8rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 4px;">✅ LIVE ON GITHUB</span>
+                                    <strong style="color: #f1f5f9; font-size: 0.95rem;">PR #${pr.pr_number || ''}</strong>
+                                    <a href="${prUrl}" target="_blank" style="color: var(--primary); text-decoration: underline; font-weight: 600; font-size: 0.9rem;">${prUrl}</a>
+                                    <span class="badge badge-pr">${pr.state}</span>
+                                </div>
+                                <div style="display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 0.6rem;">
+                                    <a href="${prUrl}" target="_blank" class="btn-action" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px; background: #2563eb; color: #fff; font-weight: 600; padding: 0.45rem 1rem;">
+                                        🔗 Open & Review on GitHub
+                                    </a>
+                                    <a href="${compareUrl}" target="_blank" class="btn-action" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px; background: #059669; color: #fff; font-weight: 600; padding: 0.45rem 1rem;">
+                                        🚀 Merge / Compare on GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        `;
+                    }
                 } else {
                     prEl.innerText = 'No pull request opened yet.';
                 }
@@ -1055,13 +1246,36 @@
 
         async function triggerPublish() {
             if (!currentIncidentId) return;
-            showToast("Publishing PR to GitHub...");
+            showToast("Publishing PR...");
             const res = await fetch(`/api/v1/incidents/${currentIncidentId}/publish`, { method: 'POST' });
             if (res.ok) {
                 showToast("Pull request published!");
                 viewIncidentDetail(currentIncidentId);
             } else {
                 showToast("Publish failed.");
+            }
+        }
+
+        async function triggerPublishLive() {
+            if (!currentIncidentId) return;
+            const token = document.getElementById('input-github-token').value.trim();
+            if (!token && (!serverConfig || !serverConfig.has_github_token)) {
+                alert('Please enter your GitHub Personal Access Token (PAT) in the top settings bar before publishing live to GitHub.');
+                document.getElementById('input-github-token').focus();
+                return;
+            }
+
+            document.getElementById('check-dry-run').checked = false;
+            await syncConfigToServer();
+
+            showToast("Publishing live PR to GitHub repository...");
+            const res = await fetch(`/api/v1/incidents/${currentIncidentId}/publish`, { method: 'POST' });
+            if (res.ok) {
+                showToast("Live Pull Request published to GitHub!");
+                viewIncidentDetail(currentIncidentId);
+            } else {
+                const err = await res.json().catch(() => ({}));
+                showToast("Live publish failed: " + (err.message || 'Check GitHub token and repo permissions.'));
             }
         }
 
@@ -1078,57 +1292,91 @@
             }
         }
 
+        // ── Trajectory View & Filtering ───────────────────────────────────────────────
         async function populateTrajectorySelect() {
-            const sel = document.getElementById('trajectory-incident-select');
+            const incSel = document.getElementById('trajectory-incident-select');
             try {
                 const res = await fetch('/api/v1/incidents?size=100');
                 const json = await res.json();
                 const incidents = json.data || [];
-                sel.innerHTML = '<option value="">Select an incident...</option>' +
-                    incidents.map(i => `<option value="${i.id}">${i.title} (${i.severity || 'MAJOR'})</option>`).join('');
+                incidentsCache = incidents;
+
+                const runVal = document.getElementById('trajectory-run-select').value;
+                updateTrajectoryIncidentOptions(runVal);
+
                 if (currentIncidentId) {
-                    sel.value = currentIncidentId;
-                    loadTrajectoryForSelected();
+                    incSel.value = currentIncidentId;
                 }
+                loadTrajectoryForSelected();
             } catch (e) {
                 console.error(e);
             }
         }
 
+        function onTrajectoryRunChanged() {
+            const runVal = document.getElementById('trajectory-run-select').value;
+            updateTrajectoryIncidentOptions(runVal);
+            loadTrajectoryForSelected();
+        }
+
+        function updateTrajectoryIncidentOptions(runId) {
+            const incSel = document.getElementById('trajectory-incident-select');
+            if (!incSel) return;
+
+            let filteredIncidents = incidentsCache;
+            if (runId) {
+                filteredIncidents = incidentsCache.filter(i => i.last_scan_run_id === runId);
+            }
+
+            incSel.innerHTML = '<option value="">All Incidents in Run</option>' +
+                filteredIncidents.map(i => `<option value="${i.id}">${escapeHtml(i.title)} (${i.severity || 'MAJOR'})</option>`).join('');
+        }
+
         async function loadTrajectoryForSelected() {
-            const id = document.getElementById('trajectory-incident-select').value;
+            const runId = document.getElementById('trajectory-run-select').value;
+            const incId = document.getElementById('trajectory-incident-select').value;
             const tbody = document.getElementById('trajectory-tbody');
-            if (!id) {
-                tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; color: var(--text-muted);">Select an incident above.</td></tr>';
-                return;
+
+            let url = '/api/v1/incidents/trajectory';
+            const params = [];
+            if (runId) params.push(`scanRunId=${encodeURIComponent(runId)}`);
+            if (incId) params.push(`incidentId=${encodeURIComponent(incId)}`);
+            if (params.length > 0) {
+                url += '?' + params.join('&');
             }
 
             try {
-                const res = await fetch(`/api/v1/incidents/${id}/trajectory`);
+                const res = await fetch(url);
                 const json = await res.json();
                 const steps = json.data || [];
 
                 if (steps.length === 0) {
-                    tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; color: var(--text-muted);">No trajectory steps recorded for this incident yet.</td></tr>';
+                    tbody.innerHTML = '<tr><td colspan="9" style="text-align: center; color: var(--text-muted);">No trajectory steps recorded for the selected filter.</td></tr>';
                     return;
                 }
 
-                tbody.innerHTML = steps.map(s => `
-                    <tr>
-                        <td><strong>#${s.step_index}</strong></td>
-                        <td><span class="badge">${s.agent_role}</span></td>
-                        <td><span class="chip chip-minor">${s.step_type}</span></td>
-                        <td style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem;">${s.provider || '-'}/${s.model || s.tool_name || '-'}</td>
-                        <td>${s.latency_ms || 0}ms</td>
-                        <td><span class="badge ${s.status === 'OK' ? 'badge-pr' : 'badge-fail'}">${s.status}</span></td>
-                        <td style="max-width: 400px; font-size: 0.8rem; word-break: break-word;">
-                            <strong>In:</strong> ${escapeHtml(s.input_summary || '-')}<br>
-                            <strong>Out:</strong> ${escapeHtml(s.output_summary || '-')}
-                        </td>
-                    </tr>
-                `).join('');
+                tbody.innerHTML = steps.map(s => {
+                    const shortRun = s.scan_run_id ? s.scan_run_id.substring(0, 8) + '...' : 'Global';
+                    const incTitle = s.incident_title || (s.incident_id ? s.incident_id.substring(0, 8) + '...' : 'Scan');
+                    return `
+                        <tr>
+                            <td><strong>#${s.step_index}</strong></td>
+                            <td style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem;">${shortRun}</td>
+                            <td style="max-width: 220px; font-weight: 500; font-size: 0.85rem;" title="${escapeHtml(incTitle)}">${escapeHtml(incTitle)}</td>
+                            <td><span class="badge">${s.agent_role}</span></td>
+                            <td><span class="chip chip-minor">${s.step_type}</span></td>
+                            <td style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem;">${s.provider || '-'}/${s.model || s.tool_name || '-'}</td>
+                            <td>${s.latency_ms || 0}ms</td>
+                            <td><span class="badge ${s.status === 'OK' ? 'badge-pr' : 'badge-fail'}">${s.status}</span></td>
+                            <td style="max-width: 380px; font-size: 0.8rem; word-break: break-word;">
+                                <strong>In:</strong> ${escapeHtml(s.input_summary || '-')}<br>
+                                <strong>Out:</strong> ${escapeHtml(s.output_summary || '-')}
+                            </td>
+                        </tr>
+                    `;
+                }).join('');
             } catch (e) {
-                tbody.innerHTML = `<tr><td colspan="7" style="color: var(--danger);">Failed to load trajectory: ${e.message}</td></tr>`;
+                tbody.innerHTML = `<tr><td colspan="9" style="color: var(--danger);">Failed to load trajectory: ${e.message}</td></tr>`;
             }
         }
 

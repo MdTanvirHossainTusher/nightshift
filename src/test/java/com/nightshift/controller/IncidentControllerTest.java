@@ -99,8 +99,10 @@ class IncidentControllerTest {
 
     @Test
     void listIncidents_returns200() throws Exception {
-        when(incidentRepository.findByFilters(any(), any(), any(Pageable.class)))
+        when(incidentRepository.findByFilters(any(), any(), any(), any(Pageable.class)))
                 .thenReturn(new PageImpl<>(List.of(incident)));
+        when(incidentOccurrenceRepository.findLatestScanRunPerIncident(any()))
+                .thenReturn(List.of());
 
         mockMvc.perform(get("/api/v1/incidents"))
                 .andExpect(status().isOk())

@@ -17,4 +17,9 @@ public interface IncidentOccurrenceRepository extends JpaRepository<IncidentOccu
     @Query("SELECT o FROM IncidentOccurrence o WHERE o.incident.id = :incidentId ORDER BY o.occurredAt ASC")
     List<IncidentOccurrence> findTopByIncidentId(@Param("incidentId") UUID incidentId,
                                                   org.springframework.data.domain.Pageable pageable);
+
+    @Query("SELECT o.incident.id, o.scanRun.id FROM IncidentOccurrence o " +
+           "WHERE o.incident.id IN :incidentIds AND o.scanRun IS NOT NULL " +
+           "ORDER BY o.occurredAt DESC")
+    List<Object[]> findLatestScanRunPerIncident(@Param("incidentIds") java.util.Collection<UUID> incidentIds);
 }

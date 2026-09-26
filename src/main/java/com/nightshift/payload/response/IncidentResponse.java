@@ -31,9 +31,14 @@ public record IncidentResponse(
         boolean muted,
         String muteReason,
         String assigneeEmail,
-        String assigneeHandle
+        String assigneeHandle,
+        UUID lastScanRunId
 ) {
     public static IncidentResponse from(Incident i) {
+        return from(i, null);
+    }
+
+    public static IncidentResponse from(Incident i, UUID lastScanRunId) {
         if (i == null) return null;
         return new IncidentResponse(
                 i.getId(),
@@ -57,7 +62,8 @@ public record IncidentResponse(
                 i.isMuted(),
                 i.getMuteReason(),
                 i.getAssigneeEmail(),
-                i.getAssigneeHandle()
+                i.getAssigneeHandle(),
+                lastScanRunId
         );
     }
 }

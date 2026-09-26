@@ -7,6 +7,7 @@ import java.util.UUID;
 
 public record IncidentOccurrenceResponse(
         UUID id,
+        UUID scanRunId,
         Instant occurredAt,
         String logFile,
         Integer lineNumber,
@@ -18,6 +19,7 @@ public record IncidentOccurrenceResponse(
         if (o == null) return null;
         return new IncidentOccurrenceResponse(
                 o.getId(),
+                o.getScanRun() != null ? o.getScanRun().getId() : null,
                 o.getOccurredAt(),
                 o.getLogFile(),
                 o.getLineNumber(),
