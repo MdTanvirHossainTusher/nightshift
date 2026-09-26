@@ -66,10 +66,32 @@ public class HeuristicLlmClient implements LlmClient {
     @Override
     public LlmResponse complete(LlmRequest request) {
         String prompt = request.userPrompt() != null ? request.userPrompt() : "";
+        if (prompt.contains("verify_request") || (request.systemPromptPath() != null && request.systemPromptPath().contains("verify"))) {
+            return LlmResponse.of(buildVerify(prompt));
+        }
         if (prompt.contains("fix_request")) {
             return LlmResponse.of(buildDiff(prompt));
         }
         return LlmResponse.of(buildTriage(prompt));
+    }
+
+    private String buildVerify(String prompt) {
+        if (prompt.contains("reject_me") || prompt.contains("unsupported") || prompt.contains("contradict") || prompt.contains("hallucinated")) {
+            return """
+                    {
+                      "verdict": "FAIL",
+                      "notes": "Patch rejected: proposed diff contains unsupported claims and contradicts source logic.",
+                      "unsupported_claims": ["Proposed changes cannot be grounded in provided source code"]
+                    }
+                    """;
+        }
+        return """
+                {
+                  "verdict": "PASS",
+                  "notes": "Patch verified against source: changes are grounded and correctly resolve the diagnosed issue.",
+                  "unsupported_claims": []
+                }
+                """;
     }
 
     // ── Triage dispatch ──────────────────────────────────────────────────────

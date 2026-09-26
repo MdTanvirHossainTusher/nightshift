@@ -300,7 +300,7 @@ and `git apply --check` via JGit. `LOW`-confidence locations never reach this ag
 
 ## Task 8 — Verifier Agent
 
-**Status:** `[ ] pending`
+**Status:** `[x] done`
 
 **Intent:** Build the verifier (step 7): a deliberately adversarial second agent call that is
 given the diff, the original source, and the triage claim and must find the reason to reject

@@ -9,5 +9,6 @@ public enum IncidentStatus {
     PR_OPEN,
     PR_MERGED,
     RESOLVED,
-    MUTED
+    MUTED,
+    TRIAGED_PATCH_REJECTED
 }

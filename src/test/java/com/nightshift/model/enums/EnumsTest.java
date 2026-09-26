@@ -30,7 +30,7 @@ class EnumsTest {
                 .extracting(Enum::name)
                 .containsExactlyInAnyOrder(
                         "NEW", "TRIAGED", "TRIAGE_FAILED", "FIX_PROPOSED", "FIX_VERIFIED",
-                        "PR_OPEN", "PR_MERGED", "RESOLVED", "MUTED");
+                        "PR_OPEN", "PR_MERGED", "RESOLVED", "MUTED", "TRIAGED_PATCH_REJECTED");
     }
 
     @Test
