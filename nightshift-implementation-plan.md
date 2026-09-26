@@ -407,7 +407,7 @@ The notifier reads `config/assignment-rules.yml`, resolves the assignee, and que
 
 ## Task 11 — Controllers, ResponseBuilder Integration, OpenAPI
 
-**Status:** `[ ] pending`
+**Status:** `[x] done`
 
 **Intent:** Wire up all REST endpoints from PROMPT.md §8, returning `ResponseEntity<ApiResponse<T>>`
 through `ResponseBuilder`, with full OpenAPI annotations.

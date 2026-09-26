@@ -6,6 +6,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
 public interface ScanRunRepository extends JpaRepository<ScanRun, UUID> {
 
     /**
@@ -13,4 +16,6 @@ public interface ScanRunRepository extends JpaRepository<ScanRun, UUID> {
      * Primarily used to enforce the single-active-run guard (status = RUNNING).
      */
     boolean existsByStatus(ScanStatus status);
+
+    Page<ScanRun> findAllByOrderByStartedAtDesc(Pageable pageable);
 }
