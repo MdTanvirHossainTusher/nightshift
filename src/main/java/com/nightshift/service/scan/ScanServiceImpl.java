@@ -56,6 +56,42 @@ public class ScanServiceImpl implements ScanService {
     private final ObjectProvider<VerifierAgent> verifierAgentProvider;
     private final ObjectProvider<PublisherService> publisherServiceProvider;
     private final ObjectProvider<com.nightshift.config.LogSourceInitializer> logSourceInitializerProvider;
+    private final ObjectProvider<ScannedFileRepository> scannedFileRepositoryProvider;
+    private final ObjectProvider<AgentStepRepository> agentStepRepositoryProvider;
+    private final ObjectProvider<PullRequestRepository> pullRequestRepositoryProvider;
+    private final ObjectProvider<PatchProposalRepository> patchProposalRepositoryProvider;
+    private final ObjectProvider<CodeLocationRepository> codeLocationRepositoryProvider;
+    private final ObjectProvider<NotificationRepository> notificationRepositoryProvider;
+
+    @Override
+    @Transactional
+    public void resetCheckpoints(boolean resetData) {
+        log.info("Resetting scan checkpoints (resetData={})", resetData);
+        if (resetData) {
+            notificationRepositoryProvider.ifAvailable(org.springframework.data.jpa.repository.JpaRepository::deleteAllInBatch);
+            agentStepRepositoryProvider.ifAvailable(org.springframework.data.jpa.repository.JpaRepository::deleteAllInBatch);
+            pullRequestRepositoryProvider.ifAvailable(org.springframework.data.jpa.repository.JpaRepository::deleteAllInBatch);
+            patchProposalRepositoryProvider.ifAvailable(org.springframework.data.jpa.repository.JpaRepository::deleteAllInBatch);
+            codeLocationRepositoryProvider.ifAvailable(org.springframework.data.jpa.repository.JpaRepository::deleteAllInBatch);
+            incidentOccurrenceRepository.deleteAllInBatch();
+            incidentRepository.deleteAllInBatch();
+            scannedFileRepositoryProvider.ifAvailable(org.springframework.data.jpa.repository.JpaRepository::deleteAllInBatch);
+            scanRunRepository.deleteAllInBatch();
+            logSourceInitializerProvider.ifAvailable(com.nightshift.config.LogSourceInitializer::initializeSourcesIfEmpty);
+        } else {
+            scannedFileRepositoryProvider.ifAvailable(org.springframework.data.jpa.repository.JpaRepository::deleteAllInBatch);
+        }
+        log.info("Reset checkpoints completed successfully.");
+    }
+
+    @Override
+    @Transactional
+    public ScanRun runScan(TriggerSource triggerSource, boolean resetCheckpoints) {
+        if (resetCheckpoints) {
+            resetCheckpoints(true);
+        }
+        return runScan(triggerSource);
+    }
 
     @Override
     @Transactional

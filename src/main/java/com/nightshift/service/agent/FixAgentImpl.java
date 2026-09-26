@@ -115,6 +115,7 @@ public class FixAgentImpl implements FixAgent {
                     .linesAdded(analysis.linesAdded())
                     .linesRemoved(analysis.linesRemoved())
                     .provider(client.provider())
+                    .model(client.model())
                     .build();
 
             proposal = patchProposalRepository.save(proposal);
@@ -141,6 +142,7 @@ public class FixAgentImpl implements FixAgent {
                     .linesAdded(analysis != null ? analysis.linesAdded() : 0)
                     .linesRemoved(analysis != null ? analysis.linesRemoved() : 0)
                     .provider(client.provider())
+                    .model(client.model())
                     .build();
 
             patchProposalRepository.save(rejected);

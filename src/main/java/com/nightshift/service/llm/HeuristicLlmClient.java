@@ -52,6 +52,11 @@ public class HeuristicLlmClient implements LlmClient {
     }
 
     @Override
+    public String model() {
+        return "heuristic-rules";
+    }
+
+    @Override
     public boolean isAvailable() {
         return true;
     }

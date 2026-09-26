@@ -38,6 +38,30 @@ public class ConfigController {
         }
 
         String provider = props.getLlm().getProvider();
+        if (req.getModel() != null && !req.getModel().isBlank()) {
+            String model = req.getModel().trim();
+            if ("gemini".equalsIgnoreCase(provider)) {
+                props.getLlm().getGemini().setModel(model);
+            } else if ("openai".equalsIgnoreCase(provider)) {
+                props.getLlm().getOpenai().setModel(model);
+            } else if ("anthropic".equalsIgnoreCase(provider)) {
+                props.getLlm().getAnthropic().setModel(model);
+            }
+            log.info("Model configured dynamically for provider {}: {}", provider, model);
+        }
+
+        if (req.getBaseUrl() != null && !req.getBaseUrl().isBlank()) {
+            String baseUrl = req.getBaseUrl().trim();
+            if ("openai".equalsIgnoreCase(provider)) {
+                props.getLlm().getOpenai().setBaseUrl(baseUrl);
+            } else if ("gemini".equalsIgnoreCase(provider)) {
+                props.getLlm().getGemini().setBaseUrl(baseUrl);
+            } else if ("anthropic".equalsIgnoreCase(provider)) {
+                props.getLlm().getAnthropic().setBaseUrl(baseUrl);
+            }
+            log.info("Base URL configured dynamically for provider {}: {}", provider, baseUrl);
+        }
+
         if (req.getApiKey() != null && !req.getApiKey().isBlank()) {
             String key = req.getApiKey().trim();
             if ("gemini".equalsIgnoreCase(provider)) {
@@ -94,8 +118,19 @@ public class ConfigController {
 
         boolean dryRun = props.getPublish() == null || props.getPublish().isDryRun();
 
+        String activeModel = switch (props.getLlm().getProvider().toLowerCase()) {
+            case "gemini" -> props.getLlm().getGemini().getModel();
+            case "openai" -> props.getLlm().getOpenai().getModel();
+            case "anthropic" -> props.getLlm().getAnthropic().getModel();
+            default -> "heuristic-rules";
+        };
+
         return new ConfigResponse(
                 props.getLlm().getProvider(),
+                activeModel,
+                props.getLlm().getOpenai().getModel(),
+                props.getLlm().getGemini().getModel(),
+                props.getLlm().getAnthropic().getModel(),
                 hasOpenAi,
                 hasGemini,
                 hasAnthropic,
@@ -110,6 +145,8 @@ public class ConfigController {
     public static class ConfigUpdateRequest {
         private String provider;
         private String apiKey;
+        private String model;
+        private String baseUrl;
         private String gitRepo;
         private String githubToken;
         private Boolean dryRun;
@@ -117,6 +154,10 @@ public class ConfigController {
 
     public record ConfigResponse(
             String provider,
+            String model,
+            String openaiModel,
+            String geminiModel,
+            String anthropicModel,
             boolean hasOpenaiKey,
             boolean hasGeminiKey,
             boolean hasAnthropicKey,

@@ -32,7 +32,7 @@ public interface LlmClient {
     LlmResponse complete(LlmRequest request);
 
     /**
-     * Returns {@code true} when this provider can currently serve requests.
+     * Returns true when this provider can currently serve requests.
      *
      * <p>For offline providers (e.g. {@code heuristic}) this always returns
      * {@code true}. For API-backed providers it returns {@code false} when the
@@ -40,4 +40,11 @@ public interface LlmClient {
      * {@code heuristic} gracefully.
      */
     boolean isAvailable();
+
+    /**
+     * The model name or version used by this client.
+     */
+    default String model() {
+        return "";
+    }
 }

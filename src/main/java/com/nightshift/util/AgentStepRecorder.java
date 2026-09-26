@@ -71,6 +71,7 @@ public class AgentStepRecorder {
                     .stepIndex(stepIndex)
                     .stepType(StepType.MODEL)
                     .provider(client.provider())
+                    .model(client.model())
                     .inputSummary(truncate(inputSummary, 2000))
                     .outputSummary(truncate(response.responseText(), 2000))
                     .tokensIn(response.tokensIn())
@@ -80,8 +81,8 @@ public class AgentStepRecorder {
                     .build();
             agentStepRepository.save(step);
 
-            log.debug("AgentStep recorded: role={} stepIndex={} provider={} latencyMs={}",
-                    role, stepIndex, client.provider(), latencyMs);
+            log.debug("AgentStep recorded: role={} stepIndex={} provider={} model={} latencyMs={}",
+                    role, stepIndex, client.provider(), client.model(), latencyMs);
             return response;
 
         } catch (Exception e) {
@@ -94,6 +95,7 @@ public class AgentStepRecorder {
                     .stepIndex(stepIndex)
                     .stepType(StepType.MODEL)
                     .provider(client.provider())
+                    .model(client.model())
                     .inputSummary(truncate(inputSummary, 2000))
                     .latencyMs((int) Math.min(latencyMs, Integer.MAX_VALUE))
                     .status(STATUS_ERROR)

@@ -100,11 +100,12 @@ public class TriageAgentImpl implements TriageAgent {
                       "setting TRIAGE_FAILED (LLM_RESPONSE_UNPARSEABLE)", incident.getId());
             incident.setStatus(IncidentStatus.TRIAGE_FAILED);
             incident.setTriageProvider(client.provider());
+            incident.setTriageModel(client.model());
             incidentRepository.save(incident);
             return;
         }
 
-        applyTriageResult(incident, parsed, client.provider());
+        applyTriageResult(incident, parsed, client.provider(), client.model());
         incidentRepository.save(incident);
 
         log.info("Triage complete: incident={} severity={} category={}",
@@ -176,7 +177,7 @@ public class TriageAgentImpl implements TriageAgent {
 
     // ── Entity mapping ────────────────────────────────────────────────────────
 
-    private void applyTriageResult(Incident incident, JsonNode json, String provider) {
+    private void applyTriageResult(Incident incident, JsonNode json, String provider, String model) {
         String title = textOrNull(json, "title");
         if (title != null) incident.setTitle(title);
 
@@ -188,6 +189,7 @@ public class TriageAgentImpl implements TriageAgent {
         incident.setRecommendedAction(textOrNull(json, "recommended_action"));
         incident.setConfidence(parseConfidence(json));
         incident.setTriageProvider(provider);
+        incident.setTriageModel(model);
         incident.setTriagedAt(Instant.now());
         incident.setStatus(IncidentStatus.TRIAGED);
     }

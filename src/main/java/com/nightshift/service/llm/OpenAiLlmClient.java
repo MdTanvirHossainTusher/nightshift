@@ -43,6 +43,11 @@ public class OpenAiLlmClient implements LlmClient {
         return "openai";
     }
 
+    @Override
+    public String model() {
+        return properties.getLlm().getOpenai().getModel();
+    }
+
     private String getEffectiveApiKey() {
         String key = properties.getLlm().getOpenai().getApiKey();
         if (key != null && !key.isBlank()) return key.strip();

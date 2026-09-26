@@ -165,6 +165,25 @@
         .btn-scan:active { transform: translateY(0); }
         .btn-scan:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
 
+        .btn-rescan {
+            background: linear-gradient(135deg, #0284c7, #0369a1);
+            color: white;
+            border: 1px solid #38bdf8;
+            padding: 0.5rem 1.15rem;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+            transition: all 0.2s ease;
+        }
+        .btn-rescan:hover { opacity: 0.92; transform: translateY(-1px); background: linear-gradient(135deg, #0369a1, #075985); }
+        .btn-rescan:active { transform: translateY(0); }
+        .btn-rescan:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
         /* Subheader Bar */
         .sub-bar {
             background: #0b1324;
@@ -367,15 +386,22 @@
             <button id="nav-trajectory" onclick="switchView('trajectory')">Trajectory</button>
         </nav>
         <div class="header-actions">
-            <!-- Prominent Model Selector Dropdown -->
+            <!-- Engine / Provider Selector -->
             <div class="provider-selector-wrap">
-                <label for="select-provider">🤖 Model:</label>
+                <label for="select-provider">⚡ Engine:</label>
                 <select id="select-provider" class="provider-dropdown" onchange="onProviderChange()">
                     <option value="heuristic">Heuristic (Offline, Fast)</option>
-                    <option value="gemini">Google Gemini (gemini-2.0-flash)</option>
-                    <option value="openai">OpenAI (gpt-4o-mini)</option>
-                    <option value="anthropic">Anthropic Claude (claude-3-5-sonnet)</option>
+                    <option value="openai">OpenAI (Luna / GPT-4o)</option>
+                    <option value="gemini">Google Gemini</option>
+                    <option value="anthropic">Anthropic Claude</option>
                 </select>
+            </div>
+
+            <!-- Dynamic Model Selector & Custom Input -->
+            <div id="model-selector-wrap" class="provider-selector-wrap" style="display: none;">
+                <label for="select-model">🤖 Model:</label>
+                <select id="select-model" class="provider-dropdown" onchange="onModelChange()"></select>
+                <input type="text" id="input-custom-model" placeholder="Model name" oninput="onCustomModelInput()" style="display: none; padding: 2px 6px; font-size: 0.8rem; width: 110px; background:#0f172a; border: 1px solid #334155; border-radius: 4px; color: #f8fafc;" />
             </div>
 
             <!-- Dynamic API Key Input Field -->
@@ -384,8 +410,9 @@
                 <span id="env-badge" class="badge-env" style="display: none;">ENV Key Active</span>
             </div>
 
-            <!-- Run Scan Button -->
-            <button id="btn-scan" class="btn-scan" onclick="triggerScanNow()">⚡ Run Scan Now</button>
+            <!-- Scan Action Buttons -->
+            <button id="btn-scan" class="btn-scan" onclick="triggerScanNow(false)" title="Scans only newly appended lines since last run">⚡ Scan New</button>
+            <button id="btn-rescan" class="btn-rescan" onclick="triggerScanNow(true)" title="Resets checkpoints and re-processes all 20,127 lines from scratch with the chosen AI model">🔄 Reset & Re-scan All</button>
         </div>
     </header>
 
@@ -582,6 +609,28 @@
             setTimeout(() => { t.style.display = 'none'; }, 4000);
         }
 
+        const PROVIDER_MODELS = {
+            'openai': [
+                { id: 'luna', label: 'Luna (Default)' },
+                { id: 'gpt-4o-mini', label: 'gpt-4o-mini' },
+                { id: 'gpt-4o', label: 'gpt-4o' },
+                { id: 'o3-mini', label: 'o3-mini' },
+                { id: 'custom', label: 'Custom...' }
+            ],
+            'gemini': [
+                { id: 'gemini-2.0-flash', label: 'Gemini 2.0 Flash (Default)' },
+                { id: 'gemini-2.5-flash', label: 'Gemini 2.5 Flash' },
+                { id: 'gemini-1.5-pro', label: 'Gemini 1.5 Pro' },
+                { id: 'custom', label: 'Custom...' }
+            ],
+            'anthropic': [
+                { id: 'claude-3-7-sonnet-20250219', label: 'Claude 3.7 Sonnet (Default)' },
+                { id: 'claude-3-5-sonnet-20241022', label: 'Claude 3.5 Sonnet' },
+                { id: 'claude-3-5-haiku-20241022', label: 'Claude 3.5 Haiku' },
+                { id: 'custom', label: 'Custom...' }
+            ]
+        };
+
         // ── Provider & API Key Session Caching ─────────────────────────────────────
         async function loadConfig() {
             try {
@@ -597,6 +646,7 @@
                 document.getElementById('input-git-repo').value = cachedRepo;
                 updateRepoLink(cachedRepo);
 
+                updateModelSelector(cachedProvider);
                 updateApiKeyVisibility(cachedProvider);
             } catch (e) {
                 console.warn('Failed to load server config:', e);
@@ -606,8 +656,84 @@
         function onProviderChange() {
             const provider = document.getElementById('select-provider').value;
             localStorage.setItem('nightshift_provider', provider);
+            updateModelSelector(provider);
             updateApiKeyVisibility(provider);
             syncConfigToServer();
+        }
+
+        function updateModelSelector(provider) {
+            const wrap = document.getElementById('model-selector-wrap');
+            const select = document.getElementById('select-model');
+            const customInput = document.getElementById('input-custom-model');
+
+            if (provider === 'heuristic' || !PROVIDER_MODELS[provider]) {
+                wrap.style.display = 'none';
+                return;
+            }
+
+            wrap.style.display = 'flex';
+            select.innerHTML = '';
+            const models = PROVIDER_MODELS[provider];
+            models.forEach(m => {
+                const opt = document.createElement('option');
+                opt.value = m.id;
+                opt.innerText = m.label;
+                select.appendChild(opt);
+            });
+
+            // Find current active model
+            let activeModel = localStorage.getItem(`nightshift_model_${provider}`);
+            if (!activeModel && serverConfig) {
+                if (provider === 'openai') activeModel = serverConfig.openai_model;
+                if (provider === 'gemini') activeModel = serverConfig.gemini_model;
+                if (provider === 'anthropic') activeModel = serverConfig.anthropic_model;
+            }
+            if (!activeModel) activeModel = models[0].id;
+
+            const hasOpt = models.some(m => m.id === activeModel);
+            if (hasOpt) {
+                select.value = activeModel;
+                customInput.style.display = 'none';
+            } else {
+                select.value = 'custom';
+                customInput.style.display = 'inline-block';
+                customInput.value = activeModel;
+            }
+        }
+
+        function onModelChange() {
+            const provider = document.getElementById('select-provider').value;
+            const select = document.getElementById('select-model');
+            const customInput = document.getElementById('input-custom-model');
+
+            if (select.value === 'custom') {
+                customInput.style.display = 'inline-block';
+                customInput.focus();
+            } else {
+                customInput.style.display = 'none';
+                localStorage.setItem(`nightshift_model_${provider}`, select.value);
+                syncConfigToServer();
+            }
+        }
+
+        function onCustomModelInput() {
+            const provider = document.getElementById('select-provider').value;
+            const customInput = document.getElementById('input-custom-model');
+            if (customInput.value.trim()) {
+                localStorage.setItem(`nightshift_model_${provider}`, customInput.value.trim());
+                syncConfigToServer();
+            }
+        }
+
+        function getSelectedModel(provider) {
+            if (provider === 'heuristic') return 'heuristic-rules';
+            const select = document.getElementById('select-model');
+            if (!select) return '';
+            if (select.value === 'custom') {
+                const customInput = document.getElementById('input-custom-model');
+                return (customInput && customInput.value.trim()) ? customInput.value.trim() : '';
+            }
+            return select.value;
         }
 
         function updateApiKeyVisibility(provider) {
@@ -670,6 +796,7 @@
 
         async function syncConfigToServer() {
             const provider = document.getElementById('select-provider').value;
+            const model = getSelectedModel(provider);
             const apiKey = document.getElementById('input-api-key').value;
             const gitRepo = document.getElementById('input-git-repo').value;
 
@@ -679,6 +806,7 @@
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         provider: provider,
+                        model: model,
                         api_key: apiKey,
                         git_repo: gitRepo
                     })
@@ -704,22 +832,34 @@
             if (viewName === 'trajectory') populateTrajectorySelect();
         }
 
-        async function triggerScanNow() {
-            const btn = document.getElementById('btn-scan');
+        async function triggerScanNow(isForce = false) {
+            const btnScan = document.getElementById('btn-scan');
+            const btnRescan = document.getElementById('btn-rescan');
             try {
-                btn.disabled = true;
-                btn.innerText = '⏳ Scanning...';
-                showToast("⚡ Triggering Overnight Scan...");
+                btnScan.disabled = true;
+                btnRescan.disabled = true;
+                if (isForce) {
+                    btnRescan.innerText = '⏳ Resetting & Scanning...';
+                    showToast("🔄 Resetting checkpoints & scanning all 20k log lines...");
+                } else {
+                    btnScan.innerText = '⏳ Scanning...';
+                    showToast("⚡ Triggering incremental log scan...");
+                }
 
                 // First ensure backend config has active UI selections
                 await syncConfigToServer();
 
-                const res = await fetch('/api/v1/scans', { method: 'POST' });
+                const url = isForce ? '/api/v1/scans?force=true' : '/api/v1/scans';
+                const res = await fetch(url, { method: 'POST' });
                 const json = await res.json();
                 if (res.status === 202 || res.status === 200) {
-                    showToast("Scan completed! Updating dashboard...");
+                    const lines = json.data ? (json.data.lines_parsed || 0) : 0;
+                    const inc = json.data ? (json.data.incidents_new || 0) : 0;
+                    const prs = json.data ? (json.data.prs_opened || 0) : 0;
+                    showToast(`Scan complete! ${lines.toLocaleString()} lines · ${inc} new incidents · ${prs} PRs`);
                     loadRuns();
                     loadIncidents();
+                    populateTrajectorySelect();
                 } else if (res.status === 400 || res.status === 409) {
                     showToast("A scan is already in progress!");
                 } else {
@@ -728,8 +868,10 @@
             } catch (e) {
                 showToast("Failed to connect to API: " + e.message);
             } finally {
-                btn.disabled = false;
-                btn.innerText = '⚡ Run Scan Now';
+                btnScan.disabled = false;
+                btnScan.innerText = '⚡ Scan New';
+                btnRescan.disabled = false;
+                btnRescan.innerText = '🔄 Reset & Re-scan All';
             }
         }
 

@@ -44,3 +44,7 @@ workspace/
 # OS
 .DS_Store
 Thumbs.db
+
+# Presentations & Office temporary files
+*.pptx
+~$*.pptx

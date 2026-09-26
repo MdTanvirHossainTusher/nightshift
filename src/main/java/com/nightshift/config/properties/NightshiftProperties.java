@@ -108,7 +108,7 @@ public class NightshiftProperties {
         @Data
         public static class OpenAiProperties {
             private String apiKey = "";
-            private String model = "gpt-4o-mini";
+            private String model = "luna";
             private String baseUrl = "https://api.openai.com/v1";
         }
 
@@ -122,7 +122,7 @@ public class NightshiftProperties {
         @Data
         public static class AnthropicProperties {
             private String apiKey = "";
-            private String model = "claude-sonnet-4-5";
+            private String model = "claude-3-7-sonnet-20250219";
             private String baseUrl = "https://api.anthropic.com/v1";
         }
     }

@@ -38,9 +38,12 @@ public class ScanController {
     private final ScanService scanService;
     private final ScanRunRepository scanRunRepository;
 
-    @Operation(summary = "Trigger a new log scan")
+    @Operation(summary = "Trigger a new log scan (optionally resetting checkpoints for full re-scan)")
     @PostMapping
-    public ResponseEntity<ApiResponse<ScanRunResponse>> triggerScan() {
+    public ResponseEntity<ApiResponse<ScanRunResponse>> triggerScan(
+            @RequestParam(defaultValue = "false") boolean force,
+            @RequestParam(defaultValue = "false") boolean reset
+    ) {
         if (!SCAN_IN_PROGRESS.compareAndSet(false, true)) {
             throw new com.nightshift.exception.ResourceAlreadyExistsException(
                     ErrorCodes.SCAN_ALREADY_RUNNING,
@@ -49,7 +52,11 @@ public class ScanController {
         }
 
         try {
-            if (scanRunRepository.existsByStatus(ScanStatus.RUNNING)) {
+            boolean doReset = force || reset;
+            if (doReset) {
+                log.info("Force re-scan requested. Resetting scan checkpoints and prior data...");
+                scanService.resetCheckpoints(true);
+            } else if (scanRunRepository.existsByStatus(ScanStatus.RUNNING)) {
                 throw new com.nightshift.exception.ResourceAlreadyExistsException(
                         ErrorCodes.SCAN_ALREADY_RUNNING,
                         "A scan is already in progress in the database."
@@ -65,6 +72,15 @@ public class ScanController {
         } finally {
             SCAN_IN_PROGRESS.set(false);
         }
+    }
+
+    @Operation(summary = "Reset scan checkpoints and clear prior scan data")
+    @PostMapping("/reset")
+    public ResponseEntity<ApiResponse<String>> resetCheckpoints(
+            @RequestParam(defaultValue = "true") boolean resetData
+    ) {
+        scanService.resetCheckpoints(resetData);
+        return ResponseBuilder.ok("Scan checkpoints reset successfully. Next scan will parse all log sources from offset 0.");
     }
 
     @Operation(summary = "List scan runs with pagination")

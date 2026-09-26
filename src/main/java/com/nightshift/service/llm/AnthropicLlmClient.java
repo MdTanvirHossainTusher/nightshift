@@ -43,6 +43,11 @@ public class AnthropicLlmClient implements LlmClient {
         return "anthropic";
     }
 
+    @Override
+    public String model() {
+        return properties.getLlm().getAnthropic().getModel();
+    }
+
     private String getEffectiveApiKey() {
         String key = properties.getLlm().getAnthropic().getApiKey();
         if (key != null && !key.isBlank()) return key.strip();

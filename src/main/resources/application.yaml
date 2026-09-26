@@ -111,13 +111,13 @@ nightshift:
     provider: ${NIGHTSHIFT_LLM_PROVIDER:heuristic}
     openai:
       api-key: ${OPENAI_API_KEY:}
-      model: ${OPENAI_MODEL:gpt-4o-mini}
+      model: ${OPENAI_MODEL:luna}
     gemini:
       api-key: ${GEMINI_API_KEY:}
       model: ${GEMINI_MODEL:gemini-2.0-flash}
     anthropic:
       api-key: ${ANTHROPIC_API_KEY:}
-      model: ${ANTHROPIC_MODEL:claude-sonnet-4-5}
+      model: ${ANTHROPIC_MODEL:claude-3-7-sonnet-20250219}
   messaging:
     transport: ${NIGHTSHIFT_MESSAGING_TRANSPORT:local}
   locator:

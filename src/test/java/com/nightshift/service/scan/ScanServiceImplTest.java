@@ -187,4 +187,23 @@ class ScanServiceImplTest {
                 .as("NPE via NameFormatter.initials must map to exactly ONE incident (defects #2 and #8 folded)")
                 .isEqualTo(1);
     }
+
+    @Test
+    void resetCheckpoints_allowsFreshScan() {
+        createLogSource("farmer-service");
+        ScanRun first = scanService.runScan(TriggerSource.MANUAL);
+        assertThat(first.getLinesParsed()).isGreaterThan(0);
+
+        ScanRun second = scanService.runScan(TriggerSource.MANUAL);
+        assertThat(second.getLinesParsed()).isEqualTo(0);
+
+        // Reset checkpoints and data
+        scanService.resetCheckpoints(true);
+        assertThat(scannedFileRepository.count()).isEqualTo(0);
+
+        // Run fresh scan directly using existing log source
+        ScanRun third = scanService.runScan(TriggerSource.MANUAL);
+        assertThat(third.getLinesParsed()).isGreaterThan(0);
+        assertThat(third.getIncidentsNew()).isGreaterThan(0);
+    }
 }
