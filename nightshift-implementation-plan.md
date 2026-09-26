@@ -558,7 +558,7 @@ config without code changes.
 
 ## Task 16 — Evaluation Harness vs expected-findings.json
 
-**Status:** `[ ] pending`
+**Status:** `[x] complete`
 
 **Intent:** Build a test that runs the full demo pipeline and scores the output against
 `demo/expected-findings.json`, printing precision, recall, and F1. Assertion thresholds are

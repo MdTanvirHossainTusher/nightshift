@@ -55,6 +55,12 @@ public class IncidentFingerprinter {
     /** Double- or single-quoted strings. */
     private static final Pattern QUOTED_PAT = Pattern.compile("\"[^\"]*\"|'[^']*'");
 
+    /** Key-value parameter patterns like region=north, region=south, etc. */
+    private static final Pattern REGION_PAT = Pattern.compile("\\bregion=[a-zA-Z]+\\b");
+
+    /** Numbers with optional time/data units (e.g. 15432ms, 15s, 1000ms, 30001ms). */
+    private static final Pattern UNIT_NUM_PAT = Pattern.compile("\\b\\d+(?:\\.\\d+)?(?:ms|s|us|ns|min|h|bytes|KB|MB|GB)?\\b");
+
     /** Remaining standalone numbers (int or decimal). */
     private static final Pattern NUM_PAT = Pattern.compile("\\b\\d+(?:\\.\\d+)?\\b");
 
@@ -115,6 +121,8 @@ public class IncidentFingerprinter {
         s = HEX_PAT.matcher(s).replaceAll("<HEX>");
         s = IP_PAT.matcher(s).replaceAll("<IP>");
         s = QUOTED_PAT.matcher(s).replaceAll("<STR>");
+        s = REGION_PAT.matcher(s).replaceAll("region=<VAL>");
+        s = UNIT_NUM_PAT.matcher(s).replaceAll("<N>");
         s = NUM_PAT.matcher(s).replaceAll("<N>");
         return s.strip();
     }

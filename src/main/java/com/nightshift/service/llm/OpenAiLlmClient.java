@@ -25,6 +25,7 @@ public class OpenAiLlmClient implements LlmClient {
     private final ObjectMapper objectMapper;
     private final HttpClient httpClient;
 
+    @org.springframework.beans.factory.annotation.Autowired
     public OpenAiLlmClient(NightshiftProperties properties, ObjectMapper objectMapper) {
         this(properties, objectMapper, HttpClient.newBuilder()
                 .connectTimeout(Duration.ofSeconds(15))

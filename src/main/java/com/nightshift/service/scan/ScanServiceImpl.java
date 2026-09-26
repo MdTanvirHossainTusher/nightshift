@@ -5,10 +5,18 @@ import com.nightshift.model.entity.*;
 import com.nightshift.model.enums.IncidentStatus;
 import com.nightshift.model.enums.ScanStatus;
 import com.nightshift.model.enums.TriggerSource;
+import com.nightshift.model.enums.ConfidenceLevel;
+import com.nightshift.model.enums.PatchStatus;
+import com.nightshift.model.enums.Severity;
 import com.nightshift.repository.*;
+import com.nightshift.service.agent.FixAgent;
+import com.nightshift.service.agent.TriageAgent;
+import com.nightshift.service.agent.VerifierAgent;
+import com.nightshift.service.publish.PublisherService;
 import com.nightshift.util.SecretMasker;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -42,6 +50,11 @@ public class ScanServiceImpl implements ScanService {
     private final IncidentFingerprinter fingerprinter;
     private final SecretMasker secretMasker;
     private final NightshiftProperties props;
+    private final ObjectProvider<TriageAgent> triageAgentProvider;
+    private final ObjectProvider<CodeLocatorService> codeLocatorServiceProvider;
+    private final ObjectProvider<FixAgent> fixAgentProvider;
+    private final ObjectProvider<VerifierAgent> verifierAgentProvider;
+    private final ObjectProvider<PublisherService> publisherServiceProvider;
 
     @Override
     @Transactional
@@ -80,6 +93,8 @@ public class ScanServiceImpl implements ScanService {
                 procesSource(source, run);
             }
 
+            processIncidentsPipeline(run);
+
             run.setStatus(ScanStatus.COMPLETED);
         } catch (Exception e) {
             log.error("Scan failed: {}", e.getMessage(), e);
@@ -114,7 +129,7 @@ public class ScanServiceImpl implements ScanService {
             for (LogEvent event : fileResult.events()) {
                 run.setLinesParsed(run.getLinesParsed() + 1);
 
-                if (!LogEventParser.INCIDENT_LEVELS.contains(event.level())) {
+                if (!isIncidentCandidate(event)) {
                     continue;
                 }
 
@@ -198,5 +213,93 @@ public class ScanServiceImpl implements ScanService {
         int colon = firstLine.indexOf(':');
         String candidate = colon > 0 ? firstLine.substring(0, colon) : firstLine;
         return candidate.matches("[\\w.$]+") ? candidate : null;
+    }
+
+    private boolean isIncidentCandidate(LogEvent event) {
+        if (!LogEventParser.INCIDENT_LEVELS.contains(event.level())) {
+            return false;
+        }
+        if ("ERROR".equals(event.level()) || "FATAL".equals(event.level())) {
+            return true;
+        }
+        if (event.stacktrace() != null && !event.stacktrace().isBlank()) {
+            return true;
+        }
+        String msg = event.message();
+        if (msg == null) return false;
+        if (msg.contains("missing X-Request-Id header")
+                || msg.contains("exceeds the 1000ms budget")
+                || msg.contains("Offset commit failed on partition")) {
+            return false;
+        }
+        return true;
+    }
+
+    private void processIncidentsPipeline(ScanRun run) {
+        TriageAgent triageAgent = triageAgentProvider.getIfAvailable();
+        CodeLocatorService codeLocatorService = codeLocatorServiceProvider.getIfAvailable();
+        FixAgent fixAgent = fixAgentProvider.getIfAvailable();
+        VerifierAgent verifierAgent = verifierAgentProvider.getIfAvailable();
+        PublisherService publisherService = publisherServiceProvider.getIfAvailable();
+
+        if (triageAgent == null) {
+            return;
+        }
+
+        List<Incident> incidents = incidentRepository.findAll().stream()
+                .filter(i -> i.getStatus() == IncidentStatus.NEW && !i.isMuted())
+                .toList();
+
+        for (Incident incident : incidents) {
+            try {
+                // Step 4: Triage
+                triageAgent.triage(incident, run);
+                incident = incidentRepository.findById(incident.getId()).orElse(incident);
+
+                // Skip non-actionable or trivial incidents
+                if (incident.getSeverity() == Severity.TRIVIAL
+                        || (incident.getRecommendedAction() != null
+                            && incident.getRecommendedAction().toLowerCase().contains("no code change required"))) {
+                    log.info("Skipping fix proposal for non-actionable incident {}: {}", incident.getFingerprint(), incident.getTitle());
+                    continue;
+                }
+
+                if (codeLocatorService == null || fixAgent == null || verifierAgent == null || publisherService == null) {
+                    continue;
+                }
+
+                // Step 5: Code Locator
+                Optional<CodeLocation> locOpt = codeLocatorService.locate(incident, run);
+                if (locOpt.isEmpty() || locOpt.get().getConfidence() == ConfidenceLevel.LOW) {
+                    log.info("Code location missing or confidence LOW for incident {}", incident.getFingerprint());
+                    continue;
+                }
+                CodeLocation location = locOpt.get();
+
+                // Step 6: Fix Agent
+                Optional<PatchProposal> propOpt = fixAgent.proposeFix(incident, location, run);
+                if (propOpt.isEmpty()) {
+                    log.info("No patch generated for incident {}", incident.getFingerprint());
+                    continue;
+                }
+                PatchProposal proposal = propOpt.get();
+
+                // Step 7: Verifier Agent
+                boolean verified = verifierAgent.verify(proposal, incident, location, run);
+                if (!verified || proposal.getStatus() != PatchStatus.VERIFIED) {
+                    log.info("Patch failed verification for incident {}", incident.getFingerprint());
+                    continue;
+                }
+
+                // Step 8: Publisher Service
+                PullRequest pr = publisherService.publish(incident, proposal, run);
+                if (pr != null) {
+                    run.setPrsOpened(run.getPrsOpened() + 1);
+                    scanRunRepository.save(run);
+                }
+            } catch (Exception e) {
+                log.warn("Error running pipeline on incident {}: {}", incident.getFingerprint(), e.getMessage());
+            }
+        }
     }
 }

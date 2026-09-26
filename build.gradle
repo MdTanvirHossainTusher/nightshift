@@ -108,8 +108,13 @@ tasks.named('test') {
 tasks.register('integrationTest', Test) {
 	description = 'Runs tests that need Docker (Testcontainers Postgres).'
 	group = 'verification'
+	testClassesDirs = sourceSets.test.output.classesDirs
+	classpath = sourceSets.test.runtimeClasspath
 	useJUnitPlatform {
 		includeTags 'integration'
+	}
+	testLogging {
+		showStandardStreams = true
 	}
 	shouldRunAfter tasks.named('test')
 }
