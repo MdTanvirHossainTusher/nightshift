@@ -104,7 +104,7 @@ Wire springdoc to show OpenAPI at `/swagger-ui.html`.
 
 ## Task 3 — Incremental Reader, Parser, Fingerprinter, Scanned-File Checkpointing
 
-**Status:** `[ ] pending`
+**Status:** `[x] done`
 
 **Intent:** Build the deterministic log-ingestion pipeline (steps 1–3 in the nine-step diagram).
 Read only new bytes past the stored offset, parse logback-format lines into `LogEvent` objects,
