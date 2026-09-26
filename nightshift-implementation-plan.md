@@ -440,7 +440,7 @@ through `ResponseBuilder`, with full OpenAPI annotations.
 
 ## Task 12 — Static Dashboard (HTML/JS)
 
-**Status:** `[ ] pending`
+**Status:** `[x] done`
 
 **Intent:** Build a thin single-page dashboard served as `src/main/resources/static/index.html`.
 Four views: Runs, Incidents, Incident Detail, Agent Trajectory. Vanilla JS calling the same-origin

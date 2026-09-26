@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nightshift - Autonomous Incident Remediation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #090d16;
+            --surface: #111827;
+            --surface-hover: #1f2937;
+            --border: #374151;
+            --text-main: #f9fafb;
+            --text-muted: #9ca3af;
+            --primary: #6366f1;
+            --primary-hover: #4f46e5;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --critical: #f97316;
+            --info: #3b82f6;
+            --code-bg: #030712;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            background: rgba(17, 24, 39, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 0.85rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        .brand span.logo { font-size: 1.4rem; }
+        .brand span.tag {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            font-size: 0.7rem;
+            padding: 0.15rem 0.5rem;
+            border-radius: 9999px;
+            font-family: 'JetBrains Mono', monospace;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+        }
+        nav { display: flex; gap: 0.5rem; }
+        nav button {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 0.45rem 0.9rem;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        nav button:hover { color: var(--text-main); background: var(--surface-hover); }
+        nav button.active { color: var(--text-main); background: #1f2937; font-weight: 600; }
+        .btn-scan {
+            background: linear-gradient(135deg, #6366f1, #4f46e5);
+            color: white;
+            border: none;
+            padding: 0.5rem 1.1rem;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: all 0.2s ease;
+        }
+        .btn-scan:hover { opacity: 0.92; transform: translateY(-1px); }
+        .btn-scan:active { transform: translateY(0); }
+        main {
+            flex: 1;
+            padding: 2rem;
+            max-width: 1300px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .view { display: none; }
+        .view.active { display: block; }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .stat-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.25rem;
+        }
+        .stat-title {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-top: 0.35rem;
+        }
+        .toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .filters { display: flex; gap: 0.75rem; align-items: center; }
+        select, input {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 0.45rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            outline: none;
+        }
+        select:focus, input:focus { border-color: var(--primary); }
+        .card-table {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+            text-align: left;
+        }
+        th {
+            background: #161f30;
+            padding: 0.75rem 1rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        td {
+            padding: 0.85rem 1rem;
+            border-bottom: 1px solid rgba(55, 65, 81, 0.4);
+            vertical-align: middle;
+        }
+        tr:last-child td { border-bottom: none; }
+        tr:hover td { background: rgba(31, 41, 55, 0.4); }
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.2rem 0.55rem;
+            border-radius: 9999px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+        .chip-blocker { background: rgba(239, 68, 68, 0.18); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.4); }
+        .chip-critical { background: rgba(249, 115, 22, 0.18); color: #fdba74; border: 1px solid rgba(249, 115, 22, 0.4); }
+        .chip-major { background: rgba(245, 158, 11, 0.18); color: #fde68a; border: 1px solid rgba(245, 158, 11, 0.4); }
+        .chip-minor { background: rgba(59, 130, 246, 0.18); color: #93c5fd; border: 1px solid rgba(59, 130, 246, 0.4); }
+        .chip-trivial { background: rgba(156, 163, 175, 0.18); color: #d1d5db; border: 1px solid rgba(156, 163, 175, 0.4); }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            background: #252e3e;
+            color: #d1d5db;
+        }
+        .badge-pr { background: rgba(16, 185, 129, 0.15); color: #6ee7b7; border: 1px solid rgba(16, 185, 129, 0.3); }
+        .badge-fail { background: rgba(239, 68, 68, 0.15); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.3); }
+        .badge-running { background: rgba(59, 130, 246, 0.15); color: #93c5fd; border: 1px solid rgba(59, 130, 246, 0.3); }
+
+        .btn-action {
+            background: #252e3e;
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 0.3rem 0.7rem;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+        .btn-action:hover { background: #374151; border-color: #4b5563; }
+        .detail-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .detail-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.25rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .code-box {
+            background: var(--code-bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.82rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            line-height: 1.45;
+            margin-top: 0.5rem;
+        }
+        .alert-box {
+            background: rgba(245, 158, 11, 0.1);
+            border-left: 4px solid var(--warning);
+            padding: 1rem;
+            border-radius: 0 6px 6px 0;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+        }
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--surface);
+            border: 1px solid var(--primary);
+            color: var(--text-main);
+            padding: 0.75rem 1.25rem;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+            display: none;
+            z-index: 100;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="brand">
+            <span class="logo">ðŸŒ™</span>
+            <span>Nightshift</span>
+            <span class="tag">AI SRE</span>
+        </div>
+        <nav>
+            <button id="nav-runs" class="active" onclick="switchView('runs')">Runs</button>
+            <button id="nav-incidents" onclick="switchView('incidents')">Incidents</button>
+            <button id="nav-trajectory" onclick="switchView('trajectory')">Trajectory</button>
+        </nav>
+        <button class="btn-scan" onclick="triggerScanNow()">âš¡ Run Scan Now</button>
+    </header>
+
+    <main>
+        <!-- RUNS VIEW -->
+        <div id="view-runs" class="view active">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-title">Total Runs</div>
+                    <div id="stat-runs" class="stat-value">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-title">Incidents Identified</div>
+                    <div id="stat-incidents" class="stat-value">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-title">Pull Requests Opened</div>
+                    <div id="stat-prs" class="stat-value">0</div>
+                </div>
+            </div>
+
+            <div class="card-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Run ID</th>
+                            <th>Trigger</th>
+                            <th>Status</th>
+                            <th>Started At</th>
+                            <th>Lines Parsed</th>
+                            <th>Incidents New</th>
+                            <th>PRs Opened</th>
+                        </tr>
+                    </thead>
+                    <tbody id="runs-tbody">
+                        <tr><td colspan="7" style="text-align: center; color: var(--text-muted);">Loading scan runs...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- INCIDENTS VIEW -->
+        <div id="view-incidents" class="view">
+            <div class="toolbar">
+                <div class="filters">
+                    <select id="filter-status" onchange="loadIncidents()">
+                        <option value="">All Statuses</option>
+                        <option value="NEW">NEW</option>
+                        <option value="TRIAGED">TRIAGED</option>
+                        <option value="FIX_PROPOSED">FIX_PROPOSED</option>
+                        <option value="PR_OPEN">PR_OPEN</option>
+                        <option value="TRIAGED_PATCH_REJECTED">PATCH_REJECTED</option>
+                        <option value="MUTED">MUTED</option>
+                    </select>
+                    <select id="filter-severity" onchange="loadIncidents()">
+                        <option value="">All Severities</option>
+                        <option value="BLOCKER">BLOCKER</option>
+                        <option value="CRITICAL">CRITICAL</option>
+                        <option value="MAJOR">MAJOR</option>
+                        <option value="MINOR">MINOR</option>
+                        <option value="TRIVIAL">TRIVIAL</option>
+                    </select>
+                </div>
+                <button class="btn-action" onclick="loadIncidents()">ðŸ”„ Refresh</button>
+            </div>
+
+            <div class="card-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Severity</th>
+                            <th>Status</th>
+                            <th>Title</th>
+                            <th>Service</th>
+                            <th>Occurrences</th>
+                            <th>Last Seen</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="incidents-tbody">
+                        <tr><td colspan="7" style="text-align: center; color: var(--text-muted);">Loading incidents...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- INCIDENT DETAIL VIEW -->
+        <div id="view-detail" class="view">
+            <div style="margin-bottom: 1rem;">
+                <button class="btn-action" onclick="switchView('incidents')">â† Back to Incidents</button>
+            </div>
+
+            <div class="detail-card">
+                <div class="detail-header">
+                    <div>
+                        <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.5rem;">
+                            <span id="detail-severity" class="chip">MAJOR</span>
+                            <span id="detail-status" class="badge">NEW</span>
+                            <span id="detail-service" style="color: var(--text-muted); font-size: 0.85rem;">service-name</span>
+                        </div>
+                        <h2 id="detail-title" style="font-size: 1.35rem; font-weight: 700;">Incident Title</h2>
+                        <div id="detail-fingerprint" style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">fp-xxxx</div>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button class="btn-action" onclick="triggerTriage()">ðŸ¤– Re-Triage</button>
+                        <button class="btn-action" onclick="triggerPatch()">ðŸ”§ Propose Patch</button>
+                        <button class="btn-action" onclick="triggerPublish()">ðŸš€ Publish PR</button>
+                        <button class="btn-action" onclick="triggerMute()">ðŸ”• Mute</button>
+                    </div>
+                </div>
+
+                <div id="detail-future-impact-box" class="alert-box">
+                    <strong>âš ï¸ Future Impact Forecast:</strong>
+                    <div id="detail-future-impact" style="margin-top: 0.35rem;">No impact assessed yet.</div>
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="font-size: 0.9rem; margin-bottom: 0.35rem; color: var(--text-muted);">Root Cause Analysis</h4>
+                    <p id="detail-root-cause" style="font-size: 0.9rem;">Analysis pending.</p>
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="font-size: 0.9rem; margin-bottom: 0.35rem; color: var(--text-muted);">Resolved Code Location</h4>
+                    <div id="detail-code-location" class="code-box">Searching target repository...</div>
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="font-size: 0.9rem; margin-bottom: 0.35rem; color: var(--text-muted);">Proposed Patch & Verifier Verdict</h4>
+                    <div id="detail-verifier-verdict" style="margin-bottom: 0.5rem;"></div>
+                    <div id="detail-patch-diff" class="code-box">No patch generated yet.</div>
+                </div>
+
+                <div>
+                    <h4 style="font-size: 0.9rem; margin-bottom: 0.35rem; color: var(--text-muted);">Pull Request</h4>
+                    <div id="detail-pr-info" style="font-size: 0.9rem;">No PR opened.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TRAJECTORY VIEW -->
+        <div id="view-trajectory" class="view">
+            <div class="toolbar">
+                <h3 style="font-size: 1.1rem; font-weight: 600;">Agent Trajectory & Audit Trail</h3>
+                <div class="filters">
+                    <select id="trajectory-incident-select" onchange="loadTrajectoryForSelected()">
+                        <option value="">Select an incident...</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="card-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Step #</th>
+                            <th>Role</th>
+                            <th>Type</th>
+                            <th>Provider / Model</th>
+                            <th>Latency</th>
+                            <th>Status</th>
+                            <th>Input / Output Summaries</th>
+                        </tr>
+                    </thead>
+                    <tbody id="trajectory-tbody">
+                        <tr><td colspan="7" style="text-align: center; color: var(--text-muted);">Select an incident above to view its agent reasoning trajectory.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <div id="toast" class="toast">Scan accepted and initiated.</div>
+
+    <script>
+        let currentIncidentId = null;
+
+        function showToast(msg) {
+            const t = document.getElementById('toast');
+            t.innerText = msg;
+            t.style.display = 'block';
+            setTimeout(() => { t.style.display = 'none'; }, 4000);
+        }
+
+        function switchView(viewName) {
+            document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+            document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+
+            const targetView = document.getElementById(`view-${viewName}`);
+            if (targetView) targetView.classList.add('active');
+
+            const navBtn = document.getElementById(`nav-${viewName}`);
+            if (navBtn) navBtn.classList.add('active');
+
+            if (viewName === 'runs') loadRuns();
+            if (viewName === 'incidents') loadIncidents();
+            if (viewName === 'trajectory') populateTrajectorySelect();
+        }
+
+        async function triggerScanNow() {
+            try {
+                showToast("âš¡ Triggering Overnight Scan...");
+                const res = await fetch('/api/v1/scans', { method: 'POST' });
+                const json = await res.json();
+                if (res.status === 202) {
+                    showToast("Scan accepted! Refreshing runs...");
+                    loadRuns();
+                } else if (res.status === 400 || res.status === 409) {
+                    showToast("Scan already in progress!");
+                } else {
+                    showToast("Scan trigger response: " + (json.error ? json.error.message : res.statusText));
+                }
+            } catch (e) {
+                showToast("Failed to connect to API: " + e.message);
+            }
+        }
+
+        async function loadRuns() {
+            const tbody = document.getElementById('runs-tbody');
+            try {
+                const res = await fetch('/api/v1/scans?page=0&size=20');
+                const json = await res.json();
+                const runs = json.data || [];
+                
+                document.getElementById('stat-runs').innerText = json.pagination ? json.pagination.total_count : runs.length;
+                
+                let totalInc = 0, totalPrs = 0;
+                runs.forEach(r => {
+                    totalInc += (r.incidents_new || 0);
+                    totalPrs += (r.prs_opened || 0);
+                });
+                document.getElementById('stat-incidents').innerText = totalInc;
+                document.getElementById('stat-prs').innerText = totalPrs;
+
+                if (runs.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; color: var(--text-muted);">No scan runs recorded yet. Click \"Run Scan Now\" above.</td></tr>';
+                    return;
+                }
+
+                tbody.innerHTML = runs.map(r => `
+                    <tr>
+                        <td style="font-family: \'JetBrains Mono\', monospace; font-size: 0.8rem;">${r.id.substring(0, 8)}...</td>
+                        <td><span class="badge">${r.trigger_source || 'SCHEDULE'}</span></td>
+                        <td><span class="badge ${r.status === 'COMPLETED' ? 'badge-pr' : (r.status === 'RUNNING' ? 'badge-running' : 'badge-fail')}">${r.status}</span></td>
+                        <td>${r.started_at ? new Date(r.started_at).toLocaleString() : 'N/A'}</td>
+                        <td>${(r.lines_parsed || 0).toLocaleString()}</td>
+                        <td><strong>${r.incidents_new || 0}</strong></td>
+                        <td><strong>${r.prs_opened || 0}</strong></td>
+                    </tr>
+                `).join('');
+            } catch (e) {
+                tbody.innerHTML = `<tr><td colspan="7" style="color: var(--danger);">Failed to load runs: ${e.message}</td></tr>`;
+            }
+        }
+
+        async function loadIncidents() {
+            const tbody = document.getElementById('incidents-tbody');
+            const status = document.getElementById('filter-status').value;
+            const severity = document.getElementById('filter-severity').value;
+
+            let url = '/api/v1/incidents?page=0&size=50';
+            if (status) url += `&status=${status}`;
+            if (severity) url += `&severity=${severity}`;
+
+            try {
+                const res = await fetch(url);
+                const json = await res.json();
+                const incidents = json.data || [];
+
+                if (incidents.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; color: var(--text-muted);">No matching incidents found.</td></tr>';
+                    return;
+                }
+
+                tbody.innerHTML = incidents.map(i => {
+                    const sev = (i.severity || 'MAJOR').toLowerCase();
+                    return `
+                        <tr>
+                            <td><span class="chip chip-${sev}">${i.severity || 'MAJOR'}</span></td>
+                            <td><span class="badge ${i.status === 'PR_OPEN' ? 'badge-pr' : ''}">${i.status}</span></td>
+                            <td><strong>${escapeHtml(i.title || 'Untitled Incident')}</strong></td>
+                            <td style="color: var(--text-muted);">${i.service_name || 'unknown'}</td>
+                            <td>${i.occurrence_count || 1}</td>
+                            <td style="font-size: 0.8rem; color: var(--text-muted);">${i.last_seen_at ? new Date(i.last_seen_at).toLocaleTimeString() : 'N/A'}</td>
+                            <td>
+                                <button class="btn-action" onclick="viewIncidentDetail('${i.id}')">Inspect</button>
+                            </td>
+                        </tr>
+                    `;
+                }).join('');
+            } catch (e) {
+                tbody.innerHTML = `<tr><td colspan="7" style="color: var(--danger);">Failed to load incidents: ${e.message}</td></tr>`;
+            }
+        }
+
+        async function viewIncidentDetail(id) {
+            currentIncidentId = id;
+            switchView('detail');
+
+            try {
+                const res = await fetch(`/api/v1/incidents/${id}`);
+                const json = await res.json();
+                const d = json.data;
+
+                document.getElementById('detail-title').innerText = d.title || 'Untitled';
+                document.getElementById('detail-fingerprint').innerText = `Fingerprint: ${d.fingerprint || 'N/A'}`;
+                document.getElementById('detail-service').innerText = d.service_name || 'unknown-service';
+
+                const sevEl = document.getElementById('detail-severity');
+                const sev = (d.severity || 'MAJOR').toLowerCase();
+                sevEl.className = `chip chip-${sev}`;
+                sevEl.innerText = d.severity || 'MAJOR';
+
+                document.getElementById('detail-status').innerText = d.status || 'NEW';
+                document.getElementById('detail-root-cause').innerText = d.root_cause || 'No root cause identified yet.';
+                document.getElementById('detail-future-impact').innerText = d.future_impact || 'Future impact forecast pending.';
+
+                // Code location
+                const locEl = document.getElementById('detail-code-location');
+                if (d.code_locations && d.code_locations.length > 0) {
+                    const loc = d.code_locations[0];
+                    locEl.innerText = `${loc.file_path}:${loc.start_line || '?'}\n\n${loc.snippet || 'No snippet available.'}`;
+                } else {
+                    locEl.innerText = 'No source file located.';
+                }
+
+                // Patch diff & verifier
+                const diffEl = document.getElementById('detail-patch-diff');
+                const verifierEl = document.getElementById('detail-verifier-verdict');
+                if (d.patch_proposals && d.patch_proposals.length > 0) {
+                    const p = d.patch_proposals[0];
+                    verifierEl.innerHTML = `<span class="badge ${p.verifier_verdict === 'PASS' ? 'badge-pr' : 'badge-fail'}">Verifier: ${p.verifier_verdict || 'PENDING'}</span> <span style="font-size:0.8rem; color:var(--text-muted);">${escapeHtml(p.verifier_notes || '')}</span>`;
+                    diffEl.innerText = p.unified_diff || 'Empty diff.';
+                } else {
+                    verifierEl.innerHTML = '';
+                    diffEl.innerText = 'No patch proposal generated.';
+                }
+
+                // PR
+                const prEl = document.getElementById('detail-pr-info');
+                if (d.pull_requests && d.pull_requests.length > 0) {
+                    const pr = d.pull_requests[0];
+                    prEl.innerHTML = `<strong>PR #${pr.pr_number || ''}</strong>: <a href="${pr.pr_url || '#'}" target="_blank" style="color: var(--primary);">${pr.pr_url || pr.branch_name}</a> (${pr.state})`;
+                } else {
+                    prEl.innerText = 'No pull request opened.';
+                }
+            } catch (e) {
+                showToast("Failed to load incident detail: " + e.message);
+            }
+        }
+
+        async function triggerTriage() {
+            if (!currentIncidentId) return;
+            showToast("Running Triage Agent...");
+            const res = await fetch(`/api/v1/incidents/${currentIncidentId}/triage`, { method: 'POST' });
+            if (res.ok) {
+                showToast("Triage complete!");
+                viewIncidentDetail(currentIncidentId);
+            } else {
+                showToast("Triage failed.");
+            }
+        }
+
+        async function triggerPatch() {
+            if (!currentIncidentId) return;
+            showToast("Locating code, generating fix, and verifying...");
+            const res = await fetch(`/api/v1/incidents/${currentIncidentId}/patch`, { method: 'POST' });
+            if (res.ok) {
+                showToast("Patch proposed & verified!");
+                viewIncidentDetail(currentIncidentId);
+            } else {
+                showToast("Patch proposal failed.");
+            }
+        }
+
+        async function triggerPublish() {
+            if (!currentIncidentId) return;
+            showToast("Publishing PR to GitHub...");
+            const res = await fetch(`/api/v1/incidents/${currentIncidentId}/publish`, { method: 'POST' });
+            if (res.ok) {
+                showToast("Pull request published!");
+                viewIncidentDetail(currentIncidentId);
+            } else {
+                showToast("Publish failed.");
+            }
+        }
+
+        async function triggerMute() {
+            if (!currentIncidentId) return;
+            const res = await fetch(`/api/v1/incidents/${currentIncidentId}/mute`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ reason: "Muted from dashboard" })
+            });
+            if (res.ok) {
+                showToast("Incident muted.");
+                viewIncidentDetail(currentIncidentId);
+            }
+        }
+
+        async function populateTrajectorySelect() {
+            const sel = document.getElementById('trajectory-incident-select');
+            try {
+                const res = await fetch('/api/v1/incidents?size=100');
+                const json = await res.json();
+                const incidents = json.data || [];
+                sel.innerHTML = '<option value="">Select an incident...</option>' +
+                    incidents.map(i => `<option value="${i.id}">${i.title} (${i.severity || 'MAJOR'})</option>`).join('');
+                if (currentIncidentId) {
+                    sel.value = currentIncidentId;
+                    loadTrajectoryForSelected();
+                }
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        async function loadTrajectoryForSelected() {
+            const id = document.getElementById('trajectory-incident-select').value;
+            const tbody = document.getElementById('trajectory-tbody');
+            if (!id) {
+                tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; color: var(--text-muted);">Select an incident above.</td></tr>';
+                return;
+            }
+
+            try {
+                const res = await fetch(`/api/v1/incidents/${id}/trajectory`);
+                const json = await res.json();
+                const steps = json.data || [];
+
+                if (steps.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; color: var(--text-muted);">No trajectory steps recorded for this incident yet.</td></tr>';
+                    return;
+                }
+
+                tbody.innerHTML = steps.map(s => `
+                    <tr>
+                        <td><strong>#${s.step_index}</strong></td>
+                        <td><span class="badge">${s.agent_role}</span></td>
+                        <td><span class="chip chip-minor">${s.step_type}</span></td>
+                        <td style="font-family: \'JetBrains Mono\', monospace; font-size: 0.8rem;">${s.provider || '-'}/${s.model || s.tool_name || '-'}</td>
+                        <td>${s.latency_ms || 0}ms</td>
+                        <td><span class="badge ${s.status === 'OK' ? 'badge-pr' : 'badge-fail'}">${s.status}</span></td>
+                        <td style="max-width: 400px; font-size: 0.8rem; word-break: break-word;">
+                            <strong>In:</strong> ${escapeHtml(s.input_summary || '-')}<br>
+                            <strong>Out:</strong> ${escapeHtml(s.output_summary || '-')}
+                        </td>
+                    </tr>
+                `).join('');
+            } catch (e) {
+                tbody.innerHTML = `<tr><td colspan="7" style="color: var(--danger);">Failed to load trajectory: ${e.message}</td></tr>`;
+            }
+        }
+
+        function escapeHtml(str) {
+            if (!str) return '';
+            return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            loadRuns();
+        });
+    </script>
+</body>
+</html>
