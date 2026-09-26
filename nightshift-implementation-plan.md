@@ -472,7 +472,7 @@ REST API. A judge must understand it without narration.
 
 ## Task 13 — Scheduler, POST /api/v1/scans, Single-Run Guard
 
-**Status:** `[ ] pending`
+**Status:** `[x] done`
 
 **Intent:** Wire the `@Scheduled` trigger at 02:00, connect `POST /api/v1/scans` to the same
 scan pipeline, and enforce the single-run guard: if a scan is already `RUNNING`, the second

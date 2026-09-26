@@ -48,12 +48,27 @@ public class ScanServiceImpl implements ScanService {
     public ScanRun runScan(TriggerSource triggerSource) {
         log.info("Starting scan (trigger={})", triggerSource);
 
-        ScanRun run = ScanRun.builder()
-                .triggerSource(triggerSource)
-                .status(ScanStatus.RUNNING)
-                .startedAt(Instant.now())
-                .build();
-        run = scanRunRepository.save(run);
+        if (scanRunRepository.existsByStatus(ScanStatus.RUNNING)) {
+            throw new com.nightshift.exception.ResourceAlreadyExistsException(
+                    com.nightshift.constant.code.ErrorCodes.SCAN_ALREADY_RUNNING,
+                    "A scan is already in progress."
+            );
+        }
+
+        ScanRun run;
+        try {
+            run = ScanRun.builder()
+                    .triggerSource(triggerSource)
+                    .status(ScanStatus.RUNNING)
+                    .startedAt(Instant.now())
+                    .build();
+            run = scanRunRepository.saveAndFlush(run);
+        } catch (org.springframework.dao.DataIntegrityViolationException e) {
+            throw new com.nightshift.exception.ResourceAlreadyExistsException(
+                    com.nightshift.constant.code.ErrorCodes.SCAN_ALREADY_RUNNING,
+                    "A scan is already in progress (enforced by unique constraint)."
+            );
+        }
 
         try {
             List<LogSource> sources = logSourceRepository.findAll()

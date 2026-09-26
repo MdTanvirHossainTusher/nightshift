@@ -42,7 +42,7 @@ public class ScanController {
     @PostMapping
     public ResponseEntity<ApiResponse<ScanRunResponse>> triggerScan() {
         if (!SCAN_IN_PROGRESS.compareAndSet(false, true)) {
-            throw new BadResourceRequestException(
+            throw new com.nightshift.exception.ResourceAlreadyExistsException(
                     ErrorCodes.SCAN_ALREADY_RUNNING,
                     "A scan is already in progress. Concurrent scans are not permitted."
             );
@@ -50,7 +50,7 @@ public class ScanController {
 
         try {
             if (scanRunRepository.existsByStatus(ScanStatus.RUNNING)) {
-                throw new BadResourceRequestException(
+                throw new com.nightshift.exception.ResourceAlreadyExistsException(
                         ErrorCodes.SCAN_ALREADY_RUNNING,
                         "A scan is already in progress in the database."
                 );

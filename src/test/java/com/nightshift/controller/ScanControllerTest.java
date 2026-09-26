@@ -62,11 +62,11 @@ class ScanControllerTest {
     }
 
     @Test
-    void triggerScan_whenAlreadyRunning_returns400ScanAlreadyRunning() throws Exception {
+    void triggerScan_whenAlreadyRunning_returns409ScanAlreadyRunning() throws Exception {
         when(scanRunRepository.existsByStatus(ScanStatus.RUNNING)).thenReturn(true);
 
         mockMvc.perform(post("/api/v1/scans").contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isBadRequest())
+                .andExpect(status().isConflict())
                 .andExpect(jsonPath("$.success").value(false))
                 .andExpect(jsonPath("$.error.code").value(ErrorCodes.SCAN_ALREADY_RUNNING));
     }
