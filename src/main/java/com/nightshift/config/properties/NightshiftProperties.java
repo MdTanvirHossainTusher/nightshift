@@ -130,6 +130,15 @@ public class NightshiftProperties {
     public static class PatchProperties {
         /** When false the fix agent skips patch generation entirely. */
         private boolean enabled = true;
+
+        /** Allowed path glob patterns for generated patches. */
+        private java.util.List<String> allowedPaths = java.util.List.of("src/main/java/**", "src/main/resources/**");
+
+        /** Maximum number of files a patch may modify. */
+        private int maxFiles = 3;
+
+        /** Maximum number of changed (added + removed) lines a patch may introduce. */
+        private int maxChangedLines = 120;
     }
 
     @Data

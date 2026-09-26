@@ -360,7 +360,7 @@ public class HeuristicLlmClient implements LlmClient {
                 +        }
                          return report;
                      }
-                @@ -38,7 +46,8 @@
+                @@ -39,4 +47,5 @@
                  
                      public interface StockItemRepository {
                          List<StockItem> findByDealerId(long dealerId);

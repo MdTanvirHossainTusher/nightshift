@@ -262,7 +262,7 @@ target repo, read ±40 lines as a snippet, and store a `code_location` row. No L
 
 ## Task 7 — Fix Agent, Patch Guards, git apply --check
 
-**Status:** `[ ] pending`
+**Status:** `[x] done`
 
 **Intent:** Build the fix agent (step 6): given the triage result and the located source,
 call the LLM for a unified diff, then apply all safety guards: allowed-paths check, max-files /
