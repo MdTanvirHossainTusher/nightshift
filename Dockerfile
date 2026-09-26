@@ -1,20 +1,17 @@
-# syntax=docker/dockerfile:1.7
-
 # ── Stage 1: build ───────────────────────────────────────────────────────────
 FROM eclipse-temurin:21-jdk-alpine AS builder
 WORKDIR /workspace
 
 # Dependencies resolve in their own layer so a source-only change does not
-# re-download the world.
+# re-download the world. No BuildKit cache mounts: Railway rejects cache ids that
+# are not prefixed with its service id, and the layer cache covers this anyway.
 COPY gradlew settings.gradle build.gradle ./
 COPY gradle ./gradle
 RUN chmod +x ./gradlew
-RUN --mount=type=cache,id=gradle-user-home,target=/root/.gradle,sharing=locked \
-    ./gradlew dependencies --no-daemon --quiet
+RUN ./gradlew dependencies --no-daemon --quiet
 
 COPY src ./src
-RUN --mount=type=cache,id=gradle-user-home,target=/root/.gradle,sharing=locked \
-    ./gradlew bootJar --no-daemon -x test && \
+RUN ./gradlew bootJar --no-daemon -x test && \
     java -Djarmode=tools -jar build/libs/*.jar extract --layers --launcher --destination build/extracted
 
 # ── Stage 2: runtime ─────────────────────────────────────────────────────────
