@@ -8,6 +8,7 @@ WORKDIR /workspace
 # re-download the world.
 COPY gradlew settings.gradle build.gradle ./
 COPY gradle ./gradle
+RUN chmod +x ./gradlew
 RUN --mount=type=cache,id=gradle-user-home,target=/root/.gradle,sharing=locked \
     ./gradlew dependencies --no-daemon --quiet
 
