@@ -333,7 +333,7 @@ state — that is a success, not a failure.
 
 ## Task 9 — Publisher: JGit Branch, Commit, Push + GitHub PR from PR_TEMPLATE.md
 
-**Status:** `[ ] pending`
+**Status:** `[x] done`
 
 **Intent:** Build the publisher (step 8): create a branch `nightshift/fix-<severity>-<short-fingerprint>`
 off the configured base, apply the verified patch, commit with a conventional message, push
