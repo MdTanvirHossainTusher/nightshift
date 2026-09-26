@@ -369,7 +369,7 @@ via JGit, then open a GitHub PR via the REST API using the body template in `doc
 
 ## Task 10 — Outbox Pattern + Email Notifier + Assignment Rules
 
-**Status:** `[ ] pending`
+**Status:** `[x] done`
 
 **Intent:** Implement the transactional outbox: the `pull_request` row and an `outbox_event`
 row commit atomically, the relay publishes after commit via `@TransactionalEventListener(AFTER_COMMIT)`,

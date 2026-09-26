@@ -1,0 +1,54 @@
+# Who gets the PR and the email. First matching rule wins; if nothing matches,
+# default_assignee is used and the incident is tagged NO_ASSIGNEE_MATCHED so the
+# gap is visible rather than silent.
+#
+# Keep this file in the repo, not in the database: ownership is a code-review
+# decision, and a PR changing it is the audit trail.
+
+rules:
+  - name: Farmer domain
+    match:
+      logger_prefix: com.example.farmer
+    assignee:
+      name: Dev A
+      email: dev.a@example.com
+      github: dev-a
+
+  - name: Payments, anything that matters
+    match:
+      service: payment-service
+      severity_at_least: MAJOR
+    assignee:
+      name: Dev B
+      email: dev.b@example.com
+      github: dev-b
+
+  - name: Sync and messaging
+    match:
+      logger_prefix: com.example.sync
+    assignee:
+      name: Dev C
+      email: dev.c@example.com
+      github: dev-c
+
+  # Anything BLOCKER goes to on-call regardless of area, and this rule is last so
+  # a more specific owner still wins when there is one.
+  - name: Blocker escalation
+    match:
+      severity_at_least: BLOCKER
+    assignee:
+      name: Platform on-call
+      email: oncall@example.com
+      github: oncall
+
+default_assignee:
+  name: Platform on-call
+  email: oncall@example.com
+  github: oncall
+
+# Delivery window. A PR opened at 02:14 should not page anyone; the email is
+# queued and released at the start of the next working day.
+delivery:
+  send_at: "09:00"
+  timezone: Asia/Dhaka
+  skip_days: [SATURDAY, SUNDAY]

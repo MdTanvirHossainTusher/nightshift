@@ -52,6 +52,7 @@ public class PublisherServiceImpl implements PublisherService {
     private final IncidentRepository incidentRepository;
     private final PrBodyRenderer prBodyRenderer;
     private final AgentStepRecorder recorder;
+    private final com.nightshift.service.outbox.NotificationService notificationService;
 
     @Override
     @Transactional
@@ -132,6 +133,7 @@ public class PublisherServiceImpl implements PublisherService {
                 .build();
 
         pr = pullRequestRepository.save(pr);
+        notificationService.createNotificationAndOutbox(pr);
 
         proposal.setStatus(PatchStatus.PUBLISHED);
         patchProposalRepository.save(proposal);

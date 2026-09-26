@@ -11,6 +11,7 @@ import com.nightshift.model.enums.PatchStatus;
 import com.nightshift.model.enums.PrState;
 import com.nightshift.model.enums.Severity;
 import com.nightshift.repository.IncidentRepository;
+import com.nightshift.repository.NotificationRepository;
 import com.nightshift.repository.PatchProposalRepository;
 import com.nightshift.repository.PullRequestRepository;
 import com.nightshift.util.AgentStepRecorder;
@@ -34,7 +35,10 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
         PrBodyRenderer.class,
         SecretMasker.class,
         AgentStepRecorder.class,
-        NightshiftProperties.class
+        NightshiftProperties.class,
+        com.nightshift.service.outbox.NotificationService.class,
+        com.nightshift.service.outbox.AssignmentRulesService.class,
+        com.fasterxml.jackson.databind.ObjectMapper.class
 })
 @TestPropertySource(properties = {
         "nightshift.publish.dry-run=true",
@@ -54,6 +58,12 @@ class PublisherServiceImplTest {
 
     @Autowired
     private PullRequestRepository pullRequestRepository;
+
+    @Autowired
+    private NotificationRepository notificationRepository;
+
+    @Autowired
+    private com.nightshift.repository.OutboxEventRepository outboxEventRepository;
 
     @Autowired
     private PrBodyRenderer prBodyRenderer;
@@ -119,6 +129,17 @@ class PublisherServiceImplTest {
 
         Incident updatedIncident = incidentRepository.findById(incident.getId()).orElseThrow();
         assertThat(updatedIncident.getStatus()).isEqualTo(IncidentStatus.PR_OPEN);
+
+        // Verify outbox & notification committed atomically
+        var notifications = notificationRepository.findAll();
+        assertThat(notifications).hasSize(1);
+        assertThat(notifications.get(0).getRecipient()).isEqualTo("dev.a@example.com");
+        assertThat(notifications.get(0).getSubject()).contains("[Nightshift] CRITICAL · Hikari connection pool leak");
+
+        var outboxEvents = outboxEventRepository.findAll();
+        assertThat(outboxEvents).hasSize(1);
+        assertThat(outboxEvents.get(0).getType()).isEqualTo("PULL_REQUEST_OPENED");
+        assertThat(outboxEvents.get(0).getStatus()).isEqualTo(com.nightshift.model.enums.OutboxStatus.PENDING);
     }
 
     @Test
