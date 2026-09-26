@@ -34,7 +34,7 @@ class NightshiftPropertiesTest {
 
     @Test
     void defaults_llm_openaiModelDefault() {
-        assertThat(props.getLlm().getOpenai().getModel()).isEqualTo("luna");
+        assertThat(props.getLlm().getOpenai().getModel()).isEqualTo("gpt-4o-mini");
     }
 
     @Test

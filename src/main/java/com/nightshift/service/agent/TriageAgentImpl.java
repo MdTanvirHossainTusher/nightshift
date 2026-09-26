@@ -68,7 +68,7 @@ public class TriageAgentImpl implements TriageAgent {
     // ── TriageAgent ───────────────────────────────────────────────────────────
 
     @Override
-    @Transactional
+    @Transactional(noRollbackFor = Exception.class)
     public void triage(Incident incident, ScanRun scanRun) {
         log.debug("Triaging incident id={} fingerprint={}", incident.getId(), incident.getFingerprint());
 
@@ -78,10 +78,33 @@ public class TriageAgentImpl implements TriageAgent {
                 + " level=" + incident.getLogLevel()
                 + " occurrences=" + incident.getOccurrenceCount();
 
-        // Attempt 1
-        LlmResponse response = recorder.recordModelCall(
-                scanRun, incident, AgentRole.TRIAGE, 0,
-                client, LlmRequest.of(SYSTEM_PROMPT_PATH, userPrompt), inputSummary);
+        LlmResponse response = null;
+        try {
+            // Attempt 1
+            response = recorder.recordModelCall(
+                    scanRun, incident, AgentRole.TRIAGE, 0,
+                    client, LlmRequest.of(SYSTEM_PROMPT_PATH, userPrompt), inputSummary);
+        } catch (Exception e) {
+            log.warn("Triage call failed for provider '{}': {}. Falling back to heuristic...", client.provider(), e.getMessage());
+            if (!"heuristic".equalsIgnoreCase(client.provider())) {
+                try {
+                    client = llmRegistry.resolve("heuristic");
+                    response = recorder.recordModelCall(
+                            scanRun, incident, AgentRole.TRIAGE, 0,
+                            client, LlmRequest.of(SYSTEM_PROMPT_PATH, userPrompt), inputSummary + " [heuristic-fallback]");
+                } catch (Exception fallbackEx) {
+                    log.error("Heuristic fallback also failed: {}", fallbackEx.getMessage());
+                }
+            }
+        }
+
+        if (response == null) {
+            incident.setStatus(IncidentStatus.TRIAGE_FAILED);
+            incident.setTriageProvider(client.provider());
+            incident.setTriageModel(client.model());
+            incidentRepository.save(incident);
+            return;
+        }
 
         JsonNode parsed = tryParse(response.responseText());
 
@@ -89,10 +112,14 @@ public class TriageAgentImpl implements TriageAgent {
             log.warn("Triage JSON parse failed on attempt 1 for incident {}; retrying", incident.getId());
             // Attempt 2 — append repair instruction
             String repairedPrompt = userPrompt + REPAIR_INSTRUCTION;
-            LlmResponse repairResponse = recorder.recordModelCall(
-                    scanRun, incident, AgentRole.TRIAGE, 1,
-                    client, LlmRequest.of(SYSTEM_PROMPT_PATH, repairedPrompt), inputSummary + " [repair]");
-            parsed = tryParse(repairResponse.responseText());
+            try {
+                LlmResponse repairResponse = recorder.recordModelCall(
+                        scanRun, incident, AgentRole.TRIAGE, 1,
+                        client, LlmRequest.of(SYSTEM_PROMPT_PATH, repairedPrompt), inputSummary + " [repair]");
+                parsed = tryParse(repairResponse.responseText());
+            } catch (Exception e) {
+                log.warn("Triage repair call failed: {}", e.getMessage());
+            }
         }
 
         if (parsed == null) {

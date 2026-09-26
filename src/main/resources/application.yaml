@@ -111,7 +111,7 @@ nightshift:
     provider: ${NIGHTSHIFT_LLM_PROVIDER:heuristic}
     openai:
       api-key: ${OPENAI_API_KEY:}
-      model: ${OPENAI_MODEL:luna}
+      model: ${OPENAI_MODEL:gpt-4o-mini}
     gemini:
       api-key: ${GEMINI_API_KEY:}
       model: ${GEMINI_MODEL:gemini-2.0-flash}

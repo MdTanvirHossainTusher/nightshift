@@ -94,7 +94,7 @@ public class ScanServiceImpl implements ScanService {
     }
 
     @Override
-    @Transactional
+    @Transactional(noRollbackFor = Exception.class)
     public ScanRun runScan(TriggerSource triggerSource) {
         log.info("Starting scan (trigger={})", triggerSource);
 

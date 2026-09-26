@@ -46,19 +46,19 @@ public class FixAgentImpl implements FixAgent {
     private final AgentStepRecorder recorder;
 
     @Override
-    @Transactional
+    @Transactional(noRollbackFor = Exception.class)
     public Optional<PatchProposal> proposeFix(Incident incident, CodeLocation codeLocation) {
         return proposeFix(incident, codeLocation, null, null);
     }
 
     @Override
-    @Transactional
+    @Transactional(noRollbackFor = Exception.class)
     public Optional<PatchProposal> proposeFix(Incident incident, CodeLocation codeLocation, ScanRun scanRun) {
         return proposeFix(incident, codeLocation, scanRun, null);
     }
 
     @Override
-    @Transactional
+    @Transactional(noRollbackFor = Exception.class)
     public Optional<PatchProposal> proposeFix(Incident incident, CodeLocation codeLocation, ScanRun scanRun, Path targetRepoPath) {
         if (props.getPatch() != null && !props.getPatch().isEnabled()) {
             log.info("Patch generation disabled by nightshift.patch.enabled");
@@ -82,9 +82,31 @@ public class FixAgentImpl implements FixAgent {
         String inputSummary = "fingerprint=" + incident.getFingerprint() + " file=" + codeLocation.getFilePath();
 
         // Step 0: Model call to generate the patch
-        LlmResponse response = recorder.recordModelCall(
-                scanRun, incident, AgentRole.FIX, 0,
-                client, LlmRequest.of(SYSTEM_PROMPT_PATH, userPrompt), inputSummary);
+        LlmResponse response = null;
+        try {
+            response = recorder.recordModelCall(
+                    scanRun, incident, AgentRole.FIX, 0,
+                    client, LlmRequest.of(SYSTEM_PROMPT_PATH, userPrompt), inputSummary);
+        } catch (Exception e) {
+            log.warn("Fix model call failed with provider '{}': {}. Falling back to heuristic...", client.provider(), e.getMessage());
+            if (!"heuristic".equalsIgnoreCase(client.provider())) {
+                try {
+                    client = llmRegistry.resolve("heuristic");
+                    response = recorder.recordModelCall(
+                            scanRun, incident, AgentRole.FIX, 0,
+                            client, LlmRequest.of(SYSTEM_PROMPT_PATH, userPrompt), inputSummary + " [heuristic-fallback]");
+                } catch (Exception fallbackEx) {
+                    log.error("Heuristic fallback for fix failed: {}", fallbackEx.getMessage());
+                    return Optional.empty();
+                }
+            } else {
+                return Optional.empty();
+            }
+        }
+
+        if (response == null) {
+            return Optional.empty();
+        }
 
         FixResult fixResult = parseFixResponse(response.responseText(), incident);
 

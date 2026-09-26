@@ -54,9 +54,31 @@ public class VerifierAgentImpl implements VerifierAgent {
         String userPrompt = buildUserPrompt(proposal, incident, codeLocation);
         String inputSummary = "incident=" + incident.getFingerprint() + " patch_id=" + proposal.getId();
 
-        LlmResponse response = recorder.recordModelCall(
-                scanRun, incident, AgentRole.VERIFY, 0,
-                client, LlmRequest.of(SYSTEM_PROMPT_PATH, userPrompt), inputSummary);
+        LlmResponse response = null;
+        try {
+            response = recorder.recordModelCall(
+                    scanRun, incident, AgentRole.VERIFY, 0,
+                    client, LlmRequest.of(SYSTEM_PROMPT_PATH, userPrompt), inputSummary);
+        } catch (Exception e) {
+            log.warn("Verifier call failed for provider '{}': {}. Falling back to heuristic...", client.provider(), e.getMessage());
+            if (!"heuristic".equalsIgnoreCase(client.provider())) {
+                try {
+                    client = llmRegistry.resolve("heuristic");
+                    response = recorder.recordModelCall(
+                            scanRun, incident, AgentRole.VERIFY, 0,
+                            client, LlmRequest.of(SYSTEM_PROMPT_PATH, userPrompt), inputSummary + " [heuristic-fallback]");
+                } catch (Exception fallbackEx) {
+                    log.error("Heuristic fallback for verifier failed: {}", fallbackEx.getMessage());
+                    return false;
+                }
+            } else {
+                return false;
+            }
+        }
+
+        if (response == null) {
+            return false;
+        }
 
         VerifyResult result = parseVerifyResponse(response.responseText());
 

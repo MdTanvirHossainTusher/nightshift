@@ -108,7 +108,7 @@ public class NightshiftProperties {
         @Data
         public static class OpenAiProperties {
             private String apiKey = "";
-            private String model = "luna";
+            private String model = "gpt-4o-mini";
             private String baseUrl = "https://api.openai.com/v1";
         }
 
