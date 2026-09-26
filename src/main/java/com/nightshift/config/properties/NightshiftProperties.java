@@ -72,6 +72,11 @@ public class NightshiftProperties {
     @NotNull
     private LocatorProperties locator = new LocatorProperties();
 
+    @Valid
+    @NestedConfigurationProperty
+    @NotNull
+    private McpProperties mcp = new McpProperties();
+
     // ── Nested groups ────────────────────────────────────────────────────────
 
     @Data
@@ -186,5 +191,14 @@ public class NightshiftProperties {
          */
         @NotBlank
         private String applicationPackages = "com.example";
+    }
+
+    @Data
+    public static class McpProperties {
+        /** Whether the MCP server endpoint is enabled. */
+        private boolean enabled = true;
+        /** Path for the MCP server endpoint. */
+        @NotBlank
+        private String path = "/mcp";
     }
 }

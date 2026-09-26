@@ -122,3 +122,6 @@ nightshift:
     transport: ${NIGHTSHIFT_MESSAGING_TRANSPORT:local}
   locator:
     application-packages: com.example
+  mcp:
+    enabled: ${NIGHTSHIFT_MCP_ENABLED:true}
+    path: ${NIGHTSHIFT_MCP_PATH:/mcp}

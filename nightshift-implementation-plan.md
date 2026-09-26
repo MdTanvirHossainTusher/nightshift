@@ -503,7 +503,7 @@ trigger returns `409 SCAN_ALREADY_RUNNING` and does not start a second pipeline.
 
 ## Task 14 — MCP Server and .mcp.json
 
-**Status:** `[ ] pending`
+**Status:** `[x] done`
 
 **Intent:** Expose the pipeline as MCP tools so Claude Code, Bob, or any MCP client can drive
 Nightshift from their own chat. Ship `.mcp.json` for one-liner integration.
