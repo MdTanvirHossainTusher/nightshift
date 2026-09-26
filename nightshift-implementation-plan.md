@@ -225,7 +225,7 @@ they enter any prompt.
 
 ## Task 6 — Code Locator over demo/target-repo
 
-**Status:** `[ ] pending`
+**Status:** `[x] done`
 
 **Intent:** Implement the deterministic code locator (step 5): parse stack frames from the
 incident, keep only application-package frames (filter by `nightshift.locator.application-packages`),
