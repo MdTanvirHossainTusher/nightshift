@@ -55,6 +55,7 @@ public class ScanServiceImpl implements ScanService {
     private final ObjectProvider<FixAgent> fixAgentProvider;
     private final ObjectProvider<VerifierAgent> verifierAgentProvider;
     private final ObjectProvider<PublisherService> publisherServiceProvider;
+    private final ObjectProvider<com.nightshift.config.LogSourceInitializer> logSourceInitializerProvider;
 
     @Override
     @Transactional
@@ -88,6 +89,15 @@ public class ScanServiceImpl implements ScanService {
                     .stream()
                     .filter(LogSource::isEnabled)
                     .toList();
+
+            if (sources.isEmpty()) {
+                log.info("No active log sources found. Initializing default demo sources...");
+                logSourceInitializerProvider.ifAvailable(com.nightshift.config.LogSourceInitializer::initializeSourcesIfEmpty);
+                sources = logSourceRepository.findAll()
+                        .stream()
+                        .filter(LogSource::isEnabled)
+                        .toList();
+            }
 
             for (LogSource source : sources) {
                 procesSource(source, run);
