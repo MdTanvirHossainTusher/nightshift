@@ -61,7 +61,8 @@ spring:
 
 # ── Server ──────────────────────────────────────────────────────────────────
 server:
-  port: 8080
+  # Render (and most PaaS) inject PORT; locally and in compose it stays 8080.
+  port: ${PORT:8080}
 
 # ── Actuator (management port 9091, health + prometheus + info) ─────────────
 management:

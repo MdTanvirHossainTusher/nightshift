@@ -1,0 +1,76 @@
+# Render Blueprint: one web service (the repo Dockerfile) + one Postgres.
+# Render dashboard → New → Blueprint → pick this repo. Values marked `sync: false`
+# are prompted for on first deploy and never stored in git.
+services:
+  - type: web
+    name: nightshift
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /actuator/health
+    autoDeploy: true
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
+      # One port for the app and actuator: Render routes and health-checks a single port.
+      - key: PORT
+        value: "8080"
+      - key: MANAGEMENT_SERVER_PORT
+        value: "8080"
+      # The free instance has 512 MB; keep heap + metaspace + threads inside it.
+      - key: JAVA_OPTS
+        value: "-XX:+UseContainerSupport -XX:MaxRAMPercentage=60.0 -XX:+UseSerialGC -Xss512k"
+
+      - key: DB_HOST
+        fromDatabase:
+          name: nightshift-db
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: nightshift-db
+          property: port
+      - key: DB_NAME
+        fromDatabase:
+          name: nightshift-db
+          property: database
+      - key: SPRING_DATASOURCE_USERNAME
+        fromDatabase:
+          name: nightshift-db
+          property: user
+      - key: SPRING_DATASOURCE_PASSWORD
+        fromDatabase:
+          name: nightshift-db
+          property: password
+
+      - key: NIGHTSHIFT_LOG_ROOT
+        value: /app/logs
+      - key: NIGHTSHIFT_WORKSPACE
+        value: /app/workspace
+      - key: NIGHTSHIFT_LLM_PROVIDER
+        value: heuristic
+      - key: NIGHTSHIFT_MESSAGING_TRANSPORT
+        value: local
+      # Safe default: flip to false (and set GITHUB_TOKEN) only when you want real PRs.
+      - key: NIGHTSHIFT_PUBLISH_DRY_RUN
+        value: "true"
+      - key: NIGHTSHIFT_GIT_REPO
+        value: MdTanvirHossainTusher/nightshift
+      - key: NIGHTSHIFT_GIT_BASE_BRANCH
+        value: main
+
+      # Secrets: prompted for in the dashboard, optional.
+      - key: GITHUB_TOKEN
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: ANTHROPIC_API_KEY
+        sync: false
+
+databases:
+  - name: nightshift-db
+    databaseName: nightshift
+    user: nightshift
+    plan: free

@@ -23,6 +23,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.api.ResetCommand;
+import org.eclipse.jgit.api.errors.TransportException;
 import org.eclipse.jgit.transport.RefSpec;
 import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
 import org.springframework.stereotype.Service;
@@ -225,10 +226,12 @@ public class PublisherServiceImpl implements PublisherService {
             // previous attempt on the same branch.
             git.reset().setMode(ResetCommand.ResetType.HARD).call();
             git.clean().setCleanDirectories(true).setForce(true).call();
+            // Detach onto the remote base so the (possibly checked-out) PR branch can be dropped.
+            git.checkout().setName("refs/remotes/origin/" + baseBranch).setForced(true).call();
+            git.branchDelete().setBranchNames(branchName).setForce(true).call();
             git.checkout()
                     .setName(branchName)
                     .setCreateBranch(true)
-                    .setForced(true)
                     .setStartPoint("origin/" + baseBranch)
                     .call();
 
@@ -248,11 +251,22 @@ public class PublisherServiceImpl implements PublisherService {
                     .call();
 
             // Bot-owned branch: force so a re-publish replaces an earlier attempt.
-            git.push()
-                    .setCredentialsProvider(credentials)
-                    .setRemote("origin")
-                    .setRefSpecs(new RefSpec("+refs/heads/" + branchName + ":refs/heads/" + branchName))
-                    .call();
+            try {
+                git.push()
+                        .setCredentialsProvider(credentials)
+                        .setRemote("origin")
+                        .setRefSpecs(new RefSpec("+refs/heads/" + branchName + ":refs/heads/" + branchName))
+                        .call();
+            } catch (TransportException e) {
+                String msg = String.valueOf(e.getMessage());
+                if (msg.contains("receive-pack not permitted") || msg.contains("not authorized")
+                        || msg.contains("403")) {
+                    throw new IllegalStateException("GitHub token cannot push to " + repoFullName
+                            + ": grant it Contents: Read and write and Pull requests: Read and write"
+                            + " on this repository (fine-grained PAT), or the repo scope (classic PAT)", e);
+                }
+                throw e;
+            }
         }
     }
 

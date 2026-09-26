@@ -3,7 +3,8 @@
 
 spring:
   datasource:
-    url: ${SPRING_DATASOURCE_URL}
+    # Railway sets SPRING_DATASOURCE_URL; Render's blueprint supplies host/port/name separately.
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://${DB_HOST}:${DB_PORT:5432}/${DB_NAME}}
     username: ${SPRING_DATASOURCE_USERNAME}
     password: ${SPRING_DATASOURCE_PASSWORD}
 
@@ -23,3 +24,10 @@ nightshift:
     dry-run: ${NIGHTSHIFT_PUBLISH_DRY_RUN:true}
   messaging:
     transport: ${NIGHTSHIFT_MESSAGING_TRANSPORT:local}
+
+# Mail is optional in the cloud (no MailHog). Without this, an unreachable SMTP host marks
+# /actuator/health DOWN and Render/Railway health checks never let the deploy go live.
+management:
+  health:
+    mail:
+      enabled: ${NIGHTSHIFT_MAIL_HEALTH:false}
