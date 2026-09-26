@@ -44,19 +44,28 @@ public class GeminiLlmClient implements LlmClient {
         return "gemini";
     }
 
+    private String getEffectiveApiKey() {
+        String key = properties.getLlm().getGemini().getApiKey();
+        if (key != null && !key.isBlank()) return key.strip();
+        String envKey = System.getenv("GEMINI_API_KEY");
+        if (envKey != null && !envKey.isBlank()) return envKey.strip();
+        String sysKey = System.getProperty("GEMINI_API_KEY");
+        if (sysKey != null && !sysKey.isBlank()) return sysKey.strip();
+        return "";
+    }
+
     @Override
     public boolean isAvailable() {
-        String key = properties.getLlm().getGemini().getApiKey();
-        return key != null && !key.isBlank();
+        return !getEffectiveApiKey().isBlank();
     }
 
     @Override
     public LlmResponse complete(LlmRequest request) {
-        if (!isAvailable()) {
+        String apiKey = getEffectiveApiKey();
+        if (apiKey.isBlank()) {
             throw new ExternalServiceException("Gemini", "API key is not configured");
         }
 
-        String apiKey = properties.getLlm().getGemini().getApiKey();
         String model = properties.getLlm().getGemini().getModel();
         String baseUrl = properties.getLlm().getGemini().getBaseUrl();
         String cleanBase = baseUrl.endsWith("/") ? baseUrl.substring(0, baseUrl.length() - 1) : baseUrl;

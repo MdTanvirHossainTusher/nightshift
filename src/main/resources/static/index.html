@@ -35,7 +35,7 @@
             flex-direction: column;
         }
         header {
-            background: rgba(17, 24, 39, 0.8);
+            background: rgba(17, 24, 39, 0.85);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
             padding: 0.85rem 2rem;
@@ -78,11 +78,37 @@
         }
         nav button:hover { color: var(--text-main); background: var(--surface-hover); }
         nav button.active { color: var(--text-main); background: #1f2937; font-weight: 600; }
+        
+        /* Configuration Bar */
+        .config-bar {
+            background: #0f172a;
+            border-bottom: 1px solid var(--border);
+            padding: 0.75rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+        }
+        .config-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+        }
+        .config-group label {
+            color: var(--text-muted);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
         .btn-scan {
             background: linear-gradient(135deg, #6366f1, #4f46e5);
             color: white;
             border: none;
-            padding: 0.5rem 1.1rem;
+            padding: 0.5rem 1.15rem;
             border-radius: 6px;
             font-size: 0.875rem;
             font-weight: 600;
@@ -90,11 +116,13 @@
             box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
             display: flex;
             align-items: center;
-            gap: 0.4rem;
+            gap: 0.45rem;
             transition: all 0.2s ease;
         }
         .btn-scan:hover { opacity: 0.92; transform: translateY(-1px); }
         .btn-scan:active { transform: translateY(0); }
+        .btn-scan:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
         main {
             flex: 1;
             padding: 2rem;
@@ -156,92 +184,88 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 0.875rem;
             text-align: left;
+            font-size: 0.875rem;
+        }
+        th, td {
+            padding: 0.9rem 1.25rem;
+            border-bottom: 1px solid var(--border);
         }
         th {
-            background: #161f30;
-            padding: 0.75rem 1rem;
+            background: rgba(255, 255, 255, 0.02);
             color: var(--text-muted);
             font-weight: 600;
-            border-bottom: 1px solid var(--border);
             font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
-        td {
-            padding: 0.85rem 1rem;
-            border-bottom: 1px solid rgba(55, 65, 81, 0.4);
-            vertical-align: middle;
-        }
-        tr:last-child td { border-bottom: none; }
-        tr:hover td { background: rgba(31, 41, 55, 0.4); }
+        tbody tr:hover { background: var(--surface-hover); }
         .chip {
-            display: inline-flex;
-            align-items: center;
+            display: inline-block;
             padding: 0.2rem 0.55rem;
-            border-radius: 9999px;
-            font-size: 0.7rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
             font-weight: 600;
-            font-family: 'JetBrains Mono', monospace;
             text-transform: uppercase;
-            letter-spacing: 0.02em;
         }
-        .chip-blocker { background: rgba(239, 68, 68, 0.18); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.4); }
-        .chip-critical { background: rgba(249, 115, 22, 0.18); color: #fdba74; border: 1px solid rgba(249, 115, 22, 0.4); }
-        .chip-major { background: rgba(245, 158, 11, 0.18); color: #fde68a; border: 1px solid rgba(245, 158, 11, 0.4); }
-        .chip-minor { background: rgba(59, 130, 246, 0.18); color: #93c5fd; border: 1px solid rgba(59, 130, 246, 0.4); }
-        .chip-trivial { background: rgba(156, 163, 175, 0.18); color: #d1d5db; border: 1px solid rgba(156, 163, 175, 0.4); }
-        
+        .chip-blocker { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.4); }
+        .chip-critical { background: rgba(249, 115, 22, 0.2); color: #fb923c; border: 1px solid rgba(249, 115, 22, 0.4); }
+        .chip-major { background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.4); }
+        .chip-minor { background: rgba(59, 130, 246, 0.2); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.4); }
+        .chip-trivial { background: rgba(107, 114, 128, 0.2); color: #9ca3af; border: 1px solid rgba(107, 114, 128, 0.4); }
+
         .badge {
             display: inline-block;
             padding: 0.2rem 0.5rem;
             border-radius: 4px;
             font-size: 0.75rem;
-            font-weight: 500;
-            background: #252e3e;
+            font-family: 'JetBrains Mono', monospace;
+            background: #1f2937;
             color: #d1d5db;
         }
-        .badge-pr { background: rgba(16, 185, 129, 0.15); color: #6ee7b7; border: 1px solid rgba(16, 185, 129, 0.3); }
-        .badge-fail { background: rgba(239, 68, 68, 0.15); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.3); }
-        .badge-running { background: rgba(59, 130, 246, 0.15); color: #93c5fd; border: 1px solid rgba(59, 130, 246, 0.3); }
+        .badge-pr { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+        .badge-fail { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
+        .badge-running { background: rgba(59, 130, 246, 0.2); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); }
 
         .btn-action {
-            background: #252e3e;
+            background: #1f2937;
             border: 1px solid var(--border);
             color: var(--text-main);
-            padding: 0.3rem 0.7rem;
-            border-radius: 5px;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
             font-size: 0.8rem;
             cursor: pointer;
-            transition: all 0.15s;
+            transition: all 0.15s ease;
         }
-        .btn-action:hover { background: #374151; border-color: #4b5563; }
+        .btn-action:hover { background: #374151; }
+
         .detail-card {
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: 10px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
+            padding: 1.75rem;
+            margin-bottom: 2rem;
         }
         .detail-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 1.25rem;
-            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
             border-bottom: 1px solid var(--border);
+            padding-bottom: 1.25rem;
+            gap: 1rem;
+            flex-wrap: wrap;
         }
         .code-box {
             background: var(--code-bg);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 1rem;
+            border: 1px solid #1f2937;
+            border-radius: 8px;
+            padding: 1.25rem;
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.82rem;
+            font-size: 0.825rem;
             overflow-x: auto;
             white-space: pre-wrap;
-            line-height: 1.45;
+            color: #e5e7eb;
             margin-top: 0.5rem;
         }
         .alert-box {
@@ -271,7 +295,7 @@
 <body>
     <header>
         <div class="brand">
-            <span class="logo">ðŸŒ™</span>
+            <span class="logo">🌙</span>
             <span>Nightshift</span>
             <span class="tag">AI SRE</span>
         </div>
@@ -280,8 +304,33 @@
             <button id="nav-incidents" onclick="switchView('incidents')">Incidents</button>
             <button id="nav-trajectory" onclick="switchView('trajectory')">Trajectory</button>
         </nav>
-        <button class="btn-scan" onclick="triggerScanNow()">âš¡ Run Scan Now</button>
     </header>
+
+    <!-- Model & Target Repo Configuration Bar -->
+    <div class="config-bar">
+        <div class="config-group">
+            <label for="select-provider">🤖 AI Provider:</label>
+            <select id="select-provider" onchange="onProviderChange()">
+                <option value="heuristic">Heuristic (Offline, Fast)</option>
+                <option value="gemini">Google Gemini (gemini-2.0-flash)</option>
+                <option value="openai">OpenAI (gpt-4o-mini)</option>
+                <option value="anthropic">Anthropic Claude (claude-3-5-sonnet)</option>
+            </select>
+        </div>
+
+        <div class="config-group" id="api-key-container" style="display: none;">
+            <label for="input-api-key">🔑 API Key:</label>
+            <input type="password" id="input-api-key" placeholder="Enter key (or leave empty for ENV)" oninput="onApiKeyInput()" style="width: 250px;" />
+            <span id="env-badge" class="badge" style="display: none; font-size: 0.75rem; background: rgba(16, 185, 129, 0.2); color: #34d399;">ENV Detected</span>
+        </div>
+
+        <div class="config-group">
+            <label for="input-git-repo">📦 GitHub Repo:</label>
+            <input type="text" id="input-git-repo" value="MdTanvirHossainTusher/nightshift" oninput="onGitRepoInput()" style="width: 260px;" />
+        </div>
+
+        <button id="btn-scan" class="btn-scan" onclick="triggerScanNow()">⚡ Run Scan Now</button>
+    </div>
 
     <main>
         <!-- RUNS VIEW -->
@@ -343,7 +392,7 @@
                         <option value="TRIVIAL">TRIVIAL</option>
                     </select>
                 </div>
-                <button class="btn-action" onclick="loadIncidents()">ðŸ”„ Refresh</button>
+                <button class="btn-action" onclick="loadIncidents()">🔄 Refresh</button>
             </div>
 
             <div class="card-table">
@@ -369,7 +418,7 @@
         <!-- INCIDENT DETAIL VIEW -->
         <div id="view-detail" class="view">
             <div style="margin-bottom: 1rem;">
-                <button class="btn-action" onclick="switchView('incidents')">â† Back to Incidents</button>
+                <button class="btn-action" onclick="switchView('incidents')">← Back to Incidents</button>
             </div>
 
             <div class="detail-card">
@@ -383,16 +432,16 @@
                         <h2 id="detail-title" style="font-size: 1.35rem; font-weight: 700;">Incident Title</h2>
                         <div id="detail-fingerprint" style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">fp-xxxx</div>
                     </div>
-                    <div style="display: flex; gap: 0.5rem;">
-                        <button class="btn-action" onclick="triggerTriage()">ðŸ¤– Re-Triage</button>
-                        <button class="btn-action" onclick="triggerPatch()">ðŸ”§ Propose Patch</button>
-                        <button class="btn-action" onclick="triggerPublish()">ðŸš€ Publish PR</button>
-                        <button class="btn-action" onclick="triggerMute()">ðŸ”• Mute</button>
+                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                        <button class="btn-action" onclick="triggerTriage()">🤖 Re-Triage</button>
+                        <button class="btn-action" onclick="triggerPatch()">🔧 Propose Patch</button>
+                        <button class="btn-action" onclick="triggerPublish()">🚀 Publish PR</button>
+                        <button class="btn-action" onclick="triggerMute()">🔇 Mute</button>
                     </div>
                 </div>
 
                 <div id="detail-future-impact-box" class="alert-box">
-                    <strong>âš ï¸ Future Impact Forecast:</strong>
+                    <strong>⚠️ Future Impact Forecast:</strong>
                     <div id="detail-future-impact" style="margin-top: 0.35rem;">No impact assessed yet.</div>
                 </div>
 
@@ -413,7 +462,7 @@
                 </div>
 
                 <div>
-                    <h4 style="font-size: 0.9rem; margin-bottom: 0.35rem; color: var(--text-muted);">Pull Request</h4>
+                    <h4 style="font-size: 0.9rem; margin-bottom: 0.35rem; color: var(--text-muted);">Pull Request & GitHub Review</h4>
                     <div id="detail-pr-info" style="font-size: 0.9rem;">No PR opened.</div>
                 </div>
             </div>
@@ -455,6 +504,7 @@
 
     <script>
         let currentIncidentId = null;
+        let serverConfig = null;
 
         function showToast(msg) {
             const t = document.getElementById('toast');
@@ -463,6 +513,100 @@
             setTimeout(() => { t.style.display = 'none'; }, 4000);
         }
 
+        // ── Provider & API Key Session Caching ─────────────────────────────────────
+        async function loadConfig() {
+            try {
+                const res = await fetch('/api/v1/config');
+                const json = await res.json();
+                serverConfig = json.data || {};
+
+                // Restore cached settings from localStorage
+                const cachedProvider = localStorage.getItem('nightshift_provider') || serverConfig.provider || 'heuristic';
+                document.getElementById('select-provider').value = cachedProvider;
+
+                const cachedRepo = localStorage.getItem('nightshift_git_repo') || serverConfig.git_repo || 'MdTanvirHossainTusher/nightshift';
+                document.getElementById('input-git-repo').value = cachedRepo;
+
+                updateApiKeyVisibility(cachedProvider);
+            } catch (e) {
+                console.warn('Failed to load server config:', e);
+            }
+        }
+
+        function onProviderChange() {
+            const provider = document.getElementById('select-provider').value;
+            localStorage.setItem('nightshift_provider', provider);
+            updateApiKeyVisibility(provider);
+            syncConfigToServer();
+        }
+
+        function updateApiKeyVisibility(provider) {
+            const container = document.getElementById('api-key-container');
+            const keyInput = document.getElementById('input-api-key');
+            const envBadge = document.getElementById('env-badge');
+
+            if (provider === 'heuristic') {
+                container.style.display = 'none';
+            } else {
+                container.style.display = 'flex';
+                // Load cached key for this specific provider
+                const cachedKey = localStorage.getItem(`nightshift_key_${provider}`) || '';
+                keyInput.value = cachedKey;
+
+                // Check if server already has env key
+                let hasEnvKey = false;
+                if (serverConfig) {
+                    if (provider === 'gemini') hasEnvKey = serverConfig.has_gemini_key;
+                    if (provider === 'openai') hasEnvKey = serverConfig.has_openai_key;
+                    if (provider === 'anthropic') hasEnvKey = serverConfig.has_anthropic_key;
+                }
+
+                if (hasEnvKey) {
+                    envBadge.style.display = 'inline-block';
+                    keyInput.placeholder = 'Using server ENV key (or enter override)';
+                } else {
+                    envBadge.style.display = 'none';
+                    keyInput.placeholder = `Enter ${provider} API Key`;
+                }
+            }
+        }
+
+        function onApiKeyInput() {
+            const provider = document.getElementById('select-provider').value;
+            const key = document.getElementById('input-api-key').value;
+            if (provider !== 'heuristic') {
+                localStorage.setItem(`nightshift_key_${provider}`, key);
+                syncConfigToServer();
+            }
+        }
+
+        function onGitRepoInput() {
+            const repo = document.getElementById('input-git-repo').value;
+            localStorage.setItem('nightshift_git_repo', repo);
+            syncConfigToServer();
+        }
+
+        async function syncConfigToServer() {
+            const provider = document.getElementById('select-provider').value;
+            const apiKey = document.getElementById('input-api-key').value;
+            const gitRepo = document.getElementById('input-git-repo').value;
+
+            try {
+                await fetch('/api/v1/config', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        provider: provider,
+                        api_key: apiKey,
+                        git_repo: gitRepo
+                    })
+                });
+            } catch (e) {
+                console.warn('Config sync error:', e);
+            }
+        }
+
+        // ── View Switching ────────────────────────────────────────────────────────
         function switchView(viewName) {
             document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
             document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
@@ -479,20 +623,31 @@
         }
 
         async function triggerScanNow() {
+            const btn = document.getElementById('btn-scan');
             try {
-                showToast("âš¡ Triggering Overnight Scan...");
+                btn.disabled = true;
+                btn.innerText = '⏳ Scanning...';
+                showToast("⚡ Triggering Overnight Scan...");
+
+                // First ensure backend config has active UI selections
+                await syncConfigToServer();
+
                 const res = await fetch('/api/v1/scans', { method: 'POST' });
                 const json = await res.json();
-                if (res.status === 202) {
-                    showToast("Scan accepted! Refreshing runs...");
+                if (res.status === 202 || res.status === 200) {
+                    showToast("Scan completed! Updating dashboard...");
                     loadRuns();
+                    loadIncidents();
                 } else if (res.status === 400 || res.status === 409) {
-                    showToast("Scan already in progress!");
+                    showToast("A scan is already in progress!");
                 } else {
-                    showToast("Scan trigger response: " + (json.error ? json.error.message : res.statusText));
+                    showToast("Scan status: " + (json.message || res.statusText));
                 }
             } catch (e) {
                 showToast("Failed to connect to API: " + e.message);
+            } finally {
+                btn.disabled = false;
+                btn.innerText = '⚡ Run Scan Now';
             }
         }
 
@@ -514,13 +669,13 @@
                 document.getElementById('stat-prs').innerText = totalPrs;
 
                 if (runs.length === 0) {
-                    tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; color: var(--text-muted);">No scan runs recorded yet. Click \"Run Scan Now\" above.</td></tr>';
+                    tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; color: var(--text-muted);">No scan runs recorded yet. Click "Run Scan Now" above.</td></tr>';
                     return;
                 }
 
                 tbody.innerHTML = runs.map(r => `
                     <tr>
-                        <td style="font-family: \'JetBrains Mono\', monospace; font-size: 0.8rem;">${r.id.substring(0, 8)}...</td>
+                        <td style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem;">${r.id.substring(0, 8)}...</td>
                         <td><span class="badge">${r.trigger_source || 'SCHEDULE'}</span></td>
                         <td><span class="badge ${r.status === 'COMPLETED' ? 'badge-pr' : (r.status === 'RUNNING' ? 'badge-running' : 'badge-fail')}">${r.status}</span></td>
                         <td>${r.started_at ? new Date(r.started_at).toLocaleString() : 'N/A'}</td>
@@ -583,18 +738,21 @@
                 const json = await res.json();
                 const d = json.data;
 
-                document.getElementById('detail-title').innerText = d.title || 'Untitled';
-                document.getElementById('detail-fingerprint').innerText = `Fingerprint: ${d.fingerprint || 'N/A'}`;
+                document.getElementById('detail-title').innerText = d.title || 'Untitled Incident';
+                document.getElementById('detail-fingerprint').innerText = 'Fingerprint: ' + d.fingerprint;
                 document.getElementById('detail-service').innerText = d.service_name || 'unknown-service';
 
-                const sevEl = document.getElementById('detail-severity');
                 const sev = (d.severity || 'MAJOR').toLowerCase();
+                const sevEl = document.getElementById('detail-severity');
                 sevEl.className = `chip chip-${sev}`;
                 sevEl.innerText = d.severity || 'MAJOR';
 
-                document.getElementById('detail-status').innerText = d.status || 'NEW';
-                document.getElementById('detail-root-cause').innerText = d.root_cause || 'No root cause identified yet.';
-                document.getElementById('detail-future-impact').innerText = d.future_impact || 'Future impact forecast pending.';
+                const statusEl = document.getElementById('detail-status');
+                statusEl.className = `badge ${d.status === 'PR_OPEN' ? 'badge-pr' : ''}`;
+                statusEl.innerText = d.status || 'NEW';
+
+                document.getElementById('detail-root-cause').innerText = d.root_cause || 'Root cause analysis pending.';
+                document.getElementById('detail-future-impact').innerText = d.future_impact || 'No future impact forecast available.';
 
                 // Code location
                 const locEl = document.getElementById('detail-code-location');
@@ -617,13 +775,30 @@
                     diffEl.innerText = 'No patch proposal generated.';
                 }
 
-                // PR
+                // PR with GitHub review & merge buttons
                 const prEl = document.getElementById('detail-pr-info');
                 if (d.pull_requests && d.pull_requests.length > 0) {
                     const pr = d.pull_requests[0];
-                    prEl.innerHTML = `<strong>PR #${pr.pr_number || ''}</strong>: <a href="${pr.pr_url || '#'}" target="_blank" style="color: var(--primary);">${pr.pr_url || pr.branch_name}</a> (${pr.state})`;
+                    const prUrl = pr.pr_url || `https://github.com/${pr.repo_full_name}/pull/${pr.pr_number}`;
+                    const compareUrl = `https://github.com/${pr.repo_full_name}/compare/main...${pr.branch_name}`;
+                    
+                    prEl.innerHTML = `
+                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
+                            <strong>PR #${pr.pr_number || ''}</strong>: 
+                            <a href="${prUrl}" target="_blank" style="color: var(--primary); text-decoration: underline; font-weight: 600;">${prUrl}</a> 
+                            <span class="badge badge-pr">${pr.state}</span>
+                        </div>
+                        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                            <a href="${prUrl}" target="_blank" class="btn-action" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px; background: #2563eb; color: #fff; font-weight: 600; padding: 0.45rem 1rem;">
+                                🔗 Open & Review on GitHub
+                            </a>
+                            <a href="${compareUrl}" target="_blank" class="btn-action" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px; background: #059669; color: #fff; font-weight: 600; padding: 0.45rem 1rem;">
+                                🚀 Merge / Compare on GitHub
+                            </a>
+                        </div>
+                    `;
                 } else {
-                    prEl.innerText = 'No pull request opened.';
+                    prEl.innerText = 'No pull request opened yet.';
                 }
             } catch (e) {
                 showToast("Failed to load incident detail: " + e.message);
@@ -719,7 +894,7 @@
                         <td><strong>#${s.step_index}</strong></td>
                         <td><span class="badge">${s.agent_role}</span></td>
                         <td><span class="chip chip-minor">${s.step_type}</span></td>
-                        <td style="font-family: \'JetBrains Mono\', monospace; font-size: 0.8rem;">${s.provider || '-'}/${s.model || s.tool_name || '-'}</td>
+                        <td style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem;">${s.provider || '-'}/${s.model || s.tool_name || '-'}</td>
                         <td>${s.latency_ms || 0}ms</td>
                         <td><span class="badge ${s.status === 'OK' ? 'badge-pr' : 'badge-fail'}">${s.status}</span></td>
                         <td style="max-width: 400px; font-size: 0.8rem; word-break: break-word;">
@@ -739,6 +914,7 @@
         }
 
         window.addEventListener('DOMContentLoaded', () => {
+            loadConfig();
             loadRuns();
         });
     </script>

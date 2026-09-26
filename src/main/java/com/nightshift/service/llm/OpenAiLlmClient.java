@@ -43,19 +43,28 @@ public class OpenAiLlmClient implements LlmClient {
         return "openai";
     }
 
+    private String getEffectiveApiKey() {
+        String key = properties.getLlm().getOpenai().getApiKey();
+        if (key != null && !key.isBlank()) return key.strip();
+        String envKey = System.getenv("OPENAI_API_KEY");
+        if (envKey != null && !envKey.isBlank()) return envKey.strip();
+        String sysKey = System.getProperty("OPENAI_API_KEY");
+        if (sysKey != null && !sysKey.isBlank()) return sysKey.strip();
+        return "";
+    }
+
     @Override
     public boolean isAvailable() {
-        String key = properties.getLlm().getOpenai().getApiKey();
-        return key != null && !key.isBlank();
+        return !getEffectiveApiKey().isBlank();
     }
 
     @Override
     public LlmResponse complete(LlmRequest request) {
-        if (!isAvailable()) {
+        String apiKey = getEffectiveApiKey();
+        if (apiKey.isBlank()) {
             throw new ExternalServiceException("OpenAI", "API key is not configured");
         }
 
-        String apiKey = properties.getLlm().getOpenai().getApiKey();
         String model = properties.getLlm().getOpenai().getModel();
         String baseUrl = properties.getLlm().getOpenai().getBaseUrl();
         String endpoint = baseUrl.endsWith("/") ? baseUrl + "chat/completions" : baseUrl + "/chat/completions";

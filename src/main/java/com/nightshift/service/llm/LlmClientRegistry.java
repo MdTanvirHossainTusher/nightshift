@@ -33,13 +33,13 @@ public class LlmClientRegistry {
     private static final String FALLBACK = "heuristic";
 
     private final Map<String, LlmClient> byProvider;
-    private final String configuredProvider;
+    private final NightshiftProperties properties;
 
     public LlmClientRegistry(List<LlmClient> clients,
                               NightshiftProperties properties) {
         this.byProvider = clients.stream()
                 .collect(Collectors.toMap(LlmClient::provider, Function.identity()));
-        this.configuredProvider = properties.getLlm().getProvider();
+        this.properties = properties;
     }
 
     /**
@@ -47,6 +47,9 @@ public class LlmClientRegistry {
      * Falls back to {@code heuristic} when the configured provider is unavailable.
      */
     public LlmClient resolve() {
+        String configuredProvider = properties.getLlm() != null && properties.getLlm().getProvider() != null
+                ? properties.getLlm().getProvider()
+                : FALLBACK;
         LlmClient client = byProvider.get(configuredProvider);
         if (client != null && client.isAvailable()) {
             return client;

@@ -43,19 +43,28 @@ public class AnthropicLlmClient implements LlmClient {
         return "anthropic";
     }
 
+    private String getEffectiveApiKey() {
+        String key = properties.getLlm().getAnthropic().getApiKey();
+        if (key != null && !key.isBlank()) return key.strip();
+        String envKey = System.getenv("ANTHROPIC_API_KEY");
+        if (envKey != null && !envKey.isBlank()) return envKey.strip();
+        String sysKey = System.getProperty("ANTHROPIC_API_KEY");
+        if (sysKey != null && !sysKey.isBlank()) return sysKey.strip();
+        return "";
+    }
+
     @Override
     public boolean isAvailable() {
-        String key = properties.getLlm().getAnthropic().getApiKey();
-        return key != null && !key.isBlank();
+        return !getEffectiveApiKey().isBlank();
     }
 
     @Override
     public LlmResponse complete(LlmRequest request) {
-        if (!isAvailable()) {
+        String apiKey = getEffectiveApiKey();
+        if (apiKey.isBlank()) {
             throw new ExternalServiceException("Anthropic", "API key is not configured");
         }
 
-        String apiKey = properties.getLlm().getAnthropic().getApiKey();
         String model = properties.getLlm().getAnthropic().getModel();
         String baseUrl = properties.getLlm().getAnthropic().getBaseUrl();
         String endpoint = baseUrl.endsWith("/") ? baseUrl + "messages" : baseUrl + "/messages";

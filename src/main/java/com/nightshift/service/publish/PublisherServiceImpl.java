@@ -75,7 +75,7 @@ public class PublisherServiceImpl implements PublisherService {
 
         String repoFullName = props.getGit() != null && !props.getGit().getRepo().isBlank()
                 ? props.getGit().getRepo()
-                : "owner/target-repo";
+                : "MdTanvirHossainTusher/nightshift";
         String baseBranch = props.getGit() != null && !props.getGit().getBaseBranch().isBlank()
                 ? props.getGit().getBaseBranch()
                 : "main";
@@ -93,6 +93,9 @@ public class PublisherServiceImpl implements PublisherService {
 
         boolean dryRun = props.getPublish() != null && props.getPublish().isDryRun();
         String githubToken = System.getenv("GITHUB_TOKEN");
+        if (githubToken == null || githubToken.isBlank()) {
+            githubToken = System.getProperty("GITHUB_TOKEN");
+        }
 
         int prNumber;
         String prUrl;
