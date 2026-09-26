@@ -186,7 +186,7 @@ before any real provider.
 
 ## Task 5 — Triage Agent, prompts/triage.md, AgentStep Recording
 
-**Status:** `[ ] pending`
+**Status:** `[x] complete`
 
 **Intent:** Build the triage agent (step 4 in the pipeline): take a parsed incident, pass it
 to the configured LLM with the structured prompt, parse the JSON response, persist

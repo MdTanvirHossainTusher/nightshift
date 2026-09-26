@@ -35,7 +35,8 @@ import static org.assertj.core.api.Assertions.assertThat;
         IncrementalLogReader.class,
         LogEventParser.class,
         IncidentFingerprinter.class,
-        NightshiftProperties.class
+        NightshiftProperties.class,
+        com.nightshift.util.SecretMasker.class
 })
 @TestPropertySource(properties = {
         "nightshift.log-root=./demo/logs",

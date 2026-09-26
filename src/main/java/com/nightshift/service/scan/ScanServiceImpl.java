@@ -6,6 +6,7 @@ import com.nightshift.model.enums.IncidentStatus;
 import com.nightshift.model.enums.ScanStatus;
 import com.nightshift.model.enums.TriggerSource;
 import com.nightshift.repository.*;
+import com.nightshift.util.SecretMasker;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -39,6 +40,7 @@ public class ScanServiceImpl implements ScanService {
     private final IncidentOccurrenceRepository incidentOccurrenceRepository;
     private final IncrementalLogReader logReader;
     private final IncidentFingerprinter fingerprinter;
+    private final SecretMasker secretMasker;
     private final NightshiftProperties props;
 
     @Override
@@ -163,7 +165,7 @@ public class ScanServiceImpl implements ScanService {
                 .lineNumber(event.lineNumber())
                 .traceId(event.traceId())
                 .threadName(event.threadName())
-                .rawLine(event.message())
+                .rawLine(secretMasker.mask(event.message()))
                 .build();
         incidentOccurrenceRepository.save(occ);
     }
