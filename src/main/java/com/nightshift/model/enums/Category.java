@@ -1,0 +1,18 @@
+package com.nightshift.model.enums;
+
+public enum Category {
+    NULL_POINTER,
+    DATABASE,
+    NETWORK,
+    AUTHENTICATION,
+    AUTHORIZATION,
+    CONFIGURATION,
+    PERFORMANCE,
+    MEMORY,
+    CONCURRENCY,
+    EXTERNAL_SERVICE,
+    VALIDATION,
+    SERIALIZATION,
+    FILE_IO,
+    UNCATEGORIZED
+}

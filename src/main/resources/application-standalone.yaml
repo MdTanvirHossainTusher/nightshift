@@ -1,0 +1,36 @@
+# Standalone profile — no Docker, no Postgres, no SMTP required.
+# Start with: ./gradlew bootRun --args='--spring.profiles.active=standalone'
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:nightshift;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+
+  flyway:
+    enabled: false
+
+  # Swallow all SMTP in standalone — no MailHog, no real mail account needed.
+  mail:
+    host: localhost
+    port: 1025
+    properties:
+      mail:
+        smtp:
+          auth: false
+          starttls:
+            enable: false
+
+nightshift:
+  llm:
+    provider: heuristic
+  messaging:
+    transport: local

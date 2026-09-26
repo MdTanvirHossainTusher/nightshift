@@ -1,0 +1,124 @@
+spring:
+  application:
+    name: nightshift
+  version: "@project.version@"
+
+  # ── Datasource (Postgres default; overridden per profile) ───────────────────
+  datasource:
+    url: jdbc:postgresql://localhost:5433/nightshift
+    username: nightshift
+    password: nightshift
+    hikari:
+      maximum-pool-size: 10
+      connection-timeout: 30000
+
+  # ── JPA ─────────────────────────────────────────────────────────────────────
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        default_schema: public
+
+  # ── Flyway ──────────────────────────────────────────────────────────────────
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: false
+
+  # ── Jackson ─────────────────────────────────────────────────────────────────
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+    default-property-inclusion: non_null
+    serialization:
+      write-dates-as-timestamps: false
+    deserialization:
+      fail-on-unknown-properties: false
+
+  # ── Mail (real SMTP; overridden to noop in standalone) ──────────────────────
+  mail:
+    host: ${SPRING_MAIL_HOST:localhost}
+    port: ${SPRING_MAIL_PORT:1025}
+    username: ${SPRING_MAIL_USERNAME:}
+    password: ${SPRING_MAIL_PASSWORD:}
+    properties:
+      mail:
+        smtp:
+          auth: false
+          starttls:
+            enable: false
+
+  # ── Async thread pool ────────────────────────────────────────────────────────
+  task:
+    execution:
+      pool:
+        core-size: 4
+        max-size: 16
+        queue-capacity: 512
+      thread-name-prefix: nightshift-async-
+
+# ── Server ──────────────────────────────────────────────────────────────────
+server:
+  port: 8080
+
+# ── Actuator (management port 9091, health + prometheus + info) ─────────────
+management:
+  server:
+    port: 9091
+  endpoints:
+    web:
+      exposure:
+        include: health, prometheus, info
+  endpoint:
+    health:
+      show-details: always
+  info:
+    env:
+      enabled: true
+
+info:
+  app:
+    name: nightshift
+    version: "@project.version@"
+
+# ── Springdoc / OpenAPI ─────────────────────────────────────────────────────
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: alpha
+  packages-to-scan: com.nightshift.controller
+
+# ── Nightshift domain properties (defaults; override in profiles/env) ────────
+nightshift:
+  log-root: ${NIGHTSHIFT_LOG_ROOT:./demo/logs}
+  workspace: ${NIGHTSHIFT_WORKSPACE:./workspace}
+  notify:
+    from: ${NIGHTSHIFT_NOTIFY_FROM:nightshift@example.com}
+  scan:
+    cron: ${NIGHTSHIFT_SCAN_CRON:0 0 2 * * *}
+  patch:
+    enabled: true
+  git:
+    repo: ${NIGHTSHIFT_GIT_REPO:}
+    base-branch: ${NIGHTSHIFT_GIT_BASE_BRANCH:main}
+  publish:
+    dry-run: ${NIGHTSHIFT_PUBLISH_DRY_RUN:true}
+  llm:
+    provider: ${NIGHTSHIFT_LLM_PROVIDER:heuristic}
+    openai:
+      api-key: ${OPENAI_API_KEY:}
+      model: ${OPENAI_MODEL:gpt-4o-mini}
+    gemini:
+      api-key: ${GEMINI_API_KEY:}
+      model: ${GEMINI_MODEL:gemini-2.0-flash}
+    anthropic:
+      api-key: ${ANTHROPIC_API_KEY:}
+      model: ${ANTHROPIC_MODEL:claude-sonnet-4-5}
+  messaging:
+    transport: ${NIGHTSHIFT_MESSAGING_TRANSPORT:local}
+  locator:
+    application-packages: com.example

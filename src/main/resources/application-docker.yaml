@@ -1,0 +1,31 @@
+# Docker profile — reads all configuration from env vars injected by compose.yml.
+# Active when SPRING_PROFILES_ACTIVE=docker (set in compose.yml).
+
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+  flyway:
+    enabled: true
+
+  mail:
+    host: ${SPRING_MAIL_HOST:mailhog}
+    port: ${SPRING_MAIL_PORT:1025}
+
+logging:
+  file:
+    path: ${NIGHTSHIFT_LOG_ROOT:/app/logs}
+
+nightshift:
+  log-root: ${NIGHTSHIFT_LOG_ROOT:/app/logs}
+  workspace: ${NIGHTSHIFT_WORKSPACE:/app/workspace}
+  llm:
+    provider: ${NIGHTSHIFT_LLM_PROVIDER:heuristic}
+  messaging:
+    transport: ${NIGHTSHIFT_MESSAGING_TRANSPORT:local}
