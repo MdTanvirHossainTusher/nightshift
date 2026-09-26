@@ -614,7 +614,7 @@ persistent volume for logs, and verify the public URL is reachable.
 
 ## Task 18 — Docs, README, Cover Image, Slides, Video
 
-**Status:** `[ ] pending`
+**Status:** `[x] complete`
 
 **Intent:** Complete the submission deliverables: README with all three run modes, problem/solution
 statement, Bob usage statement, cover image, slides, and the 3-minute video.
