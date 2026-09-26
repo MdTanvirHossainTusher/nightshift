@@ -529,7 +529,7 @@ Nightshift from their own chat. Ship `.mcp.json` for one-liner integration.
 
 ## Task 15 — Real LLM Providers (OpenAI, Gemini, Anthropic, Claude Code CLI)
 
-**Status:** `[ ] pending`
+**Status:** `[x] done`
 
 **Intent:** Implement the four real LLM provider adapters so the provider is switchable by
 config without code changes.

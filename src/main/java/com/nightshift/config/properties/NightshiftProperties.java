@@ -109,18 +109,21 @@ public class NightshiftProperties {
         public static class OpenAiProperties {
             private String apiKey = "";
             private String model = "gpt-4o-mini";
+            private String baseUrl = "https://api.openai.com/v1";
         }
 
         @Data
         public static class GeminiProperties {
             private String apiKey = "";
             private String model = "gemini-2.0-flash";
+            private String baseUrl = "https://generativelanguage.googleapis.com";
         }
 
         @Data
         public static class AnthropicProperties {
             private String apiKey = "";
             private String model = "claude-sonnet-4-5";
+            private String baseUrl = "https://api.anthropic.com/v1";
         }
     }
 
