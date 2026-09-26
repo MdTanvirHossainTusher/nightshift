@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.3.0](https://github.com/MdTanvirHossainTusher/nightshift/compare/v0.2.0...v0.3.0) (2026-09-26)
+
+
+### Features
+
+* add render blueprint, bind to PORT and reset stale publish branches ([66ad69a](https://github.com/MdTanvirHossainTusher/nightshift/commit/66ad69aa2b85ee1d8849aca28e55103849d71ce4))
+* add scan reset capability, update models to luna, gemini and claude, and gitignore pptx ([f4c6102](https://github.com/MdTanvirHossainTusher/nightshift/commit/f4c6102b72c311cb918a584cc9abe59f578599ae))
+* add ui provider selector, api key caching, and real github repo integration ([7d1275a](https://github.com/MdTanvirHossainTusher/nightshift/commit/7d1275a58a546708f6def6293442de581e71e3f2))
+* embed model selector in header and disable static caching ([303f941](https://github.com/MdTanvirHossainTusher/nightshift/commit/303f9417d3af47d579ab041322a39a148fb5a2d1))
+
+
+### Bug Fixes
+
+* build patches from model search/replace edits so llm fixes apply cleanly ([7f58eba](https://github.com/MdTanvirHossainTusher/nightshift/commit/7f58eba357929e8281c3ef96f487b6b9f41061fe))
+* drop buildkit cache mounts so railway accepts the dockerfile ([0dc8e73](https://github.com/MdTanvirHossainTusher/nightshift/commit/0dc8e7332cb51dc187e1d119e665b83b3c06b6cb))
+* prevent transaction rollback on external model failure with graceful fallback ([cf20cb7](https://github.com/MdTanvirHossainTusher/nightshift/commit/cf20cb73b8e912c916a01f6f960ff3cf72003a2c))
+* publish real prs from a repo clone and gate patches through verifier revision and brace checks ([3ba8052](https://github.com/MdTanvirHossainTusher/nightshift/commit/3ba805248d09d1d0539e5d0951159c73d9f502e2))
+
 ## [0.2.0](https://github.com/MdTanvirHossainTusher/nightshift/compare/v0.1.0...v0.2.0) (2026-09-26)
 
 
