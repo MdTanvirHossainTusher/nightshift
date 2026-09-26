@@ -49,11 +49,56 @@ class EditDiffBuilderTest {
     }
 
     @Test
+    void edit_stripsCopiedLineNumberPrefixes() {
+        String diff = builder.build(List.of(new EditDiffBuilder.Edit(NAME_FORMATTER,
+                "  22|         out.append(Character.toUpperCase(middleName.charAt(0))); // NS_FRAME",
+                "  22|         if (middleName != null) out.append(Character.toUpperCase(middleName.charAt(0))); // NS_FRAME")),
+                DEMO_REPO, 22);
+
+        assertThat(diff).contains("+        if (middleName != null) out.append(");
+        assertThat(diff).doesNotContain("22|");
+        patchGuard.validate(diff, DEMO_REPO);
+    }
+
+    @Test
+    void edit_joiningNonConsecutiveLines_explainsWhy() {
+        assertThatThrownBy(() -> builder.build(List.of(new EditDiffBuilder.Edit(NAME_FORMATTER,
+                "        StringBuilder out = new StringBuilder();\n        return out.toString();", "x")),
+                DEMO_REPO, 22))
+                .isInstanceOf(PatchRejectedException.class)
+                .hasMessageContaining("not consecutive");
+    }
+
+    @Test
     void edit_withUnknownOldCode_isRejectedAsNotApplying() {
         assertThatThrownBy(() -> builder.build(List.of(new EditDiffBuilder.Edit(NAME_FORMATTER,
                 "this line is not in the file", "x")), DEMO_REPO, 22))
                 .isInstanceOf(PatchRejectedException.class)
                 .extracting("code").isEqualTo(ErrorCodes.PATCH_DOES_NOT_APPLY);
+    }
+
+    @Test
+    void guard_rejectsPatchThatOpensBlockWithoutClosingIt() {
+        // The gpt-4o-mini FarmerSync patch: opens try-with-resources, never closes it.
+        String diff = builder.build(List.of(new EditDiffBuilder.Edit(
+                "src/main/java/com/example/farmer/FarmerSyncService.java",
+                "            Connection connection = dataSource.getConnection(); // NS_FRAME_POOL",
+                "            try (Connection connection = dataSource.getConnection()) { // NS_FRAME_POOL")),
+                DEMO_REPO, 36);
+
+        assertThatThrownBy(() -> patchGuard.validate(diff, DEMO_REPO))
+                .isInstanceOf(PatchRejectedException.class)
+                .extracting("code").isEqualTo(ErrorCodes.PATCH_UNBALANCED);
+    }
+
+    @Test
+    void guard_ignoresBracesInsideStringsAndComments() {
+        patchGuard.checkBalanced("""
+                --- a/X.java
+                +++ b/X.java
+                @@ -1,1 +1,2 @@
+                +        log.warn("dropped {} events", count); // see {issue}
+                """);
     }
 
     @Test

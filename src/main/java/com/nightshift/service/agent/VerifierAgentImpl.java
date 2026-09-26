@@ -57,7 +57,7 @@ public class VerifierAgentImpl implements VerifierAgent {
         LlmResponse response = null;
         try {
             response = recorder.recordModelCall(
-                    scanRun, incident, AgentRole.VERIFY, 0,
+                    scanRun, incident, AgentRole.VERIFY, Math.max(0, proposal.getAttempt() - 1),
                     client, LlmRequest.of(SYSTEM_PROMPT_PATH, userPrompt), inputSummary);
         } catch (Exception e) {
             log.warn("Verifier call failed for provider '{}': {}. Falling back to heuristic...", client.provider(), e.getMessage());
@@ -65,7 +65,7 @@ public class VerifierAgentImpl implements VerifierAgent {
                 try {
                     client = llmRegistry.resolve("heuristic");
                     response = recorder.recordModelCall(
-                            scanRun, incident, AgentRole.VERIFY, 0,
+                            scanRun, incident, AgentRole.VERIFY, Math.max(0, proposal.getAttempt() - 1),
                             client, LlmRequest.of(SYSTEM_PROMPT_PATH, userPrompt), inputSummary + " [heuristic-fallback]");
                 } catch (Exception fallbackEx) {
                     log.error("Heuristic fallback for verifier failed: {}", fallbackEx.getMessage());

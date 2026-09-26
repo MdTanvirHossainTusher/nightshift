@@ -22,19 +22,28 @@ import com.nightshift.util.PrBodyRenderer;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.eclipse.jgit.api.Git;
+import org.eclipse.jgit.api.ResetCommand;
+import org.eclipse.jgit.transport.RefSpec;
 import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.IOException;
 import java.net.URI;
+import java.net.URLEncoder;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.time.Instant;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Stream;
 
 /**
  * Default implementation of {@link PublisherService}.
@@ -98,8 +107,12 @@ public class PublisherServiceImpl implements PublisherService {
             if ("SIMULATED".equalsIgnoreCase(existing.getProvider()) && !isDryRun) {
                 log.info("Promoting simulated PR for branch {} to live GitHub PR...", branchName);
                 try {
-                    executeGitPublish(branchName, baseBranch, proposal.getUnifiedDiff(), commitTitle, incident.getFingerprint(), githubToken);
-                    PrApiResult result = openGitHubPullRequest(repoFullName, commitTitle, prBody, branchName, baseBranch, githubToken);
+                    // Publish the proposal the simulated PR was created from, not whatever
+                    // proposal is newest for the incident (that may be a rejected revision).
+                    PatchProposal published = existing.getPatchProposal() != null ? existing.getPatchProposal() : proposal;
+                    executeGitPublish(branchName, baseBranch, published.getUnifiedDiff(), commitTitle, incident.getFingerprint(), githubToken);
+                    PrApiResult result = openGitHubPullRequest(repoFullName, commitTitle,
+                            prBodyRenderer.render(incident, published, scanRun), branchName, baseBranch, githubToken);
                     existing.setProvider("GITHUB");
                     existing.setPrNumber(result.number());
                     existing.setPrUrl(result.url());
@@ -180,54 +193,107 @@ public class PublisherServiceImpl implements PublisherService {
 
     private void executeGitPublish(String branchName, String baseBranch, String diff,
                                    String title, String fingerprint, String token) throws Exception {
-        String wsPath = props.getWorkspace() != null ? props.getWorkspace() : "./workspace";
-        File repoDir = new File(wsPath);
-        if (!new File(repoDir, ".git").exists()) {
-            File targetRepoDir = new File(repoDir, "target-repo");
-            if (new File(targetRepoDir, ".git").exists()) {
-                repoDir = targetRepoDir;
-            } else {
-                log.info("Initializing local git repo at {} for publishing...", repoDir.getAbsolutePath());
-                Git.init().setDirectory(repoDir).call();
-            }
-        }
-
         String repoFullName = props.getGit() != null && !props.getGit().getRepo().isBlank()
                 ? props.getGit().getRepo()
                 : "MdTanvirHossainTusher/nightshift";
         String remoteUrl = "https://github.com/" + repoFullName + ".git";
+        UsernamePasswordCredentialsProvider credentials =
+                new UsernamePasswordCredentialsProvider("x-access-token", token);
 
-        try (Git git = Git.open(repoDir)) {
-            boolean hasOrigin = git.remoteList().call().stream().anyMatch(r -> "origin".equalsIgnoreCase(r.getName()));
-            if (!hasOrigin) {
-                git.remoteAdd().setName("origin").setUri(new org.eclipse.jgit.transport.URIish(remoteUrl)).call();
+        // A dedicated clone of the real repo. The workspace root also holds the locator's
+        // target-repo mount, which is not a git checkout of the PR repository.
+        String wsPath = props.getWorkspace() != null ? props.getWorkspace() : "./workspace";
+        File repoDir = new File(new File(wsPath, "publish"), repoFullName.replace('/', '_'));
+
+        Git git;
+        if (new File(repoDir, ".git").exists()) {
+            git = Git.open(repoDir);
+            git.fetch().setRemote("origin").setCredentialsProvider(credentials).call();
+        } else {
+            log.info("Cloning {} into {} for publishing...", repoFullName, repoDir.getAbsolutePath());
+            repoDir.mkdirs();
+            git = Git.cloneRepository()
+                    .setURI(remoteUrl)
+                    .setDirectory(repoDir)
+                    .setCredentialsProvider(credentials)
+                    .setBranch(baseBranch)
+                    .call();
+        }
+
+        try (git) {
+            // Start every PR branch from the current remote base, discarding leftovers of a
+            // previous attempt on the same branch.
+            git.reset().setMode(ResetCommand.ResetType.HARD).call();
+            git.clean().setCleanDirectories(true).setForce(true).call();
+            git.checkout()
+                    .setName(branchName)
+                    .setCreateBranch(true)
+                    .setForced(true)
+                    .setStartPoint("origin/" + baseBranch)
+                    .call();
+
+            String repoDiff = rebaseDiffPaths(diff, repoDir.toPath());
+            git.apply().setPatch(new ByteArrayInputStream(repoDiff.getBytes(StandardCharsets.UTF_8))).call();
+
+            if (git.status().call().isClean()) {
+                throw new IllegalStateException("Patch applied but produced no changes in " + repoFullName);
             }
 
-            try {
-                git.checkout().setName(baseBranch).call();
-            } catch (Exception ignored) {
-                // If base branch doesn't exist locally, create or proceed
-            }
-
-            // Create new branch
-            git.checkout().setCreateBranch(true).setName(branchName).call();
-
-            // Apply patch
-            git.apply().setPatch(new ByteArrayInputStream(diff.getBytes(StandardCharsets.UTF_8))).call();
-
-            // Commit
+            git.add().addFilepattern(".").call();
             String commitMsg = title + "\n\nRefs: nightshift/" + fingerprint;
             git.commit()
                     .setMessage(commitMsg)
                     .setAuthor("Nightshift Bot", "nightshift@example.com")
+                    .setCommitter("Nightshift Bot", "nightshift@example.com")
                     .call();
 
-            // Push branch
+            // Bot-owned branch: force so a re-publish replaces an earlier attempt.
             git.push()
-                    .setCredentialsProvider(new UsernamePasswordCredentialsProvider("x-access-token", token))
+                    .setCredentialsProvider(credentials)
                     .setRemote("origin")
+                    .setRefSpecs(new RefSpec("+refs/heads/" + branchName + ":refs/heads/" + branchName))
                     .call();
         }
+    }
+
+    /**
+     * Diffs are computed against the locator's target repo, whose root may be a sub-directory of
+     * the PR repository (the demo lives at {@code demo/target-repo/} in this repo). Rewrites each
+     * file header to the path that actually exists in the clone.
+     */
+    private String rebaseDiffPaths(String diff, Path cloneRoot) throws IOException {
+        Map<String, String> remap = new HashMap<>();
+        for (String line : diff.lines().toList()) {
+            if (!line.startsWith("+++ b/")) continue;
+            String rel = line.substring("+++ b/".length()).strip();
+            if (remap.containsKey(rel) || Files.exists(cloneRoot.resolve(rel))) continue;
+
+            List<Path> matches;
+            try (Stream<Path> walk = Files.walk(cloneRoot)) {
+                matches = walk
+                        .filter(Files::isRegularFile)
+                        .filter(p -> !cloneRoot.relativize(p).toString().replace('\\', '/').startsWith(".git/"))
+                        .filter(p -> p.toString().replace('\\', '/').endsWith("/" + rel))
+                        .toList();
+            }
+            if (matches.size() != 1) {
+                throw new IllegalStateException("Cannot map " + rel + " into the repository ("
+                        + matches.size() + " candidate files)");
+            }
+            remap.put(rel, cloneRoot.relativize(matches.get(0)).toString().replace('\\', '/'));
+        }
+        if (remap.isEmpty()) return diff;
+
+        StringBuilder out = new StringBuilder(diff.length() + 64);
+        for (String line : diff.lines().toList()) {
+            if (line.startsWith("--- a/") && remap.containsKey(line.substring(6).strip())) {
+                line = "--- a/" + remap.get(line.substring(6).strip());
+            } else if (line.startsWith("+++ b/") && remap.containsKey(line.substring(6).strip())) {
+                line = "+++ b/" + remap.get(line.substring(6).strip());
+            }
+            out.append(line).append('\n');
+        }
+        return out.toString();
     }
 
     private PrApiResult openGitHubPullRequest(String repo, String title, String body,
@@ -249,6 +315,10 @@ public class PublisherServiceImpl implements PublisherService {
                 .build();
 
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString(StandardCharsets.UTF_8));
+        if (response.statusCode() == 422 && response.body().contains("already exists")) {
+            // The branch already has an open PR from an earlier publish; the force-push updated it.
+            return findOpenPullRequest(client, repo, head, token);
+        }
         if (response.statusCode() != 201) {
             throw new IllegalStateException("GitHub API returned " + response.statusCode() + ": " + response.body());
         }
@@ -257,6 +327,23 @@ public class PublisherServiceImpl implements PublisherService {
         int number = respNode.path("number").asInt(1);
         String url = respNode.path("html_url").asText("https://github.com/" + repo + "/pull/" + number);
         return new PrApiResult(number, url);
+    }
+
+    private PrApiResult findOpenPullRequest(HttpClient client, String repo, String head, String token) throws Exception {
+        String owner = repo.substring(0, repo.indexOf('/'));
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://api.github.com/repos/" + repo + "/pulls?state=open&head="
+                        + owner + ":" + URLEncoder.encode(head, StandardCharsets.UTF_8)))
+                .header("Authorization", "Bearer " + token)
+                .header("Accept", "application/vnd.github+json")
+                .GET()
+                .build();
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString(StandardCharsets.UTF_8));
+        JsonNode prs = MAPPER.readTree(response.body());
+        if (response.statusCode() != 200 || !prs.isArray() || prs.isEmpty()) {
+            throw new IllegalStateException("GitHub reports an existing PR for " + head + " but it could not be found");
+        }
+        return new PrApiResult(prs.get(0).path("number").asInt(), prs.get(0).path("html_url").asText());
     }
 
     private record PrApiResult(int number, String url) {}

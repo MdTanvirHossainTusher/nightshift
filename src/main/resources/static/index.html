@@ -1160,7 +1160,9 @@
                 const prEl = document.getElementById('detail-pr-info');
                 if (d.pull_requests && d.pull_requests.length > 0) {
                     const pr = d.pull_requests[0];
-                    const isSimulated = (pr.provider === 'SIMULATED') || (!pr.pr_url) || (serverConfig && serverConfig.dry_run);
+                    // The PR's own provider decides; the current dry-run toggle says nothing about
+                    // how an existing PR was published.
+                    const isSimulated = (pr.provider === 'SIMULATED') || (!pr.pr_url);
                     const repo = pr.repo_full_name || (serverConfig && serverConfig.git_repo) || 'MdTanvirHossainTusher/nightshift';
                     const branch = pr.branch_name || 'nightshift/fix-patch';
                     const baseBranch = pr.base_branch || 'main';
@@ -1182,9 +1184,6 @@
                                 <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
                                     <a href="${repoUrl}" target="_blank" class="btn-action" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px; background: #334155; color: #f8fafc; font-weight: 600; padding: 0.45rem 1rem;">
                                         ↗ View Repository (${escapeHtml(repo)})
-                                    </a>
-                                    <a href="${compareUrl}" target="_blank" class="btn-action" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px; background: #059669; color: #fff; font-weight: 600; padding: 0.45rem 1rem;">
-                                        🌿 Compare / Create PR on GitHub
                                     </a>
                                     <button class="btn-action" onclick="triggerPublishLive()" style="display: inline-flex; align-items: center; gap: 6px; background: #2563eb; color: #fff; font-weight: 600; padding: 0.45rem 1rem;">
                                         🚀 Publish Live to GitHub (PAT required)
@@ -1275,7 +1274,7 @@
                 viewIncidentDetail(currentIncidentId);
             } else {
                 const err = await res.json().catch(() => ({}));
-                showToast("Live publish failed: " + (err.message || 'Check GitHub token and repo permissions.'));
+                showToast("Live publish failed: " + ((err.error && err.error.message) || err.message || 'Check GitHub token and repo permissions.'));
             }
         }
 

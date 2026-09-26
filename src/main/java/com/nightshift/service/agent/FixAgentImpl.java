@@ -49,7 +49,7 @@ public class FixAgentImpl implements FixAgent {
 
     private static final ObjectMapper MAPPER = new ObjectMapper();
     private static final String SYSTEM_PROMPT_PATH = "prompts/fix.md";
-    /** One retry when the patch does not apply, with the rejection fed back to the model. */
+    /** Model calls per generate(): one retry when the patch does not apply, with the rejection fed back. */
     private static final int MAX_ATTEMPTS = 2;
     private static final Pattern FRAME_LINE = Pattern.compile(":(\\d+)\\)?\\s*$");
     private static final String DEFAULT_TEST_PLAN = "Verify incident pattern no longer recurs in logs.";
@@ -91,21 +91,40 @@ public class FixAgentImpl implements FixAgent {
                     "Cannot generate fix: code location confidence is LOW for incident " + incident.getFingerprint());
         }
 
-        Path repoPath = resolveRepoPath(codeLocation, targetRepoPath);
+        return generate(incident, codeLocation, scanRun, resolveRepoPath(codeLocation, targetRepoPath),
+                1, null, null);
+    }
+
+    @Override
+    @Transactional(noRollbackFor = Exception.class)
+    public Optional<PatchProposal> reviseFix(Incident incident, CodeLocation codeLocation, ScanRun scanRun,
+                                             PatchProposal rejected, String verifierNotes) {
+        if (props.getPatch() != null && !props.getPatch().isEnabled()) {
+            return Optional.empty();
+        }
+        String feedback = "the verifier rejected the previous patch: " + nullSafe(verifierNotes);
+        return generate(incident, codeLocation, scanRun, resolveRepoPath(codeLocation, null),
+                rejected.getAttempt() + 1, feedback, rejected.getUnifiedDiff());
+    }
+
+    /**
+     * Model call → diff → patch guard, retrying once when the patch does not apply. Attempt
+     * {@code n} records its steps at indexes {@code 2(n-1)} (model) and {@code 2(n-1)+1} (guard).
+     */
+    private Optional<PatchProposal> generate(Incident incident, CodeLocation codeLocation, ScanRun scanRun,
+                                             Path repoPath, int firstAttempt,
+                                             String retryFeedback, String previousAttempt) {
         LlmClient client = llmRegistry.resolve();
 
         String basePrompt = buildUserPrompt(incident, codeLocation);
         String inputSummary = "fingerprint=" + incident.getFingerprint() + " file=" + codeLocation.getFilePath();
 
-        String retryFeedback = null;
-        String previousAttempt = null;
-        int stepIndex = 0;
-
-        for (int attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+        for (int attempt = firstAttempt; attempt < firstAttempt + MAX_ATTEMPTS; attempt++) {
+            int stepIndex = 2 * (attempt - 1);
             String userPrompt = retryFeedback == null
                     ? basePrompt
                     : basePrompt + buildRetrySection(retryFeedback, previousAttempt);
-            String attemptSummary = attempt == 1 ? inputSummary : inputSummary + " [retry " + attempt + "]";
+            String attemptSummary = attempt == 1 ? inputSummary : inputSummary + " [attempt " + attempt + "]";
 
             // Model call to generate the patch
             ModelCall call = callModel(scanRun, incident, stepIndex++, client, userPrompt, attemptSummary);
@@ -179,9 +198,10 @@ public class FixAgentImpl implements FixAgent {
                         .build();
                 patchProposalRepository.save(rejected);
 
-                boolean retryable = ErrorCodes.PATCH_DOES_NOT_APPLY.equals(e.getCode())
+                boolean retryable = (ErrorCodes.PATCH_DOES_NOT_APPLY.equals(e.getCode())
+                        || ErrorCodes.PATCH_UNBALANCED.equals(e.getCode()))
                         && !"heuristic".equalsIgnoreCase(client.provider());
-                if (attempt < MAX_ATTEMPTS && retryable) {
+                if (attempt < firstAttempt + MAX_ATTEMPTS - 1 && retryable) {
                     log.info("Patch for incident {} did not apply ({}); retrying with feedback",
                             incident.getFingerprint(), e.getMessage());
                     retryFeedback = e.getMessage();
@@ -276,8 +296,9 @@ public class FixAgentImpl implements FixAgent {
         if (previousAttempt != null && !previousAttempt.isBlank()) {
             sb.append("previous_attempt:\n").append(previousAttempt).append('\n');
         }
-        sb.append("instruction: return `edits` again. Copy every `old_code` verbatim from source_snippet, ")
-          .append("without the line-number prefix, and include every line being replaced.\n");
+        sb.append("instruction: return a corrected `edits` array that resolves the rejection above. ")
+          .append("Copy every `old_code` verbatim from source_snippet (consecutive lines, without the ")
+          .append("line-number prefix); use a separate edit for each separate location.\n");
         return sb.toString();
     }
 

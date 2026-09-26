@@ -28,7 +28,19 @@ Accept (`PASS`) only when:
 - Every modified symbol, method, and variable exists in or is appropriately introduced into the file.
 - The change is bounded, minimal, and correct.
 
+Calibration — do **not** fail a patch for these alone:
+- It is minimal. A small change that safely removes the failure shown in the logs is a good fix,
+  even if a larger redesign is imaginable.
+- It changes output for inputs that previously crashed. For example, skipping an optional
+  (nullable) value instead of throwing is the expected behaviour, not a regression.
+- Symbols it introduces itself. A method the patch adds to an interface in the same file exists.
+
+Do fail it when it would not compile (e.g. an unhandled checked exception such as
+`InterruptedException` from `Thread.sleep`), calls a method that neither exists nor is added by
+the patch, or only logs the error without changing the faulty behaviour.
+
 Remember: **A rejected patch is a system success**, preventing bad PRs from wasting human reviewer time.
+But rejecting a correct fix costs just as much: judge the patch on concrete defects you can point to.
 
 ---
 

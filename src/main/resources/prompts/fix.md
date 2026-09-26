@@ -31,7 +31,17 @@ no prose outside the JSON.
      empty `new_code`. To insert lines, quote the neighbouring line in `old_code` and repeat it
      in `new_code` alongside the new lines.
    - Multiple edits to the same file must not overlap.
-7. **No change needed.** If the code is already correct, return an empty `edits` array and say
+7. **One edit per location.** Changes in two places that are not next to each other (for
+   example line 36 and line 45) are two separate edits, never one `old_code` joining them.
+8. **It must compile.** Only call methods and types that exist in the snippet or the JDK. If the
+   fix needs a new method on an interface or record declared in the same file, add it with a
+   separate edit. Handle checked exceptions you introduce (e.g. `Thread.sleep` throws
+   `InterruptedException`: catch it, restore the interrupt flag, and exit the loop).
+9. **Fix the cause, not the symptom.** Logging an error is not a fix. Implement what
+   `recommended_action` asks for (bounded retries with backoff, closing resources on every
+   path, batching queries, rejecting invalid input, …). Use the file's existing logger if it has
+   one; never `System.out` / `System.err`.
+10. **No change needed.** If the code is already correct, return an empty `edits` array and say
    why in `rationale`.
 
 ---

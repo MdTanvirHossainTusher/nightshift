@@ -36,6 +36,7 @@ public interface ErrorCodes {
     String PATCH_DOES_NOT_APPLY        = "PATCH_DOES_NOT_APPLY";
     String PATCH_TOUCHES_DENIED_PATH   = "PATCH_TOUCHES_DENIED_PATH";
     String PATCH_TOO_LARGE             = "PATCH_TOO_LARGE";
+    String PATCH_UNBALANCED            = "PATCH_UNBALANCED";
     String SOURCE_FILE_NOT_LOCATED     = "SOURCE_FILE_NOT_LOCATED";
     String PR_ALREADY_OPEN             = "PR_ALREADY_OPEN";
     String GIT_REMOTE_REJECTED         = "GIT_REMOTE_REJECTED";

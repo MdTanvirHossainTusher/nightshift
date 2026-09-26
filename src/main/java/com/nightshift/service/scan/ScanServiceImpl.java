@@ -344,8 +344,19 @@ public class ScanServiceImpl implements ScanService {
                 // Step 7: Verifier Agent
                 boolean verified = verifierAgent.verify(proposal, incident, location, run);
                 if (!verified || proposal.getStatus() != PatchStatus.VERIFIED) {
-                    log.info("Patch failed verification for incident {}", incident.getFingerprint());
-                    continue;
+                    // One revision: the fix agent sees the verifier's objections and tries again.
+                    log.info("Patch failed verification for incident {}; requesting one revision", incident.getFingerprint());
+                    Optional<PatchProposal> revisedOpt = fixAgent.reviseFix(
+                            incident, location, run, proposal, proposal.getVerifierNotes());
+                    if (revisedOpt.isEmpty()) {
+                        continue;
+                    }
+                    proposal = revisedOpt.get();
+                    verified = verifierAgent.verify(proposal, incident, location, run);
+                    if (!verified || proposal.getStatus() != PatchStatus.VERIFIED) {
+                        log.info("Revised patch also failed verification for incident {}", incident.getFingerprint());
+                        continue;
+                    }
                 }
 
                 // Step 8: Publisher Service

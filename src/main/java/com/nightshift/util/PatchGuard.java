@@ -139,6 +139,9 @@ public class PatchGuard {
             checkApplies(unifiedDiff, targetRepo);
         }
 
+        // 5. Bracket balance: a patch that opens a block it never closes cannot compile
+        checkBalanced(unifiedDiff);
+
         return analysis;
     }
 
@@ -201,6 +204,55 @@ public class PatchGuard {
             }
 
             verifyFileHunks(relPath, entry.getValue(), targetLines);
+        }
+    }
+
+    /**
+     * Rejects a patch whose added lines open more (or fewer) braces, parentheses or brackets
+     * than its removed lines close. Models routinely wrap code in a try-with-resources or
+     * an if-block and forget the closing brace. String/char literals and comments are
+     * skipped, so a brace inside a log message does not count.
+     */
+    public void checkBalanced(String unifiedDiff) {
+        int[] delta = new int[3]; // {} () []
+        for (String line : unifiedDiff.lines().toList()) {
+            if (line.startsWith("+++") || line.startsWith("---")) continue;
+            int sign = line.startsWith("+") ? 1 : line.startsWith("-") ? -1 : 0;
+            if (sign == 0) continue;
+            countBrackets(line.substring(1), sign, delta);
+        }
+        String[] names = {"braces {}", "parentheses ()", "brackets []"};
+        for (int k = 0; k < 3; k++) {
+            if (delta[k] != 0) {
+                throw new PatchRejectedException(ErrorCodes.PATCH_UNBALANCED,
+                        "Patch leaves " + names[k] + " unbalanced (" + (delta[k] > 0 ? "+" : "") + delta[k]
+                                + " net opening); every block the patch opens must also be closed by the patch");
+            }
+        }
+    }
+
+    private static void countBrackets(String code, int sign, int[] delta) {
+        String trimmed = code.strip();
+        if (trimmed.startsWith("*") || trimmed.startsWith("/*") || trimmed.startsWith("//")) return;
+        char quote = 0;
+        for (int i = 0; i < code.length(); i++) {
+            char c = code.charAt(i);
+            if (quote != 0) {
+                if (c == '\\') i++;
+                else if (c == quote) quote = 0;
+                continue;
+            }
+            if (c == '"' || c == '\'') { quote = c; continue; }
+            if (c == '/' && i + 1 < code.length() && code.charAt(i + 1) == '/') return;
+            switch (c) {
+                case '{' -> delta[0] += sign;
+                case '}' -> delta[0] -= sign;
+                case '(' -> delta[1] += sign;
+                case ')' -> delta[1] -= sign;
+                case '[' -> delta[2] += sign;
+                case ']' -> delta[2] -= sign;
+                default -> { }
+            }
         }
     }
 

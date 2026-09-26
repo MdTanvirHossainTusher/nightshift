@@ -56,6 +56,9 @@ services:
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
       GITHUB_TOKEN: ${GITHUB_TOKEN:-}
       NIGHTSHIFT_GIT_REPO: ${NIGHTSHIFT_GIT_REPO:-}
+      NIGHTSHIFT_GIT_BASE_BRANCH: ${NIGHTSHIFT_GIT_BASE_BRANCH:-main}
+      # Defaults to dry run; .env must opt in to pushing real branches and PRs.
+      NIGHTSHIFT_PUBLISH_DRY_RUN: ${NIGHTSHIFT_PUBLISH_DRY_RUN:-true}
     volumes:
       # Read-only, and the app must never need it otherwise: the checkpoint lives
       # in Postgres, not in a marker file next to the logs.

@@ -18,6 +18,8 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Turns model-proposed search/replace edits into a unified diff computed against the real
@@ -33,6 +35,8 @@ import java.util.Map;
 public class EditDiffBuilder {
 
     private static final int CONTEXT_LINES = 3;
+    /** The {@code "%4d| "} prefix FixAgentImpl puts on snippet lines; no Java line starts this way. */
+    private static final Pattern LINE_NUMBER_PREFIX = Pattern.compile("^\\s*\\d+\\| ?");
 
     /** One search/replace edit as returned by the fix agent. */
     public record Edit(String file, String oldCode, String newCode) {}
@@ -86,29 +90,28 @@ public class EditDiffBuilder {
     // ── Edit application ──────────────────────────────────────────────────────
 
     private void applyEdit(List<String> lines, Edit edit, String relPath, int hintLine) {
-        List<String> oldLines = trimBlankEdges(splitLines(edit.oldCode()));
+        List<String> oldLines = trimBlankEdges(stripLineNumbers(splitLines(edit.oldCode())));
         if (oldLines.isEmpty()) {
             throw new PatchRejectedException(ErrorCodes.PATCH_DOES_NOT_APPLY,
                     "Edit for " + relPath + " has an empty old_code; quote the lines to replace");
         }
-        List<String> newLines = splitLines(edit.newCode());
+        List<String> newLines = stripLineNumbers(splitLines(edit.newCode()));
 
         int start = findBlock(lines, oldLines, hintLine);
         if (start < 0) {
+            String reason = oldLines.size() > 1 && findBlock(lines, oldLines.subList(0, 1), hintLine) >= 0
+                    ? "old_code lines are not consecutive in " + relPath
+                      + " (use one edit per separate location)"
+                    : "old_code not found in " + relPath;
             throw new PatchRejectedException(ErrorCodes.PATCH_DOES_NOT_APPLY,
-                    "old_code not found in " + relPath + ": \"" + abbreviate(oldLines.get(0).strip()) + "\"");
+                    reason + ": \"" + abbreviate(oldLines.get(0).strip()) + "\"");
         }
 
-        // Re-base the replacement onto the file's indentation if the model dedented its quote.
-        String fileIndent = leadingWhitespace(lines.get(start));
-        String modelIndent = leadingWhitespace(oldLines.get(0));
+        // Shift the replacement by however far the model's quote was off the file's indentation.
+        int shift = leadingWhitespace(lines.get(start)).length() - leadingWhitespace(oldLines.get(0)).length();
         List<String> reindented = new ArrayList<>(newLines.size());
         for (String nl : newLines) {
-            if (!fileIndent.equals(modelIndent) && !nl.isBlank() && nl.startsWith(modelIndent)) {
-                reindented.add(fileIndent + nl.substring(modelIndent.length()));
-            } else {
-                reindented.add(nl);
-            }
+            reindented.add(nl.isBlank() || shift == 0 ? nl : shiftIndent(nl, shift));
         }
 
         for (int i = 0; i < oldLines.size(); i++) {
@@ -171,6 +174,24 @@ public class EditDiffBuilder {
     private static List<String> splitLines(String text) {
         if (text == null || text.isEmpty()) return new ArrayList<>();
         return new ArrayList<>(text.replace("\r\n", "\n").lines().toList());
+    }
+
+    /** Removes {@code "  36| "} prefixes a model copied from the numbered snippet. */
+    private static List<String> stripLineNumbers(List<String> lines) {
+        List<String> out = new ArrayList<>(lines.size());
+        for (String line : lines) {
+            Matcher m = LINE_NUMBER_PREFIX.matcher(line);
+            out.add(m.find() ? line.substring(m.end()) : line);
+        }
+        return out;
+    }
+
+    private static String shiftIndent(String line, int shift) {
+        if (shift > 0) {
+            return " ".repeat(shift) + line;
+        }
+        int removable = Math.min(-shift, leadingWhitespace(line).length());
+        return line.substring(removable);
     }
 
     private static List<String> trimBlankEdges(List<String> lines) {
