@@ -51,6 +51,11 @@ services:
         value: heuristic
       - key: NIGHTSHIFT_MESSAGING_TRANSPORT
         value: local
+      # "-" disables the daily 02:00 scan; run one from the dashboard instead. A free
+      # instance sleeps after 15 idle minutes, so a cron would not fire reliably anyway.
+      # Set a cron (e.g. "0 0 2 * * *") on a paid, always-on instance to bring it back.
+      - key: NIGHTSHIFT_SCAN_CRON
+        value: "-"
       # Safe default: flip to false (and set GITHUB_TOKEN) only when you want real PRs.
       - key: NIGHTSHIFT_PUBLISH_DRY_RUN
         value: "true"
