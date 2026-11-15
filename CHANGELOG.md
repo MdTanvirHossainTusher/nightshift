@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.2](https://github.com/MdTanvirHossainTusher/nightshift/compare/v0.3.1...v0.3.2) (2026-11-15)
+
+
+### Bug Fixes
+
+* **mcp:** minimum severity filter, verified-only publishing and tool errors instead of 500s ([19d4c84](https://github.com/MdTanvirHossainTusher/nightshift/commit/19d4c84b5b11cabb15c9046d68e8a9add91fa5bf))
+
 ## [0.3.1](https://github.com/MdTanvirHossainTusher/nightshift/compare/v0.3.0...v0.3.1) (2026-11-15)
 
 
