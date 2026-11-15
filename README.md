@@ -169,4 +169,5 @@ Nightshift never needs to write there.
 
 ## Licence
 
-MIT. See [LICENSE](LICENSE).
+Apache License 2.0. See [LICENSE](LICENSE) and [NOTICE](NOTICE). If you redistribute Nightshift
+or a work based on it, keep the NOTICE file with it.
