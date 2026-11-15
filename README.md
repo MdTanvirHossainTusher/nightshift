@@ -139,7 +139,7 @@ Nightshift includes a zero-dependency static web dashboard served directly from 
 ## Stack
 
 Java 21 · Spring Boot 3.4.3 · Gradle · PostgreSQL 16 + Flyway · JGit · transactional outbox ·
-Docker · MCP Server · release-please · GitHub Actions
+Docker · MCP Server · [publish-please](https://github.com/MdTanvirHossainTusher/publish-please) · GitHub Actions
 
 ## Data
 

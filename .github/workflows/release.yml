@@ -1,0 +1,37 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pull-requests: write
+  packages: write
+
+jobs:
+  release:
+    name: Create release PR / tag
+    runs-on: ubuntu-latest
+    outputs:
+      released: ${{ steps.pp.outputs.release_created }}
+      tag: ${{ steps.pp.outputs.tag_name }}
+    steps:
+      - uses: MdTanvirHossainTusher/publish-please@v0.1.0
+        id: pp
+        with:
+          # GITHUB_TOKEN is enough for a public repo. Swap for an app token if the
+          # release PR needs to trigger other workflows.
+          token: ${{ secrets.GITHUB_TOKEN }}
+          config-file: publish-please-config.json
+          manifest-file: .publish-please-manifest.json
+
+  # A tag pushed with GITHUB_TOKEN does not trigger other workflows, so the image
+  # is built from here instead of relying on docker-publish's tag trigger.
+  image:
+    name: Publish image
+    needs: release
+    if: needs.release.outputs.released == 'true'
+    uses: ./.github/workflows/docker-publish.yml
+    with:
+      tag: ${{ needs.release.outputs.tag }}

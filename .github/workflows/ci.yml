@@ -23,8 +23,8 @@ jobs:
   build:
     name: Build and test
     runs-on: ubuntu-latest
-    # release-please branches only bump a version string; nothing to test.
-    if: ${{ !startsWith(github.head_ref, 'release-please--branches--') }}
+    # publish-please release branches only bump a version string; nothing to test.
+    if: ${{ !startsWith(github.head_ref, 'publish-please--branches--') }}
     steps:
       - uses: actions/checkout@v4
 
