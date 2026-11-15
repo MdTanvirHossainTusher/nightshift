@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.1](https://github.com/MdTanvirHossainTusher/nightshift/compare/v0.3.0...v0.3.1) (2026-11-15)
+
+
+### Bug Fixes
+
+* **render:** disable the daily scan on the free instance ([8e62993](https://github.com/MdTanvirHossainTusher/nightshift/commit/8e629931d83ffc692787c3bb8d56332011652070))
+* relicense under apache-2.0, valid mcp config and working deployment links ([71b0b72](https://github.com/MdTanvirHossainTusher/nightshift/commit/71b0b72112557c1947f0b1695a11fcd4a231798e))
+
 ## [0.3.0](https://github.com/MdTanvirHossainTusher/nightshift/compare/v0.2.0...v0.3.0) (2026-09-26)
 
 
