@@ -9,6 +9,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.util.Collection;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -35,4 +36,13 @@ public interface IncidentRepository extends JpaRepository<Incident, UUID> {
     default Page<Incident> findByFilters(IncidentStatus status, Severity severity, Pageable pageable) {
         return findByFilters(status, severity, null, pageable);
     }
+
+    /** Incidents whose severity is one of {@code severities}; used for "this severity or worse". */
+    @Query("SELECT i FROM Incident i " +
+           "WHERE (:status IS NULL OR i.status = :status) " +
+           "  AND i.severity IN :severities " +
+           "ORDER BY i.lastSeenAt DESC")
+    Page<Incident> findByStatusAndSeverityIn(@Param("status") IncidentStatus status,
+                                             @Param("severities") Collection<Severity> severities,
+                                             Pageable pageable);
 }

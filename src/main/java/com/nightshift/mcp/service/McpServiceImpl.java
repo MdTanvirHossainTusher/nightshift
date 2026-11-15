@@ -8,6 +8,7 @@ import com.nightshift.mcp.dto.McpResponse;
 import com.nightshift.mcp.dto.McpTool;
 import com.nightshift.model.entity.*;
 import com.nightshift.model.enums.IncidentStatus;
+import com.nightshift.model.enums.PatchStatus;
 import com.nightshift.model.enums.Severity;
 import com.nightshift.model.enums.TriggerSource;
 import com.nightshift.payload.response.CodeLocationResponse;
@@ -29,6 +30,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.interceptor.TransactionAspectSupport;
+import org.springframework.transaction.support.TransactionSynchronizationManager;
 
 import java.util.*;
 
@@ -98,6 +101,12 @@ public class McpServiceImpl implements McpService {
             return McpResponse.success(id, result);
         } catch (Exception e) {
             log.error("Error executing MCP tool {}: {}", toolName, e.getMessage(), e);
+            // A @Transactional collaborator that threw has marked the shared transaction
+            // rollback-only. Roll it back here, explicitly, so the commit does not raise
+            // UnexpectedRollbackException and turn this tool error into an HTTP 500.
+            if (TransactionSynchronizationManager.isActualTransactionActive()) {
+                TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
+            }
             return McpResponse.success(id, McpResponse.ToolResult.error("Tool execution failed: " + e.getMessage()));
         }
     }
@@ -119,8 +128,12 @@ public class McpServiceImpl implements McpService {
             }
         }
 
-        List<Incident> incidents = incidentRepository
-                .findByFilters(status, severity, PageRequest.of(0, 100))
+        // The tool's severity is a minimum ("MAJOR" includes CRITICAL and BLOCKER); the REST
+        // API's severity filter stays an exact match for the dashboard's chips.
+        PageRequest page = PageRequest.of(0, 100);
+        List<Incident> incidents = (severity == null
+                ? incidentRepository.findByFilters(status, null, page)
+                : incidentRepository.findByStatusAndSeverityIn(status, severity.andAbove(), page))
                 .getContent();
 
         List<IncidentResponse> responses = incidents.stream()
@@ -230,18 +243,16 @@ public class McpServiceImpl implements McpService {
                 .findTopByIncidentIdOrderByCreatedAtDesc(incident.getId())
                 .orElse(null);
 
+        // Only publish what the verifier passed. Previously a DRAFT or REJECTED proposal was
+        // published as-is, and with no proposal one was generated and published unreviewed.
+        // PUBLISHED is allowed so the publisher can promote a dry-run PR or report it as open.
         if (proposal == null) {
-            // Automatically generate patch proposal if not present
-            CodeLocation location = codeLocationRepository.findByIncidentId(incident.getId())
-                    .orElseGet(() -> codeLocatorService.locate(incident).orElse(null));
-            if (location == null) {
-                return McpResponse.ToolResult.error("Could not locate source code to generate patch for: " + fingerprint);
-            }
-            proposal = fixAgent.proposeFix(incident, location).orElse(null);
-            if (proposal == null) {
-                return McpResponse.ToolResult.error("Could not generate patch proposal for: " + fingerprint);
-            }
-            verifierAgent.verify(proposal, incident, location);
+            return McpResponse.ToolResult.error("No patch proposal for " + fingerprint
+                    + "; call propose_patch first.");
+        }
+        if (proposal.getStatus() != PatchStatus.VERIFIED && proposal.getStatus() != PatchStatus.PUBLISHED) {
+            return McpResponse.ToolResult.error("Newest patch proposal for " + fingerprint + " is "
+                    + proposal.getStatus() + ", not VERIFIED; nothing was published.");
         }
 
         PullRequest pr = publisherService.publish(incident, proposal);

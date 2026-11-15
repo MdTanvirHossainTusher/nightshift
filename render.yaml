@@ -18,6 +18,11 @@ services:
         value: "8080"
       - key: MANAGEMENT_SERVER_PORT
         value: "8080"
+      # No SMTP server on Render: without a JavaMailSender bean, notifications are logged and
+      # skipped instead of failing 5 times each against localhost:1025. Remove this line (and
+      # set SPRING_MAIL_HOST etc.) to send real email.
+      - key: SPRING_AUTOCONFIGURE_EXCLUDE
+        value: org.springframework.boot.autoconfigure.mail.MailSenderAutoConfiguration
       # The free instance has 512 MB; keep heap + metaspace + threads inside it.
       - key: JAVA_OPTS
         value: "-XX:+UseContainerSupport -XX:MaxRAMPercentage=60.0 -XX:+UseSerialGC -Xss512k"
