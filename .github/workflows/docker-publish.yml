@@ -1,10 +1,17 @@
 name: Publish image
 
-# Runs when release-please tags a release. The tag is the single source of the
-# image version, so a deployed image is always traceable to a changelog entry.
+# Called by release.yml when publish-please tags a release (and on a tag pushed by
+# hand). The tag is the single source of the image version, so a deployed image is
+# always traceable to a changelog entry.
 on:
   push:
     tags: ['v*']
+  workflow_call:
+    inputs:
+      tag:
+        description: Release tag to build, e.g. v0.3.1
+        type: string
+        required: true
   workflow_dispatch:
 
 permissions:
@@ -17,6 +24,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.tag || github.ref }}
       - uses: docker/setup-buildx-action@v3
 
       - name: Log in to GHCR
@@ -32,8 +41,8 @@ jobs:
         with:
           images: ghcr.io/${{ github.repository }}
           tags: |
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern={{version}},value=${{ inputs.tag || github.ref_name }}
+            type=semver,pattern={{major}}.{{minor}},value=${{ inputs.tag || github.ref_name }}
             type=raw,value=latest
 
       - name: Build and push
