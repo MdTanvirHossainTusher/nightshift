@@ -33,6 +33,7 @@ import java.util.UUID;
 import static org.hamcrest.Matchers.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.ArgumentMatchers.isNull;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -179,7 +180,8 @@ class McpControllerTest {
 
     @Test
     void testToolCallListIncidents() throws Exception {
-        when(incidentRepository.findByFilters(any(), any(), any(Pageable.class)))
+        when(incidentRepository.findByStatusAndSeverityIn(isNull(),
+                eq(List.of(Severity.BLOCKER, Severity.CRITICAL, Severity.MAJOR)), any(Pageable.class)))
                 .thenReturn(new PageImpl<>(List.of(testIncident)));
 
         String req = """
@@ -201,6 +203,35 @@ class McpControllerTest {
                 .andExpect(jsonPath("$.result.content[0].type").value("text"))
                 .andExpect(jsonPath("$.result.content[0].text", containsString("fp-1234567890abcdef")))
                 .andExpect(jsonPath("$.result.isError").value(false));
+
+        verify(incidentRepository, never()).findByFilters(any(), any(), any(Pageable.class));
+    }
+
+    @Test
+    void testToolCallListIncidentsWithoutSeverityDoesNotFilterSeverity() throws Exception {
+        when(incidentRepository.findByFilters(eq(IncidentStatus.NEW), isNull(), any(Pageable.class)))
+                .thenReturn(new PageImpl<>(List.of(testIncident)));
+
+        String req = """
+                {
+                  "jsonrpc": "2.0",
+                  "id": 4,
+                  "method": "tools/call",
+                  "params": {
+                    "name": "list_incidents",
+                    "arguments": { "status": "NEW" }
+                  }
+                }
+                """;
+
+        mockMvc.perform(post("/mcp")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(req))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.result.content[0].text", containsString("fp-1234567890abcdef")))
+                .andExpect(jsonPath("$.result.isError").value(false));
+
+        verify(incidentRepository, never()).findByStatusAndSeverityIn(any(), any(), any(Pageable.class));
     }
 
     @Test
@@ -326,6 +357,67 @@ class McpControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.result.isError").value(false))
                 .andExpect(jsonPath("$.result.content[0].text", containsString("https://github.com/acme/order-service/pull/101")));
+    }
+
+    private static final String OPEN_PR_REQUEST = """
+            {
+              "jsonrpc": "2.0",
+              "id": 8,
+              "method": "tools/call",
+              "params": {
+                "name": "open_pull_request",
+                "arguments": { "fingerprint": "fp-1234567890abcdef" }
+              }
+            }
+            """;
+
+    @Test
+    void testToolCallOpenPullRequestRefusesUnverifiedProposal() throws Exception {
+        testProposal.setStatus(PatchStatus.REJECTED);
+        when(incidentRepository.findByFingerprint("fp-1234567890abcdef"))
+                .thenReturn(Optional.of(testIncident));
+        when(patchProposalRepository.findTopByIncidentIdOrderByCreatedAtDesc(testIncident.getId()))
+                .thenReturn(Optional.of(testProposal));
+
+        mockMvc.perform(post("/mcp").contentType(MediaType.APPLICATION_JSON).content(OPEN_PR_REQUEST))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.result.isError").value(true))
+                .andExpect(jsonPath("$.result.content[0].text", containsString("REJECTED, not VERIFIED")));
+
+        verify(publisherService, never()).publish(any(), any());
+    }
+
+    @Test
+    void testToolCallOpenPullRequestWithoutProposalDoesNotGenerateOne() throws Exception {
+        when(incidentRepository.findByFingerprint("fp-1234567890abcdef"))
+                .thenReturn(Optional.of(testIncident));
+        when(patchProposalRepository.findTopByIncidentIdOrderByCreatedAtDesc(testIncident.getId()))
+                .thenReturn(Optional.empty());
+
+        mockMvc.perform(post("/mcp").contentType(MediaType.APPLICATION_JSON).content(OPEN_PR_REQUEST))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.result.isError").value(true))
+                .andExpect(jsonPath("$.result.content[0].text", containsString("call propose_patch first")));
+
+        verify(fixAgent, never()).proposeFix(any(), any());
+        verify(publisherService, never()).publish(any(), any());
+    }
+
+    @Test
+    void testToolCallOpenPullRequestReportsPublisherFailureAsToolError() throws Exception {
+        when(incidentRepository.findByFingerprint("fp-1234567890abcdef"))
+                .thenReturn(Optional.of(testIncident));
+        when(patchProposalRepository.findTopByIncidentIdOrderByCreatedAtDesc(testIncident.getId()))
+                .thenReturn(Optional.of(testProposal));
+        when(publisherService.publish(testIncident, testProposal))
+                .thenThrow(new com.nightshift.exception.BadResourceRequestException(
+                        com.nightshift.constant.code.ErrorCodes.PR_ALREADY_OPEN,
+                        "Pull request already exists for branch: nightshift/fix-major-fp-12345"));
+
+        mockMvc.perform(post("/mcp").contentType(MediaType.APPLICATION_JSON).content(OPEN_PR_REQUEST))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.result.isError").value(true))
+                .andExpect(jsonPath("$.result.content[0].text", containsString("already exists for branch")));
     }
 
     @Test

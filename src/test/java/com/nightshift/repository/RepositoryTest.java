@@ -157,6 +157,22 @@ class RepositoryTest {
         assertThat(incidentRepository.findByFingerprint("no-such-fp")).isEmpty();
     }
 
+    @Test
+    void incidentRepository_findByStatusAndSeverityIn_returnsSeverityAndAbove() {
+        for (Severity severity : Severity.values()) {
+            Incident incident = buildIncident("fp-sev-" + severity);
+            incident.setSeverity(severity);
+            incidentRepository.save(incident);
+        }
+
+        var found = incidentRepository.findByStatusAndSeverityIn(
+                null, Severity.MAJOR.andAbove(), org.springframework.data.domain.PageRequest.of(0, 10));
+
+        assertThat(found.getContent()).extracting(Incident::getSeverity)
+                .containsExactlyInAnyOrder(Severity.BLOCKER, Severity.CRITICAL, Severity.MAJOR);
+        assertThat(found.getTotalElements()).isEqualTo(3);
+    }
+
     // ── IncidentOccurrence ────────────────────────────────────────────────────
 
     @Test
