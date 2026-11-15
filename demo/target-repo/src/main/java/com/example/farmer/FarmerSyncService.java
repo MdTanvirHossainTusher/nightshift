@@ -33,7 +33,9 @@ public class FarmerSyncService {
         for (FarmerRecord record : pending) {
             // The borrow is NOT in a try-with-resources. `upstream.push` below can
             // throw, and when it does this connection is never returned.
-            Connection connection = dataSource.getConnection(); // NS_FRAME_POOL
+            Connection connection = null;
+            try {
+                connection = dataSource.getConnection(); // NS_FRAME_POOL
 
             PreparedStatement stmt = connection.prepareStatement(
                     "UPDATE farmer SET synced_at = now() WHERE id = ?");
@@ -42,7 +44,11 @@ public class FarmerSyncService {
             upstream.push(record);
             stmt.executeUpdate();
 
-            connection.close();
+            } finally {
+                if (connection != null) {
+                    connection.close();
+                }
+            }
             pushed++;
         }
         return pushed;
