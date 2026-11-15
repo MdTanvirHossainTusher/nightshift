@@ -55,7 +55,7 @@ All 18 tasks are fully implemented, verified, and passing continuous integration
 | **Ground Truth** | [`demo/expected-findings.json`](demo/expected-findings.json) | Evaluated benchmark scored at 100% precision and recall |
 | **Database Schema** | [`V1__core_schema.sql`](src/main/resources/db/migration/V1__core_schema.sql) | 9 tables with UUIDv7 PKs, transactional outbox, and trajectory audit |
 | **Assignment Rules** | [`config/assignment-rules.yml`](config/assignment-rules.yml) | Service and logger prefix routing for PR assignments |
-| **Deployment Guide** | [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) | Railway, Docker Compose, and Standalone run instructions |
+| **Deployment** | [`render.yaml`](render.yaml), [`Dockerfile`](Dockerfile), [`compose.yml`](compose.yml) | Render Blueprint (web service + Postgres), the image Railway also builds, and the local stack |
 
 ---
 
@@ -106,8 +106,8 @@ docker compose up --build
 #    api docs  http://localhost:8080/swagger-ui.html
 #    mcp       http://localhost:8080/mcp
 
-# 3. Cloud / Production deployment on Railway
-#    See docs/DEPLOYMENT.md for Railway managed Postgres configuration
+# 3. Cloud: Render dashboard → New → Blueprint → this repo (render.yaml),
+#    or point Railway at the Dockerfile with a managed Postgres (SPRING_PROFILES_ACTIVE=prod)
 ```
 
 Copy `.env.example` to `.env` to add a real model provider (`openai`, `gemini`, `anthropic`, `claude-code`), a GitHub token, or SMTP.
@@ -130,6 +130,11 @@ Nightshift includes a zero-dependency static web dashboard served directly from 
   - `scan_logs`: Trigger an immediate log scan.
   - `propose_patch`: Generate candidate patch diff for an incident.
   - `open_pull_request`: Publish verified patch to a dedicated git branch.
+
+> **The `/mcp` endpoint and the REST API have no authentication.** Anyone who can reach them can
+> trigger scans and, with dry-run off, open PRs using Nightshift's GitHub token. Keep a deployment
+> on localhost or a private network, or behind an authenticating proxy, before you set
+> `GITHUB_TOKEN` and `NIGHTSHIFT_PUBLISH_DRY_RUN=false`.
 
 ## Stack
 
@@ -164,4 +169,4 @@ Nightshift never needs to write there.
 
 ## Licence
 
-MIT.
+MIT. See [LICENSE](LICENSE).
